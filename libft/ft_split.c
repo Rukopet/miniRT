@@ -59,7 +59,7 @@ static int		count_word(const char *str, char *c)
 	return (count);
 }
 
-static void		ft_free(char **ret)
+void		ft_free(char **ret)
 {
 	while (*ret)
 	{

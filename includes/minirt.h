@@ -115,7 +115,7 @@ typedef struct	s_tr
 	char		b;
 }				t_tr;
 
-typedef	struct	s_counter
+typedef	struct	s_count
 {
 	int			resolution;
 	int			a_light;
@@ -126,7 +126,7 @@ typedef	struct	s_counter
 	int			sq;
 	int			cy;
 	int			tr;
-}				t_counter;
+}				t_count;
 
 typedef struct	s_rt
 {
@@ -151,5 +151,8 @@ typedef struct	s_error
 }				t_error;
 
 #include "stdlib.h"
+#include "unistd.h"
 
+int				check_scene_arg(char **argv, t_rt **scene);
+t_count			*init_count_struct(char *names);
 #endif
