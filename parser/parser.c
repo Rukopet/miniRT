@@ -2,6 +2,7 @@
 #include "minirt.h"
 #include "libft.h"
 #include "fcntl.h"
+#include "stdio.h"
 
 
 int			count_plus(char *names, t_count *counter)
@@ -55,27 +56,23 @@ int			check_line(char **line, t_rt *scene, t_count *counter)
 int			pars_branching(t_rt *scene, int fd, t_count *counter)
 {
 	int		i;
-	char	*save;
+	char	*gnl;
 	char	**line;
 	char	*join;
 
-	while ((i = get_next_line(fd, &save)))
+	while ((i = get_next_line(fd, &gnl)))
 	{
-		line = ft_split(save, "\t\v\f\r ");
-		if (!(check_line(line, scene, counter)))
+		line = ft_split(gnl, "\t\v\f\r ");
+		if (!(check_line(line, scene, counter)) ||
+			NULL == (join = join_free(&gnl, join, &line)))
 			return (0);
-		free_and_null(&save, 0);
-		ft_free(line);
 	}
-	if (i < 0)
+	if (i < 0 || -1 == (get_next_line(fd, &gnl)))
 		return (0);
-	if (!(get_next_line(fd, &save)))
+	line = ft_split(gnl, "\n\t\v\f ");
+	if (!(check_line(line, scene, counter)) ||
+		NULL == (join = join_free(&gnl, join, &line)))
 		return (0);
-	line = ft_split(save, "\n\t\v\f ");
-	free_and_null(&save, 0);
-	if (!(check_line(line, scene, counter)))
-		return (0);
-	ft_free(line);
 	return (1);
 }
 
@@ -113,10 +110,11 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 			tmp = argv[i];		
 		i++;
 	}
-	if (argc == 3 && !save_flag)
-		return (write(2, "Error\nBad arguments\n", 21));
-	if (-1 == (fd = open(tmp, O_RDONLY)))
-		return (write(2, "Error\nThe open operation was not successful\n", 44));
+	if ((argc == 3 && !save_flag) || -1 == (fd = open(tmp, O_RDONLY)))
+	{
+		write(2, "Error\nBad arguments\n", 21);
+		return (0);
+	}	
 	if (!(check_other(scene, fd)))
 		return (0);
 	return (1);
