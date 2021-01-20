@@ -57,23 +57,32 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 {
 	int		i;
 	char	*gnl;
-	char	**line;
 	char	*join;
 
-	while ((i = get_next_line(fd, &gnl)))
-	{
-		line = ft_split(gnl, "\t\v\f\r ");
-		if (!(check_line(line, scene, counter)) ||
-			NULL == (join = join_free(&gnl, join, &line)))
-			return (0);
-	}
-	if (i < 0 || -1 == (get_next_line(fd, &gnl)))
-		return (0);
-	line = ft_split(gnl, "\n\t\v\f ");
-	if (!(check_line(line, scene, counter)) ||
-		NULL == (join = join_free(&gnl, join, &line)))
-		return (0);
+	while (0 < (i = get_next_line(fd, &gnl )))
+		if (!(join_str(&gnl, &join)))
+			return (free_and_null(&gnl, -1));
+	i = (i == -1) ?  i : get_next_line(fd, &gnl);
+	if (i == -1)
+		return (free_and_null(&join, -1));
+	if (!(join_str(&gnl, &join)))
+		return (free_and_null(&join, -1));
+	printf("%s\n", join);
 	return (1);
+
+	// while ((i = get_next_line(fd, &gnl)))
+	// {
+	// 	line = ft_split(gnl, "\t\v\f\r ");
+	// 	if (!(check_line(line, scene, counter)) ||
+	// 		NULL == (join = join_free(&gnl, join, &line)))
+	// 		return (0);
+	// }
+	// if (i < 0 || -1 == (get_next_line(fd, &gnl)))
+	// 	return (0);
+	// line = ft_split(gnl, "\n\t\v\f ");
+	// if (!(check_line(line, scene, counter)) ||
+	// 	NULL == (join = join_free(&gnl, join, &line)))
+	// 	return (0);
 }
 
 int			check_other(t_rt *scene, int fd)
@@ -83,7 +92,7 @@ int			check_other(t_rt *scene, int fd)
 	if(!(counter = malloc(sizeof(t_count))))
 		return (0);
 	init_count_struct(counter);
-	if (!(pars_branching(scene, fd, counter)))
+	if (-1 == (pars_branching(scene, fd, counter)))
 	{
 		free(counter);
 		return (0);

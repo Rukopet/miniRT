@@ -162,5 +162,6 @@ typedef struct	s_error
 
 int				check_scene_arg(char **argv, t_rt *scene, int argc);
 int				init_count_struct(t_count *counter);
-char			*join_free(char **save, char *join, char ***line);
+// char			*join_free(char **save, char *join, char ***line);
+int				join_str(char **gnl, char **join);
 #endif

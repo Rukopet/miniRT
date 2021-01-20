@@ -18,8 +18,8 @@ int		ft_strlen_n(const char *s, char flag);
 int		free_and_null(char **tmp, int flag);
 int		ft_strchr_r(const char *s, int c);
 
-# ifndef BUFFER
-#  define BUFFER_SIZE 20
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
 # endif
 
 #endif
