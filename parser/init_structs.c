@@ -1,10 +1,6 @@
 #include "minirt.h"
 
-// t_count			*solve_count(char *names, t_count *c)
-// {
-
-// }
-int			*init_count_struct(t_count *counter)
+int			init_count_struct(t_count *counter)
 {
 	counter->resolution = 0;
 	counter->a_light = 0;

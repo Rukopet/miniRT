@@ -29,12 +29,11 @@ int			count_plus(char *names, t_count *counter)
 	return (1);
 }
 
-int			check_line(char **line, t_rt **scene, t_count *counter)
+int			check_line(char **line, t_rt *scene, t_count *counter)
 {
 	int		i;
 	char	*names[] = {"R", "A", "c", "l", "sp", "pl",
 			"sq", "cy", "tr", NULL};
-	t_count	*check;
 	char	flag;
 
 	i = 0;
@@ -45,8 +44,7 @@ int			check_line(char **line, t_rt **scene, t_count *counter)
 		{
 			flag = 1;
 			i++;
-			if (!(count_plus(names[i], counter)))
-				return (0);
+			count_plus(names[i], counter);
 		}
 	}
 	if (!flag)
@@ -54,11 +52,12 @@ int			check_line(char **line, t_rt **scene, t_count *counter)
 	return (1);	
 }
 
-int			pars_branching(t_rt **scene, int fd, t_count *counter)
+int			pars_branching(t_rt *scene, int fd, t_count *counter)
 {
 	int		i;
 	char	*save;
 	char	**line;
+	char	*join;
 
 	while ((i = get_next_line(fd, &save)))
 	{
@@ -80,7 +79,7 @@ int			pars_branching(t_rt **scene, int fd, t_count *counter)
 	return (1);
 }
 
-int			check_other(t_rt **scene, int fd)
+int			check_other(t_rt *scene, int fd)
 {
 	t_count	*counter;
 
@@ -92,10 +91,12 @@ int			check_other(t_rt **scene, int fd)
 		free(counter);
 		return (0);
 	}
+	// scene = alloc_pars_br(counter)
 	free(counter);
+	return (1);
 }
 
-int			check_scene_arg(char **argv, t_rt **scene)
+int			check_scene_arg(char **argv, t_rt *scene, int argc)
 {
 	int		fd;
 	char	save_flag;
@@ -112,9 +113,12 @@ int			check_scene_arg(char **argv, t_rt **scene)
 			tmp = argv[i];		
 		i++;
 	}
-	if (!(fd = open(tmp, O_RDONLY)))
+	if (argc == 3 && !save_flag)
+		return (write(2, "Error\nBad arguments\n", 21));
+	if (-1 == (fd = open(tmp, O_RDONLY)))
 		return (write(2, "Error\nThe open operation was not successful\n", 44));
 	if (!(check_other(scene, fd)))
 		return (0);
 	return (1);
+	//dich
 }

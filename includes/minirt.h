@@ -13,6 +13,13 @@
 #ifndef MINIRT_H
 # define MINIRT_H
 
+typedef struct	s_vec
+{
+	float		x;
+	float		y;
+	float		z;
+}				t_vec;
+
 typedef struct	s_res
 {
 	int			x;
@@ -153,6 +160,6 @@ typedef struct	s_error
 #include "stdlib.h"
 #include "unistd.h"
 
-int				check_scene_arg(char **argv, t_rt **scene);
-t_count			*init_count_struct(char *names);
+int				check_scene_arg(char **argv, t_rt *scene, int argc);
+int				init_count_struct(t_count *counter);
 #endif

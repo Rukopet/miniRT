@@ -22,7 +22,7 @@ int				check_argc(int argc, char **argv, t_rt *scene)
 		write(2, "Error\nEmpty \"save\" argument, add file name-scene\n", 50);
 		return (-1);
 	}
-	if (1 != (check_scene_arg(argv, scene)))
+	if (1 != (check_scene_arg(argv, scene, argc)))
 		return (0);
 	return (1);
 }
