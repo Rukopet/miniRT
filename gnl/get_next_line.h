@@ -17,6 +17,7 @@ int		get_next_line(int fd, char **line);
 int		ft_strlen_n(const char *s, char flag);
 int		free_and_null(char **tmp, int flag);
 int		ft_strchr_r(const char *s, int c);
+char	*ft_strjoin_g(const char *s1, const char *s2);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

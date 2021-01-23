@@ -36,6 +36,7 @@ int				main(int argc, char *argv[])
 {
 	static t_rt	scene;
 
+	init_scene_struct(&scene);
 	if (!(branching(argc ,argv, &scene)))
 		return (-1);
     return (0);

@@ -29,12 +29,12 @@ static char		*word_alloc(const char *str, char *c)
 	int			index;
 
 	index = 0;
-	while (!(0 == (check_arg(str[index], c))) && str[index])
+	while (!(check_arg(str[index], c)) && str[index])
 		index++;
-	if (!(ret_word = (char *)malloc(1 * (index + 1))))
+	if (!(ret_word = (char *)malloc(index + 1)))
 		return (NULL);
 	index = -1;
-	while (!(0 == (check_arg(str[++index], c))) && str[index])
+	while (!(check_arg(str[++index], c)) && str[index])
 		ret_word[index] = str[index];
 	ret_word[index] = '\0';
 	return (ret_word);
@@ -47,10 +47,10 @@ static int		count_word(const char *str, char *c)
 	count = 0;
 	while (*str)
 	{
-		if (*str && !(0 == (check_arg(*str, c))))
+		if (*str && !(0 == !(check_arg(*str, c))))
 		{
 			count++;
-			while (*str && !(0 == (check_arg(*str, c))))
+			while (*str && !(0 == !(check_arg(*str, c))))
 				str++;
 		}
 		while (*str && check_arg(*str, c))
@@ -64,9 +64,11 @@ void		ft_free(char **ret)
 	while (*ret)
 	{
 		free(*ret);
+		*ret = NULL;
 		ret++;
 	}
 	free(ret);
+	ret = NULL;
 }
 
 char			**ft_split(char const *s, char *c)
@@ -75,13 +77,13 @@ char			**ft_split(char const *s, char *c)
 	int			index;
 
 	index = 0;
-	if (!s || !(ret = (char **)malloc(sizeof(char *) * (count_word(s, c) + 1))))
+	if (!s || !(ret = (char **)malloc((count_word(s, c) + 1) * sizeof(char *))))
 		return (NULL);
 	while (*s)
 	{
 		while (*s && check_arg(*s, c))
 			s++;
-		if (*s && (0 == (check_arg(*s, c))))
+		if (*s && !(check_arg(*s, c)))
 		{
 			if (!(ret[index] = word_alloc(s, c)))
 			{
@@ -89,7 +91,7 @@ char			**ft_split(char const *s, char *c)
 				return (NULL);
 			}
 			index++;
-			while (*s && (0 == (check_arg(*s, c))))
+			while (*s && !(check_arg(*s, c)))
 				s++;
 		}
 	}

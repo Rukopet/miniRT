@@ -113,7 +113,7 @@ int				get_next_line(int fd, char **line)
 			return (free_and_null(&buf, -1));
 		buf[len] = '\0';
 		tmp = save;
-		save = ft_strjoin(tmp, buf);
+		save = ft_strjoin_g(tmp, buf);
 		free_and_null(&tmp, 0);
 	}
 	free_and_null(&buf, 0);

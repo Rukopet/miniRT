@@ -13,3 +13,16 @@ int			init_count_struct(t_count *counter)
 	counter->tr = 0;
 	return (1);
 }
+
+void		init_scene_struct(t_rt *s)
+{
+	s->resolution = NULL;
+	s->a_light = NULL;
+	s->cam = NULL;
+	s->light = NULL;
+	s->sp = NULL;
+	s->pl = NULL;
+	s->sq = NULL;
+	s->cy = NULL;
+	s->tr = NULL;
+}

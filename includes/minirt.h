@@ -13,12 +13,12 @@
 #ifndef MINIRT_H
 # define MINIRT_H
 
-typedef struct	s_vec
+typedef struct	s_v
 {
 	float		x;
 	float		y;
 	float		z;
-}				t_vec;
+}				t_v;
 
 typedef struct	s_res
 {
@@ -42,9 +42,7 @@ typedef struct	s_cam
 	float		x;
 	float		y;
 	float		z;
-	float		vec_x;
-	float		vec_y;
-	float		vec_z;
+	t_v			vec;
 	char		fov;
 }				t_cam;
 
@@ -75,9 +73,7 @@ typedef struct	s_pl
 	float		x;
 	float		y;
 	float		z;
-	float		vec_x;
-	float		vec_y;
-	float		vec_z;
+	t_v			vec;
 	char		r;
 	char		g;
 	char		b;
@@ -88,9 +84,7 @@ typedef struct	s_sq
 	float		x;
 	float		y;
 	float		z;
-	float		vec_x;
-	float		vec_y;
-	float		vec_z;
+	t_v			vec;
 	float		side_size;
 	char		r;
 	char		g;
@@ -102,9 +96,7 @@ typedef struct	s_cy
 	float		x;
 	float		y;
 	float		z;
-	float		vec_x;
-	float		vec_y;
-	float		vec_z;
+	t_v			vec;
 	float		diameter;
 	float		height;
 	char		r;
@@ -164,4 +156,10 @@ int				check_scene_arg(char **argv, t_rt *scene, int argc);
 int				init_count_struct(t_count *counter);
 // char			*join_free(char **save, char *join, char ***line);
 int				join_str(char **gnl, char **join);
+int				work_with_counter_br(char **join, t_count *counter, t_rt *scene);
+int				count_validate(t_count *counter);
+
+int				free_scene(t_rt *s, int flag);
+void			init_scene_struct(t_rt *s);
+
 #endif

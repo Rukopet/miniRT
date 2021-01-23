@@ -32,7 +32,7 @@ OBJ = $(SRC:.c=.o)
 all: libs $(NAME) $(SRC) 
 
 $(NAME): $(OBJ) $(HEADER)
-	$(CC) $(FLAG) -o $(NAME) $(LIBS) $(LIBX) $(SRC) $(INC)
+	$(CC) $(FLAG) -o $(NAME) libft/*.c $(LIBX) $(SRC) $(INC) #$(LIBS)
 
 %.o: %.c $(HEADER)
 	$(CC) -c $(FLAG) $(LIBX) $< $(INC) -o $@

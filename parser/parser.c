@@ -4,55 +4,6 @@
 #include "fcntl.h"
 #include "stdio.h"
 
-
-int			count_plus(char *names, t_count *counter)
-{
-	if (0 == (ft_strncmp("R", names, 2)))
-		counter->resolution += 1;
-	else if (0 == (ft_strncmp("A", names, 2)))
-		counter->a_light += 1;
-	else if (0 == (ft_strncmp("c", names, 2)))
-		counter->cam += 1;
-	else if (0 == (ft_strncmp("l", names, 2)))
-		counter->light += 1;
-	else if (0 == (ft_strncmp("sp", names, 2)))
-		counter->sp += 1;
-	else if (0 == (ft_strncmp("pl", names, 2)))
-		counter->pl += 1;
-	else if (0 == (ft_strncmp("sq", names, 2)))
-		counter->sq += 1;
-	else if (0 == (ft_strncmp("cy", names, 2)))
-		counter->cy += 1;
-	else if (0 == (ft_strncmp("tr", names, 2)))
-		counter->tr += 1;
-	else
-		return (0);	
-	return (1);
-}
-
-int			check_line(char **line, t_rt *scene, t_count *counter)
-{
-	int		i;
-	char	*names[] = {"R", "A", "c", "l", "sp", "pl",
-			"sq", "cy", "tr", NULL};
-	char	flag;
-
-	i = 0;
-	flag = 0;
-	while (names[i] != NULL)
-	{
-		if (0 == (ft_strncmp(line[0], names[i], 2)))
-		{
-			flag = 1;
-			i++;
-			count_plus(names[i], counter);
-		}
-	}
-	if (!flag)
-		return (0);
-	return (1);	
-}
-
 int			pars_branching(t_rt *scene, int fd, t_count *counter)
 {
 	int		i;
@@ -67,7 +18,8 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 		return (free_and_null(&join, -1));
 	if (!(join_str(&gnl, &join)))
 		return (free_and_null(&join, -1));
-	printf("%s\n", join);
+		if (!work_with_counter_br(&join, counter, scene))
+			return (0);
 	return (1);
 
 	// while ((i = get_next_line(fd, &gnl)))
@@ -97,7 +49,7 @@ int			check_other(t_rt *scene, int fd)
 		free(counter);
 		return (0);
 	}
-	// scene = alloc_pars_br(counter)
+	// scene = alloc_pxars_br(counter)
 	free(counter);
 	return (1);
 }
