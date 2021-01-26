@@ -61,6 +61,7 @@ int			check_line(char **line, t_count *counter, char ***check)
 		}
 	if (!flag)
 		return (0);
+	ft_free(*check);
 	return (1);	
 }
 
@@ -92,7 +93,9 @@ int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 {
 	char	*arg;
 	char	**take_line;
+	char	*begin;
 
+	begin = ft_strdup(*join);
 	while (**join != 0)
 	{
 		if (!(arg = next_argument_check(join)))
@@ -104,8 +107,11 @@ int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 		// if (!(parse_all(scene, counter)))
 		// 	return (free_scene(scene, 0));
 	}
-	if (!count_validate(counter))
+	if (!count_validate(counter, scene))
 		return (0);
+	if (!parse_after_count(&begin, scene))
+		return (0);
+	
 	// print_counter(counter);
 	return (1);
 }

@@ -13,12 +13,12 @@
 #ifndef MINIRT_H
 # define MINIRT_H
 
-typedef struct	s_v
+typedef	struct	s_vec
 {
-	float		x;
-	float		y;
-	float		z;
-}				t_v;
+	double		x;
+	double		y;
+	double		z;
+}				t_vec;
 
 typedef struct	s_res
 {
@@ -28,90 +28,95 @@ typedef struct	s_res
 
 typedef struct	s_al
 {
-	float		x;
-	float		y;
-	float		z;
-	float		bright_rate;
-	char		r;
-	char		g;
-	char		b;
+	double		bright_rate;
+	int			r;
+	int			g;
+	int			b;
 }				t_al;
 
 typedef struct	s_cam
 {
-	float		x;
-	float		y;
-	float		z;
-	t_v			vec;
-	char		fov;
+	double		x;
+	double		y;
+	double		z;
+	double		vec_x;
+	double		vec_y;
+	double		vec_z;
+	int			fov;
 }				t_cam;
 
 typedef struct	s_light
 {
-	float		x;
-	float		y;
-	float		z;
-	float		bright_rate;
-	char		r;
-	char		g;
-	char		b;
+	double		x;
+	double		y;
+	double		z;
+	double		bright_rate;
+	int			r;
+	int			g;
+	int			b;
 }				t_light;
 
 typedef struct	s_sp
 {
-	float		x;
-	float		y;
-	float		z;
-	float		diameter;
-	char		r;
-	char		g;
-	char		b;
+	double		x;
+	double		y;
+	double		z;
+	double		diameter;
+	int			r;
+	int			g;
+	int			b;
 }				t_sp;
 
 typedef struct	s_pl
 {
-	float		x;
-	float		y;
-	float		z;
-	t_v			vec;
-	char		r;
-	char		g;
-	char		b;
+	double		x;
+	double		y;
+	double		z;
+	double		vec_x;
+	double		vec_y;
+	double		vec_z;
+	int			r;
+	int			g;
+	int			b;
 }				t_pl;
 
 typedef struct	s_sq
 {
-	float		x;
-	float		y;
-	float		z;
-	t_v			vec;
-	float		side_size;
-	char		r;
-	char		g;
-	char		b;
+	double		x;
+	double		y;
+	double		z;
+	double		vec_x;
+	double		vec_y;
+	double		vec_z;
+	double		side_size;
+	int			r;
+	int			g;
+	int			b;
 }				t_sq;
 
 typedef struct	s_cy
 {
-	float		x;
-	float		y;
-	float		z;
-	t_v			vec;
-	float		diameter;
-	float		height;
-	char		r;
-	char		g;
-	char		b;
+	double		x;
+	double		y;
+	double		z;
+	double		vec_x;
+	double		vec_y;
+	double		vec_z;
+	double		diameter;
+	double		height;
+	int			r;
+	int			g;
+	int			b;
 }				t_cy;
 
 typedef struct	s_tr
 {
-	float		first;
-	float		second;
-	float		third;
-	char		r;
-	char		g;
-	char		b;
+	double		first;
+	double		second;
+	double		third;
+	int			r;
+	int			g;
+	int			b;
 }				t_tr;
 
 typedef	struct	s_count
@@ -157,9 +162,27 @@ int				init_count_struct(t_count *counter);
 // char			*join_free(char **save, char *join, char ***line);
 int				join_str(char **gnl, char **join);
 int				work_with_counter_br(char **join, t_count *counter, t_rt *scene);
-int				count_validate(t_count *counter);
+int				count_validate(t_count *counter, t_rt *scene);
 
 int				free_scene(t_rt *s, int flag);
 void			init_scene_struct(t_rt *s);
+
+int				parse_after_count(char **join, t_rt *scene);
+char			*next_argument_check(char **join);
+
+int				write_error_withpars(const char *line);
+int				parse_resolution(char **line, t_rt *s);
+int				parse_alight(char **line, t_rt *s);
+int				parse_cam(char **line, t_rt *s, int *i);
+int				parse_light(char **line, t_rt *s, int *i);
+int				parse_sphere(char **line, t_rt *s, int *i);
+int				parse_plane(char **line, t_rt *s, int *i);
+int				parse_square(char **line, t_rt *s, int *i);
+int				parse_cylinder(char **line, t_rt *s, int *i);
+int				parse_triangle(char **line, t_rt *s, int *i);
+double 			ft_atof(char *s);
+
+void			ft_index(int *index);
+void			erros_and_exit(int flag);
 
 #endif

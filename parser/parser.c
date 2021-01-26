@@ -42,14 +42,13 @@ int			check_other(t_rt *scene, int fd)
 	t_count	*counter;
 
 	if(!(counter = malloc(sizeof(t_count))))
-		return (0);
+		erros_and_exit(-1);
 	init_count_struct(counter);
 	if (-1 == (pars_branching(scene, fd, counter)))
 	{
 		free(counter);
 		return (0);
 	}
-	// scene = alloc_pxars_br(counter)
 	free(counter);
 	return (1);
 }
@@ -63,6 +62,7 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 
 	i = 1;
 	save_flag = 0;
+	fd = 0;
 	while (argv[i] != NULL)
 	{
 		if (0 == (ft_strncmp(argv[i], "--save", 7)))
@@ -72,10 +72,7 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 		i++;
 	}
 	if ((argc == 3 && !save_flag) || -1 == (fd = open(tmp, O_RDONLY)))
-	{
-		write(2, "Error\nBad arguments\n", 21);
-		return (0);
-	}	
+		erros_and_exit(4);
 	if (!(check_other(scene, fd)))
 		return (0);
 	return (1);
