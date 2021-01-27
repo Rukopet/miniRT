@@ -1,4 +1,5 @@
 #include "minirt.h"
+#include "get_next_line.h"
 #include "libft.h"
 
 int			parsing_values(char *names, char **line, t_rt *scene)
@@ -40,7 +41,8 @@ int			check_line_parse(char **line, t_rt *scene)
 	i = -1;
 	flag = 0;
 	check = ft_split(*line, "\t\v\f\r ");
-	while (names[++i] != NULL)
+	// free_and_null(line, 0);
+	while (names[++i] != NULL && **line != 0)
 		if (0 == (ft_strncmp(check[0], names[i], 2)))
 		{
 			flag = 1;

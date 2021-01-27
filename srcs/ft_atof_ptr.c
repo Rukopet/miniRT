@@ -1,6 +1,6 @@
 #include "libft.h"
 
-double ft_atof(char *s)
+double ft_atof_ptr(char **s)
 {
         double a = 0.0;
         int e = 0;
@@ -8,16 +8,19 @@ double ft_atof(char *s)
 		int	minus;
 
 		minus = 1;
-		if ((c = *s) != '\0' && (c == '-'))
+		if (**s == ',')
+			(*s)++;
+		if ((c = **s) != '\0' && (c == '-'))
 		{
 			minus = -1;
-			s++;
-		}
-        while ((c = *s++) != '\0' && ft_isdigit(c)) {
-                a = a * 10.0 + (c - '0');
+			(*s)++;
+		}	
+        while ((c = **s) != '\0' && ft_isdigit(**s)) {
+                a = a*10.0 + (c - '0');
+				(*s)++;
         }
         if (c == '.') {
-                while ((c = *s++) != '\0' && ft_isdigit(c)) {
+                while ((c = *(*s)++) != '\0' && ft_isdigit(c)) {
                         a = a*10.0 + (c - '0');
                         e = e-1;
                 }
@@ -25,16 +28,16 @@ double ft_atof(char *s)
         if (c == 'e' || c == 'E') {
                 int sign = 1;
                 int i = 0;
-                c = *s++;
+                c = *(*s)++;
                 if (c == '+')
-                        c = *s++;
+                        c = *(*s)++;
                 else if (c == '-') {
-                        c = *s++;
+                        c = *(*s)++;
                         sign = -1;
                 }
                 while (ft_isdigit(c)) {
                         i = i*10 + (c - '0');
-                        c = *s++;
+                        c = *(*s)++;
                 }
                 e += i*sign;
         }

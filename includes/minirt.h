@@ -111,9 +111,18 @@ typedef struct	s_cy
 
 typedef struct	s_tr
 {
-	double		first;
-	double		second;
-	double		third;
+	double		first_x;
+	double		first_y;
+	double		first_z;
+
+	double		second_x;
+	double		second_y;
+	double		second_z;
+
+	double		third_x;
+	double		third_y;
+	double		third_z;
+
 	int			r;
 	int			g;
 	int			b;
@@ -181,8 +190,17 @@ int				parse_square(char **line, t_rt *s, int *i);
 int				parse_cylinder(char **line, t_rt *s, int *i);
 int				parse_triangle(char **line, t_rt *s, int *i);
 double 			ft_atof(char *s);
+double			ft_atof_ptr(char **s);
+int				ft_atoi_ptr(char **nptr);
 
 void			ft_index(int *index);
-void			erros_and_exit(int flag);
+void			erros_and_exit(int flag, t_rt *scene);
+
+void			alloc_light(t_count *c, t_rt *scene);
+void			alloc_sphere(t_count *c, t_rt *scene);
+void			alloc_plane(t_count *c, t_rt *scene);
+void			alloc_square(t_count *c, t_rt *scene);
+void			alloc_cylinder(t_count *c, t_rt *scene);
+void			alloc_triangle(t_count *c, t_rt *scene);
 
 #endif

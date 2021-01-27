@@ -61,13 +61,18 @@ static int		count_word(const char *str, char *c)
 
 void		ft_free(char **ret)
 {
-	while (*ret)
+	char	**begin;
+
+	begin = ret;
+	while (*ret != NULL)
 	{
 		free(*ret);
 		*ret = NULL;
 		ret++;
 	}
+	ret = begin;
 	free(ret);
+	begin = NULL;
 	ret = NULL;
 }
 

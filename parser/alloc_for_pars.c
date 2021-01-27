@@ -43,25 +43,27 @@ int			count_plus(char *names, t_count *counter)
 	return (1);
 }
 
-int			check_line(char **line, t_count *counter, char ***check)
+int			check_line(char **line, t_count *counter)
 {
 	int		i;
 	char	*names[] = {"R", "A", "c", "l", "sp", "pl",
 			"sq", "cy", "tr", NULL};
 	char	flag;
+	char	**check;
 
 	i = -1;
 	flag = 0;
-	*check = ft_split(*line, "\t\v\f\r ");
+	check = ft_split(*line, "\t\v\f\r ");
 	while (names[++i] != NULL)
-		if (0 == (ft_strncmp(*check[0], names[i], 2)))
+		if (0 == (ft_strncmp(check[0], names[i], 2)))
 		{
 			flag = 1;
 			count_plus(names[i], counter);
 		}
 	if (!flag)
 		return (0);
-	ft_free(*check);
+	ft_free(check);
+	// free(*check);
 	return (1);	
 }
 
@@ -92,7 +94,6 @@ char		*next_argument_check(char **join)
 int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 {
 	char	*arg;
-	char	**take_line;
 	char	*begin;
 
 	begin = ft_strdup(*join);
@@ -102,7 +103,7 @@ int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 			return (0);
 		if (**join == 0)
 			break ;
-		if (!(check_line(&arg, counter, &take_line)))
+		if (!(check_line(&arg, counter)))
 			return (0);
 		// if (!(parse_all(scene, counter)))
 		// 	return (free_scene(scene, 0));

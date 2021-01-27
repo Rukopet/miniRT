@@ -19,7 +19,7 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 	if (!(join_str(&gnl, &join)))
 		return (free_and_null(&join, -1));
 		if (!work_with_counter_br(&join, counter, scene))
-			return (0);
+			return (-1);
 	return (1);
 
 	// while ((i = get_next_line(fd, &gnl)))
@@ -42,7 +42,7 @@ int			check_other(t_rt *scene, int fd)
 	t_count	*counter;
 
 	if(!(counter = malloc(sizeof(t_count))))
-		erros_and_exit(-1);
+		erros_and_exit(-1, scene);
 	init_count_struct(counter);
 	if (-1 == (pars_branching(scene, fd, counter)))
 	{
@@ -72,9 +72,9 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 		i++;
 	}
 	if ((argc == 3 && !save_flag) || -1 == (fd = open(tmp, O_RDONLY)))
-		erros_and_exit(4);
+		erros_and_exit(4, scene);
 	if (!(check_other(scene, fd)))
-		return (0);
+		erros_and_exit(6, scene);
 	return (1);
 	//dich
 }

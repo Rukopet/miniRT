@@ -6,11 +6,11 @@
 int				check_argc(int argc, char **argv, t_rt *scene)
 {
 	if (argc < 2)
-		erros_and_exit(1);
+		erros_and_exit(1, scene);
 	if (argc > 3)
-		erros_and_exit(2);
+		erros_and_exit(2, scene);
 	if (argc == 2 && (0 == (ft_strncmp(argv[1], "--save", 7))))
-		erros_and_exit(3);
+		erros_and_exit(3, scene);
 	if (1 != (check_scene_arg(argv, scene, argc)))
 		return (0);
 	return (1);
