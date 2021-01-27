@@ -4,9 +4,8 @@
 
 int			parsing_values(char *names, char **line, t_rt *scene)
 {
-	int		index[7];
+	static int		index[] = {0,0,0,0,0,0,};
 
-	ft_index(index);
 	if (0 == (ft_strncmp("R", names, 2)))
 		return(parse_resolution(line, scene));
 	else if (0 == (ft_strncmp("A", names, 2)))
@@ -57,7 +56,7 @@ int			check_line_parse(char **line, t_rt *scene)
 int			parse_after_count(char **join, t_rt *scene)
 {
 	char	*arg;
-
+	double	tmp;
 	while (**join != 0)
 	{
 		if (!(arg = next_argument_check(join)))
@@ -65,5 +64,6 @@ int			parse_after_count(char **join, t_rt *scene)
 		if (!(check_line_parse(&arg, scene)))
 			return (0);
 	}
+	tmp = scene->sp[1]->diameter;
 	return (1);
 }
