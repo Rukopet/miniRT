@@ -4,6 +4,19 @@
 #include "fcntl.h"
 #include "stdio.h"
 
+int			check_extention(char *name)
+{
+	int		i;
+	int		ret;
+
+	ret = 1;
+	i = ft_strlen(name);
+	ret = (name[--i] == 't') ? 1 : 0;
+	ret = (name[--i] == 'r') ? 1 : 0;
+	ret = (name[--i] == '.') ? 1 : 0;
+	return (ret);
+}
+
 int			pars_branching(t_rt *scene, int fd, t_count *counter)
 {
 	int		i;
@@ -18,23 +31,9 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 		return (free_and_null(&join, -1));
 	if (!(join_str(&gnl, &join)))
 		return (free_and_null(&join, -1));
-		if (!work_with_counter_br(&join, counter, scene))
+		if (!(work_with_counter_br(&join, counter, scene)))
 			return (-1);
 	return (1);
-
-	// while ((i = get_next_line(fd, &gnl)))
-	// {
-	// 	line = ft_split(gnl, "\t\v\f\r ");
-	// 	if (!(check_line(line, scene, counter)) ||
-	// 		NULL == (join = join_free(&gnl, join, &line)))
-	// 		return (0);
-	// }
-	// if (i < 0 || -1 == (get_next_line(fd, &gnl)))
-	// 	return (0);
-	// line = ft_split(gnl, "\n\t\v\f ");
-	// if (!(check_line(line, scene, counter)) ||
-	// 	NULL == (join = join_free(&gnl, join, &line)))
-	// 	return (0);
 }
 
 int			check_other(t_rt *scene, int fd)
@@ -60,21 +59,27 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 	char	*tmp;
 	int		i;
 
-	i = 1;
+	i = 0;
 	save_flag = 0;
 	fd = 0;
-	while (argv[i] != NULL)
+	while (argv[++i] != NULL)
 	{
 		if (0 == (ft_strncmp(argv[i], "--save", 7)))
 			save_flag = 1;
 		else
 			tmp = argv[i];		
-		i++;
 	}
 	if ((argc == 3 && !save_flag) || -1 == (fd = open(tmp, O_RDONLY)))
 		erros_and_exit(4, scene);
+	if (!(check_extention(tmp)))
+	{
+		close(fd);
+		erros_and_exit(7, scene);
+	}
 	if (!(check_other(scene, fd)))
+	{
+		close(fd);
 		erros_and_exit(6, scene);
+	}
 	return (1);
-	//dich
 }

@@ -34,7 +34,7 @@ void		erros_and_exit(int flag, t_rt *scene)
 	else if (flag == 6)
 		write(2, "Error\nIn begin\n", 16);
 	else if (flag == 7)
-		write(2, "Error\nBad cam value\n", 21);
+		write(2, "Error\nFile must be with .rt extention\n", 39);
 	else if (flag == -1)
 		write(2, "Error\nAllocation error (malloc def)", 36);
 	else
