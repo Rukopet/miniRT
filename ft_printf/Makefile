@@ -20,17 +20,18 @@ PATHSRC = srcs digits chars
 SRCLIST = $(wildcard $(dir)/*.c)
 SRC = $(foreach dir, $(PATHSRC), $(SRCLIST))
 INC = -I../ft_printf/includes -I../libft
-OBJ = $(SRC:.c=.o)
+OBJ =  $(SRC:.c=.o)
+
 
 .PHONY: all lib clean fclean re
 
 all: lib $(NAME) $(SRC)
 
 $(NAME): $(OBJ) $(HEADER)
-	ar rcs $(NAME) $(OBJ) $(PATHLIB)/$(NAMELIB)
+	ar rcs $(NAME) objs/*.o $(PATHLIB)/$(NAMELIB)
 
 %.o: %.c $(HEADER)
-	$(CC) -c $(FLAG) $< $(INC) -o $@
+	$(CC) -c $(FLAG) $< $(INC) -o objs/$(notdir $@)
 
 lib:
 	$(MAKE) bonus -C$(PATHLIB)

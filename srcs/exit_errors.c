@@ -2,21 +2,32 @@
 #include <unistd.h>
 #include "minirt.h"
 
+static void	mlx_errors(int flag, t_rt *scene)
+{
+	if (flag == 20)
+	{
+		write(2, "Error\nIn begin init mlx function\n", 34);
+		free_scene(scene, 1);
+		exit(flag);
+	}
+}
+
 void		next_errors(int flag, t_rt *scene)
 {
 	if (flag == 8)
 	{
-		write(2, "Error\nFunction alloc_structs_res can't alloc memory\n", 53);
+		write(2, "Error\nFunctionalloc_structs_res can't alloc memory\n", 53);
 		free_scene(scene, 1);
 		exit(flag);
 	}
-	if (flag == 9)
+	else if (flag == 9)
 	{
 		write(2, "Error\nCan't alloc memory for structs\n", 38);
 		free_scene(scene, 1);
 		exit(flag);
 	}
-		
+	else
+		mlx_errors(flag, scene);
 }
 
 void		erros_and_exit(int flag, t_rt *scene)

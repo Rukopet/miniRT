@@ -77,8 +77,9 @@ char		*next_argument_check(char **join)
 
 	begin = *join;
 	i = -1;
-	if (!(line_check = malloc(ft_strlen_n(begin, 1) + 1)))
+	if (!(line_check = malloc(len = ft_strlen_n(begin, 1) + 1)))
 		return (NULL);
+	line_check[len] = 0;
 	while (*begin != '\n' && *begin)
 		line_check[++i] = *begin++;
 	if(!(ret = malloc(len = ft_strlen_n(begin, 0) + 1)))

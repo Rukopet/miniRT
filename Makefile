@@ -36,7 +36,6 @@ $(NAME): $(OBJ) $(HEADER)
 
 %.o: %.c $(HEADER)
 	$(CC) -c $(FLAG) $(LIBX) $< $(INC) -o $@
-
 libs:
 	$(MAKE) all -C$(PRINTPATH)
 	$(MAKE) -C./minilibx_mms

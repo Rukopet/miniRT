@@ -141,8 +141,15 @@ typedef	struct	s_count
 	int			tr;
 }				t_count;
 
+typedef struct	s_data
+{
+	void		*mlx;
+}				t_data;
+
+
 typedef struct	s_rt
 {
+	t_data		*d;
 	t_res		*resolution;
 	t_al		*a_light;
 	t_cam		**cam;

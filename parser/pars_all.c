@@ -56,7 +56,7 @@ int			check_line_parse(char **line, t_rt *scene)
 int			parse_after_count(char **join, t_rt *scene)
 {
 	char	*arg;
-	double	tmp;
+	
 	while (**join != 0)
 	{
 		if (!(arg = next_argument_check(join)))
@@ -64,6 +64,5 @@ int			parse_after_count(char **join, t_rt *scene)
 		if (!(check_line_parse(&arg, scene)))
 			return (0);
 	}
-	tmp = scene->sp[1]->diameter;
 	return (1);
 }
