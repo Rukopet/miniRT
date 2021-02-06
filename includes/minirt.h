@@ -13,6 +13,8 @@
 #ifndef MINIRT_H
 # define MINIRT_H
 
+#include <inc.h>
+
 typedef	struct	s_vec
 {
 	double		x;
@@ -141,11 +143,20 @@ typedef	struct	s_count
 	int			tr;
 }				t_count;
 
+typedef struct	s_vp
+{
+	double 		x;
+	double		y;
+	double		x_iter;
+	double 		y_iter;
+}				t_vp;
+
 typedef struct	s_data
 {
 	void		*mlx;
+	void 		*win;
+	t_vp		*vp;
 }				t_data;
-
 
 typedef struct	s_rt
 {
@@ -161,17 +172,19 @@ typedef struct	s_rt
 	t_tr		**tr;
 }				t_rt;
 
+# define RES_X scene->resolution->x
+# define RES_Y scene->resolution->y
+
+#include "mlx.h"
+#include "solve_mlx.h"
+#include "vectors.h"
+#include "get_next_line.h"
+#include "libft.h"
+
 /*
 ** main structure;
 */
 
-typedef struct	s_error
-{
-	char		t;
-}				t_error;
-
-#include "stdlib.h"
-#include "unistd.h"
 
 int				check_scene_arg(char **argv, t_rt *scene, int argc);
 int				init_count_struct(t_count *counter);

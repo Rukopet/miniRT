@@ -1,8 +1,7 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/egums/miniRT
-CMake Error at CMakeLists.txt:11 (target_link_libraries):
-  Cannot specify link libraries for target "libmlx.dylib" which is not built
-  by this project.
+-- Configuring done
+CMake Error at CMakeLists.txt:19 (add_executable):
+  No SOURCES given to target: miniRT
 
 
--- Configuring incomplete, errors occurred!
-See also "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+CMake Generate step failed.  Build files cannot be regenerated correctly.

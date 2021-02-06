@@ -17,6 +17,78 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="libmlx.dylib">
+				<Option output="/Users/egums/miniRT/cmake-build-debug/liblibmlx.dylib.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/egums/miniRT/ft_printf/includes"/>
+					<Add directory="/Users/egums/miniRT/gnl"/>
+					<Add directory="/Users/egums/miniRT/includes"/>
+					<Add directory="/Users/egums/miniRT/libft"/>
+					<Add directory="/Users/egums/miniRT/minilibx_opengl"/>
+					<Add directory="/Users/egums/miniRT/./includes"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 libmlx.dylib"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="libmlx.dylib/fast">
+				<Option output="/Users/egums/miniRT/cmake-build-debug/liblibmlx.dylib.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/egums/miniRT/ft_printf/includes"/>
+					<Add directory="/Users/egums/miniRT/gnl"/>
+					<Add directory="/Users/egums/miniRT/includes"/>
+					<Add directory="/Users/egums/miniRT/libft"/>
+					<Add directory="/Users/egums/miniRT/minilibx_opengl"/>
+					<Add directory="/Users/egums/miniRT/./includes"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 libmlx.dylib/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="miniRT">
 				<Option output="/Users/egums/miniRT/cmake-build-debug/miniRT" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
@@ -29,6 +101,7 @@
 					<Add directory="/Users/egums/miniRT/includes"/>
 					<Add directory="/Users/egums/miniRT/libft"/>
 					<Add directory="/Users/egums/miniRT/minilibx_opengl"/>
+					<Add directory="/Users/egums/miniRT/./includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -54,6 +127,7 @@
 					<Add directory="/Users/egums/miniRT/includes"/>
 					<Add directory="/Users/egums/miniRT/libft"/>
 					<Add directory="/Users/egums/miniRT/minilibx_opengl"/>
+					<Add directory="/Users/egums/miniRT/./includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -67,28 +141,8 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="SHARED">
-				<Option output="/Users/egums/miniRT/cmake-build-debug/libSHARED.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="libft.a">
+				<Option output="/Users/egums/miniRT/cmake-build-debug/liblibft.a.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -99,6 +153,7 @@
 					<Add directory="/Users/egums/miniRT/includes"/>
 					<Add directory="/Users/egums/miniRT/libft"/>
 					<Add directory="/Users/egums/miniRT/minilibx_opengl"/>
+					<Add directory="/Users/egums/miniRT/./includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -106,14 +161,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 SHARED"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 libft.a"/>
 					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="SHARED/fast">
-				<Option output="/Users/egums/miniRT/cmake-build-debug/libSHARED.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="libft.a/fast">
+				<Option output="/Users/egums/miniRT/cmake-build-debug/liblibft.a.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/egums/miniRT/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -124,6 +179,7 @@
 					<Add directory="/Users/egums/miniRT/includes"/>
 					<Add directory="/Users/egums/miniRT/libft"/>
 					<Add directory="/Users/egums/miniRT/minilibx_opengl"/>
+					<Add directory="/Users/egums/miniRT/./includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -131,249 +187,183 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 SHARED/fast"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 libft.a/fast"/>
 					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/egums/miniRT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/egums/miniRT/ft_printf/chars/chars.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/chars/ft_precision_zero.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/chars/write_strings.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/digits/digits.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/digits/unsigned_int.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/digits/width_precision.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/includes/ft_printf.h">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/srcs/ft_auxiliary.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/srcs/ft_parsers.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/srcs/ft_printf.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/srcs/ft_supp.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/srcs/is_utils.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/ft_printf/srcs/out.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/gnl/get_next_line.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/gnl/get_next_line.h">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/gnl/get_next_line_utils.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/includes/minirt.h">
-			<Option target="miniRT"/>
-		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_atoi.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_bzero.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_calloc.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_isalnum.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_isalpha.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_isascii.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_isdigit.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_isprint.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_itoa.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstadd_back.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstadd_front.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstclear.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstdelone.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstiter.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstlast.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstmap.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstnew.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_lstsize.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_memccpy.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_memchr.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_memcmp.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_memcpy.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_memmove.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_memset.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_putchar_fd.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_putendl_fd.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_putnbr_fd.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_putstr_fd.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_split.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strchr.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strdup.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strjoin.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strlcat.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strlcpy.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strlen.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strmapi.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strncmp.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strnstr.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strrchr.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_strtrim.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_substr.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_tolower.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/libft/ft_toupper.c">
-			<Option target="miniRT"/>
+			<Option target="libft.a"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/libft/libft.h">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/font.c">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/libmlx.dylib">
-			<Option target="SHARED"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_init_loop.m">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/main.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_int_str_to_wordtab.c">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/mlx_branching/mlx_work_branching.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_mouse.m">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_for_pars.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_new_image.m">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_structs/alloc_cylinder.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_new_window.h">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_structs/alloc_light.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_new_window.m">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_structs/alloc_plane.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_opengl.h">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_structs/alloc_sphere.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_opengl.m">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_structs/alloc_square.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_png.c">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/alloc_structs/alloc_triangle.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_png.h">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/ft_crutch.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_rgb.c">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/init_structs.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_shaders.c">
+			<Option target="libmlx.dylib"/>
 		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/pars_all.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/parser.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/parsing_values.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/parsing_values_second.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/triangle_parser.c">
-			<Option target="miniRT"/>
-		</Unit>
-		<Unit filename="/Users/egums/miniRT/parser/validator_alloc_stucts.c">
-			<Option target="miniRT"/>
+		<Unit filename="/Users/egums/miniRT/minilibx_opengl/mlx_xpm.c">
+			<Option target="libmlx.dylib"/>
 		</Unit>
 		<Unit filename="/Users/egums/miniRT/srcs/exit_errors.c">
 			<Option target="miniRT"/>

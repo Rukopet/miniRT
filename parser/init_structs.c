@@ -16,6 +16,7 @@ int			init_count_struct(t_count *counter)
 
 void		init_scene_struct(t_rt *s)
 {
+	s->d = NULL;
 	s->resolution = NULL;
 	s->a_light = NULL;
 	s->cam = NULL;

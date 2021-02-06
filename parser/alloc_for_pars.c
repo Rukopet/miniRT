@@ -1,22 +1,5 @@
 #include "minirt.h"
 #include "libft.h"
-#include "get_next_line.h"
-#include <stdio.h>
-
-void		print_counter(t_count *c)
-{
-	printf("c->resolution = %i\n", c->resolution);
-	printf("c->a_light = %i\n", c->a_light);
-	printf("c->cam = %i\n", c->cam);
-	printf("c->light = %i\n", c->light);
-	printf("c->sp = %i\n", c->sp);
-	printf("c->pl = %i\n", c->pl);
-	printf("c->sq = %i\n", c->sq);
-	printf("c->cy = %i\n", c->cy);
-	printf("c->tr = %i\n", c->tr);
-
-	// print_counter(counter);
-}
 
 int			count_plus(char *names, t_count *counter)
 {

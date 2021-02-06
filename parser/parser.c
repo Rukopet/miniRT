@@ -31,8 +31,8 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 		return (free_and_null(&join, -1));
 	if (!(join_str(&gnl, &join)))
 		return (free_and_null(&join, -1));
-		if (!(work_with_counter_br(&join, counter, scene)))
-			return (-1);
+	if (!(work_with_counter_br(&join, counter, scene)))
+		return (-1);
 	return (1);
 }
 

@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named libmlx.dylib
+
+# Build rule for target.
+libmlx.dylib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libmlx.dylib
+.PHONY : libmlx.dylib
+
+# fast build rule for target.
+libmlx.dylib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/build
+.PHONY : libmlx.dylib/fast
+
+#=============================================================================
 # Target rules for targets named miniRT
 
 # Build rule for target.
@@ -144,395 +157,17 @@ miniRT/fast:
 .PHONY : miniRT/fast
 
 #=============================================================================
-# Target rules for targets named SHARED
+# Target rules for targets named libft.a
 
 # Build rule for target.
-SHARED: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SHARED
-.PHONY : SHARED
+libft.a: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libft.a
+.PHONY : libft.a
 
 # fast build rule for target.
-SHARED/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SHARED.dir/build.make CMakeFiles/SHARED.dir/build
-.PHONY : SHARED/fast
-
-ft_printf/chars/chars.o: ft_printf/chars/chars.c.o
-
-.PHONY : ft_printf/chars/chars.o
-
-# target to build an object file
-ft_printf/chars/chars.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/chars.c.o
-.PHONY : ft_printf/chars/chars.c.o
-
-ft_printf/chars/chars.i: ft_printf/chars/chars.c.i
-
-.PHONY : ft_printf/chars/chars.i
-
-# target to preprocess a source file
-ft_printf/chars/chars.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/chars.c.i
-.PHONY : ft_printf/chars/chars.c.i
-
-ft_printf/chars/chars.s: ft_printf/chars/chars.c.s
-
-.PHONY : ft_printf/chars/chars.s
-
-# target to generate assembly for a file
-ft_printf/chars/chars.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/chars.c.s
-.PHONY : ft_printf/chars/chars.c.s
-
-ft_printf/chars/ft_precision_zero.o: ft_printf/chars/ft_precision_zero.c.o
-
-.PHONY : ft_printf/chars/ft_precision_zero.o
-
-# target to build an object file
-ft_printf/chars/ft_precision_zero.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/ft_precision_zero.c.o
-.PHONY : ft_printf/chars/ft_precision_zero.c.o
-
-ft_printf/chars/ft_precision_zero.i: ft_printf/chars/ft_precision_zero.c.i
-
-.PHONY : ft_printf/chars/ft_precision_zero.i
-
-# target to preprocess a source file
-ft_printf/chars/ft_precision_zero.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/ft_precision_zero.c.i
-.PHONY : ft_printf/chars/ft_precision_zero.c.i
-
-ft_printf/chars/ft_precision_zero.s: ft_printf/chars/ft_precision_zero.c.s
-
-.PHONY : ft_printf/chars/ft_precision_zero.s
-
-# target to generate assembly for a file
-ft_printf/chars/ft_precision_zero.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/ft_precision_zero.c.s
-.PHONY : ft_printf/chars/ft_precision_zero.c.s
-
-ft_printf/chars/write_strings.o: ft_printf/chars/write_strings.c.o
-
-.PHONY : ft_printf/chars/write_strings.o
-
-# target to build an object file
-ft_printf/chars/write_strings.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/write_strings.c.o
-.PHONY : ft_printf/chars/write_strings.c.o
-
-ft_printf/chars/write_strings.i: ft_printf/chars/write_strings.c.i
-
-.PHONY : ft_printf/chars/write_strings.i
-
-# target to preprocess a source file
-ft_printf/chars/write_strings.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/write_strings.c.i
-.PHONY : ft_printf/chars/write_strings.c.i
-
-ft_printf/chars/write_strings.s: ft_printf/chars/write_strings.c.s
-
-.PHONY : ft_printf/chars/write_strings.s
-
-# target to generate assembly for a file
-ft_printf/chars/write_strings.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/chars/write_strings.c.s
-.PHONY : ft_printf/chars/write_strings.c.s
-
-ft_printf/digits/digits.o: ft_printf/digits/digits.c.o
-
-.PHONY : ft_printf/digits/digits.o
-
-# target to build an object file
-ft_printf/digits/digits.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/digits.c.o
-.PHONY : ft_printf/digits/digits.c.o
-
-ft_printf/digits/digits.i: ft_printf/digits/digits.c.i
-
-.PHONY : ft_printf/digits/digits.i
-
-# target to preprocess a source file
-ft_printf/digits/digits.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/digits.c.i
-.PHONY : ft_printf/digits/digits.c.i
-
-ft_printf/digits/digits.s: ft_printf/digits/digits.c.s
-
-.PHONY : ft_printf/digits/digits.s
-
-# target to generate assembly for a file
-ft_printf/digits/digits.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/digits.c.s
-.PHONY : ft_printf/digits/digits.c.s
-
-ft_printf/digits/unsigned_int.o: ft_printf/digits/unsigned_int.c.o
-
-.PHONY : ft_printf/digits/unsigned_int.o
-
-# target to build an object file
-ft_printf/digits/unsigned_int.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/unsigned_int.c.o
-.PHONY : ft_printf/digits/unsigned_int.c.o
-
-ft_printf/digits/unsigned_int.i: ft_printf/digits/unsigned_int.c.i
-
-.PHONY : ft_printf/digits/unsigned_int.i
-
-# target to preprocess a source file
-ft_printf/digits/unsigned_int.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/unsigned_int.c.i
-.PHONY : ft_printf/digits/unsigned_int.c.i
-
-ft_printf/digits/unsigned_int.s: ft_printf/digits/unsigned_int.c.s
-
-.PHONY : ft_printf/digits/unsigned_int.s
-
-# target to generate assembly for a file
-ft_printf/digits/unsigned_int.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/unsigned_int.c.s
-.PHONY : ft_printf/digits/unsigned_int.c.s
-
-ft_printf/digits/width_precision.o: ft_printf/digits/width_precision.c.o
-
-.PHONY : ft_printf/digits/width_precision.o
-
-# target to build an object file
-ft_printf/digits/width_precision.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/width_precision.c.o
-.PHONY : ft_printf/digits/width_precision.c.o
-
-ft_printf/digits/width_precision.i: ft_printf/digits/width_precision.c.i
-
-.PHONY : ft_printf/digits/width_precision.i
-
-# target to preprocess a source file
-ft_printf/digits/width_precision.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/width_precision.c.i
-.PHONY : ft_printf/digits/width_precision.c.i
-
-ft_printf/digits/width_precision.s: ft_printf/digits/width_precision.c.s
-
-.PHONY : ft_printf/digits/width_precision.s
-
-# target to generate assembly for a file
-ft_printf/digits/width_precision.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/digits/width_precision.c.s
-.PHONY : ft_printf/digits/width_precision.c.s
-
-ft_printf/srcs/ft_auxiliary.o: ft_printf/srcs/ft_auxiliary.c.o
-
-.PHONY : ft_printf/srcs/ft_auxiliary.o
-
-# target to build an object file
-ft_printf/srcs/ft_auxiliary.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_auxiliary.c.o
-.PHONY : ft_printf/srcs/ft_auxiliary.c.o
-
-ft_printf/srcs/ft_auxiliary.i: ft_printf/srcs/ft_auxiliary.c.i
-
-.PHONY : ft_printf/srcs/ft_auxiliary.i
-
-# target to preprocess a source file
-ft_printf/srcs/ft_auxiliary.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_auxiliary.c.i
-.PHONY : ft_printf/srcs/ft_auxiliary.c.i
-
-ft_printf/srcs/ft_auxiliary.s: ft_printf/srcs/ft_auxiliary.c.s
-
-.PHONY : ft_printf/srcs/ft_auxiliary.s
-
-# target to generate assembly for a file
-ft_printf/srcs/ft_auxiliary.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_auxiliary.c.s
-.PHONY : ft_printf/srcs/ft_auxiliary.c.s
-
-ft_printf/srcs/ft_parsers.o: ft_printf/srcs/ft_parsers.c.o
-
-.PHONY : ft_printf/srcs/ft_parsers.o
-
-# target to build an object file
-ft_printf/srcs/ft_parsers.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_parsers.c.o
-.PHONY : ft_printf/srcs/ft_parsers.c.o
-
-ft_printf/srcs/ft_parsers.i: ft_printf/srcs/ft_parsers.c.i
-
-.PHONY : ft_printf/srcs/ft_parsers.i
-
-# target to preprocess a source file
-ft_printf/srcs/ft_parsers.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_parsers.c.i
-.PHONY : ft_printf/srcs/ft_parsers.c.i
-
-ft_printf/srcs/ft_parsers.s: ft_printf/srcs/ft_parsers.c.s
-
-.PHONY : ft_printf/srcs/ft_parsers.s
-
-# target to generate assembly for a file
-ft_printf/srcs/ft_parsers.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_parsers.c.s
-.PHONY : ft_printf/srcs/ft_parsers.c.s
-
-ft_printf/srcs/ft_printf.o: ft_printf/srcs/ft_printf.c.o
-
-.PHONY : ft_printf/srcs/ft_printf.o
-
-# target to build an object file
-ft_printf/srcs/ft_printf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_printf.c.o
-.PHONY : ft_printf/srcs/ft_printf.c.o
-
-ft_printf/srcs/ft_printf.i: ft_printf/srcs/ft_printf.c.i
-
-.PHONY : ft_printf/srcs/ft_printf.i
-
-# target to preprocess a source file
-ft_printf/srcs/ft_printf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_printf.c.i
-.PHONY : ft_printf/srcs/ft_printf.c.i
-
-ft_printf/srcs/ft_printf.s: ft_printf/srcs/ft_printf.c.s
-
-.PHONY : ft_printf/srcs/ft_printf.s
-
-# target to generate assembly for a file
-ft_printf/srcs/ft_printf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_printf.c.s
-.PHONY : ft_printf/srcs/ft_printf.c.s
-
-ft_printf/srcs/ft_supp.o: ft_printf/srcs/ft_supp.c.o
-
-.PHONY : ft_printf/srcs/ft_supp.o
-
-# target to build an object file
-ft_printf/srcs/ft_supp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_supp.c.o
-.PHONY : ft_printf/srcs/ft_supp.c.o
-
-ft_printf/srcs/ft_supp.i: ft_printf/srcs/ft_supp.c.i
-
-.PHONY : ft_printf/srcs/ft_supp.i
-
-# target to preprocess a source file
-ft_printf/srcs/ft_supp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_supp.c.i
-.PHONY : ft_printf/srcs/ft_supp.c.i
-
-ft_printf/srcs/ft_supp.s: ft_printf/srcs/ft_supp.c.s
-
-.PHONY : ft_printf/srcs/ft_supp.s
-
-# target to generate assembly for a file
-ft_printf/srcs/ft_supp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/ft_supp.c.s
-.PHONY : ft_printf/srcs/ft_supp.c.s
-
-ft_printf/srcs/is_utils.o: ft_printf/srcs/is_utils.c.o
-
-.PHONY : ft_printf/srcs/is_utils.o
-
-# target to build an object file
-ft_printf/srcs/is_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/is_utils.c.o
-.PHONY : ft_printf/srcs/is_utils.c.o
-
-ft_printf/srcs/is_utils.i: ft_printf/srcs/is_utils.c.i
-
-.PHONY : ft_printf/srcs/is_utils.i
-
-# target to preprocess a source file
-ft_printf/srcs/is_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/is_utils.c.i
-.PHONY : ft_printf/srcs/is_utils.c.i
-
-ft_printf/srcs/is_utils.s: ft_printf/srcs/is_utils.c.s
-
-.PHONY : ft_printf/srcs/is_utils.s
-
-# target to generate assembly for a file
-ft_printf/srcs/is_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/is_utils.c.s
-.PHONY : ft_printf/srcs/is_utils.c.s
-
-ft_printf/srcs/out.o: ft_printf/srcs/out.c.o
-
-.PHONY : ft_printf/srcs/out.o
-
-# target to build an object file
-ft_printf/srcs/out.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/out.c.o
-.PHONY : ft_printf/srcs/out.c.o
-
-ft_printf/srcs/out.i: ft_printf/srcs/out.c.i
-
-.PHONY : ft_printf/srcs/out.i
-
-# target to preprocess a source file
-ft_printf/srcs/out.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/out.c.i
-.PHONY : ft_printf/srcs/out.c.i
-
-ft_printf/srcs/out.s: ft_printf/srcs/out.c.s
-
-.PHONY : ft_printf/srcs/out.s
-
-# target to generate assembly for a file
-ft_printf/srcs/out.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/ft_printf/srcs/out.c.s
-.PHONY : ft_printf/srcs/out.c.s
-
-gnl/get_next_line.o: gnl/get_next_line.c.o
-
-.PHONY : gnl/get_next_line.o
-
-# target to build an object file
-gnl/get_next_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/gnl/get_next_line.c.o
-.PHONY : gnl/get_next_line.c.o
-
-gnl/get_next_line.i: gnl/get_next_line.c.i
-
-.PHONY : gnl/get_next_line.i
-
-# target to preprocess a source file
-gnl/get_next_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/gnl/get_next_line.c.i
-.PHONY : gnl/get_next_line.c.i
-
-gnl/get_next_line.s: gnl/get_next_line.c.s
-
-.PHONY : gnl/get_next_line.s
-
-# target to generate assembly for a file
-gnl/get_next_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/gnl/get_next_line.c.s
-.PHONY : gnl/get_next_line.c.s
-
-gnl/get_next_line_utils.o: gnl/get_next_line_utils.c.o
-
-.PHONY : gnl/get_next_line_utils.o
-
-# target to build an object file
-gnl/get_next_line_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/gnl/get_next_line_utils.c.o
-.PHONY : gnl/get_next_line_utils.c.o
-
-gnl/get_next_line_utils.i: gnl/get_next_line_utils.c.i
-
-.PHONY : gnl/get_next_line_utils.i
-
-# target to preprocess a source file
-gnl/get_next_line_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/gnl/get_next_line_utils.c.i
-.PHONY : gnl/get_next_line_utils.c.i
-
-gnl/get_next_line_utils.s: gnl/get_next_line_utils.c.s
-
-.PHONY : gnl/get_next_line_utils.s
-
-# target to generate assembly for a file
-gnl/get_next_line_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/gnl/get_next_line_utils.c.s
-.PHONY : gnl/get_next_line_utils.c.s
+libft.a/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/build
+.PHONY : libft.a/fast
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -540,7 +175,7 @@ libft/ft_atoi.o: libft/ft_atoi.c.o
 
 # target to build an object file
 libft/ft_atoi.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_atoi.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_atoi.c.o
 .PHONY : libft/ft_atoi.c.o
 
 libft/ft_atoi.i: libft/ft_atoi.c.i
@@ -549,7 +184,7 @@ libft/ft_atoi.i: libft/ft_atoi.c.i
 
 # target to preprocess a source file
 libft/ft_atoi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_atoi.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_atoi.c.i
 .PHONY : libft/ft_atoi.c.i
 
 libft/ft_atoi.s: libft/ft_atoi.c.s
@@ -558,7 +193,7 @@ libft/ft_atoi.s: libft/ft_atoi.c.s
 
 # target to generate assembly for a file
 libft/ft_atoi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_atoi.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_atoi.c.s
 .PHONY : libft/ft_atoi.c.s
 
 libft/ft_bzero.o: libft/ft_bzero.c.o
@@ -567,7 +202,7 @@ libft/ft_bzero.o: libft/ft_bzero.c.o
 
 # target to build an object file
 libft/ft_bzero.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_bzero.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_bzero.c.o
 .PHONY : libft/ft_bzero.c.o
 
 libft/ft_bzero.i: libft/ft_bzero.c.i
@@ -576,7 +211,7 @@ libft/ft_bzero.i: libft/ft_bzero.c.i
 
 # target to preprocess a source file
 libft/ft_bzero.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_bzero.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_bzero.c.i
 .PHONY : libft/ft_bzero.c.i
 
 libft/ft_bzero.s: libft/ft_bzero.c.s
@@ -585,7 +220,7 @@ libft/ft_bzero.s: libft/ft_bzero.c.s
 
 # target to generate assembly for a file
 libft/ft_bzero.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_bzero.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_bzero.c.s
 .PHONY : libft/ft_bzero.c.s
 
 libft/ft_calloc.o: libft/ft_calloc.c.o
@@ -594,7 +229,7 @@ libft/ft_calloc.o: libft/ft_calloc.c.o
 
 # target to build an object file
 libft/ft_calloc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_calloc.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_calloc.c.o
 .PHONY : libft/ft_calloc.c.o
 
 libft/ft_calloc.i: libft/ft_calloc.c.i
@@ -603,7 +238,7 @@ libft/ft_calloc.i: libft/ft_calloc.c.i
 
 # target to preprocess a source file
 libft/ft_calloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_calloc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_calloc.c.i
 .PHONY : libft/ft_calloc.c.i
 
 libft/ft_calloc.s: libft/ft_calloc.c.s
@@ -612,7 +247,7 @@ libft/ft_calloc.s: libft/ft_calloc.c.s
 
 # target to generate assembly for a file
 libft/ft_calloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_calloc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_calloc.c.s
 .PHONY : libft/ft_calloc.c.s
 
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
@@ -621,7 +256,7 @@ libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 # target to build an object file
 libft/ft_isalnum.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isalnum.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isalnum.c.o
 .PHONY : libft/ft_isalnum.c.o
 
 libft/ft_isalnum.i: libft/ft_isalnum.c.i
@@ -630,7 +265,7 @@ libft/ft_isalnum.i: libft/ft_isalnum.c.i
 
 # target to preprocess a source file
 libft/ft_isalnum.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isalnum.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isalnum.c.i
 .PHONY : libft/ft_isalnum.c.i
 
 libft/ft_isalnum.s: libft/ft_isalnum.c.s
@@ -639,7 +274,7 @@ libft/ft_isalnum.s: libft/ft_isalnum.c.s
 
 # target to generate assembly for a file
 libft/ft_isalnum.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isalnum.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isalnum.c.s
 .PHONY : libft/ft_isalnum.c.s
 
 libft/ft_isalpha.o: libft/ft_isalpha.c.o
@@ -648,7 +283,7 @@ libft/ft_isalpha.o: libft/ft_isalpha.c.o
 
 # target to build an object file
 libft/ft_isalpha.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isalpha.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isalpha.c.o
 .PHONY : libft/ft_isalpha.c.o
 
 libft/ft_isalpha.i: libft/ft_isalpha.c.i
@@ -657,7 +292,7 @@ libft/ft_isalpha.i: libft/ft_isalpha.c.i
 
 # target to preprocess a source file
 libft/ft_isalpha.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isalpha.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isalpha.c.i
 .PHONY : libft/ft_isalpha.c.i
 
 libft/ft_isalpha.s: libft/ft_isalpha.c.s
@@ -666,7 +301,7 @@ libft/ft_isalpha.s: libft/ft_isalpha.c.s
 
 # target to generate assembly for a file
 libft/ft_isalpha.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isalpha.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isalpha.c.s
 .PHONY : libft/ft_isalpha.c.s
 
 libft/ft_isascii.o: libft/ft_isascii.c.o
@@ -675,7 +310,7 @@ libft/ft_isascii.o: libft/ft_isascii.c.o
 
 # target to build an object file
 libft/ft_isascii.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isascii.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isascii.c.o
 .PHONY : libft/ft_isascii.c.o
 
 libft/ft_isascii.i: libft/ft_isascii.c.i
@@ -684,7 +319,7 @@ libft/ft_isascii.i: libft/ft_isascii.c.i
 
 # target to preprocess a source file
 libft/ft_isascii.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isascii.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isascii.c.i
 .PHONY : libft/ft_isascii.c.i
 
 libft/ft_isascii.s: libft/ft_isascii.c.s
@@ -693,7 +328,7 @@ libft/ft_isascii.s: libft/ft_isascii.c.s
 
 # target to generate assembly for a file
 libft/ft_isascii.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isascii.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isascii.c.s
 .PHONY : libft/ft_isascii.c.s
 
 libft/ft_isdigit.o: libft/ft_isdigit.c.o
@@ -702,7 +337,7 @@ libft/ft_isdigit.o: libft/ft_isdigit.c.o
 
 # target to build an object file
 libft/ft_isdigit.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isdigit.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isdigit.c.o
 .PHONY : libft/ft_isdigit.c.o
 
 libft/ft_isdigit.i: libft/ft_isdigit.c.i
@@ -711,7 +346,7 @@ libft/ft_isdigit.i: libft/ft_isdigit.c.i
 
 # target to preprocess a source file
 libft/ft_isdigit.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isdigit.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isdigit.c.i
 .PHONY : libft/ft_isdigit.c.i
 
 libft/ft_isdigit.s: libft/ft_isdigit.c.s
@@ -720,7 +355,7 @@ libft/ft_isdigit.s: libft/ft_isdigit.c.s
 
 # target to generate assembly for a file
 libft/ft_isdigit.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isdigit.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isdigit.c.s
 .PHONY : libft/ft_isdigit.c.s
 
 libft/ft_isprint.o: libft/ft_isprint.c.o
@@ -729,7 +364,7 @@ libft/ft_isprint.o: libft/ft_isprint.c.o
 
 # target to build an object file
 libft/ft_isprint.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isprint.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isprint.c.o
 .PHONY : libft/ft_isprint.c.o
 
 libft/ft_isprint.i: libft/ft_isprint.c.i
@@ -738,7 +373,7 @@ libft/ft_isprint.i: libft/ft_isprint.c.i
 
 # target to preprocess a source file
 libft/ft_isprint.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isprint.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isprint.c.i
 .PHONY : libft/ft_isprint.c.i
 
 libft/ft_isprint.s: libft/ft_isprint.c.s
@@ -747,7 +382,7 @@ libft/ft_isprint.s: libft/ft_isprint.c.s
 
 # target to generate assembly for a file
 libft/ft_isprint.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_isprint.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_isprint.c.s
 .PHONY : libft/ft_isprint.c.s
 
 libft/ft_itoa.o: libft/ft_itoa.c.o
@@ -756,7 +391,7 @@ libft/ft_itoa.o: libft/ft_itoa.c.o
 
 # target to build an object file
 libft/ft_itoa.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_itoa.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_itoa.c.o
 .PHONY : libft/ft_itoa.c.o
 
 libft/ft_itoa.i: libft/ft_itoa.c.i
@@ -765,7 +400,7 @@ libft/ft_itoa.i: libft/ft_itoa.c.i
 
 # target to preprocess a source file
 libft/ft_itoa.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_itoa.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_itoa.c.i
 .PHONY : libft/ft_itoa.c.i
 
 libft/ft_itoa.s: libft/ft_itoa.c.s
@@ -774,7 +409,7 @@ libft/ft_itoa.s: libft/ft_itoa.c.s
 
 # target to generate assembly for a file
 libft/ft_itoa.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_itoa.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_itoa.c.s
 .PHONY : libft/ft_itoa.c.s
 
 libft/ft_lstadd_back.o: libft/ft_lstadd_back.c.o
@@ -783,7 +418,7 @@ libft/ft_lstadd_back.o: libft/ft_lstadd_back.c.o
 
 # target to build an object file
 libft/ft_lstadd_back.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstadd_back.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstadd_back.c.o
 .PHONY : libft/ft_lstadd_back.c.o
 
 libft/ft_lstadd_back.i: libft/ft_lstadd_back.c.i
@@ -792,7 +427,7 @@ libft/ft_lstadd_back.i: libft/ft_lstadd_back.c.i
 
 # target to preprocess a source file
 libft/ft_lstadd_back.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstadd_back.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstadd_back.c.i
 .PHONY : libft/ft_lstadd_back.c.i
 
 libft/ft_lstadd_back.s: libft/ft_lstadd_back.c.s
@@ -801,7 +436,7 @@ libft/ft_lstadd_back.s: libft/ft_lstadd_back.c.s
 
 # target to generate assembly for a file
 libft/ft_lstadd_back.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstadd_back.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstadd_back.c.s
 .PHONY : libft/ft_lstadd_back.c.s
 
 libft/ft_lstadd_front.o: libft/ft_lstadd_front.c.o
@@ -810,7 +445,7 @@ libft/ft_lstadd_front.o: libft/ft_lstadd_front.c.o
 
 # target to build an object file
 libft/ft_lstadd_front.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstadd_front.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstadd_front.c.o
 .PHONY : libft/ft_lstadd_front.c.o
 
 libft/ft_lstadd_front.i: libft/ft_lstadd_front.c.i
@@ -819,7 +454,7 @@ libft/ft_lstadd_front.i: libft/ft_lstadd_front.c.i
 
 # target to preprocess a source file
 libft/ft_lstadd_front.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstadd_front.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstadd_front.c.i
 .PHONY : libft/ft_lstadd_front.c.i
 
 libft/ft_lstadd_front.s: libft/ft_lstadd_front.c.s
@@ -828,7 +463,7 @@ libft/ft_lstadd_front.s: libft/ft_lstadd_front.c.s
 
 # target to generate assembly for a file
 libft/ft_lstadd_front.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstadd_front.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstadd_front.c.s
 .PHONY : libft/ft_lstadd_front.c.s
 
 libft/ft_lstclear.o: libft/ft_lstclear.c.o
@@ -837,7 +472,7 @@ libft/ft_lstclear.o: libft/ft_lstclear.c.o
 
 # target to build an object file
 libft/ft_lstclear.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstclear.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstclear.c.o
 .PHONY : libft/ft_lstclear.c.o
 
 libft/ft_lstclear.i: libft/ft_lstclear.c.i
@@ -846,7 +481,7 @@ libft/ft_lstclear.i: libft/ft_lstclear.c.i
 
 # target to preprocess a source file
 libft/ft_lstclear.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstclear.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstclear.c.i
 .PHONY : libft/ft_lstclear.c.i
 
 libft/ft_lstclear.s: libft/ft_lstclear.c.s
@@ -855,7 +490,7 @@ libft/ft_lstclear.s: libft/ft_lstclear.c.s
 
 # target to generate assembly for a file
 libft/ft_lstclear.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstclear.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstclear.c.s
 .PHONY : libft/ft_lstclear.c.s
 
 libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
@@ -864,7 +499,7 @@ libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
 
 # target to build an object file
 libft/ft_lstdelone.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstdelone.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstdelone.c.o
 .PHONY : libft/ft_lstdelone.c.o
 
 libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
@@ -873,7 +508,7 @@ libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
 
 # target to preprocess a source file
 libft/ft_lstdelone.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstdelone.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstdelone.c.i
 .PHONY : libft/ft_lstdelone.c.i
 
 libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
@@ -882,7 +517,7 @@ libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdelone.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstdelone.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstdelone.c.s
 .PHONY : libft/ft_lstdelone.c.s
 
 libft/ft_lstiter.o: libft/ft_lstiter.c.o
@@ -891,7 +526,7 @@ libft/ft_lstiter.o: libft/ft_lstiter.c.o
 
 # target to build an object file
 libft/ft_lstiter.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstiter.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstiter.c.o
 .PHONY : libft/ft_lstiter.c.o
 
 libft/ft_lstiter.i: libft/ft_lstiter.c.i
@@ -900,7 +535,7 @@ libft/ft_lstiter.i: libft/ft_lstiter.c.i
 
 # target to preprocess a source file
 libft/ft_lstiter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstiter.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstiter.c.i
 .PHONY : libft/ft_lstiter.c.i
 
 libft/ft_lstiter.s: libft/ft_lstiter.c.s
@@ -909,7 +544,7 @@ libft/ft_lstiter.s: libft/ft_lstiter.c.s
 
 # target to generate assembly for a file
 libft/ft_lstiter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstiter.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstiter.c.s
 .PHONY : libft/ft_lstiter.c.s
 
 libft/ft_lstlast.o: libft/ft_lstlast.c.o
@@ -918,7 +553,7 @@ libft/ft_lstlast.o: libft/ft_lstlast.c.o
 
 # target to build an object file
 libft/ft_lstlast.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstlast.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstlast.c.o
 .PHONY : libft/ft_lstlast.c.o
 
 libft/ft_lstlast.i: libft/ft_lstlast.c.i
@@ -927,7 +562,7 @@ libft/ft_lstlast.i: libft/ft_lstlast.c.i
 
 # target to preprocess a source file
 libft/ft_lstlast.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstlast.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstlast.c.i
 .PHONY : libft/ft_lstlast.c.i
 
 libft/ft_lstlast.s: libft/ft_lstlast.c.s
@@ -936,7 +571,7 @@ libft/ft_lstlast.s: libft/ft_lstlast.c.s
 
 # target to generate assembly for a file
 libft/ft_lstlast.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstlast.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstlast.c.s
 .PHONY : libft/ft_lstlast.c.s
 
 libft/ft_lstmap.o: libft/ft_lstmap.c.o
@@ -945,7 +580,7 @@ libft/ft_lstmap.o: libft/ft_lstmap.c.o
 
 # target to build an object file
 libft/ft_lstmap.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstmap.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstmap.c.o
 .PHONY : libft/ft_lstmap.c.o
 
 libft/ft_lstmap.i: libft/ft_lstmap.c.i
@@ -954,7 +589,7 @@ libft/ft_lstmap.i: libft/ft_lstmap.c.i
 
 # target to preprocess a source file
 libft/ft_lstmap.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstmap.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstmap.c.i
 .PHONY : libft/ft_lstmap.c.i
 
 libft/ft_lstmap.s: libft/ft_lstmap.c.s
@@ -963,7 +598,7 @@ libft/ft_lstmap.s: libft/ft_lstmap.c.s
 
 # target to generate assembly for a file
 libft/ft_lstmap.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstmap.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstmap.c.s
 .PHONY : libft/ft_lstmap.c.s
 
 libft/ft_lstnew.o: libft/ft_lstnew.c.o
@@ -972,7 +607,7 @@ libft/ft_lstnew.o: libft/ft_lstnew.c.o
 
 # target to build an object file
 libft/ft_lstnew.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstnew.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstnew.c.o
 .PHONY : libft/ft_lstnew.c.o
 
 libft/ft_lstnew.i: libft/ft_lstnew.c.i
@@ -981,7 +616,7 @@ libft/ft_lstnew.i: libft/ft_lstnew.c.i
 
 # target to preprocess a source file
 libft/ft_lstnew.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstnew.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstnew.c.i
 .PHONY : libft/ft_lstnew.c.i
 
 libft/ft_lstnew.s: libft/ft_lstnew.c.s
@@ -990,7 +625,7 @@ libft/ft_lstnew.s: libft/ft_lstnew.c.s
 
 # target to generate assembly for a file
 libft/ft_lstnew.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstnew.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstnew.c.s
 .PHONY : libft/ft_lstnew.c.s
 
 libft/ft_lstsize.o: libft/ft_lstsize.c.o
@@ -999,7 +634,7 @@ libft/ft_lstsize.o: libft/ft_lstsize.c.o
 
 # target to build an object file
 libft/ft_lstsize.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstsize.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstsize.c.o
 .PHONY : libft/ft_lstsize.c.o
 
 libft/ft_lstsize.i: libft/ft_lstsize.c.i
@@ -1008,7 +643,7 @@ libft/ft_lstsize.i: libft/ft_lstsize.c.i
 
 # target to preprocess a source file
 libft/ft_lstsize.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstsize.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstsize.c.i
 .PHONY : libft/ft_lstsize.c.i
 
 libft/ft_lstsize.s: libft/ft_lstsize.c.s
@@ -1017,7 +652,7 @@ libft/ft_lstsize.s: libft/ft_lstsize.c.s
 
 # target to generate assembly for a file
 libft/ft_lstsize.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_lstsize.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_lstsize.c.s
 .PHONY : libft/ft_lstsize.c.s
 
 libft/ft_memccpy.o: libft/ft_memccpy.c.o
@@ -1026,7 +661,7 @@ libft/ft_memccpy.o: libft/ft_memccpy.c.o
 
 # target to build an object file
 libft/ft_memccpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memccpy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memccpy.c.o
 .PHONY : libft/ft_memccpy.c.o
 
 libft/ft_memccpy.i: libft/ft_memccpy.c.i
@@ -1035,7 +670,7 @@ libft/ft_memccpy.i: libft/ft_memccpy.c.i
 
 # target to preprocess a source file
 libft/ft_memccpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memccpy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memccpy.c.i
 .PHONY : libft/ft_memccpy.c.i
 
 libft/ft_memccpy.s: libft/ft_memccpy.c.s
@@ -1044,7 +679,7 @@ libft/ft_memccpy.s: libft/ft_memccpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memccpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memccpy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memccpy.c.s
 .PHONY : libft/ft_memccpy.c.s
 
 libft/ft_memchr.o: libft/ft_memchr.c.o
@@ -1053,7 +688,7 @@ libft/ft_memchr.o: libft/ft_memchr.c.o
 
 # target to build an object file
 libft/ft_memchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memchr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memchr.c.o
 .PHONY : libft/ft_memchr.c.o
 
 libft/ft_memchr.i: libft/ft_memchr.c.i
@@ -1062,7 +697,7 @@ libft/ft_memchr.i: libft/ft_memchr.c.i
 
 # target to preprocess a source file
 libft/ft_memchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memchr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memchr.c.i
 .PHONY : libft/ft_memchr.c.i
 
 libft/ft_memchr.s: libft/ft_memchr.c.s
@@ -1071,7 +706,7 @@ libft/ft_memchr.s: libft/ft_memchr.c.s
 
 # target to generate assembly for a file
 libft/ft_memchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memchr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memchr.c.s
 .PHONY : libft/ft_memchr.c.s
 
 libft/ft_memcmp.o: libft/ft_memcmp.c.o
@@ -1080,7 +715,7 @@ libft/ft_memcmp.o: libft/ft_memcmp.c.o
 
 # target to build an object file
 libft/ft_memcmp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memcmp.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memcmp.c.o
 .PHONY : libft/ft_memcmp.c.o
 
 libft/ft_memcmp.i: libft/ft_memcmp.c.i
@@ -1089,7 +724,7 @@ libft/ft_memcmp.i: libft/ft_memcmp.c.i
 
 # target to preprocess a source file
 libft/ft_memcmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memcmp.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memcmp.c.i
 .PHONY : libft/ft_memcmp.c.i
 
 libft/ft_memcmp.s: libft/ft_memcmp.c.s
@@ -1098,7 +733,7 @@ libft/ft_memcmp.s: libft/ft_memcmp.c.s
 
 # target to generate assembly for a file
 libft/ft_memcmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memcmp.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memcmp.c.s
 .PHONY : libft/ft_memcmp.c.s
 
 libft/ft_memcpy.o: libft/ft_memcpy.c.o
@@ -1107,7 +742,7 @@ libft/ft_memcpy.o: libft/ft_memcpy.c.o
 
 # target to build an object file
 libft/ft_memcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memcpy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memcpy.c.o
 .PHONY : libft/ft_memcpy.c.o
 
 libft/ft_memcpy.i: libft/ft_memcpy.c.i
@@ -1116,7 +751,7 @@ libft/ft_memcpy.i: libft/ft_memcpy.c.i
 
 # target to preprocess a source file
 libft/ft_memcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memcpy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memcpy.c.i
 .PHONY : libft/ft_memcpy.c.i
 
 libft/ft_memcpy.s: libft/ft_memcpy.c.s
@@ -1125,7 +760,7 @@ libft/ft_memcpy.s: libft/ft_memcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memcpy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memcpy.c.s
 .PHONY : libft/ft_memcpy.c.s
 
 libft/ft_memmove.o: libft/ft_memmove.c.o
@@ -1134,7 +769,7 @@ libft/ft_memmove.o: libft/ft_memmove.c.o
 
 # target to build an object file
 libft/ft_memmove.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memmove.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memmove.c.o
 .PHONY : libft/ft_memmove.c.o
 
 libft/ft_memmove.i: libft/ft_memmove.c.i
@@ -1143,7 +778,7 @@ libft/ft_memmove.i: libft/ft_memmove.c.i
 
 # target to preprocess a source file
 libft/ft_memmove.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memmove.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memmove.c.i
 .PHONY : libft/ft_memmove.c.i
 
 libft/ft_memmove.s: libft/ft_memmove.c.s
@@ -1152,7 +787,7 @@ libft/ft_memmove.s: libft/ft_memmove.c.s
 
 # target to generate assembly for a file
 libft/ft_memmove.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memmove.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memmove.c.s
 .PHONY : libft/ft_memmove.c.s
 
 libft/ft_memset.o: libft/ft_memset.c.o
@@ -1161,7 +796,7 @@ libft/ft_memset.o: libft/ft_memset.c.o
 
 # target to build an object file
 libft/ft_memset.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memset.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memset.c.o
 .PHONY : libft/ft_memset.c.o
 
 libft/ft_memset.i: libft/ft_memset.c.i
@@ -1170,7 +805,7 @@ libft/ft_memset.i: libft/ft_memset.c.i
 
 # target to preprocess a source file
 libft/ft_memset.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memset.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memset.c.i
 .PHONY : libft/ft_memset.c.i
 
 libft/ft_memset.s: libft/ft_memset.c.s
@@ -1179,7 +814,7 @@ libft/ft_memset.s: libft/ft_memset.c.s
 
 # target to generate assembly for a file
 libft/ft_memset.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_memset.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
 
 libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
@@ -1188,7 +823,7 @@ libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
 
 # target to build an object file
 libft/ft_putchar_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putchar_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putchar_fd.c.o
 .PHONY : libft/ft_putchar_fd.c.o
 
 libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
@@ -1197,7 +832,7 @@ libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putchar_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putchar_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putchar_fd.c.i
 .PHONY : libft/ft_putchar_fd.c.i
 
 libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
@@ -1206,7 +841,7 @@ libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putchar_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putchar_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putchar_fd.c.s
 .PHONY : libft/ft_putchar_fd.c.s
 
 libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
@@ -1215,7 +850,7 @@ libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
 
 # target to build an object file
 libft/ft_putendl_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putendl_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putendl_fd.c.o
 .PHONY : libft/ft_putendl_fd.c.o
 
 libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
@@ -1224,7 +859,7 @@ libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putendl_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putendl_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putendl_fd.c.i
 .PHONY : libft/ft_putendl_fd.c.i
 
 libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
@@ -1233,7 +868,7 @@ libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putendl_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putendl_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putendl_fd.c.s
 .PHONY : libft/ft_putendl_fd.c.s
 
 libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
@@ -1242,7 +877,7 @@ libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
 
 # target to build an object file
 libft/ft_putnbr_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putnbr_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putnbr_fd.c.o
 .PHONY : libft/ft_putnbr_fd.c.o
 
 libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
@@ -1251,7 +886,7 @@ libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putnbr_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putnbr_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putnbr_fd.c.i
 .PHONY : libft/ft_putnbr_fd.c.i
 
 libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
@@ -1260,7 +895,7 @@ libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putnbr_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putnbr_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putnbr_fd.c.s
 .PHONY : libft/ft_putnbr_fd.c.s
 
 libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
@@ -1269,7 +904,7 @@ libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
 
 # target to build an object file
 libft/ft_putstr_fd.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putstr_fd.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putstr_fd.c.o
 .PHONY : libft/ft_putstr_fd.c.o
 
 libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
@@ -1278,7 +913,7 @@ libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putstr_fd.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putstr_fd.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putstr_fd.c.i
 .PHONY : libft/ft_putstr_fd.c.i
 
 libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
@@ -1287,7 +922,7 @@ libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putstr_fd.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_putstr_fd.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
 
 libft/ft_split.o: libft/ft_split.c.o
@@ -1296,7 +931,7 @@ libft/ft_split.o: libft/ft_split.c.o
 
 # target to build an object file
 libft/ft_split.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_split.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_split.c.o
 .PHONY : libft/ft_split.c.o
 
 libft/ft_split.i: libft/ft_split.c.i
@@ -1305,7 +940,7 @@ libft/ft_split.i: libft/ft_split.c.i
 
 # target to preprocess a source file
 libft/ft_split.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_split.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_split.c.i
 .PHONY : libft/ft_split.c.i
 
 libft/ft_split.s: libft/ft_split.c.s
@@ -1314,7 +949,7 @@ libft/ft_split.s: libft/ft_split.c.s
 
 # target to generate assembly for a file
 libft/ft_split.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_split.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_split.c.s
 .PHONY : libft/ft_split.c.s
 
 libft/ft_strchr.o: libft/ft_strchr.c.o
@@ -1323,7 +958,7 @@ libft/ft_strchr.o: libft/ft_strchr.c.o
 
 # target to build an object file
 libft/ft_strchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strchr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strchr.c.o
 .PHONY : libft/ft_strchr.c.o
 
 libft/ft_strchr.i: libft/ft_strchr.c.i
@@ -1332,7 +967,7 @@ libft/ft_strchr.i: libft/ft_strchr.c.i
 
 # target to preprocess a source file
 libft/ft_strchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strchr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strchr.c.i
 .PHONY : libft/ft_strchr.c.i
 
 libft/ft_strchr.s: libft/ft_strchr.c.s
@@ -1341,7 +976,7 @@ libft/ft_strchr.s: libft/ft_strchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strchr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strchr.c.s
 .PHONY : libft/ft_strchr.c.s
 
 libft/ft_strdup.o: libft/ft_strdup.c.o
@@ -1350,7 +985,7 @@ libft/ft_strdup.o: libft/ft_strdup.c.o
 
 # target to build an object file
 libft/ft_strdup.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strdup.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strdup.c.o
 .PHONY : libft/ft_strdup.c.o
 
 libft/ft_strdup.i: libft/ft_strdup.c.i
@@ -1359,7 +994,7 @@ libft/ft_strdup.i: libft/ft_strdup.c.i
 
 # target to preprocess a source file
 libft/ft_strdup.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strdup.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strdup.c.i
 .PHONY : libft/ft_strdup.c.i
 
 libft/ft_strdup.s: libft/ft_strdup.c.s
@@ -1368,7 +1003,7 @@ libft/ft_strdup.s: libft/ft_strdup.c.s
 
 # target to generate assembly for a file
 libft/ft_strdup.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strdup.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strdup.c.s
 .PHONY : libft/ft_strdup.c.s
 
 libft/ft_strjoin.o: libft/ft_strjoin.c.o
@@ -1377,7 +1012,7 @@ libft/ft_strjoin.o: libft/ft_strjoin.c.o
 
 # target to build an object file
 libft/ft_strjoin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strjoin.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strjoin.c.o
 .PHONY : libft/ft_strjoin.c.o
 
 libft/ft_strjoin.i: libft/ft_strjoin.c.i
@@ -1386,7 +1021,7 @@ libft/ft_strjoin.i: libft/ft_strjoin.c.i
 
 # target to preprocess a source file
 libft/ft_strjoin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strjoin.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strjoin.c.i
 .PHONY : libft/ft_strjoin.c.i
 
 libft/ft_strjoin.s: libft/ft_strjoin.c.s
@@ -1395,7 +1030,7 @@ libft/ft_strjoin.s: libft/ft_strjoin.c.s
 
 # target to generate assembly for a file
 libft/ft_strjoin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strjoin.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strjoin.c.s
 .PHONY : libft/ft_strjoin.c.s
 
 libft/ft_strlcat.o: libft/ft_strlcat.c.o
@@ -1404,7 +1039,7 @@ libft/ft_strlcat.o: libft/ft_strlcat.c.o
 
 # target to build an object file
 libft/ft_strlcat.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlcat.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlcat.c.o
 .PHONY : libft/ft_strlcat.c.o
 
 libft/ft_strlcat.i: libft/ft_strlcat.c.i
@@ -1413,7 +1048,7 @@ libft/ft_strlcat.i: libft/ft_strlcat.c.i
 
 # target to preprocess a source file
 libft/ft_strlcat.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlcat.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlcat.c.i
 .PHONY : libft/ft_strlcat.c.i
 
 libft/ft_strlcat.s: libft/ft_strlcat.c.s
@@ -1422,7 +1057,7 @@ libft/ft_strlcat.s: libft/ft_strlcat.c.s
 
 # target to generate assembly for a file
 libft/ft_strlcat.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlcat.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlcat.c.s
 .PHONY : libft/ft_strlcat.c.s
 
 libft/ft_strlcpy.o: libft/ft_strlcpy.c.o
@@ -1431,7 +1066,7 @@ libft/ft_strlcpy.o: libft/ft_strlcpy.c.o
 
 # target to build an object file
 libft/ft_strlcpy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlcpy.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlcpy.c.o
 .PHONY : libft/ft_strlcpy.c.o
 
 libft/ft_strlcpy.i: libft/ft_strlcpy.c.i
@@ -1440,7 +1075,7 @@ libft/ft_strlcpy.i: libft/ft_strlcpy.c.i
 
 # target to preprocess a source file
 libft/ft_strlcpy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlcpy.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlcpy.c.i
 .PHONY : libft/ft_strlcpy.c.i
 
 libft/ft_strlcpy.s: libft/ft_strlcpy.c.s
@@ -1449,7 +1084,7 @@ libft/ft_strlcpy.s: libft/ft_strlcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strlcpy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlcpy.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlcpy.c.s
 .PHONY : libft/ft_strlcpy.c.s
 
 libft/ft_strlen.o: libft/ft_strlen.c.o
@@ -1458,7 +1093,7 @@ libft/ft_strlen.o: libft/ft_strlen.c.o
 
 # target to build an object file
 libft/ft_strlen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlen.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlen.c.o
 .PHONY : libft/ft_strlen.c.o
 
 libft/ft_strlen.i: libft/ft_strlen.c.i
@@ -1467,7 +1102,7 @@ libft/ft_strlen.i: libft/ft_strlen.c.i
 
 # target to preprocess a source file
 libft/ft_strlen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlen.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlen.c.i
 .PHONY : libft/ft_strlen.c.i
 
 libft/ft_strlen.s: libft/ft_strlen.c.s
@@ -1476,7 +1111,7 @@ libft/ft_strlen.s: libft/ft_strlen.c.s
 
 # target to generate assembly for a file
 libft/ft_strlen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strlen.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strlen.c.s
 .PHONY : libft/ft_strlen.c.s
 
 libft/ft_strmapi.o: libft/ft_strmapi.c.o
@@ -1485,7 +1120,7 @@ libft/ft_strmapi.o: libft/ft_strmapi.c.o
 
 # target to build an object file
 libft/ft_strmapi.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strmapi.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strmapi.c.o
 .PHONY : libft/ft_strmapi.c.o
 
 libft/ft_strmapi.i: libft/ft_strmapi.c.i
@@ -1494,7 +1129,7 @@ libft/ft_strmapi.i: libft/ft_strmapi.c.i
 
 # target to preprocess a source file
 libft/ft_strmapi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strmapi.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strmapi.c.i
 .PHONY : libft/ft_strmapi.c.i
 
 libft/ft_strmapi.s: libft/ft_strmapi.c.s
@@ -1503,7 +1138,7 @@ libft/ft_strmapi.s: libft/ft_strmapi.c.s
 
 # target to generate assembly for a file
 libft/ft_strmapi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strmapi.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strmapi.c.s
 .PHONY : libft/ft_strmapi.c.s
 
 libft/ft_strncmp.o: libft/ft_strncmp.c.o
@@ -1512,7 +1147,7 @@ libft/ft_strncmp.o: libft/ft_strncmp.c.o
 
 # target to build an object file
 libft/ft_strncmp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strncmp.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strncmp.c.o
 .PHONY : libft/ft_strncmp.c.o
 
 libft/ft_strncmp.i: libft/ft_strncmp.c.i
@@ -1521,7 +1156,7 @@ libft/ft_strncmp.i: libft/ft_strncmp.c.i
 
 # target to preprocess a source file
 libft/ft_strncmp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strncmp.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strncmp.c.i
 .PHONY : libft/ft_strncmp.c.i
 
 libft/ft_strncmp.s: libft/ft_strncmp.c.s
@@ -1530,7 +1165,7 @@ libft/ft_strncmp.s: libft/ft_strncmp.c.s
 
 # target to generate assembly for a file
 libft/ft_strncmp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strncmp.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strncmp.c.s
 .PHONY : libft/ft_strncmp.c.s
 
 libft/ft_strnstr.o: libft/ft_strnstr.c.o
@@ -1539,7 +1174,7 @@ libft/ft_strnstr.o: libft/ft_strnstr.c.o
 
 # target to build an object file
 libft/ft_strnstr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strnstr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strnstr.c.o
 .PHONY : libft/ft_strnstr.c.o
 
 libft/ft_strnstr.i: libft/ft_strnstr.c.i
@@ -1548,7 +1183,7 @@ libft/ft_strnstr.i: libft/ft_strnstr.c.i
 
 # target to preprocess a source file
 libft/ft_strnstr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strnstr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strnstr.c.i
 .PHONY : libft/ft_strnstr.c.i
 
 libft/ft_strnstr.s: libft/ft_strnstr.c.s
@@ -1557,7 +1192,7 @@ libft/ft_strnstr.s: libft/ft_strnstr.c.s
 
 # target to generate assembly for a file
 libft/ft_strnstr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strnstr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strnstr.c.s
 .PHONY : libft/ft_strnstr.c.s
 
 libft/ft_strrchr.o: libft/ft_strrchr.c.o
@@ -1566,7 +1201,7 @@ libft/ft_strrchr.o: libft/ft_strrchr.c.o
 
 # target to build an object file
 libft/ft_strrchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strrchr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strrchr.c.o
 .PHONY : libft/ft_strrchr.c.o
 
 libft/ft_strrchr.i: libft/ft_strrchr.c.i
@@ -1575,7 +1210,7 @@ libft/ft_strrchr.i: libft/ft_strrchr.c.i
 
 # target to preprocess a source file
 libft/ft_strrchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strrchr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strrchr.c.i
 .PHONY : libft/ft_strrchr.c.i
 
 libft/ft_strrchr.s: libft/ft_strrchr.c.s
@@ -1584,7 +1219,7 @@ libft/ft_strrchr.s: libft/ft_strrchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strrchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strrchr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strrchr.c.s
 .PHONY : libft/ft_strrchr.c.s
 
 libft/ft_strtrim.o: libft/ft_strtrim.c.o
@@ -1593,7 +1228,7 @@ libft/ft_strtrim.o: libft/ft_strtrim.c.o
 
 # target to build an object file
 libft/ft_strtrim.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strtrim.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strtrim.c.o
 .PHONY : libft/ft_strtrim.c.o
 
 libft/ft_strtrim.i: libft/ft_strtrim.c.i
@@ -1602,7 +1237,7 @@ libft/ft_strtrim.i: libft/ft_strtrim.c.i
 
 # target to preprocess a source file
 libft/ft_strtrim.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strtrim.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strtrim.c.i
 .PHONY : libft/ft_strtrim.c.i
 
 libft/ft_strtrim.s: libft/ft_strtrim.c.s
@@ -1611,7 +1246,7 @@ libft/ft_strtrim.s: libft/ft_strtrim.c.s
 
 # target to generate assembly for a file
 libft/ft_strtrim.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_strtrim.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_strtrim.c.s
 .PHONY : libft/ft_strtrim.c.s
 
 libft/ft_substr.o: libft/ft_substr.c.o
@@ -1620,7 +1255,7 @@ libft/ft_substr.o: libft/ft_substr.c.o
 
 # target to build an object file
 libft/ft_substr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_substr.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_substr.c.o
 .PHONY : libft/ft_substr.c.o
 
 libft/ft_substr.i: libft/ft_substr.c.i
@@ -1629,7 +1264,7 @@ libft/ft_substr.i: libft/ft_substr.c.i
 
 # target to preprocess a source file
 libft/ft_substr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_substr.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_substr.c.i
 .PHONY : libft/ft_substr.c.i
 
 libft/ft_substr.s: libft/ft_substr.c.s
@@ -1638,7 +1273,7 @@ libft/ft_substr.s: libft/ft_substr.c.s
 
 # target to generate assembly for a file
 libft/ft_substr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_substr.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_substr.c.s
 .PHONY : libft/ft_substr.c.s
 
 libft/ft_tolower.o: libft/ft_tolower.c.o
@@ -1647,7 +1282,7 @@ libft/ft_tolower.o: libft/ft_tolower.c.o
 
 # target to build an object file
 libft/ft_tolower.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_tolower.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_tolower.c.o
 .PHONY : libft/ft_tolower.c.o
 
 libft/ft_tolower.i: libft/ft_tolower.c.i
@@ -1656,7 +1291,7 @@ libft/ft_tolower.i: libft/ft_tolower.c.i
 
 # target to preprocess a source file
 libft/ft_tolower.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_tolower.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_tolower.c.i
 .PHONY : libft/ft_tolower.c.i
 
 libft/ft_tolower.s: libft/ft_tolower.c.s
@@ -1665,7 +1300,7 @@ libft/ft_tolower.s: libft/ft_tolower.c.s
 
 # target to generate assembly for a file
 libft/ft_tolower.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_tolower.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_tolower.c.s
 .PHONY : libft/ft_tolower.c.s
 
 libft/ft_toupper.o: libft/ft_toupper.c.o
@@ -1674,7 +1309,7 @@ libft/ft_toupper.o: libft/ft_toupper.c.o
 
 # target to build an object file
 libft/ft_toupper.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_toupper.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.o
 .PHONY : libft/ft_toupper.c.o
 
 libft/ft_toupper.i: libft/ft_toupper.c.i
@@ -1683,7 +1318,7 @@ libft/ft_toupper.i: libft/ft_toupper.c.i
 
 # target to preprocess a source file
 libft/ft_toupper.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_toupper.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.i
 .PHONY : libft/ft_toupper.c.i
 
 libft/ft_toupper.s: libft/ft_toupper.c.s
@@ -1692,467 +1327,305 @@ libft/ft_toupper.s: libft/ft_toupper.c.s
 
 # target to generate assembly for a file
 libft/ft_toupper.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/libft/ft_toupper.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
-main.o: main.c.o
+minilibx_opengl/font.o: minilibx_opengl/font.c.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/main.c.s
-.PHONY : main.c.s
-
-mlx_branching/mlx_work_branching.o: mlx_branching/mlx_work_branching.c.o
-
-.PHONY : mlx_branching/mlx_work_branching.o
+.PHONY : minilibx_opengl/font.o
 
 # target to build an object file
-mlx_branching/mlx_work_branching.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/mlx_work_branching.c.o
-.PHONY : mlx_branching/mlx_work_branching.c.o
+minilibx_opengl/font.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/font.c.o
+.PHONY : minilibx_opengl/font.c.o
 
-mlx_branching/mlx_work_branching.i: mlx_branching/mlx_work_branching.c.i
+minilibx_opengl/font.i: minilibx_opengl/font.c.i
 
-.PHONY : mlx_branching/mlx_work_branching.i
+.PHONY : minilibx_opengl/font.i
 
 # target to preprocess a source file
-mlx_branching/mlx_work_branching.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/mlx_work_branching.c.i
-.PHONY : mlx_branching/mlx_work_branching.c.i
+minilibx_opengl/font.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/font.c.i
+.PHONY : minilibx_opengl/font.c.i
 
-mlx_branching/mlx_work_branching.s: mlx_branching/mlx_work_branching.c.s
+minilibx_opengl/font.s: minilibx_opengl/font.c.s
 
-.PHONY : mlx_branching/mlx_work_branching.s
+.PHONY : minilibx_opengl/font.s
 
 # target to generate assembly for a file
-mlx_branching/mlx_work_branching.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/mlx_work_branching.c.s
-.PHONY : mlx_branching/mlx_work_branching.c.s
+minilibx_opengl/font.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/font.c.s
+.PHONY : minilibx_opengl/font.c.s
 
-parser/alloc_for_pars.o: parser/alloc_for_pars.c.o
+minilibx_opengl/mlx_init_loop.o: minilibx_opengl/mlx_init_loop.m.o
 
-.PHONY : parser/alloc_for_pars.o
+.PHONY : minilibx_opengl/mlx_init_loop.o
 
 # target to build an object file
-parser/alloc_for_pars.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_for_pars.c.o
-.PHONY : parser/alloc_for_pars.c.o
+minilibx_opengl/mlx_init_loop.m.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_init_loop.m.o
+.PHONY : minilibx_opengl/mlx_init_loop.m.o
 
-parser/alloc_for_pars.i: parser/alloc_for_pars.c.i
+minilibx_opengl/mlx_init_loop.i: minilibx_opengl/mlx_init_loop.m.i
 
-.PHONY : parser/alloc_for_pars.i
+.PHONY : minilibx_opengl/mlx_init_loop.i
 
 # target to preprocess a source file
-parser/alloc_for_pars.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_for_pars.c.i
-.PHONY : parser/alloc_for_pars.c.i
+minilibx_opengl/mlx_init_loop.m.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_init_loop.m.i
+.PHONY : minilibx_opengl/mlx_init_loop.m.i
 
-parser/alloc_for_pars.s: parser/alloc_for_pars.c.s
+minilibx_opengl/mlx_init_loop.s: minilibx_opengl/mlx_init_loop.m.s
 
-.PHONY : parser/alloc_for_pars.s
+.PHONY : minilibx_opengl/mlx_init_loop.s
 
 # target to generate assembly for a file
-parser/alloc_for_pars.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_for_pars.c.s
-.PHONY : parser/alloc_for_pars.c.s
+minilibx_opengl/mlx_init_loop.m.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_init_loop.m.s
+.PHONY : minilibx_opengl/mlx_init_loop.m.s
 
-parser/alloc_structs/alloc_cylinder.o: parser/alloc_structs/alloc_cylinder.c.o
+minilibx_opengl/mlx_int_str_to_wordtab.o: minilibx_opengl/mlx_int_str_to_wordtab.c.o
 
-.PHONY : parser/alloc_structs/alloc_cylinder.o
+.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.o
 
 # target to build an object file
-parser/alloc_structs/alloc_cylinder.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_cylinder.c.o
-.PHONY : parser/alloc_structs/alloc_cylinder.c.o
+minilibx_opengl/mlx_int_str_to_wordtab.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_int_str_to_wordtab.c.o
+.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.c.o
 
-parser/alloc_structs/alloc_cylinder.i: parser/alloc_structs/alloc_cylinder.c.i
+minilibx_opengl/mlx_int_str_to_wordtab.i: minilibx_opengl/mlx_int_str_to_wordtab.c.i
 
-.PHONY : parser/alloc_structs/alloc_cylinder.i
+.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.i
 
 # target to preprocess a source file
-parser/alloc_structs/alloc_cylinder.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_cylinder.c.i
-.PHONY : parser/alloc_structs/alloc_cylinder.c.i
+minilibx_opengl/mlx_int_str_to_wordtab.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_int_str_to_wordtab.c.i
+.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.c.i
 
-parser/alloc_structs/alloc_cylinder.s: parser/alloc_structs/alloc_cylinder.c.s
+minilibx_opengl/mlx_int_str_to_wordtab.s: minilibx_opengl/mlx_int_str_to_wordtab.c.s
 
-.PHONY : parser/alloc_structs/alloc_cylinder.s
+.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.s
 
 # target to generate assembly for a file
-parser/alloc_structs/alloc_cylinder.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_cylinder.c.s
-.PHONY : parser/alloc_structs/alloc_cylinder.c.s
+minilibx_opengl/mlx_int_str_to_wordtab.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_int_str_to_wordtab.c.s
+.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.c.s
 
-parser/alloc_structs/alloc_light.o: parser/alloc_structs/alloc_light.c.o
+minilibx_opengl/mlx_mouse.o: minilibx_opengl/mlx_mouse.m.o
 
-.PHONY : parser/alloc_structs/alloc_light.o
+.PHONY : minilibx_opengl/mlx_mouse.o
 
 # target to build an object file
-parser/alloc_structs/alloc_light.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_light.c.o
-.PHONY : parser/alloc_structs/alloc_light.c.o
+minilibx_opengl/mlx_mouse.m.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_mouse.m.o
+.PHONY : minilibx_opengl/mlx_mouse.m.o
 
-parser/alloc_structs/alloc_light.i: parser/alloc_structs/alloc_light.c.i
+minilibx_opengl/mlx_mouse.i: minilibx_opengl/mlx_mouse.m.i
 
-.PHONY : parser/alloc_structs/alloc_light.i
+.PHONY : minilibx_opengl/mlx_mouse.i
 
 # target to preprocess a source file
-parser/alloc_structs/alloc_light.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_light.c.i
-.PHONY : parser/alloc_structs/alloc_light.c.i
+minilibx_opengl/mlx_mouse.m.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_mouse.m.i
+.PHONY : minilibx_opengl/mlx_mouse.m.i
 
-parser/alloc_structs/alloc_light.s: parser/alloc_structs/alloc_light.c.s
+minilibx_opengl/mlx_mouse.s: minilibx_opengl/mlx_mouse.m.s
 
-.PHONY : parser/alloc_structs/alloc_light.s
+.PHONY : minilibx_opengl/mlx_mouse.s
 
 # target to generate assembly for a file
-parser/alloc_structs/alloc_light.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_light.c.s
-.PHONY : parser/alloc_structs/alloc_light.c.s
+minilibx_opengl/mlx_mouse.m.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_mouse.m.s
+.PHONY : minilibx_opengl/mlx_mouse.m.s
 
-parser/alloc_structs/alloc_plane.o: parser/alloc_structs/alloc_plane.c.o
+minilibx_opengl/mlx_new_image.o: minilibx_opengl/mlx_new_image.m.o
 
-.PHONY : parser/alloc_structs/alloc_plane.o
+.PHONY : minilibx_opengl/mlx_new_image.o
 
 # target to build an object file
-parser/alloc_structs/alloc_plane.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_plane.c.o
-.PHONY : parser/alloc_structs/alloc_plane.c.o
+minilibx_opengl/mlx_new_image.m.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_image.m.o
+.PHONY : minilibx_opengl/mlx_new_image.m.o
 
-parser/alloc_structs/alloc_plane.i: parser/alloc_structs/alloc_plane.c.i
+minilibx_opengl/mlx_new_image.i: minilibx_opengl/mlx_new_image.m.i
 
-.PHONY : parser/alloc_structs/alloc_plane.i
+.PHONY : minilibx_opengl/mlx_new_image.i
 
 # target to preprocess a source file
-parser/alloc_structs/alloc_plane.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_plane.c.i
-.PHONY : parser/alloc_structs/alloc_plane.c.i
+minilibx_opengl/mlx_new_image.m.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_image.m.i
+.PHONY : minilibx_opengl/mlx_new_image.m.i
 
-parser/alloc_structs/alloc_plane.s: parser/alloc_structs/alloc_plane.c.s
+minilibx_opengl/mlx_new_image.s: minilibx_opengl/mlx_new_image.m.s
 
-.PHONY : parser/alloc_structs/alloc_plane.s
+.PHONY : minilibx_opengl/mlx_new_image.s
 
 # target to generate assembly for a file
-parser/alloc_structs/alloc_plane.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_plane.c.s
-.PHONY : parser/alloc_structs/alloc_plane.c.s
+minilibx_opengl/mlx_new_image.m.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_image.m.s
+.PHONY : minilibx_opengl/mlx_new_image.m.s
 
-parser/alloc_structs/alloc_sphere.o: parser/alloc_structs/alloc_sphere.c.o
+minilibx_opengl/mlx_new_window.o: minilibx_opengl/mlx_new_window.m.o
 
-.PHONY : parser/alloc_structs/alloc_sphere.o
+.PHONY : minilibx_opengl/mlx_new_window.o
 
 # target to build an object file
-parser/alloc_structs/alloc_sphere.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_sphere.c.o
-.PHONY : parser/alloc_structs/alloc_sphere.c.o
+minilibx_opengl/mlx_new_window.m.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_window.m.o
+.PHONY : minilibx_opengl/mlx_new_window.m.o
 
-parser/alloc_structs/alloc_sphere.i: parser/alloc_structs/alloc_sphere.c.i
+minilibx_opengl/mlx_new_window.i: minilibx_opengl/mlx_new_window.m.i
 
-.PHONY : parser/alloc_structs/alloc_sphere.i
+.PHONY : minilibx_opengl/mlx_new_window.i
 
 # target to preprocess a source file
-parser/alloc_structs/alloc_sphere.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_sphere.c.i
-.PHONY : parser/alloc_structs/alloc_sphere.c.i
+minilibx_opengl/mlx_new_window.m.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_window.m.i
+.PHONY : minilibx_opengl/mlx_new_window.m.i
 
-parser/alloc_structs/alloc_sphere.s: parser/alloc_structs/alloc_sphere.c.s
+minilibx_opengl/mlx_new_window.s: minilibx_opengl/mlx_new_window.m.s
 
-.PHONY : parser/alloc_structs/alloc_sphere.s
+.PHONY : minilibx_opengl/mlx_new_window.s
 
 # target to generate assembly for a file
-parser/alloc_structs/alloc_sphere.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_sphere.c.s
-.PHONY : parser/alloc_structs/alloc_sphere.c.s
+minilibx_opengl/mlx_new_window.m.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_window.m.s
+.PHONY : minilibx_opengl/mlx_new_window.m.s
 
-parser/alloc_structs/alloc_square.o: parser/alloc_structs/alloc_square.c.o
+minilibx_opengl/mlx_opengl.o: minilibx_opengl/mlx_opengl.m.o
 
-.PHONY : parser/alloc_structs/alloc_square.o
+.PHONY : minilibx_opengl/mlx_opengl.o
 
 # target to build an object file
-parser/alloc_structs/alloc_square.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_square.c.o
-.PHONY : parser/alloc_structs/alloc_square.c.o
+minilibx_opengl/mlx_opengl.m.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_opengl.m.o
+.PHONY : minilibx_opengl/mlx_opengl.m.o
 
-parser/alloc_structs/alloc_square.i: parser/alloc_structs/alloc_square.c.i
+minilibx_opengl/mlx_opengl.i: minilibx_opengl/mlx_opengl.m.i
 
-.PHONY : parser/alloc_structs/alloc_square.i
+.PHONY : minilibx_opengl/mlx_opengl.i
 
 # target to preprocess a source file
-parser/alloc_structs/alloc_square.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_square.c.i
-.PHONY : parser/alloc_structs/alloc_square.c.i
+minilibx_opengl/mlx_opengl.m.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_opengl.m.i
+.PHONY : minilibx_opengl/mlx_opengl.m.i
 
-parser/alloc_structs/alloc_square.s: parser/alloc_structs/alloc_square.c.s
+minilibx_opengl/mlx_opengl.s: minilibx_opengl/mlx_opengl.m.s
 
-.PHONY : parser/alloc_structs/alloc_square.s
+.PHONY : minilibx_opengl/mlx_opengl.s
 
 # target to generate assembly for a file
-parser/alloc_structs/alloc_square.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_square.c.s
-.PHONY : parser/alloc_structs/alloc_square.c.s
+minilibx_opengl/mlx_opengl.m.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_opengl.m.s
+.PHONY : minilibx_opengl/mlx_opengl.m.s
 
-parser/alloc_structs/alloc_triangle.o: parser/alloc_structs/alloc_triangle.c.o
+minilibx_opengl/mlx_png.o: minilibx_opengl/mlx_png.c.o
 
-.PHONY : parser/alloc_structs/alloc_triangle.o
+.PHONY : minilibx_opengl/mlx_png.o
 
 # target to build an object file
-parser/alloc_structs/alloc_triangle.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_triangle.c.o
-.PHONY : parser/alloc_structs/alloc_triangle.c.o
+minilibx_opengl/mlx_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_png.c.o
+.PHONY : minilibx_opengl/mlx_png.c.o
 
-parser/alloc_structs/alloc_triangle.i: parser/alloc_structs/alloc_triangle.c.i
+minilibx_opengl/mlx_png.i: minilibx_opengl/mlx_png.c.i
 
-.PHONY : parser/alloc_structs/alloc_triangle.i
+.PHONY : minilibx_opengl/mlx_png.i
 
 # target to preprocess a source file
-parser/alloc_structs/alloc_triangle.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_triangle.c.i
-.PHONY : parser/alloc_structs/alloc_triangle.c.i
+minilibx_opengl/mlx_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_png.c.i
+.PHONY : minilibx_opengl/mlx_png.c.i
 
-parser/alloc_structs/alloc_triangle.s: parser/alloc_structs/alloc_triangle.c.s
+minilibx_opengl/mlx_png.s: minilibx_opengl/mlx_png.c.s
 
-.PHONY : parser/alloc_structs/alloc_triangle.s
+.PHONY : minilibx_opengl/mlx_png.s
 
 # target to generate assembly for a file
-parser/alloc_structs/alloc_triangle.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/alloc_structs/alloc_triangle.c.s
-.PHONY : parser/alloc_structs/alloc_triangle.c.s
+minilibx_opengl/mlx_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_png.c.s
+.PHONY : minilibx_opengl/mlx_png.c.s
 
-parser/ft_crutch.o: parser/ft_crutch.c.o
+minilibx_opengl/mlx_rgb.o: minilibx_opengl/mlx_rgb.c.o
 
-.PHONY : parser/ft_crutch.o
+.PHONY : minilibx_opengl/mlx_rgb.o
 
 # target to build an object file
-parser/ft_crutch.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/ft_crutch.c.o
-.PHONY : parser/ft_crutch.c.o
+minilibx_opengl/mlx_rgb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_rgb.c.o
+.PHONY : minilibx_opengl/mlx_rgb.c.o
 
-parser/ft_crutch.i: parser/ft_crutch.c.i
+minilibx_opengl/mlx_rgb.i: minilibx_opengl/mlx_rgb.c.i
 
-.PHONY : parser/ft_crutch.i
+.PHONY : minilibx_opengl/mlx_rgb.i
 
 # target to preprocess a source file
-parser/ft_crutch.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/ft_crutch.c.i
-.PHONY : parser/ft_crutch.c.i
+minilibx_opengl/mlx_rgb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_rgb.c.i
+.PHONY : minilibx_opengl/mlx_rgb.c.i
 
-parser/ft_crutch.s: parser/ft_crutch.c.s
+minilibx_opengl/mlx_rgb.s: minilibx_opengl/mlx_rgb.c.s
 
-.PHONY : parser/ft_crutch.s
+.PHONY : minilibx_opengl/mlx_rgb.s
 
 # target to generate assembly for a file
-parser/ft_crutch.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/ft_crutch.c.s
-.PHONY : parser/ft_crutch.c.s
+minilibx_opengl/mlx_rgb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_rgb.c.s
+.PHONY : minilibx_opengl/mlx_rgb.c.s
 
-parser/init_structs.o: parser/init_structs.c.o
+minilibx_opengl/mlx_shaders.o: minilibx_opengl/mlx_shaders.c.o
 
-.PHONY : parser/init_structs.o
+.PHONY : minilibx_opengl/mlx_shaders.o
 
 # target to build an object file
-parser/init_structs.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/init_structs.c.o
-.PHONY : parser/init_structs.c.o
+minilibx_opengl/mlx_shaders.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_shaders.c.o
+.PHONY : minilibx_opengl/mlx_shaders.c.o
 
-parser/init_structs.i: parser/init_structs.c.i
+minilibx_opengl/mlx_shaders.i: minilibx_opengl/mlx_shaders.c.i
 
-.PHONY : parser/init_structs.i
+.PHONY : minilibx_opengl/mlx_shaders.i
 
 # target to preprocess a source file
-parser/init_structs.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/init_structs.c.i
-.PHONY : parser/init_structs.c.i
+minilibx_opengl/mlx_shaders.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_shaders.c.i
+.PHONY : minilibx_opengl/mlx_shaders.c.i
 
-parser/init_structs.s: parser/init_structs.c.s
+minilibx_opengl/mlx_shaders.s: minilibx_opengl/mlx_shaders.c.s
 
-.PHONY : parser/init_structs.s
+.PHONY : minilibx_opengl/mlx_shaders.s
 
 # target to generate assembly for a file
-parser/init_structs.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/init_structs.c.s
-.PHONY : parser/init_structs.c.s
+minilibx_opengl/mlx_shaders.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_shaders.c.s
+.PHONY : minilibx_opengl/mlx_shaders.c.s
 
-parser/pars_all.o: parser/pars_all.c.o
+minilibx_opengl/mlx_xpm.o: minilibx_opengl/mlx_xpm.c.o
 
-.PHONY : parser/pars_all.o
+.PHONY : minilibx_opengl/mlx_xpm.o
 
 # target to build an object file
-parser/pars_all.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/pars_all.c.o
-.PHONY : parser/pars_all.c.o
+minilibx_opengl/mlx_xpm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_xpm.c.o
+.PHONY : minilibx_opengl/mlx_xpm.c.o
 
-parser/pars_all.i: parser/pars_all.c.i
+minilibx_opengl/mlx_xpm.i: minilibx_opengl/mlx_xpm.c.i
 
-.PHONY : parser/pars_all.i
-
-# target to preprocess a source file
-parser/pars_all.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/pars_all.c.i
-.PHONY : parser/pars_all.c.i
-
-parser/pars_all.s: parser/pars_all.c.s
-
-.PHONY : parser/pars_all.s
-
-# target to generate assembly for a file
-parser/pars_all.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/pars_all.c.s
-.PHONY : parser/pars_all.c.s
-
-parser/parser.o: parser/parser.c.o
-
-.PHONY : parser/parser.o
-
-# target to build an object file
-parser/parser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parser.c.o
-.PHONY : parser/parser.c.o
-
-parser/parser.i: parser/parser.c.i
-
-.PHONY : parser/parser.i
+.PHONY : minilibx_opengl/mlx_xpm.i
 
 # target to preprocess a source file
-parser/parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parser.c.i
-.PHONY : parser/parser.c.i
+minilibx_opengl/mlx_xpm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_xpm.c.i
+.PHONY : minilibx_opengl/mlx_xpm.c.i
 
-parser/parser.s: parser/parser.c.s
+minilibx_opengl/mlx_xpm.s: minilibx_opengl/mlx_xpm.c.s
 
-.PHONY : parser/parser.s
-
-# target to generate assembly for a file
-parser/parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parser.c.s
-.PHONY : parser/parser.c.s
-
-parser/parsing_values.o: parser/parsing_values.c.o
-
-.PHONY : parser/parsing_values.o
-
-# target to build an object file
-parser/parsing_values.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parsing_values.c.o
-.PHONY : parser/parsing_values.c.o
-
-parser/parsing_values.i: parser/parsing_values.c.i
-
-.PHONY : parser/parsing_values.i
-
-# target to preprocess a source file
-parser/parsing_values.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parsing_values.c.i
-.PHONY : parser/parsing_values.c.i
-
-parser/parsing_values.s: parser/parsing_values.c.s
-
-.PHONY : parser/parsing_values.s
+.PHONY : minilibx_opengl/mlx_xpm.s
 
 # target to generate assembly for a file
-parser/parsing_values.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parsing_values.c.s
-.PHONY : parser/parsing_values.c.s
-
-parser/parsing_values_second.o: parser/parsing_values_second.c.o
-
-.PHONY : parser/parsing_values_second.o
-
-# target to build an object file
-parser/parsing_values_second.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parsing_values_second.c.o
-.PHONY : parser/parsing_values_second.c.o
-
-parser/parsing_values_second.i: parser/parsing_values_second.c.i
-
-.PHONY : parser/parsing_values_second.i
-
-# target to preprocess a source file
-parser/parsing_values_second.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parsing_values_second.c.i
-.PHONY : parser/parsing_values_second.c.i
-
-parser/parsing_values_second.s: parser/parsing_values_second.c.s
-
-.PHONY : parser/parsing_values_second.s
-
-# target to generate assembly for a file
-parser/parsing_values_second.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/parsing_values_second.c.s
-.PHONY : parser/parsing_values_second.c.s
-
-parser/triangle_parser.o: parser/triangle_parser.c.o
-
-.PHONY : parser/triangle_parser.o
-
-# target to build an object file
-parser/triangle_parser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/triangle_parser.c.o
-.PHONY : parser/triangle_parser.c.o
-
-parser/triangle_parser.i: parser/triangle_parser.c.i
-
-.PHONY : parser/triangle_parser.i
-
-# target to preprocess a source file
-parser/triangle_parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/triangle_parser.c.i
-.PHONY : parser/triangle_parser.c.i
-
-parser/triangle_parser.s: parser/triangle_parser.c.s
-
-.PHONY : parser/triangle_parser.s
-
-# target to generate assembly for a file
-parser/triangle_parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/triangle_parser.c.s
-.PHONY : parser/triangle_parser.c.s
-
-parser/validator_alloc_stucts.o: parser/validator_alloc_stucts.c.o
-
-.PHONY : parser/validator_alloc_stucts.o
-
-# target to build an object file
-parser/validator_alloc_stucts.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/validator_alloc_stucts.c.o
-.PHONY : parser/validator_alloc_stucts.c.o
-
-parser/validator_alloc_stucts.i: parser/validator_alloc_stucts.c.i
-
-.PHONY : parser/validator_alloc_stucts.i
-
-# target to preprocess a source file
-parser/validator_alloc_stucts.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/validator_alloc_stucts.c.i
-.PHONY : parser/validator_alloc_stucts.c.i
-
-parser/validator_alloc_stucts.s: parser/validator_alloc_stucts.c.s
-
-.PHONY : parser/validator_alloc_stucts.s
-
-# target to generate assembly for a file
-parser/validator_alloc_stucts.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/parser/validator_alloc_stucts.c.s
-.PHONY : parser/validator_alloc_stucts.c.s
+minilibx_opengl/mlx_xpm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_xpm.c.s
+.PHONY : minilibx_opengl/mlx_xpm.c.s
 
 srcs/exit_errors.o: srcs/exit_errors.c.o
 
@@ -2324,50 +1797,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... SHARED"
+	@echo "... libft.a"
+	@echo "... libmlx.dylib"
 	@echo "... miniRT"
-	@echo "... ft_printf/chars/chars.o"
-	@echo "... ft_printf/chars/chars.i"
-	@echo "... ft_printf/chars/chars.s"
-	@echo "... ft_printf/chars/ft_precision_zero.o"
-	@echo "... ft_printf/chars/ft_precision_zero.i"
-	@echo "... ft_printf/chars/ft_precision_zero.s"
-	@echo "... ft_printf/chars/write_strings.o"
-	@echo "... ft_printf/chars/write_strings.i"
-	@echo "... ft_printf/chars/write_strings.s"
-	@echo "... ft_printf/digits/digits.o"
-	@echo "... ft_printf/digits/digits.i"
-	@echo "... ft_printf/digits/digits.s"
-	@echo "... ft_printf/digits/unsigned_int.o"
-	@echo "... ft_printf/digits/unsigned_int.i"
-	@echo "... ft_printf/digits/unsigned_int.s"
-	@echo "... ft_printf/digits/width_precision.o"
-	@echo "... ft_printf/digits/width_precision.i"
-	@echo "... ft_printf/digits/width_precision.s"
-	@echo "... ft_printf/srcs/ft_auxiliary.o"
-	@echo "... ft_printf/srcs/ft_auxiliary.i"
-	@echo "... ft_printf/srcs/ft_auxiliary.s"
-	@echo "... ft_printf/srcs/ft_parsers.o"
-	@echo "... ft_printf/srcs/ft_parsers.i"
-	@echo "... ft_printf/srcs/ft_parsers.s"
-	@echo "... ft_printf/srcs/ft_printf.o"
-	@echo "... ft_printf/srcs/ft_printf.i"
-	@echo "... ft_printf/srcs/ft_printf.s"
-	@echo "... ft_printf/srcs/ft_supp.o"
-	@echo "... ft_printf/srcs/ft_supp.i"
-	@echo "... ft_printf/srcs/ft_supp.s"
-	@echo "... ft_printf/srcs/is_utils.o"
-	@echo "... ft_printf/srcs/is_utils.i"
-	@echo "... ft_printf/srcs/is_utils.s"
-	@echo "... ft_printf/srcs/out.o"
-	@echo "... ft_printf/srcs/out.i"
-	@echo "... ft_printf/srcs/out.s"
-	@echo "... gnl/get_next_line.o"
-	@echo "... gnl/get_next_line.i"
-	@echo "... gnl/get_next_line.s"
-	@echo "... gnl/get_next_line_utils.o"
-	@echo "... gnl/get_next_line_utils.i"
-	@echo "... gnl/get_next_line_utils.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2497,57 +1929,39 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... mlx_branching/mlx_work_branching.o"
-	@echo "... mlx_branching/mlx_work_branching.i"
-	@echo "... mlx_branching/mlx_work_branching.s"
-	@echo "... parser/alloc_for_pars.o"
-	@echo "... parser/alloc_for_pars.i"
-	@echo "... parser/alloc_for_pars.s"
-	@echo "... parser/alloc_structs/alloc_cylinder.o"
-	@echo "... parser/alloc_structs/alloc_cylinder.i"
-	@echo "... parser/alloc_structs/alloc_cylinder.s"
-	@echo "... parser/alloc_structs/alloc_light.o"
-	@echo "... parser/alloc_structs/alloc_light.i"
-	@echo "... parser/alloc_structs/alloc_light.s"
-	@echo "... parser/alloc_structs/alloc_plane.o"
-	@echo "... parser/alloc_structs/alloc_plane.i"
-	@echo "... parser/alloc_structs/alloc_plane.s"
-	@echo "... parser/alloc_structs/alloc_sphere.o"
-	@echo "... parser/alloc_structs/alloc_sphere.i"
-	@echo "... parser/alloc_structs/alloc_sphere.s"
-	@echo "... parser/alloc_structs/alloc_square.o"
-	@echo "... parser/alloc_structs/alloc_square.i"
-	@echo "... parser/alloc_structs/alloc_square.s"
-	@echo "... parser/alloc_structs/alloc_triangle.o"
-	@echo "... parser/alloc_structs/alloc_triangle.i"
-	@echo "... parser/alloc_structs/alloc_triangle.s"
-	@echo "... parser/ft_crutch.o"
-	@echo "... parser/ft_crutch.i"
-	@echo "... parser/ft_crutch.s"
-	@echo "... parser/init_structs.o"
-	@echo "... parser/init_structs.i"
-	@echo "... parser/init_structs.s"
-	@echo "... parser/pars_all.o"
-	@echo "... parser/pars_all.i"
-	@echo "... parser/pars_all.s"
-	@echo "... parser/parser.o"
-	@echo "... parser/parser.i"
-	@echo "... parser/parser.s"
-	@echo "... parser/parsing_values.o"
-	@echo "... parser/parsing_values.i"
-	@echo "... parser/parsing_values.s"
-	@echo "... parser/parsing_values_second.o"
-	@echo "... parser/parsing_values_second.i"
-	@echo "... parser/parsing_values_second.s"
-	@echo "... parser/triangle_parser.o"
-	@echo "... parser/triangle_parser.i"
-	@echo "... parser/triangle_parser.s"
-	@echo "... parser/validator_alloc_stucts.o"
-	@echo "... parser/validator_alloc_stucts.i"
-	@echo "... parser/validator_alloc_stucts.s"
+	@echo "... minilibx_opengl/font.o"
+	@echo "... minilibx_opengl/font.i"
+	@echo "... minilibx_opengl/font.s"
+	@echo "... minilibx_opengl/mlx_init_loop.o"
+	@echo "... minilibx_opengl/mlx_init_loop.i"
+	@echo "... minilibx_opengl/mlx_init_loop.s"
+	@echo "... minilibx_opengl/mlx_int_str_to_wordtab.o"
+	@echo "... minilibx_opengl/mlx_int_str_to_wordtab.i"
+	@echo "... minilibx_opengl/mlx_int_str_to_wordtab.s"
+	@echo "... minilibx_opengl/mlx_mouse.o"
+	@echo "... minilibx_opengl/mlx_mouse.i"
+	@echo "... minilibx_opengl/mlx_mouse.s"
+	@echo "... minilibx_opengl/mlx_new_image.o"
+	@echo "... minilibx_opengl/mlx_new_image.i"
+	@echo "... minilibx_opengl/mlx_new_image.s"
+	@echo "... minilibx_opengl/mlx_new_window.o"
+	@echo "... minilibx_opengl/mlx_new_window.i"
+	@echo "... minilibx_opengl/mlx_new_window.s"
+	@echo "... minilibx_opengl/mlx_opengl.o"
+	@echo "... minilibx_opengl/mlx_opengl.i"
+	@echo "... minilibx_opengl/mlx_opengl.s"
+	@echo "... minilibx_opengl/mlx_png.o"
+	@echo "... minilibx_opengl/mlx_png.i"
+	@echo "... minilibx_opengl/mlx_png.s"
+	@echo "... minilibx_opengl/mlx_rgb.o"
+	@echo "... minilibx_opengl/mlx_rgb.i"
+	@echo "... minilibx_opengl/mlx_rgb.s"
+	@echo "... minilibx_opengl/mlx_shaders.o"
+	@echo "... minilibx_opengl/mlx_shaders.i"
+	@echo "... minilibx_opengl/mlx_shaders.s"
+	@echo "... minilibx_opengl/mlx_xpm.o"
+	@echo "... minilibx_opengl/mlx_xpm.i"
+	@echo "... minilibx_opengl/mlx_xpm.s"
 	@echo "... srcs/exit_errors.o"
 	@echo "... srcs/exit_errors.i"
 	@echo "... srcs/exit_errors.s"
