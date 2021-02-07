@@ -1,10 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/miniRT.dir/srcs/exit_errors.c.o"
-  "CMakeFiles/miniRT.dir/srcs/free_scene.c.o"
-  "CMakeFiles/miniRT.dir/srcs/ft_atof.c.o"
-  "CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o"
-  "CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o"
-  "CMakeFiles/miniRT.dir/srcs/main.c.o"
+  "CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"
+  "CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o"
   "miniRT"
   "miniRT.pdb"
 )

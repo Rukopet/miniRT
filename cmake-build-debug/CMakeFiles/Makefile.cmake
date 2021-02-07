@@ -47,7 +47,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/libmlx.dylib.dir/DependInfo.cmake"
   "CMakeFiles/miniRT.dir/DependInfo.cmake"
   "CMakeFiles/libft.a.dir/DependInfo.cmake"
   )

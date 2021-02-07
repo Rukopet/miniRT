@@ -73,7 +73,6 @@ CMAKE_BINARY_DIR = /Users/egums/miniRT/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/libmlx.dylib.dir/all
 all: CMakeFiles/miniRT.dir/all
 all: CMakeFiles/libft.a.dir/all
 
@@ -85,52 +84,24 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/libmlx.dylib.dir/clean
 clean: CMakeFiles/miniRT.dir/clean
 clean: CMakeFiles/libft.a.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/libmlx.dylib.dir
-
-# All Build rule for target.
-CMakeFiles/libmlx.dylib.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53,54,55,56 "Built target libmlx.dylib"
-.PHONY : CMakeFiles/libmlx.dylib.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/libmlx.dylib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 12
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/libmlx.dylib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/libmlx.dylib.dir/rule
-
-# Convenience name for target.
-libmlx.dylib: CMakeFiles/libmlx.dylib.dir/rule
-
-.PHONY : libmlx.dylib
-
-# clean rule for target.
-CMakeFiles/libmlx.dylib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/clean
-.PHONY : CMakeFiles/libmlx.dylib.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/miniRT.dir
 
 # All Build rule for target.
-CMakeFiles/miniRT.dir/all: CMakeFiles/libmlx.dylib.dir/all
+CMakeFiles/miniRT.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=57,58,59,60,61,62,63 "Built target miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=45,46,47 "Built target miniRT"
 .PHONY : CMakeFiles/miniRT.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniRT.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/miniRT.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/miniRT.dir/rule

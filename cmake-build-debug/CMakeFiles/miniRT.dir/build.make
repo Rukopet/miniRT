@@ -77,106 +77,45 @@ include CMakeFiles/miniRT.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/miniRT.dir/flags.make
 
-CMakeFiles/miniRT.dir/srcs/exit_errors.c.o: CMakeFiles/miniRT.dir/flags.make
-CMakeFiles/miniRT.dir/srcs/exit_errors.c.o: ../srcs/exit_errors.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/miniRT.dir/srcs/exit_errors.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/srcs/exit_errors.c.o   -c /Users/egums/miniRT/srcs/exit_errors.c
+CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o: ../mlx_branching/ft_matrix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o   -c /Users/egums/miniRT/mlx_branching/ft_matrix.c
 
-CMakeFiles/miniRT.dir/srcs/exit_errors.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/srcs/exit_errors.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/srcs/exit_errors.c > CMakeFiles/miniRT.dir/srcs/exit_errors.c.i
+CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/ft_matrix.c > CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.i
 
-CMakeFiles/miniRT.dir/srcs/exit_errors.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/srcs/exit_errors.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/srcs/exit_errors.c -o CMakeFiles/miniRT.dir/srcs/exit_errors.c.s
+CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/ft_matrix.c -o CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s
 
-CMakeFiles/miniRT.dir/srcs/free_scene.c.o: CMakeFiles/miniRT.dir/flags.make
-CMakeFiles/miniRT.dir/srcs/free_scene.c.o: ../srcs/free_scene.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/miniRT.dir/srcs/free_scene.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/srcs/free_scene.c.o   -c /Users/egums/miniRT/srcs/free_scene.c
+CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o: ../mlx_branching/utils_for_rtx.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o   -c /Users/egums/miniRT/mlx_branching/utils_for_rtx.c
 
-CMakeFiles/miniRT.dir/srcs/free_scene.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/srcs/free_scene.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/srcs/free_scene.c > CMakeFiles/miniRT.dir/srcs/free_scene.c.i
+CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/utils_for_rtx.c > CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.i
 
-CMakeFiles/miniRT.dir/srcs/free_scene.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/srcs/free_scene.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/srcs/free_scene.c -o CMakeFiles/miniRT.dir/srcs/free_scene.c.s
-
-CMakeFiles/miniRT.dir/srcs/ft_atof.c.o: CMakeFiles/miniRT.dir/flags.make
-CMakeFiles/miniRT.dir/srcs/ft_atof.c.o: ../srcs/ft_atof.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/miniRT.dir/srcs/ft_atof.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/srcs/ft_atof.c.o   -c /Users/egums/miniRT/srcs/ft_atof.c
-
-CMakeFiles/miniRT.dir/srcs/ft_atof.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/srcs/ft_atof.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/srcs/ft_atof.c > CMakeFiles/miniRT.dir/srcs/ft_atof.c.i
-
-CMakeFiles/miniRT.dir/srcs/ft_atof.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/srcs/ft_atof.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/srcs/ft_atof.c -o CMakeFiles/miniRT.dir/srcs/ft_atof.c.s
-
-CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o: CMakeFiles/miniRT.dir/flags.make
-CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o: ../srcs/ft_atof_ptr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o   -c /Users/egums/miniRT/srcs/ft_atof_ptr.c
-
-CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/srcs/ft_atof_ptr.c > CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.i
-
-CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/srcs/ft_atof_ptr.c -o CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.s
-
-CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o: CMakeFiles/miniRT.dir/flags.make
-CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o: ../srcs/ft_atoi_ptr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o   -c /Users/egums/miniRT/srcs/ft_atoi_ptr.c
-
-CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/srcs/ft_atoi_ptr.c > CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.i
-
-CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/srcs/ft_atoi_ptr.c -o CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.s
-
-CMakeFiles/miniRT.dir/srcs/main.c.o: CMakeFiles/miniRT.dir/flags.make
-CMakeFiles/miniRT.dir/srcs/main.c.o: ../srcs/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/miniRT.dir/srcs/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/srcs/main.c.o   -c /Users/egums/miniRT/srcs/main.c
-
-CMakeFiles/miniRT.dir/srcs/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/srcs/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/srcs/main.c > CMakeFiles/miniRT.dir/srcs/main.c.i
-
-CMakeFiles/miniRT.dir/srcs/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/srcs/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/srcs/main.c -o CMakeFiles/miniRT.dir/srcs/main.c.s
+CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/utils_for_rtx.c -o CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s
 
 # Object files for target miniRT
 miniRT_OBJECTS = \
-"CMakeFiles/miniRT.dir/srcs/exit_errors.c.o" \
-"CMakeFiles/miniRT.dir/srcs/free_scene.c.o" \
-"CMakeFiles/miniRT.dir/srcs/ft_atof.c.o" \
-"CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o" \
-"CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o" \
-"CMakeFiles/miniRT.dir/srcs/main.c.o"
+"CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o"
 
 # External object files for target miniRT
 miniRT_EXTERNAL_OBJECTS =
 
-miniRT: CMakeFiles/miniRT.dir/srcs/exit_errors.c.o
-miniRT: CMakeFiles/miniRT.dir/srcs/free_scene.c.o
-miniRT: CMakeFiles/miniRT.dir/srcs/ft_atof.c.o
-miniRT: CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o
-miniRT: CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o
-miniRT: CMakeFiles/miniRT.dir/srcs/main.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o
 miniRT: CMakeFiles/miniRT.dir/build.make
-miniRT: liblibmlx.dylib.dylib
 miniRT: CMakeFiles/miniRT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable miniRT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/miniRT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

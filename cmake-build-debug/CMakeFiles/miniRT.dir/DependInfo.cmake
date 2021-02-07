@@ -4,12 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/egums/miniRT/srcs/exit_errors.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/srcs/exit_errors.c.o"
-  "/Users/egums/miniRT/srcs/free_scene.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/srcs/free_scene.c.o"
-  "/Users/egums/miniRT/srcs/ft_atof.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/srcs/ft_atof.c.o"
-  "/Users/egums/miniRT/srcs/ft_atof_ptr.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o"
-  "/Users/egums/miniRT/srcs/ft_atoi_ptr.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o"
-  "/Users/egums/miniRT/srcs/main.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/srcs/main.c.o"
+  "/Users/egums/miniRT/mlx_branching/ft_matrix.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"
+  "/Users/egums/miniRT/mlx_branching/utils_for_rtx.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
@@ -19,13 +15,11 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../gnl"
   "../includes"
   "../libft"
-  "../minilibx_opengl"
   ".././includes"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/libmlx.dylib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

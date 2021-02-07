@@ -131,19 +131,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named libmlx.dylib
-
-# Build rule for target.
-libmlx.dylib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libmlx.dylib
-.PHONY : libmlx.dylib
-
-# fast build rule for target.
-libmlx.dylib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/build
-.PHONY : libmlx.dylib/fast
-
-#=============================================================================
 # Target rules for targets named miniRT
 
 # Build rule for target.
@@ -1330,464 +1317,59 @@ libft/ft_toupper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
-minilibx_opengl/font.o: minilibx_opengl/font.c.o
+mlx_branching/ft_matrix.o: mlx_branching/ft_matrix.c.o
 
-.PHONY : minilibx_opengl/font.o
-
-# target to build an object file
-minilibx_opengl/font.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/font.c.o
-.PHONY : minilibx_opengl/font.c.o
-
-minilibx_opengl/font.i: minilibx_opengl/font.c.i
-
-.PHONY : minilibx_opengl/font.i
-
-# target to preprocess a source file
-minilibx_opengl/font.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/font.c.i
-.PHONY : minilibx_opengl/font.c.i
-
-minilibx_opengl/font.s: minilibx_opengl/font.c.s
-
-.PHONY : minilibx_opengl/font.s
-
-# target to generate assembly for a file
-minilibx_opengl/font.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/font.c.s
-.PHONY : minilibx_opengl/font.c.s
-
-minilibx_opengl/mlx_init_loop.o: minilibx_opengl/mlx_init_loop.m.o
-
-.PHONY : minilibx_opengl/mlx_init_loop.o
+.PHONY : mlx_branching/ft_matrix.o
 
 # target to build an object file
-minilibx_opengl/mlx_init_loop.m.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_init_loop.m.o
-.PHONY : minilibx_opengl/mlx_init_loop.m.o
+mlx_branching/ft_matrix.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o
+.PHONY : mlx_branching/ft_matrix.c.o
 
-minilibx_opengl/mlx_init_loop.i: minilibx_opengl/mlx_init_loop.m.i
+mlx_branching/ft_matrix.i: mlx_branching/ft_matrix.c.i
 
-.PHONY : minilibx_opengl/mlx_init_loop.i
+.PHONY : mlx_branching/ft_matrix.i
 
 # target to preprocess a source file
-minilibx_opengl/mlx_init_loop.m.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_init_loop.m.i
-.PHONY : minilibx_opengl/mlx_init_loop.m.i
+mlx_branching/ft_matrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.i
+.PHONY : mlx_branching/ft_matrix.c.i
 
-minilibx_opengl/mlx_init_loop.s: minilibx_opengl/mlx_init_loop.m.s
+mlx_branching/ft_matrix.s: mlx_branching/ft_matrix.c.s
 
-.PHONY : minilibx_opengl/mlx_init_loop.s
+.PHONY : mlx_branching/ft_matrix.s
 
 # target to generate assembly for a file
-minilibx_opengl/mlx_init_loop.m.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_init_loop.m.s
-.PHONY : minilibx_opengl/mlx_init_loop.m.s
+mlx_branching/ft_matrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s
+.PHONY : mlx_branching/ft_matrix.c.s
 
-minilibx_opengl/mlx_int_str_to_wordtab.o: minilibx_opengl/mlx_int_str_to_wordtab.c.o
+mlx_branching/utils_for_rtx.o: mlx_branching/utils_for_rtx.c.o
 
-.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.o
+.PHONY : mlx_branching/utils_for_rtx.o
 
 # target to build an object file
-minilibx_opengl/mlx_int_str_to_wordtab.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_int_str_to_wordtab.c.o
-.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.c.o
+mlx_branching/utils_for_rtx.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o
+.PHONY : mlx_branching/utils_for_rtx.c.o
 
-minilibx_opengl/mlx_int_str_to_wordtab.i: minilibx_opengl/mlx_int_str_to_wordtab.c.i
+mlx_branching/utils_for_rtx.i: mlx_branching/utils_for_rtx.c.i
 
-.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_int_str_to_wordtab.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_int_str_to_wordtab.c.i
-.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.c.i
-
-minilibx_opengl/mlx_int_str_to_wordtab.s: minilibx_opengl/mlx_int_str_to_wordtab.c.s
-
-.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_int_str_to_wordtab.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_int_str_to_wordtab.c.s
-.PHONY : minilibx_opengl/mlx_int_str_to_wordtab.c.s
-
-minilibx_opengl/mlx_mouse.o: minilibx_opengl/mlx_mouse.m.o
-
-.PHONY : minilibx_opengl/mlx_mouse.o
-
-# target to build an object file
-minilibx_opengl/mlx_mouse.m.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_mouse.m.o
-.PHONY : minilibx_opengl/mlx_mouse.m.o
-
-minilibx_opengl/mlx_mouse.i: minilibx_opengl/mlx_mouse.m.i
-
-.PHONY : minilibx_opengl/mlx_mouse.i
+.PHONY : mlx_branching/utils_for_rtx.i
 
 # target to preprocess a source file
-minilibx_opengl/mlx_mouse.m.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_mouse.m.i
-.PHONY : minilibx_opengl/mlx_mouse.m.i
+mlx_branching/utils_for_rtx.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.i
+.PHONY : mlx_branching/utils_for_rtx.c.i
 
-minilibx_opengl/mlx_mouse.s: minilibx_opengl/mlx_mouse.m.s
+mlx_branching/utils_for_rtx.s: mlx_branching/utils_for_rtx.c.s
 
-.PHONY : minilibx_opengl/mlx_mouse.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_mouse.m.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_mouse.m.s
-.PHONY : minilibx_opengl/mlx_mouse.m.s
-
-minilibx_opengl/mlx_new_image.o: minilibx_opengl/mlx_new_image.m.o
-
-.PHONY : minilibx_opengl/mlx_new_image.o
-
-# target to build an object file
-minilibx_opengl/mlx_new_image.m.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_image.m.o
-.PHONY : minilibx_opengl/mlx_new_image.m.o
-
-minilibx_opengl/mlx_new_image.i: minilibx_opengl/mlx_new_image.m.i
-
-.PHONY : minilibx_opengl/mlx_new_image.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_new_image.m.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_image.m.i
-.PHONY : minilibx_opengl/mlx_new_image.m.i
-
-minilibx_opengl/mlx_new_image.s: minilibx_opengl/mlx_new_image.m.s
-
-.PHONY : minilibx_opengl/mlx_new_image.s
+.PHONY : mlx_branching/utils_for_rtx.s
 
 # target to generate assembly for a file
-minilibx_opengl/mlx_new_image.m.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_image.m.s
-.PHONY : minilibx_opengl/mlx_new_image.m.s
-
-minilibx_opengl/mlx_new_window.o: minilibx_opengl/mlx_new_window.m.o
-
-.PHONY : minilibx_opengl/mlx_new_window.o
-
-# target to build an object file
-minilibx_opengl/mlx_new_window.m.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_window.m.o
-.PHONY : minilibx_opengl/mlx_new_window.m.o
-
-minilibx_opengl/mlx_new_window.i: minilibx_opengl/mlx_new_window.m.i
-
-.PHONY : minilibx_opengl/mlx_new_window.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_new_window.m.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_window.m.i
-.PHONY : minilibx_opengl/mlx_new_window.m.i
-
-minilibx_opengl/mlx_new_window.s: minilibx_opengl/mlx_new_window.m.s
-
-.PHONY : minilibx_opengl/mlx_new_window.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_new_window.m.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_new_window.m.s
-.PHONY : minilibx_opengl/mlx_new_window.m.s
-
-minilibx_opengl/mlx_opengl.o: minilibx_opengl/mlx_opengl.m.o
-
-.PHONY : minilibx_opengl/mlx_opengl.o
-
-# target to build an object file
-minilibx_opengl/mlx_opengl.m.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_opengl.m.o
-.PHONY : minilibx_opengl/mlx_opengl.m.o
-
-minilibx_opengl/mlx_opengl.i: minilibx_opengl/mlx_opengl.m.i
-
-.PHONY : minilibx_opengl/mlx_opengl.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_opengl.m.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_opengl.m.i
-.PHONY : minilibx_opengl/mlx_opengl.m.i
-
-minilibx_opengl/mlx_opengl.s: minilibx_opengl/mlx_opengl.m.s
-
-.PHONY : minilibx_opengl/mlx_opengl.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_opengl.m.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_opengl.m.s
-.PHONY : minilibx_opengl/mlx_opengl.m.s
-
-minilibx_opengl/mlx_png.o: minilibx_opengl/mlx_png.c.o
-
-.PHONY : minilibx_opengl/mlx_png.o
-
-# target to build an object file
-minilibx_opengl/mlx_png.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_png.c.o
-.PHONY : minilibx_opengl/mlx_png.c.o
-
-minilibx_opengl/mlx_png.i: minilibx_opengl/mlx_png.c.i
-
-.PHONY : minilibx_opengl/mlx_png.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_png.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_png.c.i
-.PHONY : minilibx_opengl/mlx_png.c.i
-
-minilibx_opengl/mlx_png.s: minilibx_opengl/mlx_png.c.s
-
-.PHONY : minilibx_opengl/mlx_png.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_png.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_png.c.s
-.PHONY : minilibx_opengl/mlx_png.c.s
-
-minilibx_opengl/mlx_rgb.o: minilibx_opengl/mlx_rgb.c.o
-
-.PHONY : minilibx_opengl/mlx_rgb.o
-
-# target to build an object file
-minilibx_opengl/mlx_rgb.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_rgb.c.o
-.PHONY : minilibx_opengl/mlx_rgb.c.o
-
-minilibx_opengl/mlx_rgb.i: minilibx_opengl/mlx_rgb.c.i
-
-.PHONY : minilibx_opengl/mlx_rgb.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_rgb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_rgb.c.i
-.PHONY : minilibx_opengl/mlx_rgb.c.i
-
-minilibx_opengl/mlx_rgb.s: minilibx_opengl/mlx_rgb.c.s
-
-.PHONY : minilibx_opengl/mlx_rgb.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_rgb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_rgb.c.s
-.PHONY : minilibx_opengl/mlx_rgb.c.s
-
-minilibx_opengl/mlx_shaders.o: minilibx_opengl/mlx_shaders.c.o
-
-.PHONY : minilibx_opengl/mlx_shaders.o
-
-# target to build an object file
-minilibx_opengl/mlx_shaders.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_shaders.c.o
-.PHONY : minilibx_opengl/mlx_shaders.c.o
-
-minilibx_opengl/mlx_shaders.i: minilibx_opengl/mlx_shaders.c.i
-
-.PHONY : minilibx_opengl/mlx_shaders.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_shaders.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_shaders.c.i
-.PHONY : minilibx_opengl/mlx_shaders.c.i
-
-minilibx_opengl/mlx_shaders.s: minilibx_opengl/mlx_shaders.c.s
-
-.PHONY : minilibx_opengl/mlx_shaders.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_shaders.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_shaders.c.s
-.PHONY : minilibx_opengl/mlx_shaders.c.s
-
-minilibx_opengl/mlx_xpm.o: minilibx_opengl/mlx_xpm.c.o
-
-.PHONY : minilibx_opengl/mlx_xpm.o
-
-# target to build an object file
-minilibx_opengl/mlx_xpm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_xpm.c.o
-.PHONY : minilibx_opengl/mlx_xpm.c.o
-
-minilibx_opengl/mlx_xpm.i: minilibx_opengl/mlx_xpm.c.i
-
-.PHONY : minilibx_opengl/mlx_xpm.i
-
-# target to preprocess a source file
-minilibx_opengl/mlx_xpm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_xpm.c.i
-.PHONY : minilibx_opengl/mlx_xpm.c.i
-
-minilibx_opengl/mlx_xpm.s: minilibx_opengl/mlx_xpm.c.s
-
-.PHONY : minilibx_opengl/mlx_xpm.s
-
-# target to generate assembly for a file
-minilibx_opengl/mlx_xpm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libmlx.dylib.dir/build.make CMakeFiles/libmlx.dylib.dir/minilibx_opengl/mlx_xpm.c.s
-.PHONY : minilibx_opengl/mlx_xpm.c.s
-
-srcs/exit_errors.o: srcs/exit_errors.c.o
-
-.PHONY : srcs/exit_errors.o
-
-# target to build an object file
-srcs/exit_errors.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/exit_errors.c.o
-.PHONY : srcs/exit_errors.c.o
-
-srcs/exit_errors.i: srcs/exit_errors.c.i
-
-.PHONY : srcs/exit_errors.i
-
-# target to preprocess a source file
-srcs/exit_errors.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/exit_errors.c.i
-.PHONY : srcs/exit_errors.c.i
-
-srcs/exit_errors.s: srcs/exit_errors.c.s
-
-.PHONY : srcs/exit_errors.s
-
-# target to generate assembly for a file
-srcs/exit_errors.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/exit_errors.c.s
-.PHONY : srcs/exit_errors.c.s
-
-srcs/free_scene.o: srcs/free_scene.c.o
-
-.PHONY : srcs/free_scene.o
-
-# target to build an object file
-srcs/free_scene.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/free_scene.c.o
-.PHONY : srcs/free_scene.c.o
-
-srcs/free_scene.i: srcs/free_scene.c.i
-
-.PHONY : srcs/free_scene.i
-
-# target to preprocess a source file
-srcs/free_scene.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/free_scene.c.i
-.PHONY : srcs/free_scene.c.i
-
-srcs/free_scene.s: srcs/free_scene.c.s
-
-.PHONY : srcs/free_scene.s
-
-# target to generate assembly for a file
-srcs/free_scene.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/free_scene.c.s
-.PHONY : srcs/free_scene.c.s
-
-srcs/ft_atof.o: srcs/ft_atof.c.o
-
-.PHONY : srcs/ft_atof.o
-
-# target to build an object file
-srcs/ft_atof.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atof.c.o
-.PHONY : srcs/ft_atof.c.o
-
-srcs/ft_atof.i: srcs/ft_atof.c.i
-
-.PHONY : srcs/ft_atof.i
-
-# target to preprocess a source file
-srcs/ft_atof.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atof.c.i
-.PHONY : srcs/ft_atof.c.i
-
-srcs/ft_atof.s: srcs/ft_atof.c.s
-
-.PHONY : srcs/ft_atof.s
-
-# target to generate assembly for a file
-srcs/ft_atof.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atof.c.s
-.PHONY : srcs/ft_atof.c.s
-
-srcs/ft_atof_ptr.o: srcs/ft_atof_ptr.c.o
-
-.PHONY : srcs/ft_atof_ptr.o
-
-# target to build an object file
-srcs/ft_atof_ptr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.o
-.PHONY : srcs/ft_atof_ptr.c.o
-
-srcs/ft_atof_ptr.i: srcs/ft_atof_ptr.c.i
-
-.PHONY : srcs/ft_atof_ptr.i
-
-# target to preprocess a source file
-srcs/ft_atof_ptr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.i
-.PHONY : srcs/ft_atof_ptr.c.i
-
-srcs/ft_atof_ptr.s: srcs/ft_atof_ptr.c.s
-
-.PHONY : srcs/ft_atof_ptr.s
-
-# target to generate assembly for a file
-srcs/ft_atof_ptr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atof_ptr.c.s
-.PHONY : srcs/ft_atof_ptr.c.s
-
-srcs/ft_atoi_ptr.o: srcs/ft_atoi_ptr.c.o
-
-.PHONY : srcs/ft_atoi_ptr.o
-
-# target to build an object file
-srcs/ft_atoi_ptr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.o
-.PHONY : srcs/ft_atoi_ptr.c.o
-
-srcs/ft_atoi_ptr.i: srcs/ft_atoi_ptr.c.i
-
-.PHONY : srcs/ft_atoi_ptr.i
-
-# target to preprocess a source file
-srcs/ft_atoi_ptr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.i
-.PHONY : srcs/ft_atoi_ptr.c.i
-
-srcs/ft_atoi_ptr.s: srcs/ft_atoi_ptr.c.s
-
-.PHONY : srcs/ft_atoi_ptr.s
-
-# target to generate assembly for a file
-srcs/ft_atoi_ptr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/ft_atoi_ptr.c.s
-.PHONY : srcs/ft_atoi_ptr.c.s
-
-srcs/main.o: srcs/main.c.o
-
-.PHONY : srcs/main.o
-
-# target to build an object file
-srcs/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/main.c.o
-.PHONY : srcs/main.c.o
-
-srcs/main.i: srcs/main.c.i
-
-.PHONY : srcs/main.i
-
-# target to preprocess a source file
-srcs/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/main.c.i
-.PHONY : srcs/main.c.i
-
-srcs/main.s: srcs/main.c.s
-
-.PHONY : srcs/main.s
-
-# target to generate assembly for a file
-srcs/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/srcs/main.c.s
-.PHONY : srcs/main.c.s
+mlx_branching/utils_for_rtx.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s
+.PHONY : mlx_branching/utils_for_rtx.c.s
 
 # Help Target
 help:
@@ -1798,7 +1380,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... libft.a"
-	@echo "... libmlx.dylib"
 	@echo "... miniRT"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
@@ -1929,57 +1510,12 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
-	@echo "... minilibx_opengl/font.o"
-	@echo "... minilibx_opengl/font.i"
-	@echo "... minilibx_opengl/font.s"
-	@echo "... minilibx_opengl/mlx_init_loop.o"
-	@echo "... minilibx_opengl/mlx_init_loop.i"
-	@echo "... minilibx_opengl/mlx_init_loop.s"
-	@echo "... minilibx_opengl/mlx_int_str_to_wordtab.o"
-	@echo "... minilibx_opengl/mlx_int_str_to_wordtab.i"
-	@echo "... minilibx_opengl/mlx_int_str_to_wordtab.s"
-	@echo "... minilibx_opengl/mlx_mouse.o"
-	@echo "... minilibx_opengl/mlx_mouse.i"
-	@echo "... minilibx_opengl/mlx_mouse.s"
-	@echo "... minilibx_opengl/mlx_new_image.o"
-	@echo "... minilibx_opengl/mlx_new_image.i"
-	@echo "... minilibx_opengl/mlx_new_image.s"
-	@echo "... minilibx_opengl/mlx_new_window.o"
-	@echo "... minilibx_opengl/mlx_new_window.i"
-	@echo "... minilibx_opengl/mlx_new_window.s"
-	@echo "... minilibx_opengl/mlx_opengl.o"
-	@echo "... minilibx_opengl/mlx_opengl.i"
-	@echo "... minilibx_opengl/mlx_opengl.s"
-	@echo "... minilibx_opengl/mlx_png.o"
-	@echo "... minilibx_opengl/mlx_png.i"
-	@echo "... minilibx_opengl/mlx_png.s"
-	@echo "... minilibx_opengl/mlx_rgb.o"
-	@echo "... minilibx_opengl/mlx_rgb.i"
-	@echo "... minilibx_opengl/mlx_rgb.s"
-	@echo "... minilibx_opengl/mlx_shaders.o"
-	@echo "... minilibx_opengl/mlx_shaders.i"
-	@echo "... minilibx_opengl/mlx_shaders.s"
-	@echo "... minilibx_opengl/mlx_xpm.o"
-	@echo "... minilibx_opengl/mlx_xpm.i"
-	@echo "... minilibx_opengl/mlx_xpm.s"
-	@echo "... srcs/exit_errors.o"
-	@echo "... srcs/exit_errors.i"
-	@echo "... srcs/exit_errors.s"
-	@echo "... srcs/free_scene.o"
-	@echo "... srcs/free_scene.i"
-	@echo "... srcs/free_scene.s"
-	@echo "... srcs/ft_atof.o"
-	@echo "... srcs/ft_atof.i"
-	@echo "... srcs/ft_atof.s"
-	@echo "... srcs/ft_atof_ptr.o"
-	@echo "... srcs/ft_atof_ptr.i"
-	@echo "... srcs/ft_atof_ptr.s"
-	@echo "... srcs/ft_atoi_ptr.o"
-	@echo "... srcs/ft_atoi_ptr.i"
-	@echo "... srcs/ft_atoi_ptr.s"
-	@echo "... srcs/main.o"
-	@echo "... srcs/main.i"
-	@echo "... srcs/main.s"
+	@echo "... mlx_branching/ft_matrix.o"
+	@echo "... mlx_branching/ft_matrix.i"
+	@echo "... mlx_branching/ft_matrix.s"
+	@echo "... mlx_branching/utils_for_rtx.o"
+	@echo "... mlx_branching/utils_for_rtx.i"
+	@echo "... mlx_branching/utils_for_rtx.s"
 .PHONY : help
 
 

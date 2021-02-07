@@ -56,7 +56,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../gnl"
   "../includes"
   "../libft"
-  "../minilibx_opengl"
   ".././includes"
   )
 
