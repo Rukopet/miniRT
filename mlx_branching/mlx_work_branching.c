@@ -36,7 +36,7 @@ void				begin_mlx_work(t_rt *scene)
 	void			*mlx_win;
 
 	if (NULL == (mlx = mlx_init()))
-		erros_and_exit(20, scene);
+		errors_and_exit(20, scene);
 	mlx_win = mlx_new_window(mlx, scene->resolution->x, scene->resolution->y, "miniRT21");
 	init_data_struct(&d, scene, mlx, mlx_win);
 	rtx(scene);

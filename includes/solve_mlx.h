@@ -24,6 +24,8 @@ t_vp			*alloc_viewport(t_rt *scene);
 void			matrix_rellocation(t_matrix *location, t_rt *scene, int c);
 
 int 			check_max_cams(t_rt *scene);
+double 			radians_to_degrees(double radians);
+
 
 
 #endif

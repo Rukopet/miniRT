@@ -6,9 +6,9 @@ void		alloc_plane(t_count *c, t_rt *scene)
 
 	i = 0;
 	if (!(scene->pl = (t_pl **)malloc(sizeof(t_pl *) * (c->pl + 1))))
-		erros_and_exit(9, scene);
+		errors_and_exit(9, scene);
 	scene->pl[c->pl] = NULL;
 	while (i != c->pl)
 		if (!(scene->pl[i++] = malloc(sizeof(t_pl))))
-			erros_and_exit(9, scene);
+			errors_and_exit(9, scene);
 }

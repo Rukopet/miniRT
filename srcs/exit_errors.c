@@ -30,7 +30,7 @@ void		next_errors(int flag, t_rt *scene)
 		mlx_errors(flag, scene);
 }
 
-void		erros_and_exit(int flag, t_rt *scene)
+void		errors_and_exit(int flag, t_rt *scene)
 {
 	if (flag == 1)
 		write(2, "Error\nNot enough arguments, add file name-scene\n", 49);

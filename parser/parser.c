@@ -41,7 +41,7 @@ int			check_other(t_rt *scene, int fd)
 	t_count	*counter;
 
 	if(!(counter = malloc(sizeof(t_count))))
-		erros_and_exit(-1, scene);
+		errors_and_exit(-1, scene);
 	init_count_struct(counter);
 	if (-1 == (pars_branching(scene, fd, counter)))
 	{
@@ -70,16 +70,16 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 			tmp = argv[i];		
 	}
 	if ((argc == 3 && !save_flag) || -1 == (fd = open(tmp, O_RDONLY)))
-		erros_and_exit(4, scene);
+		errors_and_exit(4, scene);
 	if (!(check_extention(tmp)))
 	{
 		close(fd);
-		erros_and_exit(7, scene);
+		errors_and_exit(7, scene);
 	}
 	if (!(check_other(scene, fd)))
 	{
 		close(fd);
-		erros_and_exit(6, scene);
+		errors_and_exit(6, scene);
 	}
 	return (1);
 }

@@ -6,9 +6,9 @@ void		alloc_triangle(t_count *c, t_rt *scene)
 
 	i = 0;
 	if (!(scene->tr = (t_tr **)malloc(sizeof(t_tr *) * (c->tr + 1))))
-		erros_and_exit(9, scene);
+		errors_and_exit(9, scene);
 	scene->tr[c->tr] = NULL;
 	while (i != c->tr)
 		if (!(scene->tr[i++] = malloc(sizeof(t_tr))))
-			erros_and_exit(9, scene);
+			errors_and_exit(9, scene);
 }

@@ -6,7 +6,7 @@ t_vec				*alloc_vector(double x, double y, double z)
 	t_rt 			l;
 
 	if (!(ret = malloc(sizeof(t_vec))))
-		erros_and_exit(-1, &l);
+		errors_and_exit(-1, &l);
 	ret->x = x;
 	ret->y = y;
 	ret->z = z;
@@ -51,7 +51,7 @@ double				scalar_product(t_vec *f, t_vec *s, int flag)
 {
 	double			ret;
 
-	ret = ((f->x * s->x) + (f->y + s->y) + (f->z + s->z));
+	ret = ((f->x * s->x) + (f->y * s->y) + (f->z * s->z));
 	if (flag == 1)
 		free(f);
 	else if (flag == 2)

@@ -172,9 +172,6 @@ typedef struct	s_rt
 	t_tr		**tr;
 }				t_rt;
 
-# define RES_X scene->resolution->x
-# define RES_Y scene->resolution->y
-
 #include "mlx.h"
 #include "solve_mlx.h"
 #include "vectors.h"
@@ -214,7 +211,7 @@ double			ft_atof_ptr(char **s);
 int				ft_atoi_ptr(char **nptr);
 
 void			ft_index(int *index);
-void			erros_and_exit(int flag, t_rt *scene);
+void			errors_and_exit(int flag, t_rt *scene);
 
 void			alloc_light(t_count *c, t_rt *scene);
 void			alloc_sphere(t_count *c, t_rt *scene);

@@ -57,10 +57,10 @@ int			count_validate(t_count *counter, t_rt *scene)
 	if (counter->cam > 0)
 	{
 		if (!(alloc_structs_res(counter, scene)))
-			erros_and_exit(8, scene);
+			errors_and_exit(8, scene);
 	}
 	else
-		erros_and_exit(5, scene);
+		errors_and_exit(5, scene);
 	alloc_structs_branching(counter, scene);
 	return (1);
 }
