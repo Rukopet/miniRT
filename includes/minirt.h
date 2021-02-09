@@ -151,11 +151,24 @@ typedef struct	s_vp
 	double 		y_iter;
 }				t_vp;
 
+typedef struct	s_data_dots
+{
+	t_vec 		*first_dot;
+}				t_data_dots;
+
 typedef struct	s_data
 {
 	void		*mlx;
 	void 		*win;
+	double 		angle_x;
+	double 		angle_y;
+	double 		angle_z;
+	double		x_res_ratio;
+	double 		fov_for_y;
+	t_vec 		*v_cdir;
 	t_vp		*vp;
+	t_vec 		*vec_matrix;
+	t_data_dots *dots;
 }				t_data;
 
 typedef struct	s_rt
@@ -191,7 +204,7 @@ int				work_with_counter_br(char **join, t_count *counter, t_rt *scene);
 int				count_validate(t_count *counter, t_rt *scene);
 
 int				free_scene(t_rt *s, int flag);
-void			init_scene_struct(t_rt *s);
+void			init_scene_struct(t_rt **str);
 
 int				parse_after_count(char **join, t_rt *scene);
 char			*next_argument_check(char **join);

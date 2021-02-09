@@ -23,10 +23,10 @@ int			branching(int argc, char **argv, t_rt *scene)
 
 int				main(int argc, char *argv[])
 {
-	static t_rt	scene;
+	t_rt		*scene;
 
 	init_scene_struct(&scene);
-	if (!(branching(argc ,argv, &scene)))
+	if (!(branching(argc ,argv, scene)))
 		return (-1);
     return (0);
 }

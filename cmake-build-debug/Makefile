@@ -1317,6 +1317,60 @@ libft/ft_toupper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
+mlx_branching/angles_to_center.o: mlx_branching/angles_to_center.c.o
+
+.PHONY : mlx_branching/angles_to_center.o
+
+# target to build an object file
+mlx_branching/angles_to_center.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o
+.PHONY : mlx_branching/angles_to_center.c.o
+
+mlx_branching/angles_to_center.i: mlx_branching/angles_to_center.c.i
+
+.PHONY : mlx_branching/angles_to_center.i
+
+# target to preprocess a source file
+mlx_branching/angles_to_center.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.i
+.PHONY : mlx_branching/angles_to_center.c.i
+
+mlx_branching/angles_to_center.s: mlx_branching/angles_to_center.c.s
+
+.PHONY : mlx_branching/angles_to_center.s
+
+# target to generate assembly for a file
+mlx_branching/angles_to_center.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.s
+.PHONY : mlx_branching/angles_to_center.c.s
+
+mlx_branching/angles_to_coordinates.o: mlx_branching/angles_to_coordinates.c.o
+
+.PHONY : mlx_branching/angles_to_coordinates.o
+
+# target to build an object file
+mlx_branching/angles_to_coordinates.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o
+.PHONY : mlx_branching/angles_to_coordinates.c.o
+
+mlx_branching/angles_to_coordinates.i: mlx_branching/angles_to_coordinates.c.i
+
+.PHONY : mlx_branching/angles_to_coordinates.i
+
+# target to preprocess a source file
+mlx_branching/angles_to_coordinates.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.i
+.PHONY : mlx_branching/angles_to_coordinates.c.i
+
+mlx_branching/angles_to_coordinates.s: mlx_branching/angles_to_coordinates.c.s
+
+.PHONY : mlx_branching/angles_to_coordinates.s
+
+# target to generate assembly for a file
+mlx_branching/angles_to_coordinates.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.s
+.PHONY : mlx_branching/angles_to_coordinates.c.s
+
 mlx_branching/ft_matrix.o: mlx_branching/ft_matrix.c.o
 
 .PHONY : mlx_branching/ft_matrix.o
@@ -1510,6 +1564,12 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
+	@echo "... mlx_branching/angles_to_center.o"
+	@echo "... mlx_branching/angles_to_center.i"
+	@echo "... mlx_branching/angles_to_center.s"
+	@echo "... mlx_branching/angles_to_coordinates.o"
+	@echo "... mlx_branching/angles_to_coordinates.i"
+	@echo "... mlx_branching/angles_to_coordinates.s"
 	@echo "... mlx_branching/ft_matrix.o"
 	@echo "... mlx_branching/ft_matrix.i"
 	@echo "... mlx_branching/ft_matrix.s"

@@ -60,6 +60,8 @@ double				scalar_product(t_vec *f, t_vec *s, int flag)
 	{
 		free(f);
 		free(s);
+		f = NULL;
+		s = NULL;
 	}
 	return (ret);
 }

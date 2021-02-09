@@ -19,25 +19,35 @@ double ft_atof_ptr(char **s)
                 a = a*10.0 + (c - '0');
 				(*s)++;
         }
-        if (c == '.') {
-                while ((c = *(*s)++) != '\0' && ft_isdigit(c)) {
+        if (c == '.')
+        {
+			(*s)++;
+                while ((c = **s) != '\0' && ft_isdigit(c)) {
                         a = a*10.0 + (c - '0');
                         e = e-1;
+					(*s)++;
                 }
         }
         if (c == 'e' || c == 'E') {
                 int sign = 1;
                 int i = 0;
-                c = *(*s)++;
+			(*s)++;
+                c = **s;
                 if (c == '+')
-                        c = *(*s)++;
-                else if (c == '-') {
-                        c = *(*s)++;
+                {
+					c = **s;
+					(*s)++;
+				}
+                else if (c == '-')
+                {
+                        c = **s;
+					(*s)++;
                         sign = -1;
                 }
                 while (ft_isdigit(c)) {
                         i = i*10 + (c - '0');
-                        c = *(*s)++;
+                        c = **s;
+					(*s)++;
                 }
                 e += i*sign;
         }

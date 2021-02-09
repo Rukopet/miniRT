@@ -38,8 +38,8 @@ int			parse_cam(char **line, t_rt *s, int *i)
 
 	tmp = line[1];
 	s->cam[i[0]]->x = ft_atof_ptr(&tmp);
-	s->cam[i[0]]->z = ft_atof_ptr(&tmp);
 	s->cam[i[0]]->y = ft_atof_ptr(&tmp);
+	s->cam[i[0]]->z = ft_atof_ptr(&tmp);
 
 	tmp = line[2];
 	s->cam[i[0]]->vec_x = ft_atof_ptr(&tmp);

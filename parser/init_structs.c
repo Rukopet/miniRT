@@ -14,8 +14,12 @@ int			init_count_struct(t_count *counter)
 	return (1);
 }
 
-void		init_scene_struct(t_rt *s)
+void		init_scene_struct(t_rt **str)
 {
+	t_rt 	*s;
+
+	if (!(s = malloc(sizeof(t_rt))))
+		errors_and_exit(-1, s);
 	s->d = NULL;
 	s->resolution = NULL;
 	s->a_light = NULL;
@@ -26,4 +30,5 @@ void		init_scene_struct(t_rt *s)
 	s->sq = NULL;
 	s->cy = NULL;
 	s->tr = NULL;
+	*str = s;
 }

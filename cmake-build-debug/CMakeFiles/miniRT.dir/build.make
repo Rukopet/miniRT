@@ -103,19 +103,49 @@ CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/utils_for_rtx.c -o CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s
 
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o: ../mlx_branching/angles_to_center.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o   -c /Users/egums/miniRT/mlx_branching/angles_to_center.c
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/angles_to_center.c > CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/angles_to_center.c -o CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.s
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o: ../mlx_branching/angles_to_coordinates.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o   -c /Users/egums/miniRT/mlx_branching/angles_to_coordinates.c
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/angles_to_coordinates.c > CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/angles_to_coordinates.c -o CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.s
+
 # Object files for target miniRT
 miniRT_OBJECTS = \
 "CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o" \
-"CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o"
+"CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o"
 
 # External object files for target miniRT
 miniRT_EXTERNAL_OBJECTS =
 
 miniRT: CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o
 miniRT: CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o
 miniRT: CMakeFiles/miniRT.dir/build.make
 miniRT: CMakeFiles/miniRT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable miniRT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/miniRT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

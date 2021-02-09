@@ -267,6 +267,12 @@
 		<Unit filename="/Users/egums/miniRT/libft/ft_toupper.c">
 			<Option target="libft.a"/>
 		</Unit>
+		<Unit filename="/Users/egums/miniRT/mlx_branching/angles_to_center.c">
+			<Option target="miniRT"/>
+		</Unit>
+		<Unit filename="/Users/egums/miniRT/mlx_branching/angles_to_coordinates.c">
+			<Option target="miniRT"/>
+		</Unit>
 		<Unit filename="/Users/egums/miniRT/mlx_branching/ft_matrix.c">
 			<Option target="miniRT"/>
 		</Unit>

@@ -7,24 +7,22 @@ typedef struct	s_limits
 	int 		y;
 }				t_limits;
 
-typedef struct	s_dots
-{
-	t_vec 		d_c;
-}				t_dots;
-
-typedef struct	s_matrix
-{
-	t_vec 		*vec;
-}				t_matrix;
-
 void			rtx(t_rt *scene);
 void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
 
-void			matrix_rellocation(t_matrix *location, t_rt *scene, int c);
+void			matrix_rellocation(t_rt *scene, int c);
+t_vec *firs_dot_angles_to_coordinate(t_rt *scene, t_cam *cam);
+
 
 int 			check_max_cams(t_rt *scene);
+double 			degress_to_radians(double degrees);
 double 			radians_to_degrees(double radians);
+
+void 			get_angles_to_data(t_rt *scene, t_cam *cam);
+
+void 			init_dots(t_rt *scene);
+
 
 
 
