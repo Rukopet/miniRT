@@ -142,13 +142,55 @@ CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/matrix_scene/cp_matrix.c -o CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.s
 
+CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o: ../matrix_scene/matrix_product.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o   -c /Users/egums/miniRT/matrix_scene/matrix_product.c
+
+CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/matrix_scene/matrix_product.c > CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.i
+
+CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/matrix_scene/matrix_product.c -o CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.s
+
+CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o: ../matrix_scene/matrix_use.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o   -c /Users/egums/miniRT/matrix_scene/matrix_use.c
+
+CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/matrix_scene/matrix_use.c > CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.i
+
+CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/matrix_scene/matrix_use.c -o CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.s
+
+CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o: ../mlx_branching/rotating_oss.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o   -c /Users/egums/miniRT/mlx_branching/rotating_oss.c
+
+CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/rotating_oss.c > CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/rotating_oss.c -o CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s
+
 # Object files for target miniRT
 miniRT_OBJECTS = \
 "CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o" \
 "CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o" \
 "CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o" \
 "CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o" \
-"CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o"
+"CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o" \
+"CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o" \
+"CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o"
 
 # External object files for target miniRT
 miniRT_EXTERNAL_OBJECTS =
@@ -158,9 +200,12 @@ miniRT: CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o
 miniRT: CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o
 miniRT: CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o
 miniRT: CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o
+miniRT: CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o
+miniRT: CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o
 miniRT: CMakeFiles/miniRT.dir/build.make
 miniRT: CMakeFiles/miniRT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable miniRT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/miniRT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

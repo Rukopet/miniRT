@@ -38,3 +38,14 @@ void 			init_dots(t_rt *scene)
 	if (scene->d)
 		scene->d->dots = dot;
 }
+
+t_cos_sin *alloc_init_cos_sin(t_rt *scene, double degrees)
+{
+	t_cos_sin 	*tmp;
+
+	if (!(tmp = malloc(sizeof(t_cos_sin))))
+		errors_and_exit(-1, scene);
+	tmp->cos_c = cos(degress_to_radians(degrees));
+	tmp->sin_c = sin(degress_to_radians(degrees));
+	return (tmp);
+}

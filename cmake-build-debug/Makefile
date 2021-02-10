@@ -1344,6 +1344,60 @@ matrix_scene/cp_matrix.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.s
 .PHONY : matrix_scene/cp_matrix.c.s
 
+matrix_scene/matrix_product.o: matrix_scene/matrix_product.c.o
+
+.PHONY : matrix_scene/matrix_product.o
+
+# target to build an object file
+matrix_scene/matrix_product.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o
+.PHONY : matrix_scene/matrix_product.c.o
+
+matrix_scene/matrix_product.i: matrix_scene/matrix_product.c.i
+
+.PHONY : matrix_scene/matrix_product.i
+
+# target to preprocess a source file
+matrix_scene/matrix_product.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.i
+.PHONY : matrix_scene/matrix_product.c.i
+
+matrix_scene/matrix_product.s: matrix_scene/matrix_product.c.s
+
+.PHONY : matrix_scene/matrix_product.s
+
+# target to generate assembly for a file
+matrix_scene/matrix_product.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.s
+.PHONY : matrix_scene/matrix_product.c.s
+
+matrix_scene/matrix_use.o: matrix_scene/matrix_use.c.o
+
+.PHONY : matrix_scene/matrix_use.o
+
+# target to build an object file
+matrix_scene/matrix_use.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o
+.PHONY : matrix_scene/matrix_use.c.o
+
+matrix_scene/matrix_use.i: matrix_scene/matrix_use.c.i
+
+.PHONY : matrix_scene/matrix_use.i
+
+# target to preprocess a source file
+matrix_scene/matrix_use.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.i
+.PHONY : matrix_scene/matrix_use.c.i
+
+matrix_scene/matrix_use.s: matrix_scene/matrix_use.c.s
+
+.PHONY : matrix_scene/matrix_use.s
+
+# target to generate assembly for a file
+matrix_scene/matrix_use.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.s
+.PHONY : matrix_scene/matrix_use.c.s
+
 mlx_branching/angles_to_center.o: mlx_branching/angles_to_center.c.o
 
 .PHONY : mlx_branching/angles_to_center.o
@@ -1424,6 +1478,33 @@ mlx_branching/ft_matrix.s: mlx_branching/ft_matrix.c.s
 mlx_branching/ft_matrix.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s
 .PHONY : mlx_branching/ft_matrix.c.s
+
+mlx_branching/rotating_oss.o: mlx_branching/rotating_oss.c.o
+
+.PHONY : mlx_branching/rotating_oss.o
+
+# target to build an object file
+mlx_branching/rotating_oss.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o
+.PHONY : mlx_branching/rotating_oss.c.o
+
+mlx_branching/rotating_oss.i: mlx_branching/rotating_oss.c.i
+
+.PHONY : mlx_branching/rotating_oss.i
+
+# target to preprocess a source file
+mlx_branching/rotating_oss.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.i
+.PHONY : mlx_branching/rotating_oss.c.i
+
+mlx_branching/rotating_oss.s: mlx_branching/rotating_oss.c.s
+
+.PHONY : mlx_branching/rotating_oss.s
+
+# target to generate assembly for a file
+mlx_branching/rotating_oss.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s
+.PHONY : mlx_branching/rotating_oss.c.s
 
 mlx_branching/utils_for_rtx.o: mlx_branching/utils_for_rtx.c.o
 
@@ -1594,6 +1675,12 @@ help:
 	@echo "... matrix_scene/cp_matrix.o"
 	@echo "... matrix_scene/cp_matrix.i"
 	@echo "... matrix_scene/cp_matrix.s"
+	@echo "... matrix_scene/matrix_product.o"
+	@echo "... matrix_scene/matrix_product.i"
+	@echo "... matrix_scene/matrix_product.s"
+	@echo "... matrix_scene/matrix_use.o"
+	@echo "... matrix_scene/matrix_use.i"
+	@echo "... matrix_scene/matrix_use.s"
 	@echo "... mlx_branching/angles_to_center.o"
 	@echo "... mlx_branching/angles_to_center.i"
 	@echo "... mlx_branching/angles_to_center.s"
@@ -1603,6 +1690,9 @@ help:
 	@echo "... mlx_branching/ft_matrix.o"
 	@echo "... mlx_branching/ft_matrix.i"
 	@echo "... mlx_branching/ft_matrix.s"
+	@echo "... mlx_branching/rotating_oss.o"
+	@echo "... mlx_branching/rotating_oss.i"
+	@echo "... mlx_branching/rotating_oss.s"
 	@echo "... mlx_branching/utils_for_rtx.o"
 	@echo "... mlx_branching/utils_for_rtx.i"
 	@echo "... mlx_branching/utils_for_rtx.s"

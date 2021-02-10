@@ -14,15 +14,24 @@
 //	ret->y_iter = ret->y / RES_Y;
 //	return (ret);
 //}
+t_matrix 			*matrix_alloc()
+{
+	t_matrix 		*ret;
+	t_rt 			kek;
 
-void rtx_with_angles(t_rt *scene, t_cam *cam)
+	if (!(ret = malloc(sizeof(t_matrix))))
+		errors_and_exit(-1, &kek);
+	return (ret);
+}
+
+void				rtx_with_angles(t_rt *scene, t_cam *cam)
 {
 	t_vec			*first_dot;
-	t_figures		*ns;
+//	t_figures		*ns;
 
 	first_dot = firs_dot_angles_to_coordinate(scene, cam);
 	init_dots(scene);
-	ns = cp_scene(scene);
+//	ns = cp_scene(scene);
 }
 
 void 				rtx(t_rt *scene)

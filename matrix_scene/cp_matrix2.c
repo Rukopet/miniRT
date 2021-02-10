@@ -58,10 +58,10 @@ void 				alloc_sphere_fig(t_rt *scene, t_figures *fig)
 {
 	int				i;
 
+	i = 0;
 	if (fig->sp != NULL)
 		while (fig->sp[i] != NULL)
 		{
-			i = 0;
 			fig->sp[i]->x = scene->sp[i]->x;
 			fig->sp[i]->y = scene->sp[i]->y;
 			fig->sp[i]->z = scene->sp[i]->z;
@@ -78,10 +78,10 @@ void 				alloc_light_fig(t_rt *scene, t_figures *fig)
 {
 	int 			i;
 
+	i = 0;
 	if (fig->light != NULL)
 		while (fig->light[i] != NULL)
 		{
-			i = 0;
 			fig->light[i]->x = scene->light[i]->x;
 			fig->light[i]->y = scene->light[i]->y;
 			fig->light[i]->z = scene->light[i]->z;
