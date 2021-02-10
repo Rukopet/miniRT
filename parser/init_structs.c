@@ -20,6 +20,7 @@ void		init_scene_struct(t_rt **str)
 
 	if (!(s = malloc(sizeof(t_rt))))
 		errors_and_exit(-1, s);
+	s->counter = NULL;
 	s->d = NULL;
 	s->resolution = NULL;
 	s->a_light = NULL;

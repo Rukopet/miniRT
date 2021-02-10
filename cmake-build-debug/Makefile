@@ -1317,6 +1317,33 @@ libft/ft_toupper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
+matrix_scene/cp_matrix.o: matrix_scene/cp_matrix.c.o
+
+.PHONY : matrix_scene/cp_matrix.o
+
+# target to build an object file
+matrix_scene/cp_matrix.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o
+.PHONY : matrix_scene/cp_matrix.c.o
+
+matrix_scene/cp_matrix.i: matrix_scene/cp_matrix.c.i
+
+.PHONY : matrix_scene/cp_matrix.i
+
+# target to preprocess a source file
+matrix_scene/cp_matrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.i
+.PHONY : matrix_scene/cp_matrix.c.i
+
+matrix_scene/cp_matrix.s: matrix_scene/cp_matrix.c.s
+
+.PHONY : matrix_scene/cp_matrix.s
+
+# target to generate assembly for a file
+matrix_scene/cp_matrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.s
+.PHONY : matrix_scene/cp_matrix.c.s
+
 mlx_branching/angles_to_center.o: mlx_branching/angles_to_center.c.o
 
 .PHONY : mlx_branching/angles_to_center.o
@@ -1564,6 +1591,9 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
+	@echo "... matrix_scene/cp_matrix.o"
+	@echo "... matrix_scene/cp_matrix.i"
+	@echo "... matrix_scene/cp_matrix.s"
 	@echo "... mlx_branching/angles_to_center.o"
 	@echo "... mlx_branching/angles_to_center.i"
 	@echo "... mlx_branching/angles_to_center.s"

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/egums/miniRT/matrix_scene/cp_matrix.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o"
   "/Users/egums/miniRT/mlx_branching/angles_to_center.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o"
   "/Users/egums/miniRT/mlx_branching/angles_to_coordinates.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o"
   "/Users/egums/miniRT/mlx_branching/ft_matrix.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"

@@ -28,9 +28,9 @@ t_vec			*firs_dot_angles_to_coordinate(t_rt *scene, t_cam *cam)
 {
 	t_vec		*first_dot;
 
-	first_dot = alloc_vector(angle_to_x(scene->d->angle_x + cam->fov / 2),
-						  angle_to_y(scene->d->angle_x + cam->fov / 2),
-						  angle_to_z(scene->d->angle_z - scene->d->fov_for_y
+	first_dot = alloc_vector(angle_to_x(scene->d->angle_x - cam->fov / 2),
+						  angle_to_y(scene->d->angle_x - cam->fov / 2),
+						  angle_to_z(scene->d->angle_z + scene->d->fov_for_y
 						  / 2));
 	t_vec 		*ok = alloc_vector(first_dot->x, first_dot->y, first_dot->z);
 	norm_vec(ok);

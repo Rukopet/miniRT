@@ -114,15 +114,3 @@ int			join_str(char **gnl, char **join)
 	free_and_null(&tmp, 0);
 	return (1);
 }
-// char		*join_free(char **save, char *join, char ***line)
-// {
-// 	char	*tmp;
-	
-// 	tmp = join;
-// 	if (NULL == (join = ft_strjoin(*save, tmp)))
-// 		return (NULL);
-// 	free_and_null(&tmp, 0);
-// 	free_and_null(save, 0);
-// 	ft_free(*line);
-// 	return (join);
-// }

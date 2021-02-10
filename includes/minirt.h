@@ -173,6 +173,7 @@ typedef struct	s_data
 
 typedef struct	s_rt
 {
+	t_count 	*counter;
 	t_data		*d;
 	t_res		*resolution;
 	t_al		*a_light;
@@ -184,6 +185,17 @@ typedef struct	s_rt
 	t_cy		**cy;
 	t_tr		**tr;
 }				t_rt;
+
+typedef struct	s_figures
+{
+	t_cam		**cam;
+	t_light		**light;
+	t_sp		**sp;
+	t_pl		**pl;
+	t_sq		**sq;
+	t_cy		**cy;
+	t_tr		**tr;
+}				t_figures;
 
 #include "mlx.h"
 #include "solve_mlx.h"

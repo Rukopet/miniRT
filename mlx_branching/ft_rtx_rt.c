@@ -18,9 +18,11 @@
 void rtx_with_angles(t_rt *scene, t_cam *cam)
 {
 	t_vec			*first_dot;
+	t_figures		*ns;
 
 	first_dot = firs_dot_angles_to_coordinate(scene, cam);
 	init_dots(scene);
+	ns = cp_scene(scene);
 }
 
 void 				rtx(t_rt *scene)
@@ -32,7 +34,7 @@ void 				rtx(t_rt *scene)
 	cam = 0;
 	matrix_rellocation(scene, cam);
 	get_angles_to_data(scene, scene->cam[cam]);
-	rtx_with_angles(scene,  scene->cam[cam]);
+	rtx_with_angles(scene, scene->cam[cam]);
 
 //	rtx_cam_zy(scene, &location, , 3);
 //	vp = alloc_viewport(scene);

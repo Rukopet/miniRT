@@ -48,7 +48,7 @@ int			check_other(t_rt *scene, int fd)
 		free(counter);
 		return (0);
 	}
-	free(counter);
+	scene->counter = counter;
 	return (1);
 }
 
