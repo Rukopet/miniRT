@@ -28,17 +28,6 @@ double 			degress_to_radians(double degrees)
 	return (ret);
 }
 
-void 			init_dots(t_rt *scene)
-{
-	t_data_dots *dot;
-
-	if (!(dot = malloc(sizeof(t_data_dots))))
-		errors_and_exit(-1, scene);
-	dot->first_dot = NULL;
-	if (scene->d)
-		scene->d->dots = dot;
-}
-
 t_cos_sin *alloc_init_cos_sin(t_rt *scene, double degrees)
 {
 	t_cos_sin 	*tmp;

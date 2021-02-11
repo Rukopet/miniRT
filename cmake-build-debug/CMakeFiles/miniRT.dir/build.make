@@ -181,6 +181,45 @@ CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/rotating_oss.c -o CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.s
 
+CMakeFiles/miniRT.dir/limits/do_limits.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/limits/do_limits.c.o: ../limits/do_limits.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/miniRT.dir/limits/do_limits.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/limits/do_limits.c.o   -c /Users/egums/miniRT/limits/do_limits.c
+
+CMakeFiles/miniRT.dir/limits/do_limits.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/limits/do_limits.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/limits/do_limits.c > CMakeFiles/miniRT.dir/limits/do_limits.c.i
+
+CMakeFiles/miniRT.dir/limits/do_limits.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/limits/do_limits.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/limits/do_limits.c -o CMakeFiles/miniRT.dir/limits/do_limits.c.s
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o: ../mlx_branching/angles_calculate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o   -c /Users/egums/miniRT/mlx_branching/angles_calculate.c
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/angles_calculate.c > CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/angles_calculate.c -o CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.s
+
+CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o: ../mlx_branching/painting_scene.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o   -c /Users/egums/miniRT/mlx_branching/painting_scene.c
+
+CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/painting_scene.c > CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/painting_scene.c -o CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.s
+
 # Object files for target miniRT
 miniRT_OBJECTS = \
 "CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o" \
@@ -190,7 +229,10 @@ miniRT_OBJECTS = \
 "CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o" \
 "CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o" \
 "CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o" \
-"CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o"
+"CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o" \
+"CMakeFiles/miniRT.dir/limits/do_limits.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o"
 
 # External object files for target miniRT
 miniRT_EXTERNAL_OBJECTS =
@@ -203,9 +245,12 @@ miniRT: CMakeFiles/miniRT.dir/matrix_scene/cp_matrix.c.o
 miniRT: CMakeFiles/miniRT.dir/matrix_scene/matrix_product.c.o
 miniRT: CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.o
 miniRT: CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o
+miniRT: CMakeFiles/miniRT.dir/limits/do_limits.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o
 miniRT: CMakeFiles/miniRT.dir/build.make
 miniRT: CMakeFiles/miniRT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable miniRT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/miniRT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

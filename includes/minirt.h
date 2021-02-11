@@ -151,11 +151,6 @@ typedef struct	s_vp
 	double 		y_iter;
 }				t_vp;
 
-typedef struct	s_data_dots
-{
-	t_vec 		*first_dot;
-}				t_data_dots;
-
 typedef struct	s_data
 {
 	void		*mlx;
@@ -168,7 +163,6 @@ typedef struct	s_data
 	t_vec 		*v_cdir;
 	t_vp		*vp;
 	t_vec 		*vec_matrix;
-	t_data_dots *dots;
 }				t_data;
 
 typedef struct	s_rt

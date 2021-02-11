@@ -14,6 +14,27 @@
 //	ret->y_iter = ret->y / RES_Y;
 //	return (ret);
 //}
+
+void 				do_rtx_calculations(void *limits)
+{
+	t_limits 		*tmp;
+	int				i;
+	int 			j;
+
+	tmp = (t_limits*)limits;
+	i = tmp->prev_y;
+	while (++i != tmp->y)
+	{
+		j = tmp->prev_x;
+		while (++j != tmp->x)
+		{
+			painting_scene(tmp->scene, j, i);
+		}
+	}
+	free(limits);
+	limits = NULL;
+}
+
 t_matrix 			*matrix_alloc()
 {
 	t_matrix 		*ret;
@@ -26,11 +47,24 @@ t_matrix 			*matrix_alloc()
 
 void				rtx_with_angles(t_rt *scene, t_cam *cam)
 {
-	t_vec			*first_dot;
-//	t_figures		*ns;
+//	t_vec			*first_dot;
+	t_limits 		**limits;
+	pthread_t		thread[4];
+	int 			i;
 
-	first_dot = firs_dot_angles_to_coordinate(scene, cam);
-	init_dots(scene);
+	i = -1;
+//	first_dot = firs_dot_angles_to_coordinate(scene, cam);
+	limits = alloc_limits(scene);
+	while (++i != 4)
+		pthread_create(&thread[i], NULL, (void*)do_rtx_calculations, (void*)
+		limits[i]);
+	i = -1;
+	while (++i != 4)
+		pthread_join(thread[i], NULL);
+	free(limits);
+	limits = NULL;
+//	mlx_loop(scene->d->mlx);
+//	init_dots(scene);
 //	ns = cp_scene(scene);
 }
 

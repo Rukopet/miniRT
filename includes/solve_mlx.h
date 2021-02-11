@@ -3,8 +3,11 @@
 
 typedef struct	s_limits
 {
+	int 		prev_x;
+	int 		prev_y;
 	int			x;
 	int 		y;
+	t_rt 		*scene;
 }				t_limits;
 
 typedef struct	s_matrix
@@ -14,6 +17,12 @@ typedef struct	s_matrix
 	t_vec		*third;
 }				t_matrix;
 
+typedef struct	s_angles
+{
+	double 		angle_x;
+	double 		angle_y;
+	double 		angle_z;
+}				t_angles;
 typedef struct	s_cos_sin
 {
 	double 		sin_c;
@@ -25,7 +34,7 @@ void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
 
 void			matrix_rellocation(t_rt *scene, int c);
-t_vec *firs_dot_angles_to_coordinate(t_rt *scene, t_cam *cam);
+t_vec *firs_dot_angles_to_coordinate(t_angles *angles);
 
 
 int 			check_max_cams(t_rt *scene);
@@ -47,6 +56,15 @@ void 			matrix_use_vec(t_matrix *mat, t_vec **vec);
 t_figures 		*cp_scene(t_rt* scene);
 void			alloc_figures(t_rt *scene, t_figures *fig);
 void 			alloc_cylinder_fig(t_rt *scene, t_figures *fig);
+
+t_limits 			**alloc_limits(t_rt *scene);
+void 			calculate_angles(t_angles *angles, t_rt *scene, int x, int y);
+void			painting_scene(t_rt *scene, int x, int y);
+
+
+
+
+
 
 
 

@@ -1317,6 +1317,33 @@ libft/ft_toupper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libft.a.dir/build.make CMakeFiles/libft.a.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
+limits/do_limits.o: limits/do_limits.c.o
+
+.PHONY : limits/do_limits.o
+
+# target to build an object file
+limits/do_limits.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/limits/do_limits.c.o
+.PHONY : limits/do_limits.c.o
+
+limits/do_limits.i: limits/do_limits.c.i
+
+.PHONY : limits/do_limits.i
+
+# target to preprocess a source file
+limits/do_limits.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/limits/do_limits.c.i
+.PHONY : limits/do_limits.c.i
+
+limits/do_limits.s: limits/do_limits.c.s
+
+.PHONY : limits/do_limits.s
+
+# target to generate assembly for a file
+limits/do_limits.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/limits/do_limits.c.s
+.PHONY : limits/do_limits.c.s
+
 matrix_scene/cp_matrix.o: matrix_scene/cp_matrix.c.o
 
 .PHONY : matrix_scene/cp_matrix.o
@@ -1398,6 +1425,33 @@ matrix_scene/matrix_use.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/matrix_scene/matrix_use.c.s
 .PHONY : matrix_scene/matrix_use.c.s
 
+mlx_branching/angles_calculate.o: mlx_branching/angles_calculate.c.o
+
+.PHONY : mlx_branching/angles_calculate.o
+
+# target to build an object file
+mlx_branching/angles_calculate.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o
+.PHONY : mlx_branching/angles_calculate.c.o
+
+mlx_branching/angles_calculate.i: mlx_branching/angles_calculate.c.i
+
+.PHONY : mlx_branching/angles_calculate.i
+
+# target to preprocess a source file
+mlx_branching/angles_calculate.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.i
+.PHONY : mlx_branching/angles_calculate.c.i
+
+mlx_branching/angles_calculate.s: mlx_branching/angles_calculate.c.s
+
+.PHONY : mlx_branching/angles_calculate.s
+
+# target to generate assembly for a file
+mlx_branching/angles_calculate.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.s
+.PHONY : mlx_branching/angles_calculate.c.s
+
 mlx_branching/angles_to_center.o: mlx_branching/angles_to_center.c.o
 
 .PHONY : mlx_branching/angles_to_center.o
@@ -1478,6 +1532,33 @@ mlx_branching/ft_matrix.s: mlx_branching/ft_matrix.c.s
 mlx_branching/ft_matrix.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s
 .PHONY : mlx_branching/ft_matrix.c.s
+
+mlx_branching/painting_scene.o: mlx_branching/painting_scene.c.o
+
+.PHONY : mlx_branching/painting_scene.o
+
+# target to build an object file
+mlx_branching/painting_scene.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o
+.PHONY : mlx_branching/painting_scene.c.o
+
+mlx_branching/painting_scene.i: mlx_branching/painting_scene.c.i
+
+.PHONY : mlx_branching/painting_scene.i
+
+# target to preprocess a source file
+mlx_branching/painting_scene.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.i
+.PHONY : mlx_branching/painting_scene.c.i
+
+mlx_branching/painting_scene.s: mlx_branching/painting_scene.c.s
+
+.PHONY : mlx_branching/painting_scene.s
+
+# target to generate assembly for a file
+mlx_branching/painting_scene.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.s
+.PHONY : mlx_branching/painting_scene.c.s
 
 mlx_branching/rotating_oss.o: mlx_branching/rotating_oss.c.o
 
@@ -1672,6 +1753,9 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
+	@echo "... limits/do_limits.o"
+	@echo "... limits/do_limits.i"
+	@echo "... limits/do_limits.s"
 	@echo "... matrix_scene/cp_matrix.o"
 	@echo "... matrix_scene/cp_matrix.i"
 	@echo "... matrix_scene/cp_matrix.s"
@@ -1681,6 +1765,9 @@ help:
 	@echo "... matrix_scene/matrix_use.o"
 	@echo "... matrix_scene/matrix_use.i"
 	@echo "... matrix_scene/matrix_use.s"
+	@echo "... mlx_branching/angles_calculate.o"
+	@echo "... mlx_branching/angles_calculate.i"
+	@echo "... mlx_branching/angles_calculate.s"
 	@echo "... mlx_branching/angles_to_center.o"
 	@echo "... mlx_branching/angles_to_center.i"
 	@echo "... mlx_branching/angles_to_center.s"
@@ -1690,6 +1777,9 @@ help:
 	@echo "... mlx_branching/ft_matrix.o"
 	@echo "... mlx_branching/ft_matrix.i"
 	@echo "... mlx_branching/ft_matrix.s"
+	@echo "... mlx_branching/painting_scene.o"
+	@echo "... mlx_branching/painting_scene.i"
+	@echo "... mlx_branching/painting_scene.s"
 	@echo "... mlx_branching/rotating_oss.o"
 	@echo "... mlx_branching/rotating_oss.i"
 	@echo "... mlx_branching/rotating_oss.s"

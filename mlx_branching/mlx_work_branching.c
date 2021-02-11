@@ -35,7 +35,6 @@ void				init_data_struct(t_rt *scene, void *mlx, void *mlx_win)
 	data->v_cdir = NULL;
 	data->x_res_ratio = 0;
 	data->fov_for_y = 0;
-	data->dots = NULL;
 	data->vec_matrix = NULL;
 	scene->d = data;
 }

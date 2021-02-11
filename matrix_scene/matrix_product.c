@@ -1,9 +1,9 @@
 #include "minirt.h"
 
-t_matrix *matrix_product(t_matrix *mat1, t_matrix *mat2)
-{
-	п
-}
+//t_matrix *matrix_product(t_matrix *mat1, t_matrix *mat2)
+//{
+//
+//}
 
 void alloc_matrix_vecs(t_matrix *matrix, t_rt *scene)
 {
