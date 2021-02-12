@@ -21,7 +21,6 @@ void 				do_rtx_calculations(void *limits)
 	t_limits 		*tmp;
 	int				i;
 	int 			j;
-	int 			color;
 
 	tmp = (t_limits*)limits;
 	i = tmp->prev_y;
@@ -64,17 +63,14 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	pthread_t		thread[4];
 	int 			i;
 
-
 	i = -1;
-	while
-//	i = -1;
-//	limits = alloc_limits(scene);
-//	while (++i != 4)
-//		pthread_create(&thread[i], NULL, (void*)do_rtx_calculations, (void*)
-//		limits[i]);
-//	i = -1;
-//	while (++i != 4)
-//		pthread_join(thread[i], NULL);
+	limits = alloc_limits(scene);
+	while (++i != 4)
+		pthread_create(&thread[i], NULL, (void*)do_rtx_calculations, (void*)
+		limits[i]);
+	i = -1;
+	while (++i != 4)
+		pthread_join(thread[i], NULL);
 	free(limits);
 	limits = NULL;
 	mlx_loop(scene->d->mlx);
