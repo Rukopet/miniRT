@@ -1,4 +1,5 @@
 #include "minirt.h"
+#include <stdio.h>
 
 //t_vp				*alloc_viewport(t_rt *scene)
 //{
@@ -23,6 +24,8 @@ void 				do_rtx_calculations(void *limits)
 
 	tmp = (t_limits*)limits;
 	i = tmp->prev_y;
+	printf("p_x  - %d\nx   -  %d\np_y  - %d\ny   -   %d\n", tmp->prev_x, tmp->x,
+		tmp->prev_y, tmp->y);
 	while (++i != tmp->y)
 	{
 		j = tmp->prev_x;
