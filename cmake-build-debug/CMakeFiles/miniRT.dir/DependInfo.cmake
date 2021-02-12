@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/egums/miniRT/mlx_branching/angles_to_center.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o"
   "/Users/egums/miniRT/mlx_branching/angles_to_coordinates.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o"
   "/Users/egums/miniRT/mlx_branching/ft_matrix.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"
+  "/Users/egums/miniRT/mlx_branching/intersect.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/intersect.c.o"
   "/Users/egums/miniRT/mlx_branching/painting_scene.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/painting_scene.c.o"
   "/Users/egums/miniRT/mlx_branching/rotating_oss.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/rotating_oss.c.o"
   "/Users/egums/miniRT/mlx_branching/utils_for_rtx.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.o"

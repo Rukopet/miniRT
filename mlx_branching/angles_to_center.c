@@ -59,7 +59,10 @@ void 				get_angles_to_data(t_rt *scene, t_cam *cam)
 {
 	t_vec			*tmp;
 
-	norm_vec(tmp = alloc_vector(cam->vec_x, cam->vec_y, 0));
+	if (cam->vec_x == 0 && cam->vec_y == 0 && cam->vec_z == 1)
+		norm_vec(tmp = alloc_vector(cam->vec_x, cam->vec_y, 1));
+	else
+		norm_vec(tmp = alloc_vector(cam->vec_x, cam->vec_y, 0));
 	if (scene->d && scene->resolution)
 	{
 

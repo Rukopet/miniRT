@@ -291,6 +291,9 @@
 		<Unit filename="/Users/egums/miniRT/mlx_branching/ft_matrix.c">
 			<Option target="miniRT"/>
 		</Unit>
+		<Unit filename="/Users/egums/miniRT/mlx_branching/intersect.c">
+			<Option target="miniRT"/>
+		</Unit>
 		<Unit filename="/Users/egums/miniRT/mlx_branching/painting_scene.c">
 			<Option target="miniRT"/>
 		</Unit>

@@ -1533,6 +1533,33 @@ mlx_branching/ft_matrix.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.s
 .PHONY : mlx_branching/ft_matrix.c.s
 
+mlx_branching/intersect.o: mlx_branching/intersect.c.o
+
+.PHONY : mlx_branching/intersect.o
+
+# target to build an object file
+mlx_branching/intersect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/intersect.c.o
+.PHONY : mlx_branching/intersect.c.o
+
+mlx_branching/intersect.i: mlx_branching/intersect.c.i
+
+.PHONY : mlx_branching/intersect.i
+
+# target to preprocess a source file
+mlx_branching/intersect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/intersect.c.i
+.PHONY : mlx_branching/intersect.c.i
+
+mlx_branching/intersect.s: mlx_branching/intersect.c.s
+
+.PHONY : mlx_branching/intersect.s
+
+# target to generate assembly for a file
+mlx_branching/intersect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/intersect.c.s
+.PHONY : mlx_branching/intersect.c.s
+
 mlx_branching/painting_scene.o: mlx_branching/painting_scene.c.o
 
 .PHONY : mlx_branching/painting_scene.o
@@ -1777,6 +1804,9 @@ help:
 	@echo "... mlx_branching/ft_matrix.o"
 	@echo "... mlx_branching/ft_matrix.i"
 	@echo "... mlx_branching/ft_matrix.s"
+	@echo "... mlx_branching/intersect.o"
+	@echo "... mlx_branching/intersect.i"
+	@echo "... mlx_branching/intersect.s"
 	@echo "... mlx_branching/painting_scene.o"
 	@echo "... mlx_branching/painting_scene.i"
 	@echo "... mlx_branching/painting_scene.s"

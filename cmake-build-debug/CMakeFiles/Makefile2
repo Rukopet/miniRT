@@ -96,12 +96,12 @@ clean: CMakeFiles/libft.a.dir/clean
 CMakeFiles/miniRT.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53,54,55,56 "Built target miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53,54,55,56,57 "Built target miniRT"
 .PHONY : CMakeFiles/miniRT.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniRT.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/miniRT.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/egums/miniRT/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/miniRT.dir/rule

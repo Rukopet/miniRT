@@ -58,8 +58,11 @@ void			alloc_figures(t_rt *scene, t_figures *fig);
 void 			alloc_cylinder_fig(t_rt *scene, t_figures *fig);
 
 t_limits 			**alloc_limits(t_rt *scene);
-void 			calculate_angles(t_angles *angles, t_rt *scene, int x, int y);
-void			painting_scene(t_rt *scene, int x, int y);
+void calculate_angles(t_rt *scene, int x, int y, t_angles *angles);
+void painting_scene(t_rt *scene, int x, int y);
+
+double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene);
+
 
 
 

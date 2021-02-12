@@ -40,6 +40,8 @@ t_vec *firs_dot_angles_to_coordinate(t_angles *angles)
 	first_dot = alloc_vector(angle_to_x(angles->angle_x),
 						  angle_to_y(angles->angle_y),
 						  angle_to_z(angles->angle_z));
+//	norm_vec(first_dot);
+	return (first_dot);
 //	t_vec 		*ok = alloc_vector(first_dot->x, first_dot->y, first_dot->z);
 //	norm_vec(ok);
 //	t_matrix 		*mat;
@@ -60,6 +62,5 @@ t_vec *firs_dot_angles_to_coordinate(t_angles *angles)
 //	init_matrix_z(scene, mat, cs);
 //	init_matrix_z(scene, mat1, cs1);
 ////	first_dot = rotate_osz(scene, cam, scene->d->angle_x, mat);
-	norm_vec(first_dot);
-	return (first_dot);
+
 }
