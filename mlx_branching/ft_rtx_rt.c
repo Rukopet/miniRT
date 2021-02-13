@@ -24,21 +24,13 @@ void 				do_rtx_calculations(void *limits)
 
 	tmp = (t_limits*)limits;
 	i = tmp->prev_y;
-	printf("p_x  - %d\nx   -  %d\np_y  - %d\ny   -   %d\n", tmp->prev_x, tmp->x,
-		tmp->prev_y, tmp->y);
+//	printf("p_x  - %d\nx   -  %d\np_y  - %d\ny   -   %d\n", tmp->prev_x, tmp->x,
+//		tmp->prev_y, tmp->y);
 	while (++i != tmp->y)
 	{
 		j = tmp->prev_x;
 		while (++j != tmp->x)
 		{
-//			if (tmp->prev_x > 300 && tmp->prev_y > 300)
-//				color = 0x00FFAA33;
-//			else if (tmp->prev_x < 300 && tmp->prev_y < 300)
-//				color = 0x00AAAA33;
-//			else if (tmp->prev_x < 300 && tmp->prev_y > 300)
-//				color = 0x00FFFF33;
-//			else if (tmp->prev_x > 300 && tmp->prev_y < 300)
-//				color = 0x00FFAAFF;
 			painting_scene(tmp->scene, j, i);
 		}
 	}

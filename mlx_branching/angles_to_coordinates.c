@@ -40,7 +40,7 @@ t_vec *firs_dot_angles_to_coordinate(t_angles *angles)
 	first_dot = alloc_vector(angle_to_x(angles->angle_x),
 						  angle_to_y(angles->angle_y),
 						  angle_to_z(angles->angle_z));
-//	norm_vec(first_dot);
+	norm_vec(first_dot);
 	return (first_dot);
 //	t_vec 		*ok = alloc_vector(first_dot->x, first_dot->y, first_dot->z);
 //	norm_vec(ok);

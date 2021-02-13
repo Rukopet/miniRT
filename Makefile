@@ -21,7 +21,8 @@ LIBX = -L./ -lmlx
 HEADER = includes/minirt.h
 FLAG = -g -Wall #-Wextra #-Werror
 FLAGKIT = $(FLAG) -framework OpenGL -framework AppKit
-PATHSRC = srcs parser gnl parser/alloc_structs mlx_branching matrix_scene limits
+PATHSRC = srcs parser gnl parser/alloc_structs mlx_branching matrix_scene \
+			limits work_with color
 SRCLIST = $(wildcard $(dir)/*.c)
 SRC = $(foreach dir, $(PATHSRC), $(SRCLIST))
 INC = -I./ft_printf/includes -I./libft -I./gnl -I./includes

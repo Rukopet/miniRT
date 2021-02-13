@@ -1506,6 +1506,33 @@ mlx_branching/angles_to_coordinates.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.s
 .PHONY : mlx_branching/angles_to_coordinates.c.s
 
+mlx_branching/comparison.o: mlx_branching/comparison.c.o
+
+.PHONY : mlx_branching/comparison.o
+
+# target to build an object file
+mlx_branching/comparison.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/comparison.c.o
+.PHONY : mlx_branching/comparison.c.o
+
+mlx_branching/comparison.i: mlx_branching/comparison.c.i
+
+.PHONY : mlx_branching/comparison.i
+
+# target to preprocess a source file
+mlx_branching/comparison.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/comparison.c.i
+.PHONY : mlx_branching/comparison.c.i
+
+mlx_branching/comparison.s: mlx_branching/comparison.c.s
+
+.PHONY : mlx_branching/comparison.s
+
+# target to generate assembly for a file
+mlx_branching/comparison.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/comparison.c.s
+.PHONY : mlx_branching/comparison.c.s
+
 mlx_branching/ft_matrix.o: mlx_branching/ft_matrix.c.o
 
 .PHONY : mlx_branching/ft_matrix.o
@@ -1640,6 +1667,60 @@ mlx_branching/utils_for_rtx.s: mlx_branching/utils_for_rtx.c.s
 mlx_branching/utils_for_rtx.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/utils_for_rtx.c.s
 .PHONY : mlx_branching/utils_for_rtx.c.s
+
+work_with_color/ambient_light.o: work_with_color/ambient_light.c.o
+
+.PHONY : work_with_color/ambient_light.o
+
+# target to build an object file
+work_with_color/ambient_light.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/work_with_color/ambient_light.c.o
+.PHONY : work_with_color/ambient_light.c.o
+
+work_with_color/ambient_light.i: work_with_color/ambient_light.c.i
+
+.PHONY : work_with_color/ambient_light.i
+
+# target to preprocess a source file
+work_with_color/ambient_light.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/work_with_color/ambient_light.c.i
+.PHONY : work_with_color/ambient_light.c.i
+
+work_with_color/ambient_light.s: work_with_color/ambient_light.c.s
+
+.PHONY : work_with_color/ambient_light.s
+
+# target to generate assembly for a file
+work_with_color/ambient_light.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/work_with_color/ambient_light.c.s
+.PHONY : work_with_color/ambient_light.c.s
+
+work_with_color/light_branching.o: work_with_color/light_branching.c.o
+
+.PHONY : work_with_color/light_branching.o
+
+# target to build an object file
+work_with_color/light_branching.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/work_with_color/light_branching.c.o
+.PHONY : work_with_color/light_branching.c.o
+
+work_with_color/light_branching.i: work_with_color/light_branching.c.i
+
+.PHONY : work_with_color/light_branching.i
+
+# target to preprocess a source file
+work_with_color/light_branching.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/work_with_color/light_branching.c.i
+.PHONY : work_with_color/light_branching.c.i
+
+work_with_color/light_branching.s: work_with_color/light_branching.c.s
+
+.PHONY : work_with_color/light_branching.s
+
+# target to generate assembly for a file
+work_with_color/light_branching.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/work_with_color/light_branching.c.s
+.PHONY : work_with_color/light_branching.c.s
 
 # Help Target
 help:
@@ -1801,6 +1882,9 @@ help:
 	@echo "... mlx_branching/angles_to_coordinates.o"
 	@echo "... mlx_branching/angles_to_coordinates.i"
 	@echo "... mlx_branching/angles_to_coordinates.s"
+	@echo "... mlx_branching/comparison.o"
+	@echo "... mlx_branching/comparison.i"
+	@echo "... mlx_branching/comparison.s"
 	@echo "... mlx_branching/ft_matrix.o"
 	@echo "... mlx_branching/ft_matrix.i"
 	@echo "... mlx_branching/ft_matrix.s"
@@ -1816,6 +1900,12 @@ help:
 	@echo "... mlx_branching/utils_for_rtx.o"
 	@echo "... mlx_branching/utils_for_rtx.i"
 	@echo "... mlx_branching/utils_for_rtx.s"
+	@echo "... work_with_color/ambient_light.o"
+	@echo "... work_with_color/ambient_light.i"
+	@echo "... work_with_color/ambient_light.s"
+	@echo "... work_with_color/light_branching.o"
+	@echo "... work_with_color/light_branching.i"
+	@echo "... work_with_color/light_branching.s"
 .PHONY : help
 
 

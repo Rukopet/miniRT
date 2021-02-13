@@ -56,6 +56,7 @@ typedef struct	s_light
 	int			r;
 	int			g;
 	int			b;
+	double 		distance;
 }				t_light;
 
 typedef struct	s_sp
@@ -67,6 +68,7 @@ typedef struct	s_sp
 	int			r;
 	int			g;
 	int			b;
+	double 		distance;
 }				t_sp;
 
 typedef struct	s_pl
@@ -80,6 +82,7 @@ typedef struct	s_pl
 	int			r;
 	int			g;
 	int			b;
+	double 		distance;
 }				t_pl;
 
 typedef struct	s_sq
@@ -94,6 +97,7 @@ typedef struct	s_sq
 	int			r;
 	int			g;
 	int			b;
+	double 		distance;
 }				t_sq;
 
 typedef struct	s_cy
@@ -109,6 +113,7 @@ typedef struct	s_cy
 	int			r;
 	int			g;
 	int			b;
+	double 		distance;
 }				t_cy;
 
 typedef struct	s_tr
@@ -128,6 +133,8 @@ typedef struct	s_tr
 	int			r;
 	int			g;
 	int			b;
+
+	double 		distance;
 }				t_tr;
 
 typedef	struct	s_count
@@ -196,6 +203,7 @@ typedef struct	s_figures
 #include "vectors.h"
 #include "get_next_line.h"
 #include "libft.h"
+#include "intersect_and_light.h"
 
 /*
 ** main structure;

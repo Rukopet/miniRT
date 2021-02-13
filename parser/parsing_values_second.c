@@ -28,6 +28,7 @@ int			parse_plane(char **line, t_rt *s, int *i)
 	s->pl[i[3]]->b = ft_atof_ptr(&tmp);
 	s->pl[i[3]]->b = (s->pl[i[3]]->b < 0) ? 0 : s->pl[i[3]]->b;
 	s->pl[i[3]]->b = (s->pl[i[3]]->b > 255) ? 255 : s->pl[i[3]]->b;
+	s->pl[i[3]]->distance = -1;
 	i[3] += 1;
 	if (NULL != line[4])
 		return (0);
@@ -57,6 +58,7 @@ int			parse_square(char **line, t_rt *s, int *i)
 	s->sq[i[4]]->b = ft_atof_ptr(&tmp);
 	s->sq[i[4]]->b = (s->sq[i[4]]->b < 0) ? 0 : s->sq[i[4]]->b;
 	s->sq[i[4]]->b = (s->sq[i[4]]->b > 255) ? 255 : s->sq[i[4]]->b;
+	s->sq[i[4]]->distance = -1;
 	i[4] += 1;
 	if (NULL != line[4])
 		return (0);
@@ -87,6 +89,7 @@ int			parse_cylinder(char **line, t_rt *s, int *i)
 	s->cy[i[5]]->b = ft_atof_ptr(&tmp);
 	s->cy[i[5]]->b = (s->cy[i[5]]->b < 0) ? 0 : s->cy[i[5]]->b;
 	s->cy[i[5]]->b = (s->cy[i[5]]->b > 255) ? 255 : s->cy[i[5]]->b;
+	s->cy[i[5]]->distance = -1;
 	i[5] += 1;
 	if (NULL != line[6])
 		return (0);

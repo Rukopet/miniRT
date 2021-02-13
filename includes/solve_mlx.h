@@ -29,6 +29,13 @@ typedef struct	s_cos_sin
 	double 		cos_c;
 }				t_cos_sin;
 
+typedef struct	s_dist
+{
+	int 		index;
+	int 		fig_index;
+	double 		distance;
+}				t_dist;
+
 void			rtx(t_rt *scene);
 void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
@@ -60,18 +67,6 @@ void 			alloc_cylinder_fig(t_rt *scene, t_figures *fig);
 t_limits 			**alloc_limits(t_rt *scene);
 void calculate_angles(t_rt *scene, int x, int y, t_angles *angles);
 void painting_scene(t_rt *scene, int x, int y);
-
-double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene);
-
-
-
-
-
-
-
-
-
-
 
 
 #endif
