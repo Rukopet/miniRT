@@ -24,3 +24,14 @@ double				scalar_product_cos(t_vec *vec1, t_vec *vec2, int flag)
 	}
 	return (ret);
 }
+
+t_vec 				*product_vec_and_int(t_vec *vec, double distance, int flag)
+{
+	t_vec			*new_vec;
+
+	new_vec = alloc_vector(vec->x * distance, vec->y * distance, vec->z *
+	distance);
+	if (flag == 1)
+		free(vec);
+	return (new_vec);
+}

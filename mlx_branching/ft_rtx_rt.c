@@ -62,7 +62,8 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 		limits[i]);
 	i = -1;
 	while (++i != 4)
-		pthread_join(thread[i], NULL);
+		if (0 != pthread_join(thread[i], NULL))
+			errors_and_exit(-2, scene);
 	free(limits);
 	limits = NULL;
 	mlx_loop(scene->d->mlx);

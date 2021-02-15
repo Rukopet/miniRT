@@ -272,6 +272,32 @@ CMakeFiles/miniRT.dir/mlx_branching/comparison.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/comparison.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/comparison.c -o CMakeFiles/miniRT.dir/mlx_branching/comparison.c.s
 
+CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o: ../mlx_branching/color_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o   -c /Users/egums/miniRT/mlx_branching/color_utils.c
+
+CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/color_utils.c > CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/color_utils.c -o CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.s
+
+CMakeFiles/miniRT.dir/mlx_branching/color.c.o: CMakeFiles/miniRT.dir/flags.make
+CMakeFiles/miniRT.dir/mlx_branching/color.c.o: ../mlx_branching/color.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/miniRT.dir/mlx_branching/color.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/miniRT.dir/mlx_branching/color.c.o   -c /Users/egums/miniRT/mlx_branching/color.c
+
+CMakeFiles/miniRT.dir/mlx_branching/color.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/miniRT.dir/mlx_branching/color.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/egums/miniRT/mlx_branching/color.c > CMakeFiles/miniRT.dir/mlx_branching/color.c.i
+
+CMakeFiles/miniRT.dir/mlx_branching/color.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/miniRT.dir/mlx_branching/color.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/egums/miniRT/mlx_branching/color.c -o CMakeFiles/miniRT.dir/mlx_branching/color.c.s
+
 # Object files for target miniRT
 miniRT_OBJECTS = \
 "CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o" \
@@ -288,7 +314,9 @@ miniRT_OBJECTS = \
 "CMakeFiles/miniRT.dir/mlx_branching/intersect.c.o" \
 "CMakeFiles/miniRT.dir/work_with_color/ambient_light.c.o" \
 "CMakeFiles/miniRT.dir/work_with_color/light_branching.c.o" \
-"CMakeFiles/miniRT.dir/mlx_branching/comparison.c.o"
+"CMakeFiles/miniRT.dir/mlx_branching/comparison.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o" \
+"CMakeFiles/miniRT.dir/mlx_branching/color.c.o"
 
 # External object files for target miniRT
 miniRT_EXTERNAL_OBJECTS =
@@ -308,9 +336,11 @@ miniRT: CMakeFiles/miniRT.dir/mlx_branching/intersect.c.o
 miniRT: CMakeFiles/miniRT.dir/work_with_color/ambient_light.c.o
 miniRT: CMakeFiles/miniRT.dir/work_with_color/light_branching.c.o
 miniRT: CMakeFiles/miniRT.dir/mlx_branching/comparison.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o
+miniRT: CMakeFiles/miniRT.dir/mlx_branching/color.c.o
 miniRT: CMakeFiles/miniRT.dir/build.make
 miniRT: CMakeFiles/miniRT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C executable miniRT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/egums/miniRT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking C executable miniRT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/miniRT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

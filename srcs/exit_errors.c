@@ -47,7 +47,9 @@ void		errors_and_exit(int flag, t_rt *scene)
 	else if (flag == 7)
 		write(2, "Error\nFile must be with .rt extention\n", 39);
 	else if (flag == -1)
-		write(2, "Error\nAllocation error (malloc def)", 36);
+		write(2, "Error\nAllocation error (malloc def)\n", 37);
+	else if (flag == -2)
+		write(2, "Error\nthread_join error\n", 24);
 	else
 		next_errors(flag, scene);
 	exit(flag);

@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o"
   "CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o"
   "CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o"
+  "CMakeFiles/miniRT.dir/mlx_branching/color.c.o"
+  "CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o"
   "CMakeFiles/miniRT.dir/mlx_branching/comparison.c.o"
   "CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"
   "CMakeFiles/miniRT.dir/mlx_branching/intersect.c.o"

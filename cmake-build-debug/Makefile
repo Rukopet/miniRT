@@ -1506,6 +1506,60 @@ mlx_branching/angles_to_coordinates.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.s
 .PHONY : mlx_branching/angles_to_coordinates.c.s
 
+mlx_branching/color.o: mlx_branching/color.c.o
+
+.PHONY : mlx_branching/color.o
+
+# target to build an object file
+mlx_branching/color.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/color.c.o
+.PHONY : mlx_branching/color.c.o
+
+mlx_branching/color.i: mlx_branching/color.c.i
+
+.PHONY : mlx_branching/color.i
+
+# target to preprocess a source file
+mlx_branching/color.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/color.c.i
+.PHONY : mlx_branching/color.c.i
+
+mlx_branching/color.s: mlx_branching/color.c.s
+
+.PHONY : mlx_branching/color.s
+
+# target to generate assembly for a file
+mlx_branching/color.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/color.c.s
+.PHONY : mlx_branching/color.c.s
+
+mlx_branching/color_utils.o: mlx_branching/color_utils.c.o
+
+.PHONY : mlx_branching/color_utils.o
+
+# target to build an object file
+mlx_branching/color_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o
+.PHONY : mlx_branching/color_utils.c.o
+
+mlx_branching/color_utils.i: mlx_branching/color_utils.c.i
+
+.PHONY : mlx_branching/color_utils.i
+
+# target to preprocess a source file
+mlx_branching/color_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.i
+.PHONY : mlx_branching/color_utils.c.i
+
+mlx_branching/color_utils.s: mlx_branching/color_utils.c.s
+
+.PHONY : mlx_branching/color_utils.s
+
+# target to generate assembly for a file
+mlx_branching/color_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/miniRT.dir/build.make CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.s
+.PHONY : mlx_branching/color_utils.c.s
+
 mlx_branching/comparison.o: mlx_branching/comparison.c.o
 
 .PHONY : mlx_branching/comparison.o
@@ -1882,6 +1936,12 @@ help:
 	@echo "... mlx_branching/angles_to_coordinates.o"
 	@echo "... mlx_branching/angles_to_coordinates.i"
 	@echo "... mlx_branching/angles_to_coordinates.s"
+	@echo "... mlx_branching/color.o"
+	@echo "... mlx_branching/color.i"
+	@echo "... mlx_branching/color.s"
+	@echo "... mlx_branching/color_utils.o"
+	@echo "... mlx_branching/color_utils.i"
+	@echo "... mlx_branching/color_utils.s"
 	@echo "... mlx_branching/comparison.o"
 	@echo "... mlx_branching/comparison.i"
 	@echo "... mlx_branching/comparison.s"

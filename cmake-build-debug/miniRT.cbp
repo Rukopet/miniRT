@@ -291,6 +291,12 @@
 		<Unit filename="/Users/egums/miniRT/mlx_branching/angles_to_coordinates.c">
 			<Option target="miniRT"/>
 		</Unit>
+		<Unit filename="/Users/egums/miniRT/mlx_branching/color.c">
+			<Option target="miniRT"/>
+		</Unit>
+		<Unit filename="/Users/egums/miniRT/mlx_branching/color_utils.c">
+			<Option target="miniRT"/>
+		</Unit>
 		<Unit filename="/Users/egums/miniRT/mlx_branching/comparison.c">
 			<Option target="miniRT"/>
 		</Unit>

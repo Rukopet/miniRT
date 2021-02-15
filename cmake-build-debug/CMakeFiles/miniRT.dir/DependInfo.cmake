@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/egums/miniRT/mlx_branching/angles_calculate.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_calculate.c.o"
   "/Users/egums/miniRT/mlx_branching/angles_to_center.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_to_center.c.o"
   "/Users/egums/miniRT/mlx_branching/angles_to_coordinates.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/angles_to_coordinates.c.o"
+  "/Users/egums/miniRT/mlx_branching/color.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/color.c.o"
+  "/Users/egums/miniRT/mlx_branching/color_utils.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/color_utils.c.o"
   "/Users/egums/miniRT/mlx_branching/comparison.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/comparison.c.o"
   "/Users/egums/miniRT/mlx_branching/ft_matrix.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/ft_matrix.c.o"
   "/Users/egums/miniRT/mlx_branching/intersect.c" "/Users/egums/miniRT/cmake-build-debug/CMakeFiles/miniRT.dir/mlx_branching/intersect.c.o"

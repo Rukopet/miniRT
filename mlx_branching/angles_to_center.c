@@ -40,7 +40,6 @@ double 				rtx_cam_z(t_rt *scene, t_cam *cam, t_vec *tmp)
 	t_vec			*v_cdir;
 	double 			cos_cam_z;
 	double 			degrees;
-	t_vec			*tmp_z;
 
 	v_cdir = alloc_vector(cam->vec_x, cam->vec_y, cam->vec_z);
 	cos_cam_z = scalar_product_cos(tmp, v_cdir, 3);
