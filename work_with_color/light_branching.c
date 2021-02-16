@@ -17,7 +17,7 @@ t_vec *color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
 		color->x = color->x / 255 * scene->a_light->r * scene->a_light->bright_rate;
 		color->y = color->y / 255 * scene->a_light->g * scene->a_light->bright_rate;
 		color->z = color->z / 255 * scene->a_light->b * scene->a_light->bright_rate;
-		check_overcolor(color);
+//		check_overcolor(color);
 //		vec_to_light(&color, scene, vec, args);
 		return (color);
 	}

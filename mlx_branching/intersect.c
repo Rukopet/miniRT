@@ -11,10 +11,12 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	t_vec	*sp_center;
 
 	a = 1;
-	sp_center = alloc_vector(sp->x - scene->d->vec_matrix->x, sp->y -
-	scene->d->vec_matrix->y, sp->z - scene->d->vec_matrix->z);
+	sp_center = alloc_vector((sp->x - scene->d->vec_matrix->x),
+	(sp->y - scene->d->vec_matrix->y),(sp->z - scene->d->vec_matrix->z));
 	b = 2 * scalar_product(sp_center, vec, 3);
 	c = scalar_product(sp_center, sp_center, 3) - pow(sp->diameter / 2, 2);
+	free(sp_center);
+	sp_center = NULL;
 	if (0 < (discriminant = b * b - 4 * a * c))
 	{
 		distance_1 = -1 * b - sqrt(discriminant) / (2 * a);
