@@ -2,7 +2,7 @@
 # define INTERSECT_AND_LIGHT_H
 
 int intersect(t_vec *vec, t_rt *scene);
-double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start);
+double intersect_sphere(t_vec *ray, t_sp *sp, t_rt *scene, t_vec *start);
 
 t_vec * color_light_branching(t_dist args, t_rt *scene, t_vec *vec);
 

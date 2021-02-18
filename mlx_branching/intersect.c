@@ -8,6 +8,7 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	double	c;
 	double	discriminant;
 	double	distance_1;
+	double 	distance_2;
 	t_vec	*sp_center;
 
 	a = 1;
@@ -17,14 +18,13 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	c = scalar_product(sp_center, sp_center, 3) - pow(sp->diameter / 2, 2);
 	free(sp_center);
 	sp_center = NULL;
-	if (0 < (discriminant = b * b - 4 * a * c))
-	{
-		distance_1 = -1 * b - sqrt(discriminant) / (2 * a);
-		return (distance_1);
-	}
-	else
-	{
+	discriminant = pow(b, 2) - (4 * a * c);
+	if (discriminant < 0)
 		return (INFINITY);
+	if (MINIMUM < ((distance_1 = (fabs(b) - sqrt(discriminant)) / 2)))
+	{
+		distance_2 = (-b / 2 + sqrt(discriminant));
+		return (distance_1);
 	}
 //	distance_2 = -1 * b + sqrt(discriminant) / (2 * a);
 	return (-1);

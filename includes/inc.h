@@ -4,6 +4,7 @@
 
 # define RES_X scene->resolution->x
 # define RES_Y scene->resolution->y
+# define MINIMUM 0.0001
 
 #include <stdlib.h>
 #include <unistd.h>

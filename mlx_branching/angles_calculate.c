@@ -36,5 +36,8 @@ void calculate_angles(t_rt *scene, int x, int y, t_angles *angles)
 	}
 	else
 		calculate_angles_xless(angles, scene, x, y);
+	if (isnan(angles->angle_x) || isnan(angles->angle_y) || isnan
+	(angles->angle_z))
+		return;
 
 }
