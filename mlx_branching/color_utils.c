@@ -1,14 +1,12 @@
 #include "minirt.h"
 
-int 	vec_to_int_color(t_vec *color, int flag_del)
+int 	vec_to_int_color(t_vec color, int flag_del)
 {
 	int 		ret;
 
-	ret = (int)color->x << 16;
-	ret = (int)color->y << 8;
-	ret += (int)color->z;
-	if (flag_del)
-		free(color);
+	ret = (int)color.x << 16;
+	ret = (int)color.y << 8;
+	ret += (int)color.z;
 	return (ret);
 }
 

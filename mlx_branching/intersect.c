@@ -12,8 +12,8 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	t_vec	*sp_center;
 
 	a = 1;
-	sp_center = alloc_vector((sp->x - scene->d->vec_matrix->x),
-	(sp->y - scene->d->vec_matrix->y),(sp->z - scene->d->vec_matrix->z));
+	sp_center = alloc_vector((sp->x - start->x),
+	(sp->y - start->y),(sp->z - start->z));
 	b = 2 * scalar_product(sp_center, vec, 3);
 	c = scalar_product(sp_center, sp_center, 3) - pow(sp->diameter / 2, 2);
 	free(sp_center);
@@ -21,13 +21,13 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	discriminant = pow(b, 2) - (4 * a * c);
 	if (discriminant < 0)
 		return (INFINITY);
-	if (MINIMUM < ((distance_1 = (fabs(b) - sqrt(discriminant)) / 2)))
-	{
-		distance_2 = (-b / 2 + sqrt(discriminant));
+	distance_1 = fabs((-b + sqrt(discriminant)) / 2);
+	distance_2 = fabs((-b - sqrt(discriminant)) / 2);
+	if (distance_1 > MINIMUM && distance_2 > MINIMUM)
+		return (distance_1 < distance_2 ? distance_1 : distance_2);
+	if (distance_1 > MINIMUM)
 		return (distance_1);
-	}
-//	distance_2 = -1 * b + sqrt(discriminant) / (2 * a);
-	return (-1);
+	return (distance_2 > MINIMUM ? distance_2 : INFINITY);
 }
 
 t_dist check_len_triangle(t_vec *vec, t_rt *scene, t_dist tmp, t_vec *start)
@@ -101,19 +101,19 @@ t_dist check_len_figures(t_vec *vec, t_rt *scene, t_vec *start)
 int intersect(t_vec *vec, t_rt *scene)
 {
 	t_dist		args;
-	t_vec 		*color;
-	t_vec		zero;
+	t_vec 		color;
+//	t_vec		zero;
 
 	/*
 	** 1 sp close;
 	** 2
 	*/
 
-	zero.x = 0;
-	zero.y = 0;
-	zero.z = 0;
+//	zero.x = 0;
+//	zero.y = 0;
+//	zero.z = 0;
 
-	args = check_len_figures(vec, scene, &zero);
+	args = check_len_figures(vec, scene, scene->d->vec_matrix);
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }
