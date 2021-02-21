@@ -69,7 +69,6 @@ void 				get_angles_to_data(t_rt *scene, t_cam *cam)
 		scene->d->angle_y = rtx_cam_y(cam, tmp);
 		scene->d->angle_z = rtx_cam_z(scene, cam, tmp);
 		scene->d->x_res_ratio = (double)cam->fov / (double)scene->resolution->x;
-		scene->d->fov_for_y = (scene->d->x_res_ratio * RES_Y);
 	}
 	free(tmp);
 	tmp = NULL;

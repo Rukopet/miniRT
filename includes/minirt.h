@@ -166,9 +166,8 @@ typedef struct	s_data
 	double 		angle_y;
 	double 		angle_z;
 	double		x_res_ratio;
-	double 		fov_for_y;
 	t_vec 		*v_cdir;
-	t_vp		*vp;
+	t_vec		color_t;
 	t_vec 		*vec_matrix;
 }				t_data;
 

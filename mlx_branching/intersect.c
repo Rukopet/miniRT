@@ -11,7 +11,7 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	double 	distance_2;
 	t_vec	*sp_center;
 
-	a = 1;
+	a = 0.9999999;
 	sp_center = alloc_vector((sp->x - start->x),
 	(sp->y - start->y),(sp->z - start->z));
 	b = 2 * scalar_product(sp_center, vec, 3);
@@ -19,15 +19,18 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	free(sp_center);
 	sp_center = NULL;
 	discriminant = pow(b, 2) - (4 * a * c);
-	if (discriminant < 0)
-		return (INFINITY);
-	distance_1 = fabs((-b + sqrt(discriminant)) / 2);
-	distance_2 = fabs((-b - sqrt(discriminant)) / 2);
-	if (distance_1 > MINIMUM && distance_2 > MINIMUM)
-		return (distance_1 < distance_2 ? distance_1 : distance_2);
-	if (distance_1 > MINIMUM)
-		return (distance_1);
-	return (distance_2 > MINIMUM ? distance_2 : INFINITY);
+	if (discriminant >= 0)
+	{
+		distance_1 = (-b - sqrt(discriminant)) / 2;
+		distance_2 = (-b + sqrt(discriminant)) / 2;
+		if (distance_1 < 0)
+		{
+			distance_1 = (distance_2 > distance_1) ? distance_2 : distance_1;
+			return (fabs(distance_1));
+		}
+
+	}
+	return (INFINITY);
 }
 
 t_dist check_len_triangle(t_vec *vec, t_rt *scene, t_dist tmp, t_vec *start)

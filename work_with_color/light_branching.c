@@ -21,14 +21,15 @@ t_vec color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
 //					   scene->a_light->b / 2 * scene->a_light->bright_rate));
 	if (args.index == 1)
 	{
-		color.x = scene->sp[args.fig_index]->r / 255 * scene->a_light->r *
-				scene->a_light->bright_rate;
-		color.y = scene->sp[args.fig_index]->g / 255 * scene->a_light->g *
-				scene->a_light->bright_rate;
-		color.z = scene->sp[args.fig_index]->b / 255 * scene->a_light->b *
-				scene->a_light->bright_rate;
+//		color = (t_vec){scene->a_light->r / 255.0}
+//		color.x =  / 255 * scene->a_light->r *
+//				scene->a_light->bright_rate;
+//		color.y = scene->sp[args.fig_index]->g / 255 * scene->a_light->g *
+//				scene->a_light->bright_rate;
+//		color.z = scene->sp[args.fig_index]->b / 255 * scene->a_light->b *
+//				scene->a_light->bright_rate;
 //		check_overcolor(color);
-		if (0 == isinf(args.distance))
+		if (isinf(args.distance) == 0)
 		{
 //			int fd = open("pars.txt", O_RDWR|O_APPEND|O_CREAT);
 //			dprintf(fd, "%f\t%f\t%f\n", vec->x * args.distance, vec->y * args
