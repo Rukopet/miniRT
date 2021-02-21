@@ -16,7 +16,7 @@ int			parse_alight(char **line, t_rt *s)
 {
 	char	*tmp;
 
-	s->a_light->bright_rate = ft_atof(line[1]);
+	s->a_light->b_rate = ft_atof(line[1]);
 	tmp = line[2];
 	s->a_light->r = ft_atoi_ptr(&tmp);
 	s->a_light->r = (s->a_light->r < 0) ? 0 : s->a_light->r;
@@ -62,7 +62,7 @@ int			parse_light(char **line, t_rt *s, int *i)
 	s->light[i[1]]->y = ft_atof_ptr(&tmp);
 	s->light[i[1]]->z = ft_atof_ptr(&tmp);
 
-	s->light[i[1]]->bright_rate = ft_atof(line[2]);
+	s->light[i[1]]->b_rate = ft_atof(line[2]);
 
 	tmp = line[3];
 	s->light[i[1]]->r = ft_atoi_ptr(&tmp);

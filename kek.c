@@ -2,8 +2,10 @@
 
 int				main(void)
 {
-	t_vec		p;
+	int array[10000][5];
 
-	p = (t_vec){.x = 0, .y = 1, .z = 3};
+	int i = -1;
+
+
 	return (1);
 }

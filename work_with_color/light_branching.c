@@ -4,41 +4,36 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-t_vec color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
-{
-	t_vec		color;
-//	t_vec		*color_al;
-
-	color.x = 0;
-	color.y = 0;
-	color.z = 0;
-	if (isinf(args.distance) && scene->a_light)
-		return (color);
-//		return (alloc_vector(scene->a_light->r / 2 *
-//		scene->a_light->bright_rate,
-//					   scene->a_light->g / 2 * scene->a_light->bright_rate,
-//					   scene->a_light->b / 2 * scene->a_light->bright_rate));
-	if (args.index == 1)
-	{
-//		color = (t_vec){scene->a_light->r / 255.0}
-//		color.x =  / 255 * scene->a_light->r *
-//				scene->a_light->bright_rate;
-//		color.y = scene->sp[args.fig_index]->g / 255 * scene->a_light->g *
-//				scene->a_light->bright_rate;
-//		color.z = scene->sp[args.fig_index]->b / 255 * scene->a_light->b *
-//				scene->a_light->bright_rate;
-//		check_overcolor(color);
-		if (isinf(args.distance) == 0)
-		{
 //			int fd = open("pars.txt", O_RDWR|O_APPEND|O_CREAT);
 //			dprintf(fd, "%f\t%f\t%f\n", vec->x * args.distance, vec->y * args
 //			.distance, vec->z *
 //			args.distance);
 //			close(fd);
-			color = vec_to_light(color, scene, vec, args);
-		}
+
+t_vec color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
+{
+	t_vec		color[2];
+
+	if (scene->a_light)
+	*color = (t_vec){scene->a_light->r * scene->a_light->b_rate,
+					scene->a_light->g * scene->a_light->b_rate,
+					scene->a_light->b * scene->a_light->b_rate};
+	if (isinf(args.distance) && scene->a_light)
+		return ((t_vec){scene->a_light->r / 15.0, scene->a_light->g / 15.0,
+				  scene->a_light->b / 15.0});
+	else if (isinf(args.distance))
+		return ((t_vec){0, 0, 0});
+	if (args.index == 1)
+	{
+		*(color + 1) = (t_vec){scene->sp[args.fig_index]->r * scene->a_light->b_rate,
+		scene->sp[args.fig_index]->g * scene->a_light->b_rate, scene->sp[args
+		.fig_index]->b * scene->a_light->b_rate};
+//		if (isinf(args.distance) == 0)
+		*(color + 1) = vec_to_light(color, scene, vec, args);
+//		else
+//			*(color + 1) = (t_vec){color[1].x * color->x, color[1].y *
+//						  color->y, color[1].z * color->z};
 	}
-	return (color);
-	//chech it
+	check_overcolor(color);
+	return (*(color + 1));
 }

@@ -85,7 +85,7 @@ void 				alloc_light_fig(t_rt *scene, t_figures *fig)
 			fig->light[i]->x = scene->light[i]->x;
 			fig->light[i]->y = scene->light[i]->y;
 			fig->light[i]->z = scene->light[i]->z;
-			fig->light[i]->bright_rate = scene->light[i]->bright_rate;
+			fig->light[i]->b_rate = scene->light[i]->b_rate;
 			fig->light[i]->r = scene->light[i]->r;
 			fig->light[i]->g = scene->light[i]->g;
 			fig->light[i]->b = scene->light[i]->b;

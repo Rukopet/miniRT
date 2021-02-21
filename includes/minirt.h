@@ -30,7 +30,7 @@ typedef struct	s_res
 
 typedef struct	s_al
 {
-	double		bright_rate;
+	double		b_rate;
 	int			r;
 	int			g;
 	int			b;
@@ -52,7 +52,7 @@ typedef struct	s_light
 	double		x;
 	double		y;
 	double		z;
-	double		bright_rate;
+	double		b_rate;
 	int			r;
 	int			g;
 	int			b;
