@@ -11,7 +11,7 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	double 	distance_2;
 	t_vec	*sp_center;
 
-	a = 0.9999999;
+	a = 0.998;
 	sp_center = alloc_vector((sp->x - start->x),
 	(sp->y - start->y),(sp->z - start->z));
 	b = 2 * scalar_product(sp_center, vec, 3);

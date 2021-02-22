@@ -38,6 +38,6 @@ t_vec 				*product_vec_and_int(t_vec *vec, double distance, int flag)
 
 double				normal_vector(t_vec *vec1, t_vec *vec2)
 {
-	return (scalar_product(vec1, vec2, 3) / (length_vector(vec1) +
+	return (scalar_product(vec1, vec2, 3) / (length_vector(vec1) *
 	length_vector(vec2)) / 2);
 }

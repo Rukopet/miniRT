@@ -4,8 +4,7 @@ int 	vec_to_int_color(t_vec color, int flag_del)
 {
 	int 		ret;
 
-	ret = (int)color.x << 16;
-	ret = (int)color.y << 8;
+	ret = (int)color.x << 16 | (int)color.y << 8;
 	ret += (int)color.z;
 	return (ret);
 }
