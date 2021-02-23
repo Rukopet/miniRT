@@ -24,8 +24,6 @@ void 				do_rtx_calculations(void *limits)
 
 	tmp = (t_limits*)limits;
 	i = tmp->prev_y;
-//	printf("p_x  - %d\nx   -  %d\np_y  - %d\ny   -   %d\n", tmp->prev_x, tmp->x,
-//		tmp->prev_y, tmp->y);
 	while (++i != tmp->y)
 	{
 		j = tmp->prev_x;
@@ -50,7 +48,6 @@ t_matrix 			*matrix_alloc()
 
 void				rtx_with_angles(t_rt *scene, t_cam *cam)
 {
-//	t_vec			*first_dot;
 	t_limits 		**limits;
 	pthread_t		thread[4];
 	int 			i;
@@ -58,8 +55,11 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	i = -1;
 	limits = alloc_limits(scene);
 	while (++i != 4)
-		pthread_create(&thread[i], NULL, (void*)do_rtx_calculations, (void*)
-		limits[i]);
+	{
+		if (0 != pthread_create(&thread[i], NULL, (void*)do_rtx_calculations,
+				(void*)limits[i]))
+			errors_and_exit(-2,scene);
+	}
 	i = -1;
 	while (++i != 4)
 		if (0 != pthread_join(thread[i], NULL))
@@ -67,10 +67,6 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	free(limits);
 	limits = NULL;
 	mlx_loop(scene->d->mlx);
-//	init_dots(scene);
-//	ns = cp_scene(scene);
-//	first_dot = firs_dot_angles_to_coordinate(scene, cam);
-
 }
 
 void 				rtx(t_rt *scene)
@@ -83,7 +79,4 @@ void 				rtx(t_rt *scene)
 	matrix_rellocation(scene, cam);
 	get_angles_to_data(scene, scene->cam[cam]);
 	rtx_with_angles(scene, scene->cam[cam]);
-
-//	rtx_cam_zy(scene, &location, , 3);
-//	vp = alloc_viewport(scene);
 }

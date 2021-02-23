@@ -13,13 +13,14 @@ t_vec summ_colors(t_vec color1, t_vec color, t_vec color2)
 		return (color1);
 }
 
-t_vec			get_color_after_normal(t_vec *color, t_vec coof)
+t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 {
 	t_vec		tmp;
 
-	tmp = (t_vec){color->x * coof.x,
-			color->y * coof.y,
-			color->z * coof.z};
+	i = (i == 0) ? 1 : i;
+	tmp = (t_vec){color->x / i * coof.x,
+			color->y / i * coof.y,
+			color->z / i * coof.z};
 	return (tmp);
 }
 
@@ -48,9 +49,6 @@ t_vec			coof_color_after_normal(t_vec *a_vec, t_rt *scene, t_vec *matrix,
 		ret = (t_vec){l->r / 255.0 * (l->b_rate) * com,
 					  l->g / 255.0 * (l->b_rate) * com,
 					  l->b / 255.0 * (l->b_rate) * com};
-			int fd = open("pars.txt", O_RDWR|O_APPEND|O_CREAT);
-	dprintf(fd, "%f\t%f\t%f\t%f\n", ret.x, ret.y, ret.z, com);
-	close(fd);
 	norm_vec(&normal);
 	}
 
@@ -96,5 +94,5 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec *vec, t_dist args)
 	}
 	free(t_mtx);
 	t_mtx = NULL;
-	return (get_color_after_normal(color + 1, coof));
+	return (get_color_after_normal(color + 1, coof, i));
 }
