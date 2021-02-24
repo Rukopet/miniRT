@@ -85,20 +85,27 @@ t_dist check_len_figures(t_vec *vec, t_rt *scene, t_vec *start)
 	tmp.distance = INFINITY;
 	first = comparison_spheres(vec, scene, start);
 	second = comparison_planes(vec, scene, start);
-	if (first.distance < second.distance || (isinf(first.distance) && isinf
-	(second.distance)))
+//#include <fcntl.h>
+//#include <stdio.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
+//#include <unistd.h>
+//			int fd = open("pars.txt", O_RDWR|O_APPEND|O_CREAT);
+//			dprintf(fd, "%f\t%f\t%f\n", vec->x, vec->y, vec->z);
+//			close(fd);
+	if (first.distance < second.distance && isnormal(first.distance))
 	{
 		tmp.distance = first.distance;
 		tmp.index = 1;
 		tmp.fig_index = first.fig_index;
 	}
-	else if (isinf(second.distance))
+	else if (isnormal(second.distance))
 	{
 		tmp.distance = second.distance;
 		tmp.index = 2;
 		tmp.fig_index = second.fig_index;
 	}
-	return (check_len_cylinder(vec, scene, tmp, NULL));
+	return (check_len_cylinder(vec, scene, tmp, start));
 }
 
 int intersect(t_vec *vec, t_rt *scene)

@@ -10,6 +10,17 @@
 //			args.distance);
 //			close(fd);
 
+t_vec	plane_light_br(t_dist args, t_rt *scene, t_vec *vec)
+{
+	t_vec		color[2];
+
+	if (args.index == 2)
+	{
+		return ((t_vec){255,0,0});
+	}
+	return (*(color + 1));
+}
+
 t_vec color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
 {
 	t_vec		color[2];
@@ -33,8 +44,8 @@ t_vec color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
 			*(color + 1) = (t_vec){color[1].x * color->x,
 			color[1].y * color->y, color[1].z * color->z};
 	}
+	else
+		return (plane_light_br(args, scene, vec));
 	check_overcolor(color + 1);
-//	if (color[1].x == 240 && color[1].y == 168 && color[1].z == 250)
-//		return (*(color + 1));
 	return (*(color + 1));
 }

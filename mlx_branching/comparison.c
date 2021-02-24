@@ -26,16 +26,23 @@ t_dist comparison_spheres(t_vec *vec, t_rt *scene, t_vec *start)
 
 t_dist comparison_planes(t_vec *vec, t_rt *scene, t_vec *start)
 {
-	t_dist		ret;
+	t_dist		dist;
 	int 		i;
+	double 			tmp;
 
 	i = -1;
-	ret.distance = INFINITY;
+	dist.distance = INFINITY;
 	if (scene->pl)
 		while (scene->pl[++i] != NULL)
 		{
+			tmp = intersect_plane(vec, scene->pl[i], scene, start);
+			if (i == 0 || tmp < dist.distance)
+			{
+				dist.distance = tmp;
+				dist.fig_index = 2;
+			}
 		}
-	return (ret);
+	return (dist);
 }
 
 t_dist comparison_squares(t_vec *vec, t_rt *scene, t_vec *start)
