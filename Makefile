@@ -39,7 +39,7 @@ $(NAME): $(OBJ) $(HEADER)
 	$(CC) -c $(FLAG) $(LIBX) $< $(INC) -o $@
 libs:
 	$(MAKE) all -C$(PRINTPATH)
-	$(MAKE) -C./minilibx_mms
+	$(MAKE) -C./minilibx_mms -j 4
 	mv ./minilibx_mms/libmlx.dylib ./
 
 clean:
