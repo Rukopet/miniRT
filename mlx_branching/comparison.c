@@ -28,7 +28,7 @@ t_dist comparison_planes(t_vec *vec, t_rt *scene, t_vec *start)
 {
 	t_dist		dist;
 	int 		i;
-	double 			tmp;
+	double 		tmp;
 
 	i = -1;
 	dist.distance = INFINITY;
@@ -56,12 +56,12 @@ t_dist comparison_squares(t_vec *vec, t_rt *scene, t_vec *start)
 	if (scene->sq)
 		while (scene->sq[++i] != NULL)
 		{
-//			tmp = intersect_square(vec, scene->sq[i], scene, start);
-//			if (i == 0 || tmp < dist.distance)
-//			{
-//				dist.distance = tmp;
-//				dist.fig_index = 2;
-//			}
+			tmp = intersect_square(vec, scene->sq[i], scene, start);
+			if (i == 0 || tmp < dist.distance)
+			{
+				dist.distance = tmp;
+				dist.fig_index = i;
+			}
 		}
 	return (dist);
 }
@@ -82,14 +82,21 @@ t_dist comparison_cylinder(t_vec *vec, t_rt *scene, t_vec *start)
 
 t_dist comparison_triangle(t_vec *vec, t_rt *scene, t_vec *start)
 {
-	t_dist		ret;
+	t_dist		dist;
 	int 		i;
+	double		tmp;
 
 	i = -1;
-	ret.distance = INFINITY;
+	dist.distance = INFINITY;
 	if (scene->tr)
 		while (scene->tr[++i] != NULL)
 		{
+			tmp = intersect_triangle(vec, scene->tr[i], scene, start);
+			if (i == 0 || tmp < dist.distance)
+			{
+				dist.distance = tmp;
+				dist.fig_index = i;
+			}
 		}
-	return (ret);
+	return (dist);
 }

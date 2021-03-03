@@ -11,10 +11,10 @@ int 	vec_to_int_color(t_vec color, int flag_del)
 
 void	check_overcolor(t_vec* tmp)
 {
-	if (tmp->z >= 255 || tmp->x >= 255 || tmp->y >= 255)
-	{
-
-	}
+//	if (tmp->z >= 255 || tmp->x >= 255 || tmp->y >= 255)
+//	{
+//
+//	}
 	tmp->x = (tmp->z >= 255) ? 255 : tmp->x;
 	tmp->y = (tmp->y >= 255) ? 255 : tmp->y;
 	tmp->z = (tmp->z >= 255) ? 255 : tmp->z;

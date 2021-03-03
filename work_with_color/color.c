@@ -24,26 +24,27 @@ t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 	return (tmp);
 }
 
-t_vec			coof_color_after_normal(t_vec *a_vec, t_rt *scene, t_vec *matrix,
-							 t_dist tmp_args, t_light *l) {
+t_vec			coof_color_after_normal(t_vec a_vec[2], t_rt *scene, t_vec
+*matrix, t_dist tmp_args, t_light *l) {
 	t_vec *tmp;
 	t_vec ret;
 	t_vec normal;
+	t_vec n_l[2];
 	t_vec light;
 	double com;
-	double len_l;
-	double len_n;
 
 	ret = (t_vec){0, 0, 0};
 	tmp = product_vec_and_int(a_vec, tmp_args.distance, 0);
-	normal = (t_vec){.x = tmp->x - (scene->sp[tmp_args.fig_index]->x -
-	scene->d->vec_matrix->x), .y = tmp->y -(scene->sp[tmp_args.fig_index]->y -
-	scene->d->vec_matrix->y), .z = tmp->z - (scene->sp[tmp_args.fig_index]->z -
-	scene->d->vec_matrix->z)};
-	light = (t_vec) {l->x - scene->sp[tmp_args.fig_index]->x - tmp->x,
-					l->y - scene->sp[tmp_args.fig_index]->y - tmp->y,
-					l->z - scene->sp[tmp_args.fig_index]->z - tmp->z};
-	com = normal_vector(&light, &normal) * 0.9;
+	n_l[0] = take_normal_from_obj(tmp_args, scene, tmp, &a_vec[0]);
+//	n_l[0] = (t_vec){.x = tmp->x - (scene->sp[tmp_args.fig_index]->x -
+//	scene->d->vec_matrix->x), .y = tmp->y -(scene->sp[tmp_args.fig_index]->y -
+//	scene->d->vec_matrix->y), .z = tmp->z - (scene->sp[tmp_args.fig_index]->z -
+//	scene->d->vec_matrix->z)};
+	n_l[1] = take_light_to_color(l, tmp, scene, tmp_args);
+//	n_l[1] = (t_vec) {l->x - scene->sp[tmp_args.fig_index]->x - tmp->x,
+//					l->y - scene->sp[tmp_args.fig_index]->y - tmp->y,
+//					l->z - scene->sp[tmp_args.fig_index]->z - tmp->z};
+	com = normal_vector(&n_l[1], &n_l[0]) * 0.9;
 	if (com > 0.0)
 	{
 		ret = (t_vec){l->r / 255.0 * (l->b_rate) * com,
@@ -51,10 +52,7 @@ t_vec			coof_color_after_normal(t_vec *a_vec, t_rt *scene, t_vec *matrix,
 					  l->b / 255.0 * (l->b_rate) * com};
 	norm_vec(&normal);
 	}
-
-
 	free(tmp);
-
 	return (ret);
 }
 
@@ -85,14 +83,11 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec *vec, t_dist args)
 		*(d_vec + 1) = (t_vec){.x = light->x, .y = light->y, .z = light->z};
 		if (isinf(args.distance) == 0)
 			continue;
-//		{
-			coof = summ_colors(coof, *color, coof_color_after_normal
-			(d_vec,	scene, t_mtx, tmp_args, scene->light[i]));
-//		}
-//		else
-//			return (summ_colors(color[1], (t_vec){0}, color[0]));
+		coof = summ_colors(coof, *color, coof_color_after_normal
+		(d_vec,	scene, t_mtx, tmp_args, scene->light[i]));
 	}
 	free(t_mtx);
 	t_mtx = NULL;
 	return (get_color_after_normal(color + 1, coof, i));
 }
+

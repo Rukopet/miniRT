@@ -56,8 +56,7 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist tmp, t_vec *start)
 	self_tmp.fig_index = -1;
 	first = comparison_squares(vec, scene, start);
 	second = comparison_cylinder(vec, scene, start);
-	if (first.distance < second.distance || (isinf(first.distance) && isinf
-	(second.distance)))
+	if (first.distance < second.distance && isnormal(first.distance))
 	{
 		self_tmp.distance = first.distance;
 		self_tmp.index = 3;
@@ -85,14 +84,7 @@ t_dist check_len_figures(t_vec *vec, t_rt *scene, t_vec *start)
 	tmp.distance = INFINITY;
 	first = comparison_spheres(vec, scene, start);
 	second = comparison_planes(vec, scene, start);
-//#include <fcntl.h>
-//#include <stdio.h>
-//#include <sys/types.h>
-//#include <sys/stat.h>
-//#include <unistd.h>
-//			int fd = open("pars.txt", O_RDWR|O_APPEND|O_CREAT);
-//			dprintf(fd, "%f\t%f\t%f\n", vec->x, vec->y, vec->z);
-//			close(fd);
+
 	if (first.distance < second.distance && isnormal(first.distance))
 	{
 		tmp.distance = first.distance;
@@ -112,18 +104,10 @@ int intersect(t_vec *vec, t_rt *scene)
 {
 	t_dist		args;
 	t_vec 		color;
-//	t_vec		zero;
-
-	/*
-	** 1 sp close;
-	** 2
-	*/
-
-//	zero.x = 0;
-//	zero.y = 0;
-//	zero.z = 0;
 
 	args = check_len_figures(vec, scene, scene->d->vec_matrix);
+//	if (args.index == 5)
+//		return (vec_to_int_color((t_vec){255, 255, 0}, 0));
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }

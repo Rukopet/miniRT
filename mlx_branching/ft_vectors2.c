@@ -41,3 +41,10 @@ double				normal_vector(t_vec *vec1, t_vec *vec2)
 	return (scalar_product(vec1, vec2, 3) / (length_vector(vec1) *
 	length_vector(vec2)) / 2);
 }
+
+t_vec				vector_cross(t_vec *vec1, t_vec *vec2)
+{
+	return ((t_vec){vec1->y * vec2->z - vec1->z * vec2->y,
+					vec1->z * vec2->x - vec1->x * vec2->z,
+					vec1->x * vec2->y - vec1->y * vec2->x});
+}
