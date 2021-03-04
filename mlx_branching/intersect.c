@@ -106,8 +106,8 @@ int intersect(t_vec *vec, t_rt *scene)
 	t_vec 		color;
 
 	args = check_len_figures(vec, scene, scene->d->vec_matrix);
-//	if (args.index == 5)
-//		return (vec_to_int_color((t_vec){255, 255, 0}, 0));
+	if (args.index == 4)
+		return (vec_to_int_color((t_vec){255, 255, 0}, 0));
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }

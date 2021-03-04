@@ -53,8 +53,9 @@ t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec *vec)
 		scene->d->vec_matrix->y), tmp->z - (scene->sp[args.fig_index]->z -
 		scene->d->vec_matrix->z)};
 	if (args.index == 5)
-		normal = triangle_normal(scene->tr[args.fig_index], (t_vec){vec->x *
+		normal = take_triangle_normal(scene->tr[args.fig_index], (t_vec){vec->x *
 		args.distance, vec->y * args.distance, vec->z * args.distance});
+	return (normal);
 }
 
 t_vec	take_light_to_color(t_light *l, t_vec *tmp, t_rt *scene, t_dist args)

@@ -68,16 +68,23 @@ t_dist comparison_squares(t_vec *vec, t_rt *scene, t_vec *start)
 
 t_dist comparison_cylinder(t_vec *vec, t_rt *scene, t_vec *start)
 {
-	t_dist		ret;
+	t_dist		dist;
 	int 		i;
+	double		tmp;
 
 	i = -1;
-	ret.distance = INFINITY;
+	dist.distance = INFINITY;
 	if (scene->cy)
 		while (scene->cy[++i] != NULL)
 		{
+			tmp = intersect_cylinder(vec, scene->cy[i], scene, start);
+			if (i == 0 || tmp < dist.distance)
+			{
+				dist.distance = tmp;
+				dist.fig_index = i;
+			}
 		}
-	return (ret);
+	return (dist);
 }
 
 t_dist comparison_triangle(t_vec *vec, t_rt *scene, t_vec *start)
