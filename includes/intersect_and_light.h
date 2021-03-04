@@ -41,6 +41,11 @@ typedef struct	s_triangle
 
 typedef struct	s_cyl
 {
+	double 		a;
+	double 		b;
+	double 		c;
+	t_vec		v_port;
+	t_vec		norm_v;
 	t_vec		orient;
 	t_vec		point;
 	t_vec 		v[4];

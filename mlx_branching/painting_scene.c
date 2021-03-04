@@ -1,7 +1,7 @@
 #include "minirt.h"
 #include <stdio.h>
 
-void painting_scene(t_rt *scene, int x, int y)
+void painting_scene(t_rt *scene, int x, int y, t_cam *cam)
 {
 	t_angles 	*angles;
 	t_vec		*norm_vec;
@@ -9,8 +9,12 @@ void painting_scene(t_rt *scene, int x, int y)
 
 	if (!(angles = malloc(sizeof(t_angles))))
 		errors_and_exit(-1, scene);
-	calculate_angles(scene, x, y, angles);
-	norm_vec = firs_dot_angles_to_coordinate(angles);
+//	if (cam->fov > 170)
+//	{
+		calculate_angles(scene, x, y, angles);
+		norm_vec = firs_dot_angles_to_coordinate(angles);
+//	}
+
 //
 //	#include <fcntl.h>
 //	#include <sys/types.h>

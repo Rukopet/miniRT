@@ -26,10 +26,11 @@ t_limits			**init_limits(t_limits **limits, t_rt *scene)
 	return (limits);
 }
 
-t_limits 			**alloc_limits(t_rt *scene)
+t_limits **alloc_limits(t_rt *scene, t_cam *cam)
 {
 	t_limits 		**ret;
 	int				i;
+
 
 	i = -1;
 	if (!(ret = malloc(sizeof(t_limits*) * 5)))
@@ -39,6 +40,7 @@ t_limits 			**alloc_limits(t_rt *scene)
 	{
 		if (!(ret[i] = malloc(sizeof(t_limits))))
 			errors_and_exit(-1, scene);
+		ret[i]->cam = cam;
 	}
 	return (init_limits(ret, scene));
 }

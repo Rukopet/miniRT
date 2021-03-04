@@ -8,6 +8,7 @@ typedef struct	s_limits
 	int			x;
 	int 		y;
 	t_rt 		*scene;
+	t_cam		*cam;
 }				t_limits;
 
 typedef struct	s_matrix
@@ -64,9 +65,9 @@ t_figures 		*cp_scene(t_rt* scene);
 void			alloc_figures(t_rt *scene, t_figures *fig);
 void 			alloc_cylinder_fig(t_rt *scene, t_figures *fig);
 
-t_limits 			**alloc_limits(t_rt *scene);
+t_limits **alloc_limits(t_rt *scene, t_cam *cam);
 void calculate_angles(t_rt *scene, int x, int y, t_angles *angles);
-void painting_scene(t_rt *scene, int x, int y);
+void painting_scene(t_rt *scene, int x, int y, t_cam *cam);
 
 
 #endif
