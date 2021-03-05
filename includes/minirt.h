@@ -173,6 +173,9 @@ typedef struct	s_img
 {
 	void 		*img;
 	char 		*adr;
+	int			bits_per_pixel;
+	int 		line_len;
+	int 		endian;
 }				t_img;
 
 typedef struct	s_rt
@@ -188,7 +191,7 @@ typedef struct	s_rt
 	t_sq		**sq;
 	t_cy		**cy;
 	t_tr		**tr;
-	t_img		img;
+	t_img		*img;
 	short 		save;
 }				t_rt;
 

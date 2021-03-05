@@ -1,6 +1,15 @@
 #include "minirt.h"
 #include <stdio.h>
 
+void put_pixel(t_rt *sc, int x, int y, int color)
+{
+	char 		*d;
+
+	d = sc->img->adr + (y * sc->img->line_len + x * (sc->img->bits_per_pixel /
+			8));
+	*(unsigned  int*)d = color;
+}
+
 void painting_scene(t_rt *scene, int x, int y, t_cam *cam)
 {
 	t_angles 	*angles;
@@ -28,7 +37,7 @@ void painting_scene(t_rt *scene, int x, int y, t_cam *cam)
 //	printf("xy %d|%d  %f * %f * %f\n", x, y, angles->angle_x, angles->angle_y,
 //		  angles->angle_z);
 	color = intersect(norm_vec, scene);
-	mlx_pixel_put(scene->d->mlx, scene->d->win, x, y, color);
+	put_pixel(scene, x, y, color);
+//	mlx_pixel_put(scene->d->mlx, scene->d->win, x, y, color);
 	free(angles);
-
 }

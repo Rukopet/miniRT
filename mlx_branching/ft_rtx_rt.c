@@ -58,7 +58,7 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 			errors_and_exit(-2, scene);
 	free(limits);
 	limits = NULL;
-	mlx_loop(scene->d->mlx);
+//	mlx_loop(scene->d->mlx);
 }
 
 void rtx(t_rt *scene, int flag)

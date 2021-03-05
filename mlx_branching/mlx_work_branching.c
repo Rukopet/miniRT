@@ -17,6 +17,7 @@ int 				key_hook(int key_code, t_rt *sc)
 //		mlx_put_image_to_window(sc->d->mlx, sc->d->win, param->img->img, 0, 0);
 		rtx(sc, 1);
 	}
+	return (0);
 
 }
 
@@ -40,12 +41,22 @@ void				begin_mlx_work(t_rt *scene)
 {
 	void			*mlx;
 	void			*mlx_win;
+	t_img			img;
 
 	if (NULL == (mlx = mlx_init()))
 		errors_and_exit(20, scene);
-	mlx_win = mlx_new_window(mlx, scene->resolution->x, scene->resolution->y, "miniRT21");
-	if (NULL == mlx_win)
-		errors_and_exit(20, scene);
+	scene->img = &img;
+	scene->img->img = mlx_new_image(mlx, scene->resolution->x,
+	scene->resolution->y);
+	scene->img->adr = mlx_get_data_addr(scene->img->img, &scene->img
+	->bits_per_pixel, &scene->img->line_len, &scene->img->endian);
 	init_data_struct(scene, mlx, mlx_win);
 	rtx(scene, 0);
+	mlx_win = mlx_new_window(mlx, scene->resolution->x, scene->resolution->y,
+	"miniRT");
+	if (NULL == mlx_win)
+		errors_and_exit(20, scene);
+	mlx_put_image_to_window(scene->d->mlx, scene->d->win,
+	scene->img->img, 0, 0);
+	mlx_loop(scene->d->win);
 }
