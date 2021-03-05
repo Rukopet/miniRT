@@ -1,20 +1,12 @@
 #include "minirt.h"
 #include <stdio.h>
 
-//t_vp				*alloc_viewport(t_rt *scene)
-//{
-//	t_vp			*ret;
-//	double			ratio;
-//
-//	if(!(ret = malloc(sizeof(t_vp))))
-//		errors_and_exit(-1, scene);
-//	ret->x = 1;
-//	ratio = RES_X / RES_Y;
-//	ret->y = 1 / ratio;
-//	ret->x_iter = ret->x / RES_X;
-//	ret->y_iter = ret->y / RES_Y;
-//	return (ret);
-//}
+static int			do_close(int keycode, t_rt *sc)
+{
+	(void)keycode;
+	(void)sc;
+	exit(0);
+}
 
 void 				do_rtx_calculations(void *limits)
 {
@@ -69,14 +61,20 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	mlx_loop(scene->d->mlx);
 }
 
-void 				rtx(t_rt *scene)
+void rtx(t_rt *scene, int flag)
 {
 	static int 		cam;
 	static int 		max;
 
+	if (scene->save)
+		image_to_bmp(scene);
 	max = check_max_cams(scene);
 	cam = 0;
+	if (flag)
+		cam = (cam == max) ? 0 : 1 + cam;
 	matrix_rellocation(scene, cam);
+	mlx_key_hook(scene->d->win, key_hook, &scene->d);
+	mlx_hook(scene->d->win, 17, (1L << 2), do_close, &scene);
 	get_angles_to_data(scene, scene->cam[cam]);
 	rtx_with_angles(scene, scene->cam[cam]);
 }

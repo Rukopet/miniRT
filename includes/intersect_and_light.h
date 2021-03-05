@@ -35,8 +35,16 @@ t_dist			check_len_figures(t_vec *vec, t_rt *scene, t_vec *start);
 typedef struct	s_triangle
 {
 	t_vec		*mal[2];
-	t_vec		*p[3];
+	t_vec 		normal;
+	t_vec 		*vec;
+	t_vec		p[3];
+	double		s;
+	t_pl		pl;
+	t_vec		ab_s;
+	t_vec		ac_s;
+	t_vec		bc_s;
 	t_vec		*start;
+
 }				t_triangle;
 
 typedef struct	s_cyl

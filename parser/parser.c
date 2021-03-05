@@ -55,21 +55,19 @@ int			check_other(t_rt *scene, int fd)
 int			check_scene_arg(char **argv, t_rt *scene, int argc)
 {
 	int		fd;
-	char	save_flag;
 	char	*tmp;
 	int		i;
 
 	i = 0;
-	save_flag = 0;
 	fd = 0;
 	while (argv[++i] != NULL)
 	{
 		if (0 == (ft_strncmp(argv[i], "--save", 7)))
-			save_flag = 1;
+			scene->save = 1;
 		else
 			tmp = argv[i];		
 	}
-	if ((argc == 3 && !save_flag) || -1 == (fd = open(tmp, O_RDONLY)))
+	if ((argc == 3 && !scene->save) || -1 == (fd = open(tmp, O_RDONLY)))
 		errors_and_exit(4, scene);
 	if (!(check_extention(tmp)))
 	{

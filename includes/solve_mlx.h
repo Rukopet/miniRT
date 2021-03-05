@@ -37,7 +37,7 @@ typedef struct	s_dist
 	double 		distance;
 }				t_dist;
 
-void			rtx(t_rt *scene);
+void rtx(t_rt *scene, int flag);
 void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
 
@@ -68,6 +68,10 @@ void 			alloc_cylinder_fig(t_rt *scene, t_figures *fig);
 t_limits **alloc_limits(t_rt *scene, t_cam *cam);
 void calculate_angles(t_rt *scene, int x, int y, t_angles *angles);
 void painting_scene(t_rt *scene, int x, int y, t_cam *cam);
+
+int 				key_hook(int key_code, t_rt *sc);
+void 			image_to_bmp(t_rt *sc);
+
 
 
 #endif

@@ -31,5 +31,6 @@ void		init_scene_struct(t_rt **str)
 	s->sq = NULL;
 	s->cy = NULL;
 	s->tr = NULL;
+	s->save = 0;
 	*str = s;
 }

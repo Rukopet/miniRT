@@ -169,6 +169,12 @@ typedef struct	s_data
 	t_vec 		*vec_matrix;
 }				t_data;
 
+typedef struct	s_img
+{
+	void 		*img;
+	char 		*adr;
+}				t_img;
+
 typedef struct	s_rt
 {
 	t_count 	*counter;
@@ -182,6 +188,8 @@ typedef struct	s_rt
 	t_sq		**sq;
 	t_cy		**cy;
 	t_tr		**tr;
+	t_img		img;
+	short 		save;
 }				t_rt;
 
 typedef struct	s_figures
