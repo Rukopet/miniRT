@@ -9,8 +9,8 @@ double			intersect_square(t_vec *vec, t_sq *sq, t_rt *scene, t_vec
 *start);
 double			intersect_triangle(t_vec *vec, t_tr *tr, t_rt *sc, t_vec
 *start);
-double 			intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
-t_vec *start);
+t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
+					   t_vec *start);
 t_vec			color_light_branching(t_dist args, t_rt *scene, t_vec *vec);
 t_vec			take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec *vec);
 t_vec			take_triangle_normal(t_tr *tr, t_vec dot);
@@ -62,6 +62,22 @@ typedef struct	s_cyl
 	double 		d[4];
 	t_vec		*vec;
 }				t_cyl;
+
+typedef struct	s_c
+{
+	double 		a;
+	double 		b;
+	double 		c;
+	double 		tmp;
+	t_vec		orient;
+	t_vec		norm_ori;
+	t_vec		vpr_p;
+	t_vec		vpr_cyl;
+	t_vec		point;
+	t_vec		*vec;
+}				t_c;
+
+
 
 
 

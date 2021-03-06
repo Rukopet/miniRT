@@ -58,23 +58,20 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 			errors_and_exit(-2, scene);
 	free(limits);
 	limits = NULL;
-//	mlx_loop(scene->d->mlx);
 }
 
-void rtx(t_rt *scene, int flag)
+void rtx(t_rt *scene, t_img *img, int cam, int flag)
 {
-	static int 		cam;
-	static int 		max;
-
+	scene->img = img;
+	get_img(scene);
 	if (scene->save)
 		image_to_bmp(scene);
-	max = check_max_cams(scene);
-	cam = 0;
-	if (flag)
-		cam = (cam == max) ? 0 : 1 + cam;
-	matrix_rellocation(scene, cam);
-	mlx_key_hook(scene->d->win, key_hook, &scene->d);
+ 	matrix_rellocation(scene, cam);
+	mlx_key_hook(scene->d->win, key_hook, scene);
 	mlx_hook(scene->d->win, 17, (1L << 2), do_close, &scene);
 	get_angles_to_data(scene, scene->cam[cam]);
 	rtx_with_angles(scene, scene->cam[cam]);
+	mlx_put_image_to_window(scene->d->mlx, scene->d->win,
+							scene->img->img, 0, 0);
+	mlx_loop(scene->d->mlx);
 }

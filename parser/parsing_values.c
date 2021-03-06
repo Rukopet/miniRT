@@ -16,6 +16,7 @@ int			parse_alight(char **line, t_rt *s)
 {
 	char	*tmp;
 
+	check_args(line, 3);
 	s->a_light->b_rate = ft_atof(line[1]);
 	tmp = line[2];
 	s->a_light->r = ft_atoi_ptr(&tmp);
@@ -27,7 +28,7 @@ int			parse_alight(char **line, t_rt *s)
 	s->a_light->b = ft_atoi_ptr(&tmp);
 	s->a_light->b = (s->a_light->b < 0) ? 0 : s->a_light->b;
 	s->a_light->b = (s->a_light->b > 255) ? 255 : s->a_light->b;
-	if (NULL != line[5])
+	if (NULL != line[4])
 		return (0);
 	return (1);
 }
@@ -36,6 +37,7 @@ int			parse_cam(char **line, t_rt *s, int *i)
 {
 	char	*tmp;
 
+	check_args(line, 4);
 	tmp = line[1];
 	s->cam[i[0]]->x = ft_atof_ptr(&tmp);
 	s->cam[i[0]]->y = ft_atof_ptr(&tmp);
@@ -57,13 +59,12 @@ int			parse_light(char **line, t_rt *s, int *i)
 {
 	char	*tmp;
 
+	check_args(line, 4);
 	tmp = line[1];
 	s->light[i[1]]->x = ft_atof_ptr(&tmp);
 	s->light[i[1]]->y = ft_atof_ptr(&tmp);
 	s->light[i[1]]->z = ft_atof_ptr(&tmp);
-
 	s->light[i[1]]->b_rate = ft_atof(line[2]);
-
 	tmp = line[3];
 	s->light[i[1]]->r = ft_atoi_ptr(&tmp);
 	s->light[i[1]]->r = (s->light[i[1]]->r < 0) ? 0 : s->light[i[1]]->r;
@@ -85,22 +86,19 @@ int			parse_sphere(char **line, t_rt *s, int *i)
 {
 	char	*tmp;
 
+	check_args(line, 4);
 	tmp = line[1];
 	s->sp[i[2]]->x = ft_atof_ptr(&tmp);
 	s->sp[i[2]]->y = ft_atof_ptr(&tmp);
 	s->sp[i[2]]->z = ft_atof_ptr(&tmp);
-
 	s->sp[i[2]]->diameter = ft_atof(line[2]);
-
 	tmp = line[3];
 	s->sp[i[2]]->r = ft_atoi_ptr(&tmp);
 	s->sp[i[2]]->r = (s->sp[i[2]]->r < 0) ? 0 : s->sp[i[2]]->r;
 	s->sp[i[2]]->r = (s->sp[i[2]]->r > 255) ? 255 : s->sp[i[2]]->r;
-
 	s->sp[i[2]]->g = ft_atoi_ptr(&tmp);
 	s->sp[i[2]]->g = (s->sp[i[2]]->g < 0) ? 0 : s->sp[i[2]]->g;
 	s->sp[i[2]]->g = (s->sp[i[2]]->g > 255) ? 255 : s->sp[i[2]]->g;
-
 	s->sp[i[2]]->b = ft_atoi_ptr(&tmp);
 	s->sp[i[2]]->b = (s->sp[i[2]]->b < 0) ? 0 : s->sp[i[2]]->b;
 	s->sp[i[2]]->b = (s->sp[i[2]]->b > 255) ? 255 : s->sp[i[2]]->b;

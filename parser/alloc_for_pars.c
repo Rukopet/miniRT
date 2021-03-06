@@ -29,20 +29,23 @@ int			count_plus(char *names, t_count *counter)
 int			check_line(char **line, t_count *counter)
 {
 	int		i;
-	char	*names[] = {"R", "A", "c", "l", "sp", "pl",
-			"sq", "cy", "tr", NULL};
+	char	*names;
 	char	flag;
 	char	**check;
 
 	i = -1;
 	flag = 0;
 	check = ft_split(*line, "\t\v\f\r ");
-	while (names[++i] != NULL)
-		if (0 == (ft_strncmp(check[0], names[i], 2)))
+	while (++i != 9)
+	{
+		names = init_values_pars(i);
+		if (0 == (ft_strncmp(check[0], names, 2)))
 		{
 			flag = 1;
-			count_plus(names[i], counter);
+			count_plus(names, counter);
 		}
+	}
+
 	if (!flag)
 		return (0);
 	ft_free(check);

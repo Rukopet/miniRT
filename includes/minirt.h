@@ -192,6 +192,7 @@ typedef struct	s_rt
 	t_cy		**cy;
 	t_tr		**tr;
 	t_img		*img;
+	int 		cam1;
 	short 		save;
 }				t_rt;
 
@@ -205,6 +206,12 @@ typedef struct	s_figures
 	t_cy		**cy;
 	t_tr		**tr;
 }				t_figures;
+
+typedef struct	s_d
+{
+	double 		d1;
+	double 		d2;
+}				t_d;
 
 #include "mlx.h"
 #include "solve_mlx.h"
@@ -244,9 +251,13 @@ int				parse_triangle(char **line, t_rt *s, int *i);
 double 			ft_atof(char *s);
 double			ft_atof_ptr(char **s);
 int				ft_atoi_ptr(char **nptr);
+void			check_args(char **line, int v);
+
 
 void			ft_index(int *index);
 void			errors_and_exit(int flag, t_rt *scene);
+char			*init_values_pars(int index);
+
 
 void			alloc_light(t_count *c, t_rt *scene);
 void			alloc_sphere(t_count *c, t_rt *scene);

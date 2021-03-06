@@ -35,9 +35,10 @@ typedef struct	s_dist
 	int 		index;
 	int 		fig_index;
 	double 		distance;
+	double 		dist2;
 }				t_dist;
 
-void rtx(t_rt *scene, int flag);
+void rtx(t_rt *scene, t_img *img, int cam, int flag);
 void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
 
@@ -71,6 +72,8 @@ void painting_scene(t_rt *scene, int x, int y, t_cam *cam);
 
 int 				key_hook(int key_code, t_rt *sc);
 void 			image_to_bmp(t_rt *sc);
+void 				get_img(t_rt *scene);
+
 
 
 
