@@ -8,7 +8,7 @@ static double	**alloc_el(int k, int s)
 	int 		j;
 
 	i = -1;
-	if (!(ret = malloc(sizeof(double*) * k + k * s * sizeof(double))))
+	if (!(ret = (double**)malloc(sizeof(double*) * k + k * s * sizeof(double))))
 		errors_and_exit(-1, NULL);
 	tmp = (double*)((char*)ret + k * sizeof(double*));
 	while (++i < k)

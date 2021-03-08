@@ -12,11 +12,9 @@
 
 CC = clang
 NAME = miniRT
-PRINTPATH = ./ft_printf
-PRINTNAME = libftprintf.a
 PATHLIB = ./libft
 NAMELIB = libft.a
-LIBS = $(PATHLIB)/$(NAMELIB) $(PRINTPATH)/$(PRINTNAME)
+LIBS = $(PATHLIB)/$(NAMELIB)
 LIBX = -L./ -lmlx
 HEADER = includes/minirt.h
 FLAG = -g -Wall #-Wextra #-Werror
@@ -25,7 +23,7 @@ PATHSRC = srcs parser gnl parser/alloc_structs mlx_branching matrix_scene \
 			limits work_with_color intersect
 SRCLIST = $(wildcard $(dir)/*.c)
 SRC = $(foreach dir, $(PATHSRC), $(SRCLIST))
-INC = -I./ft_printf/includes -I./libft -I./gnl -I./includes
+INC = -I./libft -I./gnl -I./includes
 OBJ = $(SRC:.c=.o)
 
 .PHONY: all libs clean fclean re
@@ -33,23 +31,23 @@ OBJ = $(SRC:.c=.o)
 all: libs $(NAME) $(SRC) 
 
 $(NAME): $(OBJ) $(HEADER)
-	$(CC) $(FLAG) -o $(NAME) libft/*.c $(LIBX) $(SRC) $(INC) #$(LIBS)
+	$(CC) $(FLAG) -o $(NAME) libft/*.c $(LIBX) $(SRC) $(INC) $(LIBS)
 
 %.o: %.c $(HEADER)
 	$(CC) -c $(FLAG) $(LIBX) $< $(INC) -o $@
 libs:
-	$(MAKE) all -C$(PRINTPATH)
+	$(MAKE) all -C$(PATHLIB)
 	$(MAKE) -C./minilibx_mms
 	mv ./minilibx_mms/libmlx.dylib ./
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) clean -C$(PRINTPATH)
+	$(MAKE) clean -C$(PATHLIB)
 	$(MAKE) clean -C./minilibx_mms
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) fclean -C$(PRINTPATH)
+	$(MAKE) fclean -C$(PATHLIB)
 	rm -f libmlx.dylib
 
 re: fclean all

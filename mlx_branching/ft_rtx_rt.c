@@ -22,7 +22,7 @@ void 				do_rtx_calculations(void *limits)
 		j = tmp->prev_x;
 		while (++j != tmp->x)
 		{
-			painting_scene(tmp->scene, j, i, NULL);
+			painting_scene(tmp->scene, j, i, tmp->cam);
 		}
 	}
 	free(limits);
@@ -46,7 +46,7 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	int 			i;
 
 	i = -1;
-	limits = alloc_limits(scene, NULL);
+	limits = alloc_limits(scene, cam);
 	while (++i != 4)
 	{
 		if (0 != pthread_create(&thread[i], NULL, (void*)do_rtx_calculations,
