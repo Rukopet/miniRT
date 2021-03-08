@@ -44,6 +44,7 @@ typedef struct	s_cam
 	double		vec_x;
 	double		vec_y;
 	double		vec_z;
+	double 		**tran_mat;
 	int			fov;
 }				t_cam;
 

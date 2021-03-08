@@ -15,6 +15,7 @@ void 				do_rtx_calculations(void *limits)
 	int 			j;
 
 	tmp = (t_limits*)limits;
+
 	i = tmp->prev_y;
 	while (++i != tmp->y)
 	{

@@ -30,8 +30,8 @@ t_vec			coof_color_after_normal(t_vec a_vec[2], t_rt *scene, t_vec
 	t_vec ret;
 	t_vec normal;
 	t_vec n_l[2];
-	t_vec light;
-	double com;
+//	t_vec light;
+ 	double com;
 
 	ret = (t_vec){0, 0, 0};
 	tmp = product_vec_and_int(a_vec, tmp_args.distance, 0);

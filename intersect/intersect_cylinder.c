@@ -75,7 +75,6 @@ static int 		check_height_cy(t_cy* cy, t_c *cyl, t_d t, t_rt *sc)
 static t_d		check_point(t_cy *cy, t_c *cyl, t_d t, t_rt *sc)
 {
 	double			tmp;
-	t_d 			ret;
 
 	if (t.d1 > t.d2)
 	{

@@ -54,7 +54,7 @@ t_cos_sin *alloc_init_cos_sin(t_rt *scene, double degrees);
 void 			get_angles_to_data(t_rt *scene, t_cam *cam);
 t_vec get_ray_to_vp(t_rt *sc, int x, int y, t_cam *cam);
 
-
+void			alloc_matrix(t_cam *cam);
 void 			init_dots(t_rt *scene);
 void init_matrix_z(t_rt *scene, t_matrix *mat, t_cos_sin *cs);
 void init_matrix_y(t_rt *scene, t_matrix *mat, t_cos_sin *cs);

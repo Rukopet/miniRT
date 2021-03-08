@@ -49,6 +49,7 @@ int			parse_cam(char **line, t_rt *s, int *i)
 	s->cam[i[0]]->vec_z = ft_atof_ptr(&tmp);
 
 	s->cam[i[0]]->fov = ft_atof(line[3]);
+	s->cam[i[0]]->tran_mat = NULL;
 	if (line[4] != NULL)
 		return (0);
 	i[0] += 1;

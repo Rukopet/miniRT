@@ -3,7 +3,6 @@
 t_vec take_normal_cylinder(t_vec p, t_cy *cy, t_rt *sc, t_vec *vec)
 {
 	t_vec		norm;
-	t_vec		check;
 	t_vec		p_dir;
 	double 		tmp[2];
 
