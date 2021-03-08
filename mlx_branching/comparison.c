@@ -87,7 +87,7 @@ t_dist comparison_cylinder(t_vec *vec, t_rt *scene, t_vec *start)
 				check = tmp.d2;
 			if (i == 0 || check < dist.distance)
 			{
-				dist.distance = check;
+				dist.distance = check * 0.99996;
 				dist.fig_index = i;
 			}
 		}

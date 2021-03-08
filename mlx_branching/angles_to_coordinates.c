@@ -33,34 +33,11 @@ double 			angle_to_z(double z)
 //	return (tmp);
 //}
 
-t_vec *firs_dot_angles_to_coordinate(t_angles *angles)
+t_vec				firs_dot_angles_to_coordinate(t_angles *angles)
 {
-	t_vec		*first_dot;
+	t_vec			tmp;
 
-	first_dot = alloc_vector(angle_to_x(angles->angle_x),
-						  angle_to_y(angles->angle_y),
-						  angle_to_z(angles->angle_z));
-	norm_vec(first_dot);
-	return (first_dot);
-//	t_vec 		*ok = alloc_vector(first_dot->x, first_dot->y, first_dot->z);
-//	norm_vec(ok);
-//	t_matrix 		*mat;
-//	t_matrix 		*mat1;
-//	t_vec		*tmp;
-//	t_cos_sin 	*cs;
-//	t_cos_sin 	*cs1;
-//
-//	tmp = alloc_vector(1, 0, 0);
-//	mat = malloc(sizeof(t_matrix));
-//	mat1 = malloc(sizeof(t_matrix));
-//	alloc_matrix_vecs(mat, scene);
-//	alloc_matrix_vecs(mat1, scene);
-//	matrix_use_vec(mat, &tmp);
-//
-//	cs = alloc_init_cos_sin(scene, scene->d->angle_x);
-//	cs1 = alloc_init_cos_sin(scene, scene->d->angle_y);
-//	init_matrix_z(scene, mat, cs);
-//	init_matrix_z(scene, mat1, cs1);
-////	first_dot = rotate_osz(scene, cam, scene->d->angle_x, mat);
-
+	tmp = (t_vec){angles->angle_x, angles->angle_y, angles->angle_z};
+	norm_vec(&tmp);
+	return (tmp);
 }

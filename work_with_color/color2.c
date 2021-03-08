@@ -48,10 +48,13 @@ t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec *vec)
 		normal = take_square_normal((t_vec){vec->x * args.distance, vec->y *
 		args.distance, vec->z * args.distance}, scene->sq[args.fig_index]);
 	if (args.index == 4)
-		normal = (t_vec){tmp->x - (scene->sp[args.fig_index]->x -
-		scene->d->vec_matrix->x), tmp->y - (scene->sp[args.fig_index]->y -
-		scene->d->vec_matrix->y), tmp->z - (scene->sp[args.fig_index]->z -
-		scene->d->vec_matrix->z)};
+		normal = take_normal_cylinder((t_vec){vec->x * args.distance,
+		vec->y * args.distance, vec->z * args.distance},
+		scene->cy[args.fig_index], scene, vec);
+//		normal = (t_vec){tmp->x - (scene->sp[args.fig_index]->x -
+//		scene->d->vec_matrix->x), tmp->y - (scene->sp[args.fig_index]->y -
+//		scene->d->vec_matrix->y), tmp->z - (scene->sp[args.fig_index]->z -
+//		scene->d->vec_matrix->z)};
 	if (args.index == 5)
 		normal = take_triangle_normal(scene->tr[args.fig_index], (t_vec){vec->x *
 		args.distance, vec->y * args.distance, vec->z * args.distance});
@@ -75,9 +78,9 @@ t_vec	take_light_to_color(t_light *l, t_vec *tmp, t_rt *scene, t_dist args)
 		tmp->x), l->y - (scene->sq[args.fig_index]->y -
 		tmp->y), l->z - (scene->sq[args.fig_index]->z - tmp->z)};
 	if (args.index == 4)
-		light = (t_vec){l->x - (scene->sp[args.fig_index]->x -
-		tmp->x), l->y - (scene->sp[args.fig_index]->y -
-		tmp->y), l->z - (scene->sp[args.fig_index]->z - tmp->z)};
+		light = (t_vec){l->x - (scene->cy[args.fig_index]->x -
+		tmp->x), l->y - (scene->cy[args.fig_index]->y -
+		tmp->y), l->z - (scene->cy[args.fig_index]->z - tmp->z)};
 	if (args.index == 5)
 		light = (t_vec){l->x - (scene->tr[args.fig_index]->first_x -
 		tmp->x), l->y - (scene->tr[args.fig_index]->first_y -

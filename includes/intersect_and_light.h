@@ -14,6 +14,7 @@ t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
 t_vec			color_light_branching(t_dist args, t_rt *scene, t_vec *vec);
 t_vec			take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec *vec);
 t_vec			take_triangle_normal(t_tr *tr, t_vec dot);
+t_vec take_normal_cylinder(t_vec p, t_cy *cy, t_rt *sc, t_vec *vec);
 
 t_vec			take_light_to_color(t_light *l, t_vec *tmp, t_rt *scene, t_dist args);
 t_vec			triangle_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2]);

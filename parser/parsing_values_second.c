@@ -99,8 +99,8 @@ int			parse_cylinder(char **line, t_rt *s, int *i)
 	s->cy[i[5]]->r = (s->cy[i[5]]->r < 0) ? 0 : s->cy[i[5]]->r;
 	s->cy[i[5]]->r = (s->cy[i[5]]->r > 255) ? 255 : s->cy[i[5]]->r;
 	s->cy[i[5]]->g = ft_atof_ptr(&tmp);
-	s->cy[i[5]]->g = (s->pl[i[5]]->g < 0) ? 0 : s->cy[i[5]]->g;
-	s->cy[i[5]]->g = (s->pl[i[5]]->g > 255) ? 255 : s->cy[i[5]]->g;
+	s->cy[i[5]]->g = (s->cy[i[5]]->g < 0) ? 0 : s->cy[i[5]]->g;
+	s->cy[i[5]]->g = (s->cy[i[5]]->g > 255) ? 255 : s->cy[i[5]]->g;
 	s->cy[i[5]]->b = ft_atof_ptr(&tmp);
 	s->cy[i[5]]->b = (s->cy[i[5]]->b < 0) ? 0 : s->cy[i[5]]->b;
 	s->cy[i[5]]->b = (s->cy[i[5]]->b > 255) ? 255 : s->cy[i[5]]->b;

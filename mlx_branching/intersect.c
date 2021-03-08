@@ -33,21 +33,21 @@ double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
 	return (INFINITY);
 }
 
-t_dist check_len_triangle(t_vec *vec, t_rt *scene, t_dist tmp, t_vec *start)
+t_dist check_len_triangle(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
 {
 	t_dist		first;
 
 	first = comparison_triangle(vec, scene, start);
-	if (first.distance < tmp.distance)
+	if (first.distance < tmp->distance)
 	{
-		tmp.distance = first.distance;
-		tmp.fig_index = first.fig_index;
-		tmp.index = 5;
+		tmp->distance = first.distance;
+		tmp->fig_index = first.fig_index;
+		tmp->index = 5;
 	}
-	return (tmp);
+	return (*tmp);
 }
 
-t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist tmp, t_vec *start)
+t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
 {
 	t_dist		first;
 	t_dist		second;
@@ -62,14 +62,14 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist tmp, t_vec *start)
 		self_tmp.index = 3;
 		self_tmp.fig_index = first.fig_index;
 	}
-	else if (isinf(second.distance))
+	else if (!isinf(second.distance))
 	{
 		self_tmp.distance = second.distance;
  		self_tmp.index = 4;
 		self_tmp.fig_index = second.fig_index;
 	}
-	if (tmp.distance > self_tmp.distance)
-		tmp = self_tmp;
+	if (tmp->distance > self_tmp.distance && isnormal(self_tmp.distance))
+		return (check_len_triangle(vec, scene, &self_tmp, NULL));
 	return (check_len_triangle(vec, scene, tmp, NULL));
 }
 
@@ -97,7 +97,7 @@ t_dist check_len_figures(t_vec *vec, t_rt *scene, t_vec *start)
 		tmp.index = 2;
 		tmp.fig_index = second.fig_index;
 	}
-	return (check_len_cylinder(vec, scene, tmp, start));
+	return (check_len_cylinder(vec, scene, &tmp, start));
 }
 
 int intersect(t_vec *vec, t_rt *scene)
@@ -106,8 +106,8 @@ int intersect(t_vec *vec, t_rt *scene)
 	t_vec 		color;
 
 	args = check_len_figures(vec, scene, scene->d->vec_matrix);
-	if (args.index == 4)
-		return (vec_to_int_color((t_vec){255, 100, 0}, 0));
+//	if (args.index == 4)
+//		return (vec_to_int_color((t_vec){255, 100, 0}, 0));
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }

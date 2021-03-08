@@ -99,9 +99,12 @@ double			intersect_triangle(t_vec *vec, t_tr *tr, t_rt *sc, t_vec
 {
 	t_triangle	tri;
 
-	tri.p[0] = (t_vec){tr->first_x, tr->first_y, tr->first_z};
-	tri.p[1] = (t_vec){tr->second_x, tr->second_y, tr->second_z};
-	tri.p[2] = (t_vec){tr->third_x, tr->third_y, tr->third_z};
+	tri.p[0] = (t_vec){tr->first_x - start->x, tr->first_y - start->y,
+	tr->first_z - start->z};
+	tri.p[1] = (t_vec){tr->second_x - start->x, tr->second_y - start->y,
+	tr->second_z - start->z};
+	tri.p[2] = (t_vec){tr->third_x - start->x, tr->third_y - start->y,
+	tr->third_z - start->z};
 	tri.ab_s = (t_vec){tri.p[1].x -  tri.p[0].x, tri.p[1].y -  tri.p[0].y,
 	tri.p[1].z -  tri.p[0].z};
 	tri.ac_s = (t_vec){tri.p[2].x -  tri.p[0].x, tri.p[2].y -  tri.p[0].y,

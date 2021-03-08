@@ -7,7 +7,7 @@ t_vec			vec_subt(t_vec vec1, t_vec vec2)
 
 double			vec_scal(t_vec vec1, t_vec vec2)
 {
-	return (vec1.x * vec2.x, vec1.y, vec2.y, vec1.z * vec2.z);
+	return (vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z);
 }
 
 t_vec			vec_multi(t_vec vec, double dist)

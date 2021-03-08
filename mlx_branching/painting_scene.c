@@ -12,17 +12,23 @@ void put_pixel(t_rt *sc, int x, int y, int color)
 
 void painting_scene(t_rt *scene, int x, int y, t_cam *cam)
 {
-	t_angles 	*angles;
-	t_vec		*norm_vec;
+	t_angles 	angles;
+	t_vec		norm_vec;
 	int 		color;
 
-	if (!(angles = malloc(sizeof(t_angles))))
-		errors_and_exit(-1, scene);
+//	if (!(angles = malloc(sizeof(t_angles))))
+//		errors_and_exit(-1, scene);
+	if (cam == NULL)
+		cam = scene->cam[0];
 //	if (cam->fov > 170)
 //	{
-		calculate_angles(scene, x, y, angles);
-		norm_vec = firs_dot_angles_to_coordinate(angles);
+		calculate_angles(scene, x, y, &angles);
+		norm_vec = firs_dot_angles_to_coordinate(&angles);
 //	}
+	if (cam->fov == 60)
+	{
+		get_ray_to_vp(scene, x, y, cam);
+	}
 
 //
 //	#include <fcntl.h>
@@ -36,8 +42,7 @@ void painting_scene(t_rt *scene, int x, int y, t_cam *cam)
 
 //	printf("xy %d|%d  %f * %f * %f\n", x, y, angles->angle_x, angles->angle_y,
 //		  angles->angle_z);
-	color = intersect(norm_vec, scene);
+	color = intersect(&norm_vec, scene);
 	put_pixel(scene, x, y, color);
 //	mlx_pixel_put(scene->d->mlx, scene->d->win, x, y, color);
-	free(angles);
 }

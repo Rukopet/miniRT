@@ -10,6 +10,11 @@ static void	mlx_errors(int flag, t_rt *scene)
 		free_scene(scene, 1);
 		exit(flag);
 	}
+	if (flag == 19)
+	{
+		write(2, "Error\nIn check color fig\n", 28);
+
+	}
 }
 
 void		next_errors(int flag, t_rt *scene)

@@ -46,9 +46,10 @@
 //}
 
 
-static void 	take_args(t_c *cyl, t_cy *cy, t_vec *vec)
+static void take_args(t_c *cyl, t_cy *cy, t_vec *vec, t_vec *start)
 {
 	cyl->orient = (t_vec){cy->vec_x, cy->vec_y, cy->vec_z};
+//	cyl->point = (t_vec){cy->x - start->x, cy->y - start->y, cy->z - start->z};
 	cyl->point = (t_vec){cy->x, cy->y, cy->z};
 	cyl->norm_ori = (t_vec){cy->vec_x, cy->vec_y, cy->vec_z};
 	norm_vec(&cyl->norm_ori);
@@ -110,9 +111,9 @@ static t_d		cyl_quadro_cyl(t_cy *cy, t_c *cyl, t_rt *sc)
 	if (disc > 0)
 	{
 		if (cyl->b > 0)
-			tmp = cyl->b + sqrt(disc) / -2.0;
+			tmp = (cyl->b + sqrt(disc)) / -2.0;
 		else
-			tmp = cyl->b + sqrt(disc) / -2.0;
+			tmp = (cyl->b - sqrt(disc)) / -2.0;
 		d1 = tmp / cyl->a;
 		d2 = cyl->c / tmp;
 	}
@@ -126,9 +127,10 @@ t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
 	t_vec			tmp;
 	t_vec			matrix;
 
-	matrix = (t_vec){scene->d->vec_matrix->x, scene->d->vec_matrix->y,
-				  scene->d->vec_matrix->z};
-	take_args(&cyl, cy, vec);
+//	matrix = (t_vec){scene->d->vec_matrix->x, scene->d->vec_matrix->y,
+//				  scene->d->vec_matrix->z};
+	matrix = (t_vec){start->x, start->y, start->z};
+	take_args(&cyl, cy, vec, start);
 	tmp = (t_vec){cyl.vec->x, cyl.vec->y, cyl.vec->z};
 	cyl.vpr_p = vec_subt(tmp, vec_multi(cyl.norm_ori,
 	vec_scal(cyl.norm_ori, tmp)));

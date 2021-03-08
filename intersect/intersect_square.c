@@ -11,9 +11,9 @@ double			intersect_square(t_vec *vec, t_sq *sq, t_rt *scene, t_vec
 	t_vec		normal;
 	t_vec		k;
 
-	k = (t_vec){(scene->d->vec_matrix->x - sq->x),
-	(scene->d->vec_matrix->y - sq->y),
-	(scene->d->vec_matrix->z - sq->z)};
+	k = (t_vec){(scene->d->vec_matrix->x - sq->x - start->x),
+	(scene->d->vec_matrix->y - sq->y - start->y),
+	(scene->d->vec_matrix->z - sq->z - start->z)};
 	normal = (t_vec){sq->vec_x, sq->vec_y, sq->vec_z};
 	norm_vec(&normal);
 	b = scalar_product(vec, &normal, 3);
