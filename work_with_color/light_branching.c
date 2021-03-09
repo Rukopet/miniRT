@@ -45,7 +45,7 @@ t_vec	plane_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 	return (*(color + 1));
 }
 
-t_vec color_light_branching(t_dist args, t_rt *scene, t_vec *vec)
+t_vec color_light_branching(t_dist args, t_rt *scene, t_vec vec[2])
 {
 	t_vec		color[2];
 

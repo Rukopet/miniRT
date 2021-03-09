@@ -14,3 +14,11 @@ t_vec			vec_multi(t_vec vec, double dist)
 {
 	return ((t_vec){vec.x * dist, vec.y * dist, vec.z * dist});
 }
+
+t_vec			norm_vector_stack(t_vec *vec)
+{
+	double			len;
+
+	len = length_vector(vec);
+	return ((t_vec){vec->x / len, vec->y / len, vec->z / len});
+}

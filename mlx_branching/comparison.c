@@ -1,6 +1,6 @@
 #include "minirt.h"
 
-t_dist comparison_spheres(t_vec *vec, t_rt *scene, t_vec *start)
+t_dist comparison_spheres(t_vec vec[2], t_rt *scene, t_vec *start)
 {
 	int 			i;
 	t_dist			dist;
@@ -24,7 +24,7 @@ t_dist comparison_spheres(t_vec *vec, t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_planes(t_vec *vec, t_rt *scene, t_vec *start)
+t_dist comparison_planes(t_vec vec[2], t_rt *scene, t_vec *start)
 {
 	t_dist		dist;
 	int 		i;
@@ -45,7 +45,7 @@ t_dist comparison_planes(t_vec *vec, t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_squares(t_vec *vec, t_rt *scene, t_vec *start)
+t_dist comparison_squares(t_vec vec[2], t_rt *scene, t_vec *start)
 {
 	t_dist		dist;
 	int 		i;
@@ -66,7 +66,7 @@ t_dist comparison_squares(t_vec *vec, t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_cylinder(t_vec *vec, t_rt *scene, t_vec *start)
+t_dist comparison_cylinder(t_vec vec[2], t_rt *scene, t_vec *start)
 {
 	t_dist		dist;
 	int 		i;
@@ -87,14 +87,14 @@ t_dist comparison_cylinder(t_vec *vec, t_rt *scene, t_vec *start)
 				check = tmp.d2;
 			if (i == 0 || check < dist.distance)
 			{
-				dist.distance = check * 0.99996;
+				dist.distance = check;
 				dist.fig_index = i;
 			}
 		}
 	return (dist);
 }
 
-t_dist comparison_triangle(t_vec *vec, t_rt *scene, t_vec *start)
+t_dist comparison_triangle(t_vec vec[2], t_rt *scene, t_vec *start)
 {
 	t_dist		dist;
 	int 		i;
@@ -106,7 +106,7 @@ t_dist comparison_triangle(t_vec *vec, t_rt *scene, t_vec *start)
 		while (scene->tr[++i] != NULL)
 		{
 			tmp = intersect_triangle(vec, scene->tr[i], scene, start);
-			if (i == 0 || tmp < dist.distance)
+			if ((i == 0 || tmp < dist.distance) && isnormal(tmp))
 			{
 				dist.distance = tmp;
 				dist.fig_index = i;

@@ -94,7 +94,7 @@ static double	check_normal(t_triangle *tri, t_tr *tr, t_rt *sc, t_vec *start)
 	return (INFINITY);
 }
 
-double			intersect_triangle(t_vec *vec, t_tr *tr, t_rt *sc, t_vec
+double			intersect_triangle(t_vec vec[2], t_tr *tr, t_rt *sc, t_vec
 *start)
 {
 	t_triangle	tri;

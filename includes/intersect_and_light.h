@@ -1,13 +1,14 @@
 #ifndef INTERSECT_AND_LIGHT_H
 # define INTERSECT_AND_LIGHT_H
 
-int				intersect(t_vec *vec, t_rt *scene);
-double			intersect_sphere(t_vec *ray, t_sp *sp, t_rt *scene, t_vec *start);
-double			intersect_plane(t_vec *vec, t_pl *pl, t_rt *scene, t_vec
+int				intersect(t_vec vec[2], t_rt *scene);
+double			intersect_sphere(t_vec ray[2], t_sp *sp, t_rt *scene, t_vec
 *start);
-double			intersect_square(t_vec *vec, t_sq *sq, t_rt *scene, t_vec
+double			intersect_plane(t_vec vec[2], t_pl *pl, t_rt *scene, t_vec
 *start);
-double			intersect_triangle(t_vec *vec, t_tr *tr, t_rt *sc, t_vec
+double			intersect_square(t_vec vec[2], t_sq *sq, t_rt *scene, t_vec
+*start);
+double			intersect_triangle(t_vec vec[2], t_tr *tr, t_rt *sc, t_vec
 *start);
 t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
 					   t_vec *start);

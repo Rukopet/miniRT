@@ -238,6 +238,7 @@ void			init_scene_struct(t_rt **str);
 
 int				parse_after_count(char **join, t_rt *scene);
 char			*next_argument_check(char **join);
+char			*init_values_pars(int index);
 
 int				write_error_withpars(const char *line);
 int				parse_resolution(char **line, t_rt *s);

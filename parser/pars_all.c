@@ -72,9 +72,9 @@ int			check_line_parse(char **line, t_rt *scene)
 		{
 			flag = 1;
 			parsing_values(names, check, scene);
+			break;
 		}
 	}
-
 	if (!flag && **line != 0)
 		return (0);
 	ft_free(check);

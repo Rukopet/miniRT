@@ -32,7 +32,8 @@ t_vec	take_square_normal(t_vec point, t_sq *sq)
 	return (len1 > len2 ? normal1 : normal2);
 }
 
-t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec *vec)
+t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec
+vec[5])
 {
 	t_vec normal;
 
@@ -51,10 +52,6 @@ t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec *vec)
 		normal = take_normal_cylinder((t_vec){vec->x * args.distance,
 		vec->y * args.distance, vec->z * args.distance},
 		scene->cy[args.fig_index], scene, vec);
-//		normal = (t_vec){tmp->x - (scene->sp[args.fig_index]->x -
-//		scene->d->vec_matrix->x), tmp->y - (scene->sp[args.fig_index]->y -
-//		scene->d->vec_matrix->y), tmp->z - (scene->sp[args.fig_index]->z -
-//		scene->d->vec_matrix->z)};
 	if (args.index == 5)
 		normal = take_triangle_normal(scene->tr[args.fig_index], (t_vec){vec->x *
 		args.distance, vec->y * args.distance, vec->z * args.distance});

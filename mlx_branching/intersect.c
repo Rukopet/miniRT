@@ -1,39 +1,31 @@
 #include "minirt.h"
 #include <stdio.h>
 
-double intersect_sphere(t_vec *vec, t_sp *sp, t_rt *scene, t_vec *start)
+double intersect_sphere(t_vec vec[2], t_sp *sp, t_rt *scene, t_vec *start)
 {
-	double	a;
-	double	b;
-	double	c;
+	double	k[4];
 	double	discriminant;
-	double	distance_1;
-	double 	distance_2;
-	t_vec	*sp_center;
+	double	distance[3];
+	t_vec	sp_center;
 
-	a = 0.998;
-	sp_center = alloc_vector((sp->x - start->x),
-	(sp->y - start->y),(sp->z - start->z));
-	b = 2 * scalar_product(sp_center, vec, 3);
-	c = scalar_product(sp_center, sp_center, 3) - pow(sp->diameter / 2, 2);
-//	free(sp_center);
-//	sp_center = NULL;
-	discriminant = pow(b, 2) - (4 * a * c);
+	k[1] = 0.9999;
+	sp_center = vec_subt(vec[1], (t_vec){sp->x, sp->y, sp->z});
+	k[2] = 2 * scalar_product(&sp_center, &vec[0], 3);
+	k[3] = scalar_product(&sp_center, &sp_center, 3) - pow(sp->diameter / 2, 2);
+	discriminant = pow(k[2], 2) - (4 * k[1] * k[3]);
 	if (discriminant >= 0)
 	{
-		distance_1 = (-b - sqrt(discriminant)) / 2;
-		distance_2 = (-b + sqrt(discriminant)) / 2;
-		if (distance_1 < 0)
-		{
-			distance_1 = (distance_2 > distance_1) ? distance_2 : distance_1;
-			return (fabs(distance_1));
-		}
-
+		distance[1] = (-k[2] - sqrt(discriminant)) / 2;
+		distance[2] = (-k[2] + sqrt(discriminant)) / 2;
+		if (distance[1] < 0 && distance[2] > 0)
+			return (distance[2]);
+		else if (distance[1] > 0 )
+			return (distance[1]);
 	}
 	return (INFINITY);
 }
 
-t_dist check_len_triangle(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
+t_dist check_len_triangle(t_vec vec[2], t_rt *scene, t_dist *tmp, t_vec *start)
 {
 	t_dist		first;
 
@@ -72,8 +64,8 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
 		self_tmp.fig_index = second.fig_index;
 	}
 	if (tmp->distance > self_tmp.distance && isnormal(self_tmp.distance))
-		return (check_len_triangle(vec, scene, &self_tmp, NULL));
-	return (check_len_triangle(vec, scene, tmp, NULL));
+		return (check_len_triangle(vec, scene, &self_tmp, start));
+	return (check_len_triangle(vec, scene, tmp, start));
 }
 
 t_dist check_len_figures(t_vec vec[2], t_rt *scene, t_vec *start)

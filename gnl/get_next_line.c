@@ -60,7 +60,6 @@ int				ft_save_remains(char **tmp)
 	int			i;
 	int			j;
 
-	i = 0;
 	j = 0;
 	if (!(*tmp))
 		return (0);

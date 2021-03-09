@@ -26,9 +26,10 @@ SRC = $(foreach dir, $(PATHSRC), $(SRCLIST))
 INC = -I./libft -I./gnl -I./includes
 OBJ = $(SRC:.c=.o)
 
+
 .PHONY: all libs clean fclean re
 
-all: libs $(NAME) $(SRC) 
+all: libs $(NAME) $(SRC)
 
 $(NAME): $(OBJ) $(HEADER)
 	$(CC) $(FLAG) -o $(NAME) libft/*.c $(LIBX) $(SRC) $(INC) $(LIBS)

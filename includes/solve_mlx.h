@@ -38,7 +38,7 @@ typedef struct	s_dist
 	double 		dist2;
 }				t_dist;
 
-void rtx(t_rt *scene, t_img *img, int cam, int flag);
+void			rtx(t_rt *scene, t_img *img, int cam, int flag);
 void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
 

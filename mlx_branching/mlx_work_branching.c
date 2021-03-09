@@ -2,7 +2,6 @@
 
 void 				next_cam(t_rt *sc)
 {
-
 }
 
 int 				key_hook(int key_code, t_rt *sc)
@@ -64,7 +63,7 @@ void				begin_mlx_work(t_rt *scene)
 	"miniRT");
 	if (NULL == mlx_win)
 		errors_and_exit(20, scene);
+	cam = 0;
 	init_data_struct(scene, mlx, mlx_win);
-	cam = key_hook(50, scene);
 	rtx(scene, &img, cam, 0);
 }

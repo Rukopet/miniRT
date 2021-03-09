@@ -36,6 +36,8 @@ int			check_line(char **line, t_count *counter)
 	i = -1;
 	flag = 0;
 	check = ft_split(*line, "\t\v\f\r ");
+	if (NULL == check[0])
+		errors_and_exit(4, NULL);
 	while (++i != 9)
 	{
 		names = init_values_pars(i);
@@ -45,11 +47,9 @@ int			check_line(char **line, t_count *counter)
 			count_plus(names, counter);
 		}
 	}
-
 	if (!flag)
 		return (0);
 	ft_free(check);
-	// free(*check);
 	return (1);	
 }
 
@@ -63,10 +63,9 @@ char		*next_argument_check(char **join)
 
 	begin = *join;
 	i = -1;
-	if (!(line_check = malloc(len = ft_strlen_n(begin, 1) + 1)))
+	if (!(line_check = ft_calloc(1, len = ft_strlen_n(begin, 1) + 1)))
 		return (NULL);
-	line_check[len] = 0;
-	while (*begin != '\n' && *begin)
+	while ((*begin != '\n') && *begin)
 		line_check[++i] = *begin++;
 	if(!(ret = malloc(len = ft_strlen_n(begin, 0) + 1)))
 		return (NULL);
