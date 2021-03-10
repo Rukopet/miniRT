@@ -13,7 +13,7 @@ t_vec	take_plane_normal(t_vec point, t_pl *plane)
 							   point.z - normal1.z});
 	len2 = length_vector(&(t_vec){point.x - normal2.x, point.y - normal2.y,
 								  point.z - normal2.z});
-	return (len1 > len2 ? normal1 : normal2);
+	return (len1 < len2 ? normal2 : normal1);
 }
 
 t_vec	take_square_normal(t_vec point, t_sq *sq)

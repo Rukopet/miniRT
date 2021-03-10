@@ -57,7 +57,7 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
 		self_tmp.index = 3;
 		self_tmp.fig_index = first.fig_index;
 	}
-	else if (!isinf(second.distance) && second.fig_index != -1)
+	else if (isnormal(second.distance))
 	{
 		self_tmp.distance = second.distance;
  		self_tmp.index = 4;
@@ -101,6 +101,7 @@ int intersect(t_vec vec[2], t_rt *scene)
 	t_vec 		color;
 
 	args = check_len_figures(vec, scene, scene->d->vec_matrix);
+	args.distance *= 0.999999999;
 //	if (args.index == 4)
 //		return (vec_to_int_color((t_vec){255, 100, 0}, 0));
 

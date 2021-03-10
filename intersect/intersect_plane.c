@@ -9,7 +9,7 @@ double			intersect_plane(t_vec vec[2], t_pl *pl, t_rt *scene, t_vec
 	double		a;
 	double		b;
 
-	k = (t_vec){vec[1].x - pl->x, vec[1].y - pl->y, vec[1].z - pl->z};
+	k = vec_subt(vec[1], (t_vec){pl->x, pl->y, pl->z});
 	normal = (t_vec){pl->vec_x, pl->vec_y, pl->vec_z};
 	if (vec[1].x != start->x)
 		a = a;

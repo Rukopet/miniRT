@@ -33,7 +33,6 @@ t_vec coof_color_after_normal(t_vec a_vec[5], t_rt *scene, t_dist tmp_args,
 {
 	t_vec *tmp;
 	t_vec ret;
-	t_vec normal;
 	t_vec n_l[2];
  	double com;
 
@@ -42,13 +41,14 @@ t_vec coof_color_after_normal(t_vec a_vec[5], t_rt *scene, t_dist tmp_args,
 	n_l[0] = take_normal_from_obj(tmp_args, scene, tmp, a_vec);
 	norm_vec(&n_l[0]);
 	n_l[1] = take_light_to_color(l, tmp, scene, tmp_args);
-	com = normal_vector(&n_l[1], &n_l[0]) * 0.9;
-	if (com > 0.0)
+	norm_vec(&n_l[1]);
+	com = normal_vector(&n_l[1], &n_l[0]);
+//	com = normal_vector(&n_l[1], &n_l[0]) * 0.9;
+	if (com > 0)
 	{
-		ret = (t_vec){l->r / 255.0 * (l->b_rate) * com,
-					  l->g / 255.0 * (l->b_rate) * com,
-					  l->b / 255.0 * (l->b_rate) * com};
-	norm_vec(&normal);
+		ret = (t_vec){l->r / 255.0 * (l->b_rate * com),
+					  l->g / 255.0 * (l->b_rate * com),
+					  l->b / 255.0 * (l->b_rate * com)};
 	}
 	free(tmp);
 	return (ret);
@@ -73,7 +73,7 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
 	tmp_args = (t_dist){args.index, args.fig_index, args.distance, args.dist2};
 	d_vec[3] = (t_vec){color->x, color->y, color->z};
 	d_vec[4] = vec_multi((t_vec){vec->x, vec->y, vec->z},
-					  args.distance * 0.99999);
+					  args.distance);
 	i = -1;
 	light[1] = (t_vec){scene->d->vec_matrix->x + d_vec[4].x,
 	scene->d->vec_matrix->y + d_vec[4].y, scene->d->vec_matrix->z + d_vec[4].z};
