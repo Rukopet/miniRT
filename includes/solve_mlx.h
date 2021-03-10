@@ -42,7 +42,6 @@ void			rtx(t_rt *scene, t_img *img, int cam, int flag);
 void			begin_mlx_work(t_rt *scene);
 t_vp			*alloc_viewport(t_rt *scene);
 
-void			matrix_rellocation(t_rt *scene, int c);
 t_vec firs_dot_angles_to_coordinate(t_angles *angles);
 
 

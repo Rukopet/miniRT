@@ -63,11 +63,15 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 
 void rtx(t_rt *scene, t_img *img, int cam, int flag)
 {
+	t_vec		matrix;
+
+	matrix = (t_vec){scene->cam[cam]->x, scene->cam[cam]->y,
+				  scene->cam[cam]->z};
+	scene->d->vec_matrix = &matrix;
 	scene->img = img;
 	get_img(scene);
 	if (scene->save)
 		image_to_bmp(scene);
- 	matrix_rellocation(scene, cam);
 	mlx_key_hook(scene->d->win, key_hook, scene);
 	mlx_hook(scene->d->win, 17, (1L << 2), do_close, &scene);
 	if (scene->cam[cam]->fov > 170)
