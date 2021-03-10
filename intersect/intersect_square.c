@@ -20,7 +20,7 @@ static int 		check_borders(t_vec tmp[4], double k[3], t_sq *sq)
 	double 		up;
 	t_vec		check;
 
-	check = vec_subt(tmp[2], (t_vec){sq->x, sq->y, sq->z});
+	check = vec_subt(tmp[3], (t_vec){sq->x, sq->y, sq->z});
 	p = vec_scal(check, tmp[0]);
 	up = vec_scal(check, tmp[1]);
 	if ((fabs(p) <= sq->side_size / 2.0) && (fabs(up) <= sq->side_size / 2.0))
@@ -60,8 +60,8 @@ double			intersect_square(t_vec vec[2], t_sq *sq, t_rt *scene, t_vec
 	double 		k[3];
 	double 		dist;
 
-	tmp[2] = (sq->y == 1) ? (t_vec){0, 0, 1} : (t_vec){0, 1, 0};
-	tmp[2] = (sq->y == -1) ? (t_vec){0, 0, 1} : tmp[2];
+	tmp[2] = (sq->vec_y == 1) ? (t_vec){0, 0, 1} : (t_vec){0, 1, 0};
+	tmp[2] = (sq->vec_y == -1) ? (t_vec){0, 0, 1} : tmp[2];
 	tmp[0] = vector_cross(&(t_vec){sq->vec_x, sq->vec_y, sq->vec_z}, &tmp[2]);
 	norm_vec(&tmp[0]);
 	tmp[1] = vector_cross(&(t_vec){sq->vec_x, sq->vec_y, sq->vec_z}, &tmp[0]);
@@ -71,7 +71,7 @@ double			intersect_square(t_vec vec[2], t_sq *sq, t_rt *scene, t_vec
 	{
 		tmp[3] = vec_multi(vec[0], dist);
 		tmp[3] = (t_vec){start->x + tmp[3].x, start->y + tmp[3].y, start->z +
-				   tmp[3].z};
+		tmp[3].z};
 		if (check_borders(tmp, k, sq))
 			return (dist);
 	}

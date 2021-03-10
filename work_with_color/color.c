@@ -5,7 +5,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-t_vec summ_colors(t_vec color1, t_vec color, t_vec color2)
+t_vec summ_colors(t_vec color1, t_vec color2)
 {
 		color1 = (t_vec){color1.x + color2.x,
 						 color1.y + color2.y,
@@ -15,17 +15,20 @@ t_vec summ_colors(t_vec color1, t_vec color, t_vec color2)
 
 t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 {
-	t_vec		tmp;
-	double 		c;
-	double 		ch;
+	double		max;
+	double		check;
 
-	i = (i == 0) ? 1 : i;
-	c = 0.3;
-	ch = c * i;
-	tmp = (t_vec){color->x  * (coof.x),
-			color->y * (coof.y),
-			color->z * (coof.z)};
-	return (tmp);
+	check = 1;
+	*color = (t_vec){color->x * coof.x,
+						color->y * coof.y,
+						color->z * coof.z};
+	if (color->x > 255 || color->y> 255 || color->z > 255)
+	{
+		max = fmax(color->x, fmax(color->y, color->z));
+		check = 254.0 / max;
+	}
+	*color = (t_vec){color->x * check, color->y * check, color->z * check};
+	return (*color);
 }
 
 t_vec coof_color_after_normal(t_vec a_vec[5], t_rt *scene, t_dist tmp_args,
@@ -72,8 +75,7 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
 	//d_vec[5] loght
 	tmp_args = (t_dist){args.index, args.fig_index, args.distance, args.dist2};
 	d_vec[3] = (t_vec){color->x, color->y, color->z};
-	d_vec[4] = vec_multi((t_vec){vec->x, vec->y, vec->z},
-					  args.distance);
+	d_vec[4] = vec_multi((t_vec){vec->x, vec->y, vec->z}, args.distance);
 	i = -1;
 	light[1] = (t_vec){scene->d->vec_matrix->x + d_vec[4].x,
 	scene->d->vec_matrix->y + d_vec[4].y, scene->d->vec_matrix->z + d_vec[4].z};
@@ -89,7 +91,7 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
 		light[0].z};
 		if (isinf(args.distance) == 0)
 			continue;
-		d_vec[3] = summ_colors(d_vec[3], *color, coof_color_after_normal
+		d_vec[3] = summ_colors(d_vec[3], coof_color_after_normal
 				(d_vec, scene, tmp_args, scene->light[i]));
 	}
 	return (get_color_after_normal(color + 1, d_vec[3], i));
