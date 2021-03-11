@@ -31,7 +31,7 @@ t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 	return (*color);
 }
 
-t_vec coof_color_after_normal(t_vec a_vec[5], t_rt *scene, t_dist tmp_args,
+t_vec coof_color_after_normal(t_vec a_vec[2], t_rt *scene, t_dist tmp_args,
 							  t_light *l)
 {
 	t_vec *tmp;
@@ -42,6 +42,20 @@ t_vec coof_color_after_normal(t_vec a_vec[5], t_rt *scene, t_dist tmp_args,
 	ret = (t_vec){0, 0, 0};
 	tmp = product_vec_and_int(a_vec, tmp_args.distance, 0);
 	n_l[0] = take_normal_from_obj(tmp_args, scene, tmp, a_vec);
+//	if (tmp_args.index == 2)
+//	{
+//		t_vec check = (t_vec){scene->pl[tmp_args.fig_index]->x,
+//							  scene->pl[tmp_args.fig_index]->y,
+//							  scene->pl[tmp_args.fig_index]->z};
+//		t_vec opos = (t_vec){-a_vec->x, -a_vec->y, -a_vec->z};
+//		double vpr = vec_scal(opos, check);
+//		if (vec_scal(check, opos) != 0)
+//		{
+//			check = vec_multi(check, vpr);
+//			norm_vec(&check);
+//			n_l[0] = check;
+//		}
+//	}
 	norm_vec(&n_l[0]);
 	n_l[1] = take_light_to_color(l, tmp, scene, tmp_args);
 	norm_vec(&n_l[1]);
@@ -118,13 +132,13 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
 		new_vec[0] = vec_subt(*check, (t_vec){scene->light[i]->x, scene->light[i]->y,
 		scene->light[i]->z});
 		norm_vec(&new_vec[0]);
-		*(tmp + 1) = vec_subt((t_vec){scene->light[i]->x,
-		scene->light[i]->y, scene->light[i]->z}, check[0]);
 		new = check_len_figures(new_vec, scene, NULL);
 		if (args.fig_index != new.fig_index || args.index != new.index)
 			continue ;
+		*(tmp + 1) = vec_subt((t_vec){scene->light[i]->x,
+		scene->light[i]->y, scene->light[i]->z}, check[0]);
 		*color = summ_colors(*color, coof_color_after_normal
-				(tmp, scene, args, scene->light[i]));
+			(tmp, scene, args, scene->light[i]));
 	}
 //	return (*(color + 1));
 	return (get_color_after_normal(color + 1, *color, i));

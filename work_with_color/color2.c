@@ -43,18 +43,18 @@ vec[5])
 		scene->d->vec_matrix->y), tmp->z - (scene->sp[args.fig_index]->z -
 		scene->d->vec_matrix->z)};
 	if (args.index == 2)
-		normal = take_plane_normal((t_vec){vec->x * args.distance, vec->y *
-		args.distance, vec->z * args.distance}, scene->pl[args.fig_index]);
+		normal = take_plane_normal((t_vec){vec->x , vec->y, vec->z},
+			scene->pl[args.fig_index]);
 	if (args.index == 3)
-		normal = take_square_normal((t_vec){vec->x * args.distance, vec->y *
-		args.distance, vec->z * args.distance}, scene->sq[args.fig_index]);
+		normal = take_square_normal((t_vec){vec->x, vec->y, vec->z },
+			scene->sq[args.fig_index]);
 	if (args.index == 4)
 		normal = take_normal_cylinder((t_vec){vec->x * args.distance,
 		vec->y * args.distance, vec->z * args.distance},
 		scene->cy[args.fig_index], scene, vec);
 	if (args.index == 5)
-		normal = take_triangle_normal(scene->tr[args.fig_index], (t_vec){vec->x *
-		args.distance, vec->y * args.distance, vec->z * args.distance});
+		normal = take_triangle_normal(scene->tr[args.fig_index],
+		(t_vec){vec->x, vec->y, vec->z});
 	return (normal);
 }
 
