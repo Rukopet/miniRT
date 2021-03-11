@@ -88,7 +88,9 @@ static double	check_normal(t_triangle *tri, t_tr *tr, t_rt *sc, t_vec *start)
 
 	if (!isinf(dist = intersect_plane(tri->vec, &tri->pl, sc, start)))
 	{
-		p = (t_vec){dist * tri->vec->x, dist * tri->vec->y, dist * tri->vec->z};
+		p = (t_vec){dist * tri->vec->x + tri->vec[1].x,
+			  dist * tri->vec->y + tri->vec[1].y,
+			  dist * tri->vec->z + tri->vec[1].z};
 		return (summ_square(tri, p, dist));
 	}
 	return (INFINITY);
@@ -99,12 +101,9 @@ double			intersect_triangle(t_vec vec[2], t_tr *tr, t_rt *sc, t_vec
 {
 	t_triangle	tri;
 
-	tri.p[0] = (t_vec){tr->first_x - start->x, tr->first_y - start->y,
-	tr->first_z - start->z};
-	tri.p[1] = (t_vec){tr->second_x - start->x, tr->second_y - start->y,
-	tr->second_z - start->z};
-	tri.p[2] = (t_vec){tr->third_x - start->x, tr->third_y - start->y,
-	tr->third_z - start->z};
+	tri.p[0] = (t_vec){tr->first_x, tr->first_y, tr->first_z};
+	tri.p[1] = (t_vec){tr->second_x, tr->second_y, tr->second_z};
+	tri.p[2] = (t_vec){tr->third_x, tr->third_y, tr->third_z};
 	tri.ab_s = (t_vec){tri.p[1].x -  tri.p[0].x, tri.p[1].y -  tri.p[0].y,
 	tri.p[1].z -  tri.p[0].z};
 	tri.ac_s = (t_vec){tri.p[2].x -  tri.p[0].x, tri.p[2].y -  tri.p[0].y,

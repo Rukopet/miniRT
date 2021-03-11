@@ -6,8 +6,8 @@ static double 		check_plane(t_sq *sq, t_vec *vec, t_rt *scene, t_vec *start)
 	t_pl		tmp;
 	double		dist;
 
-	tmp = (t_pl){.x = sq->x - start->x, .y = sq->y - start->y,
-			  .z =  sq->z - start->z , .vec_x = sq->vec_x,
+	tmp = (t_pl){.x = sq->x, .y = sq->y,
+			  .z =  sq->z, .vec_x = sq->vec_x,
 			  .vec_y = sq->vec_y, .vec_z = sq->vec_z};
 	dist = intersect_plane(vec, &tmp, scene, start);
 	if (isnormal(dist) && (dist > MINIMUM))
@@ -71,7 +71,7 @@ double			intersect_square(t_vec vec[2], t_sq *sq, t_rt *scene, t_vec
 	if (isnormal(dist))
 	{
 		tmp[3] = vec_multi(vec[0], dist);
-		tmp[3] = (t_vec){start->x + tmp[3].x, start->y + tmp[3].y, start->z +
+		tmp[3] = (t_vec){vec[1].x + tmp[3].x, vec[1].y + tmp[3].y, tmp[1].z +
 		tmp[3].z};
 		if (check_borders(tmp, k, sq))
 			return (dist);

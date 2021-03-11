@@ -79,7 +79,7 @@ t_dist check_len_figures(t_vec vec[2], t_rt *scene, t_vec *start)
 	tmp.index = 0;
 	tmp.fig_index = -1;
 	tmp.distance = INFINITY;
-	first = comparison_spheres(vec, scene, start);
+	first =  comparison_spheres(vec, scene, start);
 	second = comparison_planes(vec, scene, start);
 
 	if (first.distance < second.distance && isnormal(first.distance))

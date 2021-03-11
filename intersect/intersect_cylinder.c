@@ -128,7 +128,7 @@ t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
 
 //	matrix = (t_vec){scene->d->vec_matrix->x, scene->d->vec_matrix->y,
 //				  scene->d->vec_matrix->z};
-	matrix = (t_vec){start->x, start->y, start->z};
+	matrix = (t_vec){vec[1].x, vec[1].y, vec[1].z};
 	take_args(&cyl, cy, vec, start);
 	tmp = (t_vec){cyl.vec->x, cyl.vec->y, cyl.vec->z};
 	cyl.vpr_p = vec_subt(tmp, vec_multi(cyl.norm_ori,

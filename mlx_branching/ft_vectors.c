@@ -18,9 +18,7 @@ double 				length_vector(t_vec *vec)
 	double			check;
 
 	check = vec->x * vec->x + vec->y * vec->y + vec->z * vec->z;
-	check *= (check < 0) ? -1 : 1;
-	check = (check == 0) ? 0 : sqrt(check);
-	return (check);
+	return (sqrt(check));
 }
 
 int 				norm_vec(t_vec *vec)
