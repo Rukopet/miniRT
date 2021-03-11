@@ -23,7 +23,7 @@ t_vec	square_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 	}
 	else
 		return (triangle_light_br(args, scene, vec, color));
-	check_overcolor(color + 1);
+//	check_overcolor(color + 1);
 	return (*(color + 1));
 }
 
@@ -41,7 +41,7 @@ t_vec	plane_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 	}
 	else
 		return (square_light_br(args, scene, vec, color));
-	check_overcolor(color + 1);
+//	check_overcolor(color + 1);
 	return (*(color + 1));
 }
 
@@ -70,6 +70,6 @@ t_vec color_light_branching(t_dist args, t_rt *scene, t_vec vec[2])
 	}
 	else
 		return (plane_light_br(args, scene, vec, color));
-	check_overcolor(color + 1);
+//	check_overcolor(color + 1);
 	return (*(color + 1));
 }

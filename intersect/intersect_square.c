@@ -6,7 +6,8 @@ static double 		check_plane(t_sq *sq, t_vec *vec, t_rt *scene, t_vec *start)
 	t_pl		tmp;
 	double		dist;
 
-	tmp = (t_pl){.x = sq->x, .y = sq->y, .z =  sq->z, .vec_x = sq->vec_x,
+	tmp = (t_pl){.x = sq->x - start->x, .y = sq->y - start->y,
+			  .z =  sq->z - start->z , .vec_x = sq->vec_x,
 			  .vec_y = sq->vec_y, .vec_z = sq->vec_z};
 	dist = intersect_plane(vec, &tmp, scene, start);
 	if (isnormal(dist) && (dist > MINIMUM))

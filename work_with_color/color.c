@@ -77,13 +77,14 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
 	d_vec[3] = (t_vec){color->x, color->y, color->z};
 	d_vec[4] = vec_multi((t_vec){vec->x, vec->y, vec->z}, args.distance);
 	i = -1;
-	light[1] = (t_vec){scene->d->vec_matrix->x + d_vec[4].x,
-	scene->d->vec_matrix->y + d_vec[4].y, scene->d->vec_matrix->z + d_vec[4].z};
+//	light[1] = (t_vec){scene->d->vec_matrix->x + d_vec[4].x,
+//	scene->d->vec_matrix->y + d_vec[4].y, scene->d->vec_matrix->z + d_vec[4].z};
 	while (scene->light[++i] != NULL)
 	{
-		t_beg = (t_vec){scene->light[i]->x - light[1].x,
-		scene->light[i]->y - light[1].y,scene->light[i]->z - light[1].z};
-		light[0] = (t_vec){t_beg.x,t_beg.y,t_beg.z};
+//		t_beg = (t_vec){scene->light[i]->x - light[1].x,
+//		scene->light[i]->y - light[1].y,scene->light[i]->z - light[1].z};
+//		light[0] = (t_vec){t_beg.x,t_beg.y,t_beg.z};
+
 		norm_vec(&light[0]);
 		args = check_len_figures(light, scene, &d_vec[4]);
 		*d_vec = (t_vec){.x = vec->x, .y = vec->y, .z = vec->z};

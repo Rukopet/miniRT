@@ -33,6 +33,6 @@ t_vec	triangle_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 	}
 	else
 		return (cylinder_light_br(args, scene, vec, color));
-	check_overcolor(color + 1);
+//	check_overcolor(color + 1);
 	return (*(color + 1));
 }

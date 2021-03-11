@@ -8,8 +8,10 @@ double intersect_sphere(t_vec vec[2], t_sp *sp, t_rt *scene, t_vec *start)
 	double	distance[3];
 	t_vec	sp_center;
 
-	k[1] = 0.9999;
+	k[1] = 0.99999999;
 	sp_center = vec_subt(vec[1], (t_vec){sp->x, sp->y, sp->z});
+	if (vec[1].x != 4)
+		vec->x = vec->x;
 	k[2] = 2 * scalar_product(&sp_center, &vec[0], 3);
 	k[3] = scalar_product(&sp_center, &sp_center, 3) - pow(sp->diameter / 2, 2);
 	discriminant = pow(k[2], 2) - (4 * k[1] * k[3]);
@@ -102,9 +104,6 @@ int intersect(t_vec vec[2], t_rt *scene)
 
 	args = check_len_figures(vec, scene, scene->d->vec_matrix);
 	args.distance *= 0.999999999;
-//	if (args.index == 4)
-//		return (vec_to_int_color((t_vec){255, 100, 0}, 0));
-
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }
