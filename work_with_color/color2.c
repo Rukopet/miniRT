@@ -33,7 +33,7 @@ t_vec	take_square_normal(t_vec point, t_sq *sq)
 }
 
 t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec
-vec[5])
+vec[2])
 {
 	t_vec normal;
 
@@ -49,9 +49,8 @@ vec[5])
 		normal = take_square_normal((t_vec){vec->x, vec->y, vec->z },
 			scene->sq[args.fig_index]);
 	if (args.index == 4)
-		normal = take_normal_cylinder((t_vec){vec->x * args.distance,
-		vec->y * args.distance, vec->z * args.distance},
-		scene->cy[args.fig_index], scene, vec);
+		normal = take_normal_cylinder((t_vec){vec->x,
+		vec->y, vec->z}, scene->cy[args.fig_index], scene, vec);
 	if (args.index == 5)
 		normal = take_triangle_normal(scene->tr[args.fig_index],
 		(t_vec){vec->x, vec->y, vec->z});
@@ -63,24 +62,14 @@ t_vec	take_light_to_color(t_light *l, t_vec *tmp, t_rt *scene, t_dist args)
 	t_vec		light;
 
 	if (args.index == 1)
-		light = (t_vec){l->x - (scene->sp[args.fig_index]->x -
-		tmp->x), l->y - (scene->sp[args.fig_index]->y -
-		tmp->y), l->z - (scene->sp[args.fig_index]->z - tmp->z)};
+		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	if (args.index == 2)
-		light = (t_vec){l->x - (scene->pl[args.fig_index]->x -
-		tmp->x), l->y - (scene->pl[args.fig_index]->y -
-		tmp->y), l->z - (scene->pl[args.fig_index]->z - tmp->z)};
+		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	if (args.index == 3)
-		light = (t_vec){l->x - (scene->sq[args.fig_index]->x -
-		tmp->x), l->y - (scene->sq[args.fig_index]->y -
-		tmp->y), l->z - (scene->sq[args.fig_index]->z - tmp->z)};
+		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	if (args.index == 4)
-		light = (t_vec){l->x - (scene->cy[args.fig_index]->x -
-		tmp->x), l->y - (scene->cy[args.fig_index]->y -
-		tmp->y), l->z - (scene->cy[args.fig_index]->z - tmp->z)};
+		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	if (args.index == 5)
-		light = (t_vec){l->x - (scene->tr[args.fig_index]->first_x -
-		tmp->x), l->y - (scene->tr[args.fig_index]->first_y -
-		tmp->y), l->z - (scene->tr[args.fig_index]->first_z - tmp->z)};
+		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	return (light);
 }

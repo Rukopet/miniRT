@@ -1,7 +1,7 @@
 #include "minirt.h"
 #include <stdio.h>
 
-double intersect_sphere(t_vec vec[2], t_sp *sp, t_rt *scene, t_vec *start)
+double intersect_sphere(t_vec vec[2], t_sp *sp)
 {
 	double	k[4];
 	double	discriminant;
@@ -27,11 +27,11 @@ double intersect_sphere(t_vec vec[2], t_sp *sp, t_rt *scene, t_vec *start)
 	return (INFINITY);
 }
 
-t_dist check_len_triangle(t_vec vec[2], t_rt *scene, t_dist *tmp, t_vec *start)
+t_dist check_len_triangle(t_vec vec[2], t_rt *scene, t_dist *tmp)
 {
 	t_dist		first;
 
-	first = comparison_triangle(vec, scene, start);
+	first = comparison_triangle(vec, scene);
 	if (first.distance < tmp->distance)
 	{
 		tmp->distance = first.distance;
@@ -42,7 +42,7 @@ t_dist check_len_triangle(t_vec vec[2], t_rt *scene, t_dist *tmp, t_vec *start)
 	return (*tmp);
 }
 
-t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
+t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp)
 {
 	t_dist		first;
 	t_dist		second;
@@ -51,8 +51,8 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
 	self_tmp.fig_index = 0;
 	self_tmp.index = 0;
 	self_tmp.distance = 0;
-	first = comparison_squares(vec, scene, start);
-	second = comparison_cylinder(vec, scene, start);
+	first = comparison_squares(vec, scene);
+	second = comparison_cylinder(vec, scene);
 	if (first.distance < second.distance && isnormal(first.distance))
 	{
 		self_tmp.distance = first.distance;
@@ -66,11 +66,11 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp, t_vec *start)
 		self_tmp.fig_index = second.fig_index;
 	}
 	if (tmp->distance > self_tmp.distance && isnormal(self_tmp.distance))
-		return (check_len_triangle(vec, scene, &self_tmp, start));
-	return (check_len_triangle(vec, scene, tmp, start));
+		return (check_len_triangle(vec, scene, &self_tmp));
+	return (check_len_triangle(vec, scene, tmp));
 }
 
-t_dist check_len_figures(t_vec vec[2], t_rt *scene, t_vec *start)
+t_dist check_len_figures(t_vec vec[2], t_rt *scene)
 {
 	t_dist 		first;
 	t_dist 		second;
@@ -79,8 +79,8 @@ t_dist check_len_figures(t_vec vec[2], t_rt *scene, t_vec *start)
 	tmp.index = 0;
 	tmp.fig_index = -1;
 	tmp.distance = INFINITY;
-	first =  comparison_spheres(vec, scene, start);
-	second = comparison_planes(vec, scene, start);
+	first = comparison_spheres(vec, scene);
+	second = comparison_planes(vec, scene);
 
 	if (first.distance < second.distance && isnormal(first.distance))
 	{
@@ -94,7 +94,7 @@ t_dist check_len_figures(t_vec vec[2], t_rt *scene, t_vec *start)
 		tmp.index = 2;
 		tmp.fig_index = second.fig_index;
 	}
-	return (check_len_cylinder(vec, scene, &tmp, start));
+	return (check_len_cylinder(vec, scene, &tmp));
 }
 
 int intersect(t_vec vec[2], t_rt *scene)
@@ -102,7 +102,7 @@ int intersect(t_vec vec[2], t_rt *scene)
 	t_dist		args;
 	t_vec 		color;
 
-	args = check_len_figures(vec, scene, scene->d->vec_matrix);
+	args = check_len_figures(vec, scene);
 	args.distance *= 0.999999999;
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));

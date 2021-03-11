@@ -46,7 +46,7 @@
 //}
 
 
-static void take_args(t_c *cyl, t_cy *cy, t_vec *vec, t_vec *start)
+static void take_args(t_c *cyl, t_cy *cy, t_vec *vec)
 {
 	cyl->orient = (t_vec){cy->vec_x, cy->vec_y, cy->vec_z};
 //	cyl->point = (t_vec){cy->x - start->x, cy->y - start->y, cy->z - start->z};
@@ -56,15 +56,15 @@ static void take_args(t_c *cyl, t_cy *cy, t_vec *vec, t_vec *start)
 	cyl->vec = vec;
 }
 
-static int 		check_height_cy(t_cy* cy, t_c *cyl, t_d t, t_rt *sc)
+static int check_height_cy(t_cy *cy, t_c *cyl, t_d t)
 {
 	t_vec		p;
 	double 		tmp;
 
 	p = vec_multi((t_vec){cyl->vec->x, cyl->vec->y, cyl->vec->z}, t.d1);
-	p = (t_vec){sc->d->vec_matrix->x + p.x,
-				sc->d->vec_matrix->y + p.y,
-				sc->d->vec_matrix->z + p.z};
+	p = (t_vec){cyl->vec[1].x + p.x,
+				cyl->vec[1].y + p.y,
+				cyl->vec[1].z + p.z};
 	tmp = vec_scal(vec_subt(p, (t_vec){cy->x, cy->y, cy->z}),
 				   cyl->norm_ori);
 	if (tmp < 0 || tmp > cy->height)
@@ -72,7 +72,7 @@ static int 		check_height_cy(t_cy* cy, t_c *cyl, t_d t, t_rt *sc)
 	return (1);
 }
 
-static t_d		check_point(t_cy *cy, t_c *cyl, t_d t, t_rt *sc)
+static t_d check_point(t_cy *cy, t_c *cyl, t_d t)
 {
 	double			tmp;
 
@@ -82,17 +82,17 @@ static t_d		check_point(t_cy *cy, t_c *cyl, t_d t, t_rt *sc)
 		t.d1 = t.d2;
 		t.d2 = tmp;
 	}
-	if (t.d1 < 0 || !check_height_cy(cy, cyl, t, sc))
+	if (t.d1 < 0 || !check_height_cy(cy, cyl, t))
 	{
 		t.d1 = t.d2;
 		t.d2 = INFINITY;
-		if (t.d1 < 0 || !check_height_cy(cy, cyl, t, sc))
+		if (t.d1 < 0 || !check_height_cy(cy, cyl, t))
 			return ((t_d){INFINITY, INFINITY});
 	}
 	return (t);
 }
 
-static t_d		cyl_quadro_cyl(t_cy *cy, t_c *cyl, t_rt *sc)
+static t_d cyl_quadro_cyl(t_cy *cy, t_c *cyl)
 {
 	double 			disc;
 	double 			d1;
@@ -116,20 +116,17 @@ static t_d		cyl_quadro_cyl(t_cy *cy, t_c *cyl, t_rt *sc)
 		d1 = tmp / cyl->a;
 		d2 = cyl->c / tmp;
 	}
-	return (check_point(cy, cyl, (t_d){d1, d2}, sc));
+	return (check_point(cy, cyl, (t_d) {d1, d2}));
 }
 
-t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
-					   t_vec *start)
+t_d intersect_cylinder(t_vec *vec, t_cy *cy)
 {
 	t_c				cyl;
 	t_vec			tmp;
 	t_vec			matrix;
 
-//	matrix = (t_vec){scene->d->vec_matrix->x, scene->d->vec_matrix->y,
-//				  scene->d->vec_matrix->z};
 	matrix = (t_vec){vec[1].x, vec[1].y, vec[1].z};
-	take_args(&cyl, cy, vec, start);
+	take_args(&cyl, cy, vec);
 	tmp = (t_vec){cyl.vec->x, cyl.vec->y, cyl.vec->z};
 	cyl.vpr_p = vec_subt(tmp, vec_multi(cyl.norm_ori,
 	vec_scal(cyl.norm_ori, tmp)));
@@ -139,5 +136,5 @@ t_d intersect_cylinder(t_vec *vec, t_cy *cy, t_rt *scene,
 	cyl.a = vec_scal(cyl.vpr_p, cyl.vpr_p);
 	cyl.b = 2.0 * vec_scal(cyl.vpr_p, cyl.vpr_cyl);
 	cyl.c = vec_scal(cyl.vpr_cyl, cyl.vpr_cyl) - pow(cy->diameter, 2) / 4.0;
-	return (cyl_quadro_cyl(cy, &cyl, scene));
+	return (cyl_quadro_cyl(cy, &cyl));
 }

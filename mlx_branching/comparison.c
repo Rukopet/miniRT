@@ -1,6 +1,6 @@
 #include "minirt.h"
 
-t_dist comparison_spheres(t_vec vec[2], t_rt *scene, t_vec *start)
+t_dist comparison_spheres(t_vec vec[2], t_rt *scene)
 {
 	int 			i;
 	t_dist			dist;
@@ -12,7 +12,7 @@ t_dist comparison_spheres(t_vec vec[2], t_rt *scene, t_vec *start)
 	{
 		while (scene->sp[++i] != NULL)
 		{
-			tmp = intersect_sphere(vec, scene->sp[i], scene, start);
+			tmp = intersect_sphere(vec, scene->sp[i]);
 			if (i == 0 || tmp < dist.distance)
 			{
 				dist.distance = tmp;
@@ -24,7 +24,7 @@ t_dist comparison_spheres(t_vec vec[2], t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_planes(t_vec vec[2], t_rt *scene, t_vec *start)
+t_dist comparison_planes(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
 	int 		i;
@@ -35,7 +35,7 @@ t_dist comparison_planes(t_vec vec[2], t_rt *scene, t_vec *start)
 	if (scene->pl)
 		while (scene->pl[++i] != NULL)
 		{
-			tmp = intersect_plane(vec, scene->pl[i], scene, start);
+			tmp = intersect_plane(vec, scene->pl[i]);
 			if (i == 0 || tmp < dist.distance)
 			{
 				dist.distance = tmp;
@@ -45,7 +45,7 @@ t_dist comparison_planes(t_vec vec[2], t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_squares(t_vec vec[2], t_rt *scene, t_vec *start)
+t_dist comparison_squares(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
 	int 		i;
@@ -56,7 +56,7 @@ t_dist comparison_squares(t_vec vec[2], t_rt *scene, t_vec *start)
 	if (scene->sq)
 		while (scene->sq[++i] != NULL)
 		{
-			tmp = intersect_square(vec, scene->sq[i], scene, start);
+			tmp = intersect_square(vec, scene->sq[i]);
 			if (i == 0 || tmp < dist.distance)
 			{
 				dist.distance = tmp;
@@ -66,7 +66,7 @@ t_dist comparison_squares(t_vec vec[2], t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_cylinder(t_vec vec[2], t_rt *scene, t_vec *start)
+t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
 	int 		i;
@@ -78,7 +78,7 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene, t_vec *start)
 	if (scene->cy)
 		while (scene->cy[++i] != NULL)
 		{
-			tmp = intersect_cylinder(vec, scene->cy[i], scene, start);
+			tmp = intersect_cylinder(vec, scene->cy[i]);
 			if (isinf(tmp.d1) && isinf(tmp.d2))
 				continue;
 			else if (tmp.d1 < tmp.d2 && isnormal(tmp.d1))
@@ -94,7 +94,7 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene, t_vec *start)
 	return (dist);
 }
 
-t_dist comparison_triangle(t_vec vec[2], t_rt *scene, t_vec *start)
+t_dist comparison_triangle(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
 	int 		i;
@@ -105,7 +105,7 @@ t_dist comparison_triangle(t_vec vec[2], t_rt *scene, t_vec *start)
 	if (scene->tr)
 		while (scene->tr[++i] != NULL)
 		{
-			tmp = intersect_triangle(vec, scene->tr[i], scene, start);
+			tmp = intersect_triangle(vec, scene->tr[i]);
 			if ((i == 0 || tmp < dist.distance) && isnormal(tmp))
 			{
 				dist.distance = tmp;

@@ -1,7 +1,6 @@
 #include "minirt.h"
 
-double			intersect_plane(t_vec vec[2], t_pl *pl, t_rt *scene, t_vec
-*start)
+double			intersect_plane(t_vec vec[2], t_pl *pl)
 {
 	double		ret;
 	t_vec		k;
