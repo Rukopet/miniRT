@@ -78,7 +78,7 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
 	if (scene->cy)
 		while (scene->cy[++i] != NULL)
 		{
-			tmp = intersect_cylinder(vec, scene->cy[i]);
+			tmp = intersect_cylinder(vec, scene->cy[i], &dist);
 			if (isinf(tmp.d1) && isinf(tmp.d2))
 				continue;
 			else if (tmp.d1 < tmp.d2 && isnormal(tmp.d1))
@@ -86,7 +86,6 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
 			else
 			{
 				check = tmp.d2;
-				scene->cy[i]->distance = INSIDE;
 			}
 
 			if (i == 0 || check < dist.distance)

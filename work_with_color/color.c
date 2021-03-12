@@ -40,25 +40,9 @@ t_vec coof_color_after_normal(t_vec a_vec[2], t_rt *scene, t_dist tmp_args,
 	t_vec n_l[2];
  	double com;
 
- 	if (tmp_args.index == 4)
- 		com = com;
 	ret = (t_vec){0, 0, 0};
 	tmp = product_vec_and_int(a_vec, tmp_args.distance, 0);
 	n_l[0] = take_normal_from_obj(tmp_args, scene, tmp, a_vec);
-//	if (tmp_args.index == 2)
-//	{
-//		t_vec check = (t_vec){scene->pl[tmp_args.fig_index]->x,
-//							  scene->pl[tmp_args.fig_index]->y,
-//							  scene->pl[tmp_args.fig_index]->z};
-//		t_vec opos = (t_vec){-a_vec->x, -a_vec->y, -a_vec->z};
-//		double vpr = vec_scal(opos, check);
-//		if (vec_scal(check, opos) != 0)
-//		{
-//			check = vec_multi(check, vpr);
-//			norm_vec(&check);
-//			n_l[0] = check;
-//		}
-//	}
 	norm_vec(&n_l[0]);
 	n_l[1] = take_light_to_color(l, tmp, scene, tmp_args);
 	norm_vec(&n_l[1]);
@@ -74,18 +58,18 @@ t_vec coof_color_after_normal(t_vec a_vec[2], t_rt *scene, t_dist tmp_args,
 	return (ret);
 }
 
-static int 		check_cyl_shadow(t_vec vec[2], t_dist *args, t_light *l,
-							  t_dist *new)
-{
-	t_vec		n_vec[2];
-	t_vec		p;
-	t_dist		tmp;
-
-	n_vec[1] = vec_multi(*vec, args->distance);
-	*n_vec = vec_subt((t_vec){l->x, l->y, l->z}, p);
-	norm_vec(&n_vec[0])
-	if ()
-}
+//static int 		check_cyl_shadow(t_vec vec[2], t_dist *args, t_light *l,
+//							  t_dist *new)
+//{
+//	t_vec		n_vec[2];
+//	t_vec		p;
+//	t_dist		tmp;
+//
+//	n_vec[1] = vec_multi(*vec, args->distance);
+//	*n_vec = vec_subt((t_vec){l->x, l->y, l->z}, p);
+//	norm_vec(&n_vec[0])
+//	if ()
+//}
 
 t_vec vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args)
 {
@@ -107,13 +91,52 @@ t_vec vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args)
 						sc->light[i]->z});
 		norm_vec(&n_v[0]);
 		new = check_len_figures(n_v, sc);
-		if ((args.fig_index != new.fig_index || args.index != new.index) ||
-		check_cyl_shadow(vec, &args, sc->light[i]))
+		if (args.fig_index != new.fig_index || args.index != new.index)
 			continue ;
 		*(tmp + 1) = vec_subt((t_vec){sc->light[i]->x,
 						sc->light[i]->y, sc->light[i]->z}, c[0]);
 		*color = summ_colors(*color, coof_color_after_normal
 			(tmp, sc, args, sc->light[i]));
+	}
+	return (get_color_after_normal(color + 1, *color, i));
+}
+
+t_vec vec_to_light_cyl(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args)
+{
+	t_vec		c[2];
+	t_vec		tmp[2];
+	t_vec		vn;
+	int 		i;
+	t_dist		new;
+
+	i = -1;
+	c[1] = vec_summ(vec_multi(*vec, args.distance), *(vec + 1));
+	*tmp = *vec;
+
+	while (sc->light[++i] != NULL)
+	{
+		c[0] = vec_subt((t_vec){sc->light[i]->x, sc->light[i]->y,
+				sc->light[i]->z}, c[1]);
+		norm_vec(&c[0]);
+		tmp[1] = c[0];
+		c[1] = vec_summ(c[1], vec_multi(vn, 0.001));
+		vn = take_normal_cylinder(c[0], sc->cy[args.index], &args, tmp);
+
+//#include <fcntl.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
+//#include <unistd.h>
+//		int fd = open("pars.txt", O_RDWR|O_APPEND|O_CREAT);
+//		dprintf(fd, "%f\t%f\t%f\n", vec->x * args.distance + vn.x, vec->y * args
+//				.distance + vn.y, vec->z * args.distance + vn.z);
+//		close(fd);
+
+		new = check_len_figures(c, sc);
+//		(new.distance - length_vector(&c[1])) < 0.01
+		if (isinf(new.distance))
+			continue ;
+		*color = summ_colors(*color, coof_color_after_normal
+				(tmp, sc, args, sc->light[i]));
 	}
 	return (get_color_after_normal(color + 1, *color, i));
 }

@@ -22,3 +22,8 @@ t_vec			norm_vector_stack(t_vec *vec)
 	len = length_vector(vec);
 	return ((t_vec){vec->x / len, vec->y / len, vec->z / len});
 }
+
+t_vec			vec_summ(t_vec vec1, t_vec vec2)
+{
+	return ((t_vec){vec1.x + vec2.x, vec1.y + vec2.y, vec1.z + vec2.z});
+}

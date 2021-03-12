@@ -15,6 +15,8 @@ double				vec_scal(t_vec vec1, t_vec vec2);
 
 t_vec 				*product_vec_and_int(t_vec *vec, double distance, int flag);
 t_vec				vec_multi(t_vec vec, double dist);
+t_vec				vec_summ(t_vec vec1, t_vec vec2);
+
 t_vec				norm_vector_stack(t_vec *vec);
 
 

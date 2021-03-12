@@ -64,6 +64,8 @@ t_dist check_len_cylinder(t_vec *vec, t_rt *scene, t_dist *tmp)
 		self_tmp.distance = second.distance;
  		self_tmp.index = 4;
 		self_tmp.fig_index = second.fig_index;
+		self_tmp.quad1 = second.quad1;
+		self_tmp.quad1 = second.quad2;
 	}
 	if (tmp->distance > self_tmp.distance && isnormal(self_tmp.distance))
 		return (check_len_triangle(vec, scene, &self_tmp));
@@ -103,7 +105,7 @@ int intersect(t_vec vec[2], t_rt *scene)
 	t_vec 		color;
 
 	args = check_len_figures(vec, scene);
-	args.distance *= 0.999999999;
+//	args.distance *= 0.999999999;
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }

@@ -35,7 +35,9 @@ typedef struct	s_dist
 	int 		index;
 	int 		fig_index;
 	double 		distance;
-	double 		dist2;
+	double 		quad1;
+	double 		quad2;
+	t_vec		normal;
 }				t_dist;
 
 void			rtx(t_rt *scene, t_img *img, int cam, int flag);
