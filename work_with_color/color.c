@@ -19,6 +19,7 @@ t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 	double		check;
 
 	check = 1;
+	coof = vec_multi(coof, 0.8);
 	*color = (t_vec){color->x * coof.x,
 						color->y * coof.y,
 						color->z * coof.z};
@@ -73,15 +74,23 @@ t_vec coof_color_after_normal(t_vec a_vec[2], t_rt *scene, t_dist tmp_args,
 	return (ret);
 }
 
-static void init_values(t_vec *value[3], t_vec color[2], t_rt *sc, t_dist args)
+static int 		check_cyl_shadow(t_vec vec[2], t_dist *args, t_light *l,
+							  t_dist *new)
 {
+	t_vec		n_vec[2];
+	t_vec		p;
+	t_dist		tmp;
 
+	n_vec[1] = vec_multi(*vec, args->distance);
+	*n_vec = vec_subt((t_vec){l->x, l->y, l->z}, p);
+	norm_vec(&n_vec[0])
+	if ()
 }
 
-t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
+t_vec vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args)
 {
 	t_vec		c[3];
-	t_vec		new_vec[2];
+	t_vec		n_v[2];
 	int 		i;
 	t_dist		new;
 	t_vec		tmp[2];
@@ -90,21 +99,21 @@ t_vec vec_to_light(t_vec color[2], t_rt *scene, t_vec vec[2], t_dist args)
 	c[0] = vec_multi(*vec, args.distance);
 	c[0] = (t_vec){c->x + vec[1].x, c->y + vec[1].y, c->z + vec[1].z};
 	*tmp = (t_vec){vec->x, vec->y, vec->z};
-	while (scene->light[++i] != NULL)
+	while (sc->light[++i] != NULL)
 	{
-		new_vec[1] = (t_vec){scene->light[i]->x, scene->light[i]->y,
-		scene->light[i]->z};
-		new_vec[0] = vec_subt(*c, (t_vec){scene->light[i]->x, scene->light[i]->y,
-										  scene->light[i]->z});
-		norm_vec(&new_vec[0]);
-		new = check_len_figures(new_vec, scene);
-		if (args.fig_index != new.fig_index || args.index != new.index)
+		n_v[1] = (t_vec){sc->light[i]->x, sc->light[i]->y,
+						sc->light[i]->z};
+		n_v[0] = vec_subt(*c, (t_vec){sc->light[i]->x, sc->light[i]->y,
+						sc->light[i]->z});
+		norm_vec(&n_v[0]);
+		new = check_len_figures(n_v, sc);
+		if ((args.fig_index != new.fig_index || args.index != new.index) ||
+		check_cyl_shadow(vec, &args, sc->light[i]))
 			continue ;
-		*(tmp + 1) = vec_subt((t_vec){scene->light[i]->x,
-		scene->light[i]->y, scene->light[i]->z}, c[0]);
+		*(tmp + 1) = vec_subt((t_vec){sc->light[i]->x,
+						sc->light[i]->y, sc->light[i]->z}, c[0]);
 		*color = summ_colors(*color, coof_color_after_normal
-			(tmp, scene, args, scene->light[i]));
+			(tmp, sc, args, sc->light[i]));
 	}
 	return (get_color_after_normal(color + 1, *color, i));
 }
-

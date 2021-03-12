@@ -25,7 +25,7 @@ t_vec			*sum_colors(t_vec *col1, t_vec *col2);
 void			check_overcolor(t_vec* tmp);
 int				vec_to_int_color(t_vec color, int flag_del);
 
-t_vec			vec_to_light(t_vec *color, t_rt *scene, t_vec *vec, t_dist args);
+t_vec			vec_to_light(t_vec *color, t_rt *sc, t_vec *vec, t_dist args);
 
 t_dist check_len_figures(t_vec vec[2], t_rt *scene);
 

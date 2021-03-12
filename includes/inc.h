@@ -2,9 +2,8 @@
 #ifndef INC_H
 #define INC_H
 
-# define RES_X scene->resolution->x
-# define RES_Y scene->resolution->y
 # define MINIMUM 0.001
+# define INSIDE 5000
 
 #include <stdlib.h>
 #include <unistd.h>

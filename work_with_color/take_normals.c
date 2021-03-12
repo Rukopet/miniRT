@@ -28,8 +28,7 @@ t_vec take_normal_cylinder(t_vec p, t_cy *cy, t_rt *sc, t_vec *vec)
 	t_vec		opp;
 	double		tmp;
 
-	k = (t_vec){vec->x + vec[1].x, vec->y + vec[1].y
-	, vec->z + vec[1].z};
+	k = (t_vec){p.x + vec[1].x, p.y + vec[1].y, p.z + vec[1].z};
 	check = vec_scal(vec_subt(k, (t_vec){cy->x, cy->y, cy->z}), (t_vec)
 	{cy->vec_x, cy->vec_y, cy->vec_z});
 	vn = vec_multi((t_vec){cy->vec_x, cy->vec_y, cy->vec_z}, check);
@@ -37,7 +36,18 @@ t_vec take_normal_cylinder(t_vec p, t_cy *cy, t_rt *sc, t_vec *vec)
 	norm_vec(&vn);
 	opp = (t_vec){-vn.x, -vn.y, -vn.z};
 	tmp = vec_scal(opp, vn);
-	vn = (vec_scal(vn, opp) == 0) ? vn : vec_multi(vn, tmp);
+	vn = (vec_scal(vn, opp) != 0) ? vec_multi(vn, tmp) : vn;
 	norm_vec(&vn);
 	return (vn);
+
+//	t_pl		pl;
+//	double 		t;
+//	t_vec		new[2];
+//
+//	*new = (t_vec){vec[1].x, vec[1].y, vec[1].z};
+//	*(new + 1) = (t_vec){cy->vec_x, cy->vec_y, cy->vec_z};
+//	pl = (t_pl){cy->x, cy->y, cy->z, cy->vec_x, cy->vec_y, cy->vec_z};
+//	t = intersect_plane(vec, &pl);
+//	if  (isinf(t))
+//		return ()
 }

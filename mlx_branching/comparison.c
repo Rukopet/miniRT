@@ -84,7 +84,11 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
 			else if (tmp.d1 < tmp.d2 && isnormal(tmp.d1))
 				check = tmp.d1;
 			else
+			{
 				check = tmp.d2;
+				scene->cy[i]->distance = INSIDE;
+			}
+
 			if (i == 0 || check < dist.distance)
 			{
 				dist.distance = check;
