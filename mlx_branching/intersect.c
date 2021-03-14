@@ -103,11 +103,9 @@ int intersect(t_vec vec[2], t_rt *scene)
 {
 	t_dist		args;
 	t_vec 		color;
-	t_vec 		vn;
 
 	args = check_len_figures(vec, scene);
-	args.distance *= 0.999999999;
-	vn = take_normal_from_obj()
+	args.distance *= 0.9999999999998;
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }

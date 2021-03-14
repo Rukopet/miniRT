@@ -7,7 +7,7 @@ t_vec	cylinder_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 		*(color + 1) = (t_vec){scene->cy[args.fig_index]->r,
 		scene->cy[args.fig_index]->g, scene->cy[args.fig_index]->b};
 		if (scene->light)
-			*(color + 1) = vec_to_light_cyl(color, scene, vec, args);
+			*(color + 1) = vec_to_light(color, scene, vec, args);
 		else
 			*(color + 1) = (t_vec){color[1].x * color->x,
 			color[1].y * color->y, color[1].z * color->z};
