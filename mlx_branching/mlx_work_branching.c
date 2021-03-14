@@ -56,5 +56,6 @@ void				begin_mlx_work(t_rt *scene)
 		errors_and_exit(20, scene);
 	cam = 0;
 	init_data_struct(scene, mlx, mlx_win);
+	check_resolution(scene);
 	rtx(scene, &img, cam, scene->cam1);
 }

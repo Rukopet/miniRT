@@ -70,13 +70,13 @@ void rtx(t_rt *scene, t_img *img, int cam, int flag)
 	scene->d->vec_matrix = &matrix;
 	scene->img = img;
 	get_img(scene);
-	if (scene->save)
-		image_to_bmp(scene);
 	mlx_key_hook(scene->d->win, key_hook, scene);
 	mlx_hook(scene->d->win, 17, (1L << 2), do_close, &scene);
 	if (scene->cam[cam]->fov > 170)
 		get_angles_to_data(scene, scene->cam[cam]);
 	rtx_with_angles(scene, scene->cam[cam]);
+	if (scene->save)
+		image_to_bmp(scene);
 	mlx_put_image_to_window(scene->d->mlx, scene->d->win,
 							scene->img->img, 0, 0);
 	mlx_loop(scene->d->mlx);

@@ -48,7 +48,7 @@ t_vec coof_color_after_normal(t_vec *a_vec, t_rt *scene, t_dist tmp_args,
 	*n_l = (vec_scal(*n_l, vec_multi(*a_vec, -1)) != 0) ?
 			vec_multi(*n_l, com) : *n_l;
 	norm_vec(&*n_l);
-	n_l[1] = take_light_to_color(l, tmp, scene, tmp_args);
+	n_l[1] = take_light_to_color(l, tmp);
 	norm_vec(&n_l[1]);
 	com = normal_vector(&n_l[1], &n_l[0]);
 	if (com > 0)

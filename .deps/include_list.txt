@@ -1,0 +1,1 @@
+includes/inc.h includes/intersect_and_light.h includes/minirt.h includes/solve_mlx.h includes/vectors.h

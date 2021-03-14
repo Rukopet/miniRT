@@ -9,5 +9,10 @@
 #include <unistd.h>
 #include <math.h>
 #include <pthread.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #endif

@@ -195,6 +195,7 @@ typedef struct	s_rt
 	t_img		*img;
 	int 		cam1;
 	short 		save;
+	char 		*fn;
 }				t_rt;
 
 typedef struct	s_figures
@@ -220,6 +221,8 @@ typedef struct	s_d
 #include "get_next_line.h"
 #include "libft.h"
 #include "intersect_and_light.h"
+
+
 
 /*
 ** main structure;

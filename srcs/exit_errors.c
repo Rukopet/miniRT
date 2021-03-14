@@ -31,6 +31,11 @@ void		next_errors(int flag, t_rt *scene)
 		free_scene(scene, 1);
 		exit(flag);
 	}
+	else if (flag == 10)
+	{
+		write(2, "Error\nWrong numbers\n", 21);
+		exit(10);
+	}
 	else
 		mlx_errors(flag, scene);
 }

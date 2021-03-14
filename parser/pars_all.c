@@ -1,8 +1,18 @@
-#include "minirt.h"
-#include "get_next_line.h"
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pars_all.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 12:12:23 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 12:23:02 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *init_values_pars(int index)
+#include "minirt.h"
+
+char				*init_values_pars(int index)
 {
 	if (index == 0)
 		return ("R");
@@ -26,9 +36,9 @@ char *init_values_pars(int index)
 		return (NULL);
 }
 
-	int			parsing_values(char *names, char **line, t_rt *scene)
+int					parsing_values(char *names, char **line, t_rt *scene)
 {
-	static int		index[6] = {0,0,0,0,0,0};
+	static int		index[6] = {0, 0, 0, 0, 0, 0};
 
 	if (0 == (ft_strncmp("R", names, 2)))
 		return (parse_resolution(line, scene));
@@ -52,19 +62,16 @@ char *init_values_pars(int index)
 		return (0);
 }
 
-int			check_line_parse(char **line, t_rt *scene)
+int					check_line_parse(char **line, t_rt *scene)
 {
-	int		i;
-	char	*names;
-	char	flag;
-	char	**check;
-
+	int				i;
+	char			*names;
+	char			flag;
+	char			**check;
 
 	i = -1;
 	flag = 0;
-
 	check = ft_split(*line, "\t\v\f\r ");
-	// free_and_null(line, 0);
 	while (++i != 9 && **line != 0)
 	{
 		names = init_values_pars(i);
@@ -72,7 +79,7 @@ int			check_line_parse(char **line, t_rt *scene)
 		{
 			flag = 1;
 			parsing_values(names, check, scene);
-			break;
+			break ;
 		}
 	}
 	if (!flag && **line != 0)
@@ -81,9 +88,9 @@ int			check_line_parse(char **line, t_rt *scene)
 	return (1);
 }
 
-int			parse_after_count(char **join, t_rt *scene)
+int					parse_after_count(char **join, t_rt *scene)
 {
-	char	*arg;
+	char			*arg;
 
 	while (**join != 0)
 	{

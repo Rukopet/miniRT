@@ -38,9 +38,9 @@ t_vec take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec vec[4])
 
 	if (args.index == 1)
 		normal = (t_vec){tmp->x - (scene->sp[args.fig_index]->x -
-		scene->d->vec_matrix->x), tmp->y - (scene->sp[args.fig_index]->y -
-		scene->d->vec_matrix->y), tmp->z - (scene->sp[args.fig_index]->z -
-		scene->d->vec_matrix->z)};
+		vec[3].x), tmp->y - (scene->sp[args.fig_index]->y -
+		vec[3].y), tmp->z - (scene->sp[args.fig_index]->z -
+		vec[3].z)};
 	if (args.index == 2)
 		normal = take_plane_normal((t_vec){vec->x , vec->y, vec->z},
 			scene->pl[args.fig_index]);
@@ -56,19 +56,10 @@ t_vec take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec vec[4])
 	return (normal);
 }
 
-t_vec	take_light_to_color(t_light *l, t_vec *tmp, t_rt *scene, t_dist args)
+t_vec take_light_to_color(t_light *l, t_vec *tmp)
 {
 	t_vec		light;
 
-	if (args.index == 1)
-		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
-	if (args.index == 2)
-		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
-	if (args.index == 3)
-		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
-	if (args.index == 4)
-		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
-	if (args.index == 5)
-		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
+	light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	return (light);
 }

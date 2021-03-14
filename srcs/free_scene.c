@@ -41,3 +41,8 @@ int			free_scene(t_rt *s, int flag)
 		return (0);
 	return (1);
 }
+
+void 		check_resolution(t_rt *sc)
+{
+	mlx_get_screen_size();
+}

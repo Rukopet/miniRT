@@ -65,19 +65,14 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 		if (0 == (ft_strncmp(argv[i], "--save", 7)))
 			scene->save = 1;
 		else
-			tmp = argv[i];		
+			scene->fn = argv[i];
 	}
-	if ((argc == 3 && !scene->save) || -1 == (fd = open(tmp, O_RDONLY)))
+	if ((argc == 3 && !scene->save) || -1 == (fd = open(scene->fn, O_RDONLY)))
 		errors_and_exit(4, scene);
 	if (!(check_extention(tmp)))
-	{
-		close(fd);
 		errors_and_exit(7, scene);
-	}
 	if (!(check_other(scene, fd)))
-	{
-		close(fd);
 		errors_and_exit(6, scene);
-	}
+	close(fd);
 	return (1);
 }

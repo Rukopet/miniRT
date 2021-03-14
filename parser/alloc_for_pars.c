@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   alloc_for_pars.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 12:07:19 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 12:10:47 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
-#include "libft.h"
 
 int			count_plus(char *names, t_count *counter)
 {
@@ -22,7 +33,7 @@ int			count_plus(char *names, t_count *counter)
 	else if (0 == (ft_strncmp("tr", names, 2)))
 		counter->tr += 1;
 	else
-		return (0);	
+		return (0);
 	return (1);
 }
 
@@ -50,7 +61,7 @@ int			check_line(char **line, t_count *counter)
 	if (!flag)
 		return (0);
 	ft_free(check);
-	return (1);	
+	return (1);
 }
 
 char		*next_argument_check(char **join)
@@ -63,11 +74,13 @@ char		*next_argument_check(char **join)
 
 	begin = *join;
 	i = -1;
-	if (!(line_check = ft_calloc(1, len = ft_strlen_n(begin, 1) + 1)))
+	len = ft_strlen_n(begin, 1);
+	if (!(line_check = ft_calloc(1, len + 1)))
 		return (NULL);
 	while ((*begin != '\n') && *begin)
 		line_check[++i] = *begin++;
-	if(!(ret = malloc(len = ft_strlen_n(begin, 0) + 1)))
+	len = ft_strlen_n(begin, 0);
+	if (!(ret = malloc(len + 1)))
 		return (NULL);
 	ret[len] = 0;
 	begin = (*begin == '\n') ? begin + 1 : begin;
@@ -91,17 +104,14 @@ int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 			break ;
 		if (!(check_line(&arg, counter)))
 			return (0);
-		// if (!(parse_all(scene, counter)))
-		// 	return (free_scene(scene, 0));
 	}
 	if (!count_validate(counter, scene))
 		return (0);
 	if (!parse_after_count(&begin, scene))
 		return (0);
-	
-	// print_counter(counter);
 	return (1);
 }
+
 int			join_str(char **gnl, char **join)
 {
 	char	*tmp;
