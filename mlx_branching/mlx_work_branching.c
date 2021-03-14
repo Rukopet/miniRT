@@ -50,12 +50,12 @@ void				begin_mlx_work(t_rt *scene)
 	scene->cam1 = 0;
 	if (NULL == (mlx = mlx_init()))
 		errors_and_exit(20, scene);
+	check_resolution(scene);
 	mlx_win = mlx_new_window(mlx, scene->resolution->x, scene->resolution->y,
 	"miniRT");
 	if (NULL == mlx_win)
 		errors_and_exit(20, scene);
 	cam = 0;
 	init_data_struct(scene, mlx, mlx_win);
-	check_resolution(scene);
 	rtx(scene, &img, cam, scene->cam1);
 }

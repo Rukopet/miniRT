@@ -215,7 +215,7 @@ typedef struct	s_d
 	double 		d2;
 }				t_d;
 
-#include "mlx.h"
+#include <mlx.h>
 #include "solve_mlx.h"
 #include "vectors.h"
 #include "get_next_line.h"

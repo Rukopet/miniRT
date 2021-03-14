@@ -44,5 +44,10 @@ int			free_scene(t_rt *s, int flag)
 
 void 		check_resolution(t_rt *sc)
 {
-	mlx_get_screen_size();
+	int		x;
+	int 	y;
+
+	mlx_get_screen_size(sc->d->mlx, &x, &y);
+	sc->resolution->x = (x < sc->resolution->x) ? x : sc->resolution->x;
+	sc->resolution->y = (y < sc->resolution->y) ? y : sc->resolution->y;
 }

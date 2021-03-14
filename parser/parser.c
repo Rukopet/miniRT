@@ -69,7 +69,7 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 	}
 	if ((argc == 3 && !scene->save) || -1 == (fd = open(scene->fn, O_RDONLY)))
 		errors_and_exit(4, scene);
-	if (!(check_extention(tmp)))
+	if (!(check_extention(scene->fn)))
 		errors_and_exit(7, scene);
 	if (!(check_other(scene, fd)))
 		errors_and_exit(6, scene);
