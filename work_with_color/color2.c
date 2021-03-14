@@ -32,8 +32,8 @@ t_vec	take_square_normal(t_vec point, t_sq *sq)
 	return (len1 > len2 ? normal1 : normal2);
 }
 
-t_vec	take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec
-vec[2])
+t_vec take_normal_from_obj(t_dist args, t_rt *scene, t_vec *tmp, t_vec vec[2],
+						   t_vec *tmp_full)
 {
 	t_vec normal;
 
@@ -49,8 +49,10 @@ vec[2])
 		normal = take_square_normal((t_vec){vec->x, vec->y, vec->z },
 			scene->sq[args.fig_index]);
 	if (args.index == 4)
-		normal = take_normal_cylinder(*tmp, scene->cy[args.fig_index], scene,
-								vec);
+		normal = take_normal_cylinder(*tmp_full, scene->cy[args.fig_index],
+								&args, vec);
+//		normal = take_normal_cylinder(*tmp, scene->cy[args.fig_index], &args,
+//			vec);
 	if (args.index == 5)
 		normal = take_triangle_normal(scene->tr[args.fig_index],
 		(t_vec){vec->x, vec->y, vec->z});
@@ -71,27 +73,5 @@ t_vec	take_light_to_color(t_light *l, t_vec *tmp, t_rt *scene, t_dist args)
 		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
 	if (args.index == 5)
 		light = (t_vec){l->x - tmp->x, l->y - tmp->y, l->z - tmp->z};
-
-//	if (args.index == 1)
-//		light = (t_vec){l->x - (tmp->x + scene->d->vec_matrix->x), l->y -
-//				(tmp->y + scene->d->vec_matrix->y), l->z -
-//				(tmp->z + scene->d->vec_matrix->z)};
-//	if (args.index == 2)
-//		light = (t_vec){l->x - (tmp->x + scene->d->vec_matrix->x), l->y -
-//				(tmp->y + scene->d->vec_matrix->y), l->z -
-//				(tmp->z + scene->d->vec_matrix->z)};
-//	if (args.index == 3)
-//		light = (t_vec){l->x - (tmp->x + scene->d->vec_matrix->x), l->y -
-//				(tmp->y + scene->d->vec_matrix->y), l->z -
-//				(tmp->z + scene->d->vec_matrix->z)};
-//	if (args.index == 4)
-//		light = (t_vec){l->x - (tmp->x + scene->d->vec_matrix->x), l->y -
-//				(tmp->y + scene->d->vec_matrix->y), l->z -
-//				(tmp->z + scene->d->vec_matrix->z)};
-//	if (args.index == 5)
-//		light = (t_vec){l->x - (tmp->x + scene->d->vec_matrix->x), l->y -
-//				(tmp->y + scene->d->vec_matrix->y), l->z -
-//				(tmp->z + scene->d->vec_matrix->z)};
-
 	return (light);
 }

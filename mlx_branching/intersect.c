@@ -8,7 +8,7 @@ double intersect_sphere(t_vec vec[2], t_sp *sp)
 	double	distance[3];
 	t_vec	sp_center;
 
-	k[1] = 0.99999999;
+	k[1] = 1;
 	sp_center = vec_subt(vec[1], (t_vec){sp->x, sp->y, sp->z});
 	if (vec[1].x != 4)
 		vec->x = vec->x;
@@ -103,9 +103,11 @@ int intersect(t_vec vec[2], t_rt *scene)
 {
 	t_dist		args;
 	t_vec 		color;
+	t_vec 		vn;
 
 	args = check_len_figures(vec, scene);
-//	args.distance *= 0.999999999;
+	args.distance *= 0.999999999;
+	vn = take_normal_from_obj()
 	color = color_light_branching(args, scene, vec);
 	return (vec_to_int_color(color, 1));
 }

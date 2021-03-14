@@ -84,17 +84,18 @@ static t_d check_point(t_cy *cy, t_c *cyl, t_d t, t_dist *quad)
 		tmp = t.d1;
 		t.d1 = t.d2;
 		t.d2 = tmp;
-		quad->quad1 = INSIDE;
+		quad->quad2 = INSIDE;
 	}
 	if (t.d1 < 0 || !check_height_cy(cy, cyl, t))
 	{
 		t.d1 = t.d2;
 		t.d2 = INFINITY;
+		quad->quad2 = INSIDE;
 		if (t.d1 < 0 || !check_height_cy(cy, cyl, t))
 			return ((t_d){INFINITY, INFINITY});
 	}
-	quad->quad1 = vec_scal(*cyl->vec, vec_multi(cyl->norm_ori,
-												cy->diameter / 2)) + vec_scal(x, cyl->vec[0]);
+//	quad->quad1 = vec_scal(*cyl->vec, vec_multi(cyl->norm_ori,
+//	cy->diameter / 2)) + vec_scal(x, cyl->vec[0]);
 	return (t);
 }
 
@@ -112,6 +113,7 @@ static t_d cyl_quadro_cyl(t_cy *cy, t_c *cyl, t_dist *quad)
 	{
 		d1 = cyl->b / -2.0 / cyl->a;
 		d2 = d1;
+
 	}
 	if (disc > 0)
 	{

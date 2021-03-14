@@ -44,14 +44,15 @@ void		alloc_structs_branching(t_count *counter, t_rt *scene)
 
 int			count_validate(t_count *counter, t_rt *scene)
 {
-	if (counter->resolution >= 2)
+	if (counter->resolution >= 2 || counter->resolution < 1)
 	{
-		write (2, "Error\nMultiplae resolution options\n", 36);
+		write (2, "Error\nMultiplae resolution options or less than one\n", 55);
 		return (0);
 	}
 	if (counter->a_light >= 2)
 	{
-		write (2, "Error\nMultiplae ambient light options\n", 39);
+		write (2, "Error\nMultiplae ambient light options or less then one\n",
+		 57);
 		return (0);
 	}
 	if (counter->cam > 0)

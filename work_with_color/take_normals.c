@@ -22,30 +22,34 @@ t_vec take_normal_cylinder(t_vec p, t_cy *cy, t_dist *args, t_vec *vec)
 //	return (norm);
 ////	return ((t_vec){-norm.x, -norm.y, -norm.z});
 
-//	double 		check;
-//	t_vec		vn;
-//	t_vec		k;
-//	t_vec		opp;
-//	double		tmp;
-//
-//	k = (t_vec){p.x + vec[1].x, p.y + vec[1].y, p.z + vec[1].z};
-//	check = vec_scal(vec_subt(k, (t_vec){cy->x, cy->y, cy->z}), (t_vec)
-//	{cy->vec_x, cy->vec_y, cy->vec_z});
-//	vn = vec_multi((t_vec){cy->vec_x, cy->vec_y, cy->vec_z}, check);
-//	vn = vec_subt(vec_subt(k, (t_vec){cy->x, cy->y, cy->z}), vn);
-//	norm_vec(&vn);
-//	opp = (t_vec){-vn.x, -vn.y, -vn.z};
-//	tmp = vec_scal(opp, vn);
-//	vn = (vec_scal(vn, opp) != 0) ? vec_multi(vn, tmp) : vn;
-//	norm_vec(&vn);
-
+	double 		check;
 	t_vec		vn;
-	t_vec		tmp;
-	tmp = vec_subt(p, (t_vec){cy->x, cy->y, cy->z});
-	vn = vec_multi(*vec, args->quad1);
-	vn = vec_subt(tmp, vn);
+	t_vec		k;
+	t_vec		opp;
+	double		tmp;
+
+//	k = (t_vec){p.x + vec[1].x, p.y + vec[1].y, p.z + vec[1].z};
+	k = p;
+	check = vec_scal(vec_subt(k, (t_vec){cy->x, cy->y, cy->z}), (t_vec)
+	{cy->vec_x, cy->vec_y, cy->vec_z});
+	vn = vec_multi((t_vec){cy->vec_x, cy->vec_y, cy->vec_z}, check);
+	vn = vec_subt(vec_subt(k, (t_vec){cy->x, cy->y, cy->z}), vn);
 	norm_vec(&vn);
-	if (args->quad1 != INSIDE)
-		vn = vec_multi(vn, -1);
+	opp = (t_vec){-vec->x, -vec->y, -vec->z};
+	tmp = vec_scal(opp, vn);
+	vn = (vec_scal(vn, opp) != 0) ? vec_multi(vn, tmp) : vn;
+	norm_vec(&vn);
+	if (vec_scal(vn, *vec) > MINIMUM)
+		vn = (t_vec){-vn.x, -vn.y, -vn.z};
+
+
+//	t_vec		vn;
+//	t_vec		tmp;
+//	tmp = vec_subt(p, (t_vec){cy->x, cy->y, cy->z});
+//	vn = vec_multi(*vec, args->quad1);
+//	vn = vec_subt(tmp, vn);
+//	norm_vec(&vn);
+//	if (args->quad2 == INSIDE)
+//		vn = vec_multi(vn, -1);
 	return (vn);
 }
