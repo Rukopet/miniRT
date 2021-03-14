@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   take_normals.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:22:30 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:22:47 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
-t_vec take_normal_cylinder(t_vec *p, t_cy *cy, t_dist *args, t_vec *vec)
+t_vec			take_normal_cylinder(t_vec *p, t_cy *cy, \
+		t_dist *args, t_vec *vec)
 {
 	t_vec		vn;
 	t_vec		c_c[2];

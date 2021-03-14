@@ -75,14 +75,11 @@ char		*next_argument_check(char **join)
 	begin = *join;
 	i = -1;
 	len = ft_strlen_n(begin, 1);
-	if (!(line_check = ft_calloc(1, len + 1)))
-		return (NULL);
+	line_check = ft_calloc(1, len + 1);
 	while ((*begin != '\n') && *begin)
 		line_check[++i] = *begin++;
 	len = ft_strlen_n(begin, 0);
-	if (!(ret = malloc(len + 1)))
-		return (NULL);
-	ret[len] = 0;
+	ret = ft_calloc(1, len + 1);
 	begin = (*begin == '\n') ? begin + 1 : begin;
 	ft_memcpy(ret, begin, len);
 	free_and_null(join, 0);
@@ -104,6 +101,7 @@ int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 			break ;
 		if (!(check_line(&arg, counter)))
 			return (0);
+		free(arg);
 	}
 	if (!count_validate(counter, scene))
 		return (0);

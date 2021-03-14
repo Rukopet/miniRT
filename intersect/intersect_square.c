@@ -1,27 +1,37 @@
-#include "minirt.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intersect_square.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 21:10:47 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 21:12:14 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static double check_plane(t_sq *sq, t_vec *vec)
+#include "minirt.h"
+
+static double	check_plane(t_sq *sq, t_vec *vec)
 {
 	t_pl		tmp;
 	double		dist;
 	t_vec		orie;
 
-
 	orie = (t_vec){.x = sq->vec_x, .y = sq->vec_y, .z = sq->vec_z};
 	norm_vec(&orie);
-	tmp = (t_pl){.x = sq->x, .y = sq->y, .z =  sq->z, .vec_x = orie.x,
-			  .vec_y = orie.y, .vec_z = orie.z};
+	tmp = (t_pl){.x = sq->x, .y = sq->y, .z = sq->z, .vec_x = orie.x,
+		.vec_y = orie.y, .vec_z = orie.z};
 	dist = intersect_plane(vec, &tmp);
 	if (isnormal(dist) && (dist > 0))
 		return (dist);
 	return (INFINITY);
 }
 
-static int check_borders(t_vec tmp[4], t_sq *sq)
+static int		check_borders(t_vec tmp[4], t_sq *sq)
 {
-	double 		p;
-	double 		up;
+	double		p;
+	double		up;
 	t_vec		check;
 
 	check = vec_subt(tmp[3], (t_vec){sq->x, sq->y, sq->z});
@@ -32,11 +42,11 @@ static int check_borders(t_vec tmp[4], t_sq *sq)
 	return (0);
 }
 
-double intersect_square(t_vec vec[2], t_sq *sq)
+double			intersect_square(t_vec vec[2], t_sq *sq)
 {
 	t_vec		tmp[4];
 	t_vec		orie;
-	double 		dist;
+	double		dist;
 
 	tmp[2] = (t_vec){0, 1, 0};
 	orie = (t_vec){sq->vec_x, sq->vec_y, sq->vec_z};

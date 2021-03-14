@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:01:07 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:01:29 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 int			init_count_struct(t_count *counter)
@@ -16,7 +28,7 @@ int			init_count_struct(t_count *counter)
 
 void		init_scene_struct(t_rt **str)
 {
-	t_rt 	*s;
+	t_rt	*s;
 
 	if (!(s = malloc(sizeof(t_rt))))
 		errors_and_exit(-1, s);

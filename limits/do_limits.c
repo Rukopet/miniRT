@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_limits.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 21:03:43 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 21:04:11 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 t_limits			**init_limits(t_limits **limits, t_rt *scene)
@@ -26,11 +38,10 @@ t_limits			**init_limits(t_limits **limits, t_rt *scene)
 	return (limits);
 }
 
-t_limits **alloc_limits(t_rt *scene, t_cam *cam)
+t_limits			**alloc_limits(t_rt *scene, t_cam *cam)
 {
-	t_limits 		**ret;
+	t_limits		**ret;
 	int				i;
-
 
 	i = -1;
 	if (!(ret = malloc(sizeof(t_limits*) * 5)))

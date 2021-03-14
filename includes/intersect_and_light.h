@@ -21,14 +21,12 @@ t_dist comparison_squares(t_vec vec[2], t_rt *scene);
 t_dist comparison_cylinder(t_vec vec[2], t_rt *scene);
 t_dist comparison_triangle(t_vec vec[2], t_rt *scene);
 
-t_vec			*sum_colors(t_vec *col1, t_vec *col2);
-void			check_overcolor(t_vec* tmp);
-int				vec_to_int_color(t_vec color, int flag_del);
+int vec_to_int_color(t_vec color);
 
 t_vec			vec_to_light(t_vec *color, t_rt *sc, t_vec *vec, t_dist args);
 t_vec vec_to_light_cyl(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args);
 t_dist check_len_figures(t_vec vec[2], t_rt *scene);
-void 		check_resolution(t_rt *sc);
+void check_resolution(t_rt *sc, void *mlx);
 
 
 typedef struct	s_triangle

@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   alloc_matrix.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 21:16:03 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 21:17:18 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 static double	**alloc_el(int k, int s)
 {
-	double 		**ret;
-	double 		*tmp;
-	int 		i;
-	int 		j;
+	double		**ret;
+	double		*tmp;
+	int			i;
+	int			j;
 
 	i = -1;
-	if (!(ret = (double**)malloc(sizeof(double*) * k + (k * s * sizeof
-			(double)))))
+	if (!(ret = (double**)malloc(sizeof(double*) * k + (k * s * \
+						sizeof(double)))))
 		errors_and_exit(-1, NULL);
 	tmp = (double*)((char*)ret + k * sizeof(double*));
 	while (++i < k)
@@ -28,7 +40,7 @@ static double	**alloc_el(int k, int s)
 void			alloc_matrix(t_cam *cam)
 {
 	int			i;
-	int 		j;
+	int			j;
 
 	cam->tran_mat = alloc_el(4, 4);
 	i = -1;

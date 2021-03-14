@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   triangle_parser.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:03:07 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:03:15 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 static void	pars(char **line, t_rt *s, int *i)
@@ -6,14 +18,8 @@ static void	pars(char **line, t_rt *s, int *i)
 
 	tmp = line[4];
 	s->tr[i[6]]->r = ft_atof_ptr(&tmp);
-	s->tr[i[6]]->r = (s->tr[i[6]]->r < 0) ? 0 : s->tr[i[6]]->r;
-	s->tr[i[6]]->r = (s->tr[i[6]]->r > 255) ? 255 : s->tr[i[6]]->r;
 	s->tr[i[6]]->g = ft_atof_ptr(&tmp);
-	s->tr[i[6]]->g = (s->tr[i[6]]->g < 0) ? 0 : s->tr[i[6]]->g;
-	s->tr[i[6]]->g = (s->tr[i[6]]->g > 255) ? 255 : s->tr[i[6]]->g;
 	s->tr[i[6]]->b = ft_atof_ptr(&tmp);
-	s->tr[i[6]]->b = (s->tr[i[6]]->b < 0) ? 0 : s->tr[i[6]]->b;
-	s->tr[i[6]]->b = (s->tr[i[6]]->b > 255) ? 255 : s->tr[i[6]]->b;
 }
 
 int			parse_triangle(char **line, t_rt *s, int *i)

@@ -4,6 +4,8 @@
 
 # define MINIMUM 0.001
 # define INSIDE 5000
+# define BMP_HEADER_S 14
+# define BMP_INFO 40
 
 #include <stdlib.h>
 #include <unistd.h>

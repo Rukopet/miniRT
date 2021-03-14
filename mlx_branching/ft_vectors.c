@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_vectors.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:47:42 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:48:16 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 t_vec				*alloc_vector(double x, double y, double z)
 {
 	t_vec			*ret;
-	t_rt 			l;
+	t_rt			l;
 
 	if (!(ret = malloc(sizeof(t_vec))))
 		errors_and_exit(-1, &l);
@@ -13,7 +25,7 @@ t_vec				*alloc_vector(double x, double y, double z)
 	return (ret);
 }
 
-double 				length_vector(t_vec *vec)
+double				length_vector(t_vec *vec)
 {
 	double			check;
 
@@ -21,7 +33,7 @@ double 				length_vector(t_vec *vec)
 	return (sqrt(check));
 }
 
-int 				norm_vec(t_vec *vec)
+int					norm_vec(t_vec *vec)
 {
 	double			len;
 

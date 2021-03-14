@@ -1,8 +1,16 @@
-#include "get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:01:54 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:02:22 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
-#include "libft.h"
-#include "fcntl.h"
-#include "stdio.h"
 
 int			check_extention(char *name)
 {
@@ -23,12 +31,16 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 	char	*gnl;
 	char	*join;
 
-	while (0 < (i = get_next_line(fd, &gnl )))
+	while (0 < (i = get_next_line(fd, &gnl)))
+	{
 		if (!(join_str(&gnl, &join)))
 			return (free_and_null(&gnl, -1));
-	i = (i == -1) ?  i : get_next_line(fd, &gnl);
+		free(gnl);
+	}
+	free(gnl);
+	i = (i == -1) ? i : get_next_line(fd, &gnl);
 	if (i == -1)
-		return (free_and_null(&join, -1));
+		errors_and_exit(-1, scene);
 	if (!(join_str(&gnl, &join)))
 		return (free_and_null(&join, -1));
 	if (!(work_with_counter_br(&join, counter, scene)))
@@ -40,7 +52,7 @@ int			check_other(t_rt *scene, int fd)
 {
 	t_count	*counter;
 
-	if(!(counter = malloc(sizeof(t_count))))
+	if (!(counter = malloc(sizeof(t_count))))
 		errors_and_exit(-1, scene);
 	init_count_struct(counter);
 	if (-1 == (pars_branching(scene, fd, counter)))
@@ -63,13 +75,16 @@ int			check_scene_arg(char **argv, t_rt *scene, int argc)
 	while (argv[++i] != NULL)
 	{
 		if (0 == (ft_strncmp(argv[i], "--save", 7)))
+		{
 			scene->save = 1;
+		}
 		else
-			scene->fn = argv[i];
+			tmp = argv[i];
 	}
-	if ((argc == 3 && !scene->save) || -1 == (fd = open(scene->fn, O_RDONLY)))
+	scene->fn = tmp;
+	if ((argc == 3 && !scene->save) || -1 == (fd = open(tmp, O_RDONLY)))
 		errors_and_exit(4, scene);
-	if (!(check_extention(scene->fn)))
+	if (!(check_extention(tmp)))
 		errors_and_exit(7, scene);
 	if (!(check_other(scene, fd)))
 		errors_and_exit(6, scene);

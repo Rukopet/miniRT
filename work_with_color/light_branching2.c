@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   light_branching2.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:21:15 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:21:18 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 t_vec	cylinder_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
@@ -14,7 +26,6 @@ t_vec	cylinder_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 	}
 	else
 		errors_and_exit(19, scene);
-//	check_overcolor(color + 1);
 	return (*(color + 1));
 }
 
@@ -32,6 +43,5 @@ t_vec	triangle_light_br(t_dist args, t_rt *scene, t_vec *vec, t_vec color[2])
 	}
 	else
 		return (cylinder_light_br(args, scene, vec, color));
-//	check_overcolor(color + 1);
 	return (*(color + 1));
 }

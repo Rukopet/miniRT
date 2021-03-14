@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 21:23:59 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 21:28:48 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 int				check_argc(int argc, char **argv, t_rt *scene)
@@ -13,7 +25,7 @@ int				check_argc(int argc, char **argv, t_rt *scene)
 	return (1);
 }
 
-int			branching(int argc, char **argv, t_rt *scene)
+int				branching(int argc, char **argv, t_rt *scene)
 {
 	if (!(check_argc(argc, argv, scene)))
 		return (0);
@@ -26,7 +38,7 @@ int				main(int argc, char *argv[])
 	t_rt		*scene;
 
 	init_scene_struct(&scene);
-	if (!(branching(argc ,argv, scene)))
+	if (!(branching(argc, argv, scene)))
 		return (-1);
-    return (0);
+	return (0);
 }

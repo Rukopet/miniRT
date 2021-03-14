@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_for_rtx.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:32:05 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:37:34 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
-int 			check_max_cams(t_rt *scene)
+int				check_max_cams(t_rt *scene)
 {
 	int			i;
 
@@ -12,29 +24,18 @@ int 			check_max_cams(t_rt *scene)
 	return (i);
 }
 
-double 			radians_to_degrees(double radians)
+double			radians_to_degrees(double radians)
 {
-	double 		ret;
+	double		ret;
 
 	ret = radians * 180 / M_PI;
 	return (ret);
 }
 
-double 			degress_to_radians(double degrees)
+double			degress_to_radians(double degrees)
 {
 	double		ret;
 
 	ret = degrees * (M_PI / 180);
 	return (ret);
-}
-
-t_cos_sin *alloc_init_cos_sin(t_rt *scene, double degrees)
-{
-	t_cos_sin 	*tmp;
-
-	if (!(tmp = malloc(sizeof(t_cos_sin))))
-		errors_and_exit(-1, scene);
-	tmp->cos_c = cos(degress_to_radians(degrees));
-	tmp->sin_c = sin(degress_to_radians(degrees));
-	return (tmp);
 }

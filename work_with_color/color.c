@@ -1,16 +1,23 @@
-#include "minirt.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   color.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:06:28 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:16:36 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_vec summ_colors(t_vec color1, t_vec color2)
+#include "minirt.h"
+
+t_vec			summ_colors(t_vec color1, t_vec color2)
 {
-		color1 = (t_vec){color1.x + color2.x,
-						 color1.y + color2.y,
-						 color1.z + color2.z};
-		return (color1);
+	color1 = (t_vec){color1.x + color2.x,
+		color1.y + color2.y,
+		color1.z + color2.z};
+	return (color1);
 }
 
 t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
@@ -23,7 +30,7 @@ t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 	*color = (t_vec){color->x * coof.x,
 						color->y * coof.y,
 						color->z * coof.z};
-	if (color->x > 255 || color->y> 255 || color->z > 255)
+	if (color->x > 255 || color->y > 255 || color->z > 255)
 	{
 		max = fmax(color->x, fmax(color->y, color->z));
 		check = 254.0 / max;
@@ -32,13 +39,13 @@ t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
 	return (*color);
 }
 
-t_vec coof_color_after_normal(t_vec *a_vec, t_rt *scene, t_dist tmp_args,
-							  t_light *l)
+t_vec			coof_color_after_normal(t_vec *a_vec, t_rt *scene,
+				t_dist tmp_args, t_light *l)
 {
-	t_vec *tmp;
-	t_vec ret;
-	t_vec n_l[2];
- 	double com;
+	t_vec		*tmp;
+	t_vec		ret;
+	t_vec		n_l[2];
+	double		com;
 
 	ret = (t_vec){0, 0, 0};
 	tmp = product_vec_and_int(a_vec, tmp_args.distance, 0);
@@ -54,17 +61,18 @@ t_vec coof_color_after_normal(t_vec *a_vec, t_rt *scene, t_dist tmp_args,
 	if (com > 0)
 	{
 		ret = (t_vec){l->r / 255.0 * (l->b_rate * com),
-					  l->g / 255.0 * (l->b_rate * com),
-					  l->b / 255.0 * (l->b_rate * com)};
+			l->g / 255.0 * (l->b_rate * com),
+			l->b / 255.0 * (l->b_rate * com)};
 	}
 	free(tmp);
 	return (ret);
 }
 
-t_vec vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args)
+t_vec			vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], \
+		t_dist args)
 {
 	t_vec		n_v[2];
-	int 		i;
+	int			i;
 	t_dist		new;
 	t_vec		tmp[4];
 
@@ -84,8 +92,8 @@ t_vec vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], t_dist args)
 			continue ;
 		*(tmp + 1) = vec_subt((t_vec){sc->light[i]->x,
 						sc->light[i]->y, sc->light[i]->z}, tmp[2]);
-		*color = summ_colors(*color, coof_color_after_normal
-				(tmp, sc, args, sc->light[i]));
+		*color = summ_colors(*color, \
+				coof_color_after_normal(tmp, sc, args, sc->light[i]));
 	}
 	return (get_color_after_normal(color + 1, *color, i));
 }

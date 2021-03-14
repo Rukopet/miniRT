@@ -242,6 +242,8 @@ void			init_scene_struct(t_rt **str);
 int				parse_after_count(char **join, t_rt *scene);
 char			*next_argument_check(char **join);
 char			*init_values_pars(int index);
+void 			validator(t_rt *sc);
+
 
 int				write_error_withpars(const char *line);
 int				parse_resolution(char **line, t_rt *s);
@@ -253,7 +255,6 @@ int				parse_plane(char **line, t_rt *s, int *i);
 int				parse_square(char **line, t_rt *s, int *i);
 int				parse_cylinder(char **line, t_rt *s, int *i);
 int				parse_triangle(char **line, t_rt *s, int *i);
-double 			ft_atof(char *s);
 double			ft_atof_ptr(char **s);
 int				ft_atoi_ptr(char **nptr);
 void			check_args(char **line, int v);

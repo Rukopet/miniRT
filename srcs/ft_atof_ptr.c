@@ -1,4 +1,15 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atof_ptr.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 21:20:53 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 21:25:29 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
 static int			check_e(char ***s)
@@ -28,11 +39,9 @@ static int			check_e(char ***s)
 	return (i * sign);
 }
 
-
-
-static double			check_after_dot(char ***s, int *e)
+static double		check_after_dot(char ***s, int *e)
 {
-	double				a;
+	double			a;
 
 	(**s)++;
 	a = 0.0;
@@ -45,7 +54,7 @@ static double			check_after_dot(char ***s, int *e)
 	return (a);
 }
 
-static double			ret_answ(char ***s, double *a, int e)
+static double		ret_answ(char ***s, double *a, int e)
 {
 	if (***s == '.')
 		*a += check_after_dot(s, &e);
@@ -64,10 +73,10 @@ static double			ret_answ(char ***s, double *a, int e)
 	return (*a);
 }
 
-double 					ft_atof_ptr(char **s)
+double				ft_atof_ptr(char **s)
 {
-	double a;
-	int i[3];
+	double			a;
+	int				i[3];
 
 	a = 0.0;
 	i[1] = 1;
@@ -88,30 +97,3 @@ double 					ft_atof_ptr(char **s)
 	}
 	return (ret_answ(&s, &a, i[2]) * i[1]);
 }
-
-//	double a = 0.0;
-//	int e = 0;
-//	int c;
-//	int	minus;
-//
-//	minus = 1;
-//	if (**s == ',')
-//		(*s)++;
-//	if ((c = **s) != '\0' && (c == '-'))
-//	{
-//		minus = -1;
-//		(*s)++;
-//	}
-//	while ((c = **s) != '\0' && ft_isdigit(**s)) {
-//			a = a*10.0 + (c - '0');
-//			(*s)++;
-//	}
-//	if (c == '.')
-//	{
-//		(*s)++;
-//			while ((c = **s) != '\0' && ft_isdigit(c)) {
-//				a = a*10.0 + (c - '0');
-//				e = e-1;
-//				(*s)++;
-//			}
-//	}

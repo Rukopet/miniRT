@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   comparison.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:37:45 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:48:46 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
-t_dist comparison_spheres(t_vec vec[2], t_rt *scene)
+t_dist			comparison_spheres(t_vec vec[2], t_rt *scene)
 {
-	int 			i;
-	t_dist			dist;
-	double 			tmp;
+	int			i;
+	t_dist		dist;
+	double		tmp;
 
 	i = -1;
 	dist.distance = INFINITY;
@@ -20,15 +32,14 @@ t_dist comparison_spheres(t_vec vec[2], t_rt *scene)
 			}
 		}
 	}
-
 	return (dist);
 }
 
-t_dist comparison_planes(t_vec vec[2], t_rt *scene)
+t_dist			comparison_planes(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
-	int 		i;
-	double 		tmp;
+	int			i;
+	double		tmp;
 
 	i = -1;
 	dist.distance = INFINITY;
@@ -45,11 +56,11 @@ t_dist comparison_planes(t_vec vec[2], t_rt *scene)
 	return (dist);
 }
 
-t_dist comparison_squares(t_vec vec[2], t_rt *scene)
+t_dist			comparison_squares(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
-	int 		i;
-	double 		tmp;
+	int			i;
+	double		tmp;
 
 	i = -1;
 	dist.distance = INFINITY;
@@ -66,12 +77,12 @@ t_dist comparison_squares(t_vec vec[2], t_rt *scene)
 	return (dist);
 }
 
-t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
+t_dist			comparison_cylinder(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
-	int 		i;
+	int			i;
 	t_d			tmp;
-	double 		check;
+	double		check;
 
 	i = -1;
 	dist.distance = INFINITY;
@@ -84,10 +95,7 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
 			else if (tmp.d1 < tmp.d2 && isnormal(tmp.d1))
 				check = tmp.d1;
 			else
-			{
 				check = tmp.d2;
-			}
-
 			if (i == 0 || check < dist.distance)
 			{
 				dist.distance = check;
@@ -97,10 +105,10 @@ t_dist comparison_cylinder(t_vec vec[2], t_rt *scene)
 	return (dist);
 }
 
-t_dist comparison_triangle(t_vec vec[2], t_rt *scene)
+t_dist			comparison_triangle(t_vec vec[2], t_rt *scene)
 {
 	t_dist		dist;
-	int 		i;
+	int			i;
 	double		tmp;
 
 	i = -1;

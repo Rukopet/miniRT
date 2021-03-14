@@ -1,8 +1,18 @@
-#include <stdlib.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   exit_errors.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 21:18:13 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 21:23:23 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
-static void	mlx_errors(int flag, t_rt *scene)
+static void		mlx_errors(int flag, t_rt *scene)
 {
 	if (flag == 20)
 	{
@@ -13,11 +23,21 @@ static void	mlx_errors(int flag, t_rt *scene)
 	if (flag == 19)
 	{
 		write(2, "Error\nIn check color fig\n", 28);
-
+		exit(flag);
+	}
+	if (flag == 12)
+	{
+		write(2, "Error\nUnvalid values in normalized vector\n", 45);
+		exit(12);
+	}
+	if (flag == 13)
+	{
+		write(2, "Error\nUnvalid values in bright rate\n", 38);
+		exit(flag);
 	}
 }
 
-void		next_errors(int flag, t_rt *scene)
+void			next_errors(int flag, t_rt *scene)
 {
 	if (flag == 8)
 	{
@@ -36,11 +56,15 @@ void		next_errors(int flag, t_rt *scene)
 		write(2, "Error\nWrong numbers\n", 21);
 		exit(10);
 	}
-	else
-		mlx_errors(flag, scene);
+	else if (flag == 11)
+	{
+		write(2, "Error\nUnvalid values in RGB\n", 21);
+		exit(11);
+	}
+	mlx_errors(flag, scene);
 }
 
-void		errors_and_exit(int flag, t_rt *scene)
+void			errors_and_exit(int flag, t_rt *scene)
 {
 	if (flag == 1)
 		write(2, "Error\nNot enough arguments, add file name-scene\n", 49);

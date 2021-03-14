@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rtx_rt.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:43:23 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:46:21 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
-#include <stdio.h>
 
 static int			do_close(int keycode, t_rt *sc)
 {
@@ -8,14 +19,13 @@ static int			do_close(int keycode, t_rt *sc)
 	exit(0);
 }
 
-void 				do_rtx_calculations(void *limits)
+void				do_rtx_calculations(void *limits)
 {
-	t_limits 		*tmp;
+	t_limits		*tmp;
 	int				i;
-	int 			j;
+	int				j;
 
 	tmp = (t_limits*)limits;
-
 	i = tmp->prev_y;
 	while (++i != tmp->y)
 	{
@@ -29,21 +39,11 @@ void 				do_rtx_calculations(void *limits)
 	limits = NULL;
 }
 
-t_matrix 			*matrix_alloc()
-{
-	t_matrix 		*ret;
-	t_rt 			kek;
-
-	if (!(ret = malloc(sizeof(t_matrix))))
-		errors_and_exit(-1, &kek);
-	return (ret);
-}
-
 void				rtx_with_angles(t_rt *scene, t_cam *cam)
 {
-	t_limits 		**limits;
+	t_limits		**limits;
 	pthread_t		thread[4];
-	int 			i;
+	int				i;
 
 	i = -1;
 	limits = alloc_limits(scene, cam);
@@ -51,7 +51,7 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	{
 		if (0 != pthread_create(&thread[i], NULL, (void*)do_rtx_calculations,
 				(void*)limits[i]))
-			errors_and_exit(-2,scene);
+			errors_and_exit(-2, scene);
 	}
 	i = -1;
 	while (++i != 4)
@@ -61,13 +61,8 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	limits = NULL;
 }
 
-void rtx(t_rt *scene, t_img *img, int cam, int flag)
+void				rtx(t_rt *scene, t_img *img, int cam, int flag)
 {
-	t_vec		matrix;
-
-	matrix = (t_vec){scene->cam[cam]->x, scene->cam[cam]->y,
-				  scene->cam[cam]->z};
-	scene->d->vec_matrix = &matrix;
 	scene->img = img;
 	get_img(scene);
 	mlx_key_hook(scene->d->win, key_hook, scene);

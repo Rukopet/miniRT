@@ -13,9 +13,9 @@
 #include "get_next_line.h"
 #include "libft.h"
 
-int					ft_strchr_r(const char *s, int c)
+int			ft_strchr_r(const char *s, int c)
 {
-	int				index;
+	int		index;
 
 	index = 0;
 	if (!s)
@@ -29,11 +29,11 @@ int					ft_strchr_r(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin_g(const char *s1, const char *s2)
+char		*ft_strjoin_g(const char *s1, const char *s2)
 {
-	int			sum_len;
-	char		*ret;
-	char		*dst;
+	int		sum_len;
+	char	*ret;
+	char	*dst;
 
 	if (NULL == s1)
 		return (ft_strdup(s2));
@@ -48,4 +48,3 @@ char	*ft_strjoin_g(const char *s1, const char *s2)
 	ft_strlcat(ret, s2, sum_len + 1);
 	return (ret);
 }
-

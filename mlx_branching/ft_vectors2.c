@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_vectors2.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:46:43 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:47:20 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
-double 				scalar_product_self(t_vec *vec)
+double				scalar_product_self(t_vec *vec)
 {
 	return (vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
 
 double				scalar_product_cos(t_vec *vec1, t_vec *vec2, int flag)
 {
-	double 			ret;
+	double			ret;
 
 	ret = (scalar_product(vec1, vec2, 3)) /
 			(length_vector(vec1) * length_vector(vec2));
@@ -25,7 +37,7 @@ double				scalar_product_cos(t_vec *vec1, t_vec *vec2, int flag)
 	return (ret);
 }
 
-t_vec 				*product_vec_and_int(t_vec *vec, double distance, int flag)
+t_vec				*product_vec_and_int(t_vec *vec, double distance, int flag)
 {
 	t_vec			*new_vec;
 

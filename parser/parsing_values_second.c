@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_values_second.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 20:00:08 by egums             #+#    #+#             */
+/*   Updated: 2021/03/14 20:00:34 by egums            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
-#include "libft.h"
 
 int			write_error_withpars(const char *line)
 {
-	write (2, &line, ft_strlen(line));
+	write(2, &line, ft_strlen(line));
 	return (0);
 }
 
@@ -33,14 +44,8 @@ int			parse_plane(char **line, t_rt *s, int *i)
 	s->pl[i[3]]->vec_z = ft_atof_ptr(&tmp);
 	tmp = line[3];
 	s->pl[i[3]]->r = ft_atof_ptr(&tmp);
-	s->pl[i[3]]->r = (s->pl[i[3]]->r < 0) ? 0 : s->pl[i[3]]->r;
-	s->pl[i[3]]->r = (s->pl[i[3]]->r > 255) ? 255 : s->pl[i[3]]->r;
 	s->pl[i[3]]->g = ft_atof_ptr(&tmp);
-	s->pl[i[3]]->g = (s->pl[i[3]]->g < 0) ? 0 : s->pl[i[3]]->g;
-	s->pl[i[3]]->g = (s->pl[i[3]]->g > 255) ? 255 : s->pl[i[3]]->g;
 	s->pl[i[3]]->b = ft_atof_ptr(&tmp);
-	s->pl[i[3]]->b = (s->pl[i[3]]->b < 0) ? 0 : s->pl[i[3]]->b;
-	s->pl[i[3]]->b = (s->pl[i[3]]->b > 255) ? 255 : s->pl[i[3]]->b;
 	s->pl[i[3]]->distance = -1;
 	i[3] += 1;
 	if (NULL != line[4])
@@ -61,18 +66,12 @@ int			parse_square(char **line, t_rt *s, int *i)
 	s->sq[i[4]]->vec_x = ft_atof_ptr(&tmp);
 	s->sq[i[4]]->vec_y = ft_atof_ptr(&tmp);
 	s->sq[i[4]]->vec_z = ft_atof_ptr(&tmp);
-	s->sq[i[4]]->side_size = ft_atof(line[3]);
+	tmp = line[3];
+	s->sq[i[4]]->side_size = ft_atof_ptr(&tmp);
 	tmp = line[4];
 	s->sq[i[4]]->r = ft_atoi_ptr(&tmp);
-	s->sq[i[4]]->r = (s->sq[i[4]]->r < 0) ? 0 : s->sq[i[4]]->r;
-	s->sq[i[4]]->r = (s->sq[i[4]]->r > 255) ? 255 : s->sq[i[4]]->r;
 	s->sq[i[4]]->g = ft_atoi_ptr(&tmp);
-	s->sq[i[4]]->g = (s->sq[i[4]]->g < 0) ? 0 : s->sq[i[4]]->g;
-	s->sq[i[4]]->g = (s->sq[i[4]]->g > 255) ? 255 : s->sq[i[4]]->g;
 	s->sq[i[4]]->b = ft_atoi_ptr(&tmp);
-	s->sq[i[4]]->b = (s->sq[i[4]]->b < 0) ? 0 : s->sq[i[4]]->b;
-	s->sq[i[4]]->b = (s->sq[i[4]]->b > 255) ? 255 : s->sq[i[4]]->b;
-	s->sq[i[4]]->distance = -1;
 	i[4] += 1;
 	if (NULL != line[5])
 		return (0);
@@ -92,19 +91,14 @@ int			parse_cylinder(char **line, t_rt *s, int *i)
 	s->cy[i[5]]->vec_x = ft_atof_ptr(&tmp);
 	s->cy[i[5]]->vec_y = ft_atof_ptr(&tmp);
 	s->cy[i[5]]->vec_z = ft_atof_ptr(&tmp);
-	s->cy[i[5]]->diameter = ft_atof(line[3]);
-	s->cy[i[5]]->height = ft_atof(line[4]);
+	tmp = line[3];
+	s->cy[i[5]]->diameter = ft_atof_ptr(&tmp);
+	tmp = line[4];
+	s->cy[i[5]]->height = ft_atof_ptr(&tmp);
 	tmp = line[5];
-	s->cy[i[5]]->r = ft_atof_ptr(&tmp);
-	s->cy[i[5]]->r = (s->cy[i[5]]->r < 0) ? 0 : s->cy[i[5]]->r;
-	s->cy[i[5]]->r = (s->cy[i[5]]->r > 255) ? 255 : s->cy[i[5]]->r;
-	s->cy[i[5]]->g = ft_atof_ptr(&tmp);
-	s->cy[i[5]]->g = (s->cy[i[5]]->g < 0) ? 0 : s->cy[i[5]]->g;
-	s->cy[i[5]]->g = (s->cy[i[5]]->g > 255) ? 255 : s->cy[i[5]]->g;
-	s->cy[i[5]]->b = ft_atof_ptr(&tmp);
-	s->cy[i[5]]->b = (s->cy[i[5]]->b < 0) ? 0 : s->cy[i[5]]->b;
-	s->cy[i[5]]->b = (s->cy[i[5]]->b > 255) ? 255 : s->cy[i[5]]->b;
-	s->cy[i[5]]->distance = -1;
+	s->cy[i[5]]->r = ft_atoi_ptr(&tmp);
+	s->cy[i[5]]->g = ft_atoi_ptr(&tmp);
+	s->cy[i[5]]->b = ft_atoi_ptr(&tmp);
 	i[5] += 1;
 	if (NULL != line[6])
 		return (0);
