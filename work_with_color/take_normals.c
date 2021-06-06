@@ -12,8 +12,7 @@
 
 #include "minirt.h"
 
-t_vec			take_normal_cylinder(t_vec *p, t_cy *cy, \
-		t_dist *args, t_vec *vec)
+t_vec			take_normal_cylinder(t_cy *cy, t_dist *args, t_vec *vec)
 {
 	t_vec		vn;
 	t_vec		c_c[2];

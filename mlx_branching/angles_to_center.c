@@ -12,7 +12,7 @@
 
 #include "minirt.h"
 
-double				rtx_cam_x(t_cam *cam, t_vec *tmp)
+double				rtx_cam_x(t_vec *tmp)
 {
 	double			cos_cam_z;
 	double			degrees;
@@ -24,7 +24,7 @@ double				rtx_cam_x(t_cam *cam, t_vec *tmp)
 	return (degrees);
 }
 
-double				rtx_cam_y(t_cam *cam, t_vec *tmp)
+double				rtx_cam_y(t_vec *tmp)
 {
 	double			cos_cam_z;
 	double			degrees;
@@ -36,7 +36,7 @@ double				rtx_cam_y(t_cam *cam, t_vec *tmp)
 	return (degrees);
 }
 
-double				rtx_cam_z(t_rt *scene, t_cam *cam, t_vec *tmp)
+double				rtx_cam_z(t_cam *cam, t_vec *tmp)
 {
 	t_vec			*v_cdir;
 	double			cos_cam_z;
@@ -60,9 +60,9 @@ void				get_angles_to_data(t_rt *scene, t_cam *cam)
 		norm_vec(tmp = alloc_vector(cam->vec_x, cam->vec_y, 0));
 	if (scene->d && scene->resolution)
 	{
-		scene->d->angle_x = rtx_cam_x(cam, tmp);
-		scene->d->angle_y = rtx_cam_y(cam, tmp);
-		scene->d->angle_z = rtx_cam_z(scene, cam, tmp);
+		scene->d->angle_x = rtx_cam_x(tmp);
+		scene->d->angle_y = rtx_cam_y(tmp);
+		scene->d->angle_z = rtx_cam_z(cam, tmp);
 		scene->d->x_res_ratio = (double)cam->fov / (double)scene->resolution->x;
 	}
 	free(tmp);

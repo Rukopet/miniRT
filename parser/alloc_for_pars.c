@@ -98,15 +98,20 @@ int			work_with_counter_br(char **join, t_count *counter, t_rt *scene)
 		if (!(arg = next_argument_check(join)))
 			return (0);
 		if (**join == 0)
+		{
+			free(arg);
 			break ;
+		}
 		if (!(check_line(&arg, counter)))
 			return (0);
 		free(arg);
 	}
+	free(*join);
 	if (!count_validate(counter, scene))
 		return (0);
 	if (!parse_after_count(&begin, scene))
 		return (0);
+	free(begin);
 	return (1);
 }
 

@@ -12,17 +12,19 @@
 
 #include "minirt.h"
 
-int			check_extention(char *name)
+static void	do_line_check(char **join, char *gnl, int *p)
 {
-	int		i;
-	int		ret;
-
-	ret = 1;
-	i = ft_strlen(name);
-	ret = (name[--i] == 't') ? 1 : 0;
-	ret = (name[--i] == 'r') ? 1 : 0;
-	ret = (name[--i] == '.') ? 1 : 0;
-	return (ret);
+	if (*gnl == 0)
+	{
+		p[0]++;
+		free(gnl);
+		return ;
+	}
+	p[1] += 1;
+	p[0] = p[1];
+	if (!(join_str(&gnl, join)))
+		free_and_null(&gnl, -1);
+	free(gnl);
 }
 
 int			pars_branching(t_rt *scene, int fd, t_count *counter)
@@ -30,19 +32,22 @@ int			pars_branching(t_rt *scene, int fd, t_count *counter)
 	int		i;
 	char	*gnl;
 	char	*join;
+	int		p[2];
 
+	join = NULL;
+	p[0] = 0;
+	p[1] = 0;
 	while (0 < (i = get_next_line(fd, &gnl)))
-	{
-		if (!(join_str(&gnl, &join)))
-			return (free_and_null(&gnl, -1));
-		free(gnl);
-	}
-	free(gnl);
+		do_line_check(&join, gnl, p);
+	do_line_check(&join, gnl, p);
+	if (p[0] - p[1] > 1)
+		errors_and_exit(4, scene);
 	i = (i == -1) ? i : get_next_line(fd, &gnl);
 	if (i == -1)
 		errors_and_exit(-1, scene);
 	if (!(join_str(&gnl, &join)))
 		return (free_and_null(&join, -1));
+	free(gnl);
 	if (!(work_with_counter_br(&join, counter, scene)))
 		return (-1);
 	return (1);

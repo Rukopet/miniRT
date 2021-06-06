@@ -27,7 +27,7 @@ int					key_hook(int key_code, t_rt *sc)
 			sc->cam1 = 0;
 		else
 			sc->cam1++;
-		rtx(sc, &img, sc->cam1, 1);
+		rtx(sc, &img, sc->cam1);
 	}
 	return (0);
 }
@@ -68,5 +68,5 @@ void				begin_mlx_work(t_rt *scene)
 		errors_and_exit(20, scene);
 	cam = 0;
 	init_data_struct(scene, mlx, mlx_win);
-	rtx(scene, &img, cam, scene->cam1);
+	rtx(scene, &img, cam);
 }

@@ -37,7 +37,7 @@ static int			check_height_cy(t_cy *cy, t_c *cyl, t_d t)
 	return (1);
 }
 
-static t_d			check_point(t_cy *cy, t_c *cyl, t_d t, t_dist *quad)
+static t_d			check_point(t_cy *cy, t_c *cyl, t_d t)
 {
 	double			tmp;
 	t_vec			x;
@@ -59,7 +59,7 @@ static t_d			check_point(t_cy *cy, t_c *cyl, t_d t, t_dist *quad)
 	return (t);
 }
 
-static t_d			cyl_quadro_cyl(t_cy *cy, t_c *cyl, t_dist *quad)
+static t_d			cyl_quadro_cyl(t_cy *cy, t_c *cyl)
 {
 	double			disc;
 	double			d1;
@@ -83,10 +83,10 @@ static t_d			cyl_quadro_cyl(t_cy *cy, t_c *cyl, t_dist *quad)
 		d1 = tmp / cyl->a;
 		d2 = cyl->c / tmp;
 	}
-	return (check_point(cy, cyl, (t_d){d1, d2}, quad));
+	return (check_point(cy, cyl, (t_d) {d1, d2}));
 }
 
-t_d					intersect_cylinder(t_vec *vec, t_cy *cy, t_dist *quad)
+t_d					intersect_cylinder(t_vec *vec, t_cy *cy)
 {
 	t_c				cyl;
 	t_vec			tmp;
@@ -103,5 +103,5 @@ t_d					intersect_cylinder(t_vec *vec, t_cy *cy, t_dist *quad)
 	cyl.a = vec_scal(cyl.vpr_p, cyl.vpr_p);
 	cyl.b = 2.0 * vec_scal(cyl.vpr_p, cyl.vpr_cyl);
 	cyl.c = vec_scal(cyl.vpr_cyl, cyl.vpr_cyl) - pow(cy->diameter, 2) / 4.0;
-	return (cyl_quadro_cyl(cy, &cyl, quad));
+	return (cyl_quadro_cyl(cy, &cyl));
 }

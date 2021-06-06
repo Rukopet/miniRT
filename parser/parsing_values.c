@@ -76,7 +76,6 @@ int			parse_light(char **line, t_rt *s, int *i)
 	s->light[i[1]]->r = ft_atoi_ptr(&tmp);
 	s->light[i[1]]->g = ft_atoi_ptr(&tmp);
 	s->light[i[1]]->b = ft_atoi_ptr(&tmp);
-	s->light[i[1]]->distance = -1;
 	if (NULL != line[4])
 		return (0);
 	i[1] += 1;
@@ -98,7 +97,6 @@ int			parse_sphere(char **line, t_rt *s, int *i)
 	s->sp[i[2]]->r = ft_atoi_ptr(&tmp);
 	s->sp[i[2]]->g = ft_atoi_ptr(&tmp);
 	s->sp[i[2]]->b = ft_atoi_ptr(&tmp);
-	s->sp[i[2]]->distance = -1;
 	i[2] += 1;
 	if (NULL != line[4])
 		return (0);

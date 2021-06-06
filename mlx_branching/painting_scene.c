@@ -65,7 +65,7 @@ void			painting_scene(t_rt *scene, int x, int y, t_cam *cam)
 	int			color;
 
 	norm_vec[1] = (t_vec){cam->x, cam->y, cam->z};
-	if (cam->fov == 60 || cam->fov == 70)
+	if (cam->fov >= 0 && cam->fov <= 180)
 	{
 		if (cam->tran_mat == NULL)
 			alloc_matrix(cam);

@@ -95,5 +95,8 @@ double				ft_atof_ptr(char **s)
 		a = a * 10.0 + (*i - '0');
 		(*s)++;
 	}
+	if (!ft_isdigit(**s) && **s != '.' && (**s == '.' && \
+	!ft_isdigit(**(s + 1))))
+		errors_and_exit(4, NULL);
 	return (ret_answ(&s, &a, i[2]) * i[1]);
 }

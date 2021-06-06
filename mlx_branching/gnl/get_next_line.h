@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_crutch.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egums <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/14 12:11:18 by egums             #+#    #+#             */
-/*   Updated: 2021/03/14 12:11:38 by egums            ###   ########.fr       */
+/*   Created: 2021/01/12 20:01:02 by egums             #+#    #+#             */
+/*   Updated: 2021/01/12 20:01:03 by egums            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_index(int *index)
-{
-	int		i;
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-	i = -1;
-	while (++i != 7)
-	{
-		index[i] = 0;
-	}
-}
+int		get_next_line(int fd, char **line);
+int		ft_strlen_n(const char *s, char flag);
+int		free_and_null(char **tmp, int flag);
+int		ft_strchr_r(const char *s, int c);
+char	*ft_strjoin_g(const char *s1, const char *s2);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+#endif

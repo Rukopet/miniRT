@@ -98,6 +98,7 @@ int					parse_after_count(char **join, t_rt *scene)
 			return (0);
 		if (!(check_line_parse(&arg, scene)))
 			return (0);
+		free(arg);
 	}
 	validator(scene);
 	return (1);

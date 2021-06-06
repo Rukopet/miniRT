@@ -61,7 +61,7 @@ void				rtx_with_angles(t_rt *scene, t_cam *cam)
 	limits = NULL;
 }
 
-void				rtx(t_rt *scene, t_img *img, int cam, int flag)
+void				rtx(t_rt *scene, t_img *img, int cam)
 {
 	scene->img = img;
 	get_img(scene);

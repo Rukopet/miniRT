@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile2                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: egums <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -33,9 +33,9 @@ all: $(NAME) $(SRC)
 
 $(NAME): $(OBJ) $(BOBJ) libft.h
 ifdef $(BONUS_RULE)
-	ar rcs $(NAME) $(OBJ) $(BOBJ)
+	@ar rcs $(NAME) $(OBJ) $(BOBJ)
 else
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 endif
 
 bonus: RULE all
@@ -43,14 +43,14 @@ bonus: RULE all
 RULE: BONUS_RULE ?= TRUE
 
 %.o: %.c libft.h
-	$(CC) -c $(FLAG) $< $(INC)
+	@$(CC) -c $(FLAG) $< $(INC)
 
 .PHONY: RULE bonus all clean fclean re
 
 clean:
-	rm -f $(OBJ) $(BOBJ)
+	@rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all

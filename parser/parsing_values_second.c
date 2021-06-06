@@ -46,7 +46,6 @@ int			parse_plane(char **line, t_rt *s, int *i)
 	s->pl[i[3]]->r = ft_atof_ptr(&tmp);
 	s->pl[i[3]]->g = ft_atof_ptr(&tmp);
 	s->pl[i[3]]->b = ft_atof_ptr(&tmp);
-	s->pl[i[3]]->distance = -1;
 	i[3] += 1;
 	if (NULL != line[4])
 		return (0);

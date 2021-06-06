@@ -20,7 +20,7 @@ t_vec			summ_colors(t_vec color1, t_vec color2)
 	return (color1);
 }
 
-t_vec			get_color_after_normal(t_vec *color, t_vec coof, int i)
+t_vec			get_color_after_normal(t_vec *color, t_vec coof)
 {
 	double		max;
 	double		check;
@@ -95,5 +95,5 @@ t_vec			vec_to_light(t_vec color[2], t_rt *sc, t_vec vec[2], \
 		*color = summ_colors(*color, \
 				coof_color_after_normal(tmp, sc, args, sc->light[i]));
 	}
-	return (get_color_after_normal(color + 1, *color, i));
+	return (get_color_after_normal(color + 1, *color));
 }

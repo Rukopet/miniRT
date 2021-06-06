@@ -61,8 +61,8 @@ t_vec			take_normal_from_obj(t_dist args, t_rt *scene, \
 		normal = take_square_normal((t_vec){vec->x, vec->y, vec->z },
 			scene->sq[args.fig_index]);
 	if (args.index == 4)
-		normal = take_normal_cylinder(vec, scene->cy[args.fig_index],
-			&args, vec);
+		normal = take_normal_cylinder(scene->cy[args.fig_index],
+								&args, vec);
 	if (args.index == 5)
 		normal = take_triangle_normal(scene->tr[args.fig_index],
 			(t_vec){vec->x, vec->y, vec->z});
